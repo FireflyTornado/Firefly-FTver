@@ -68,6 +68,17 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			// 书签导航
 			LinkPresets.Booknav,
 
+			//足迹
+			LinkPresets.Places,
+		],
+	});
+
+		// 娱乐及其子菜单
+	links.push({
+		name: "娱乐",
+		url: "#",
+		icon: "material-symbols:person",
+		children: [
 			// 哔哩哔哩追番
 			LinkPresets.Bilibili,
 
@@ -91,8 +102,11 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			// 打赏
 			LinkPresets.Sponsor,
 
-			// 关于页面
+			// 关于我
 			LinkPresets.About,
+
+			// 关于本站
+			LinkPresets.AboutWebsite,
 		],
 	});
 
@@ -105,21 +119,27 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		children: [
 			{
 				name: "GitHub",
-				url: "https://github.com/CuteLeaf/Firefly",
+				url: "https://github.com/FireflyTornado/Firefly-FTver",
 				external: true,
 				icon: "fa7-brands:github",
 			},
+			//{
+			//	name: "Friefly Gitee",
+			//	url: "https://gitee.com/CuteLeaf/Firefly",
+			//	external: true,
+			//	icon: "fa7-brands:gitee",
+			//},
+			//{
+			//	name: "QQ交流群",
+			//	url: "https://qm.qq.com/q/ZGsFa8qX2G",
+			//	external: true,
+			//	icon: "fa7-brands:qq",
+			//},
 			{
-				name: "Gitee",
-				url: "https://gitee.com/CuteLeaf/Firefly",
+				name: "Bilibili",
+				url: "https://space.bilibili.com/1585266228",
 				external: true,
-				icon: "fa7-brands:gitee",
-			},
-			{
-				name: "QQ交流群",
-				url: "https://qm.qq.com/q/ZGsFa8qX2G",
-				external: true,
-				icon: "fa7-brands:qq",
+				icon: "fa7-brands:bilibili",
 			},
 			{
 				name: "Firefly文档",
@@ -241,11 +261,23 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/sponsor/",
 		icon: "material-symbols:favorite",
 		pageKey: "sponsor",
-	},
+	},	
 	About: {
 		name: "关于我",
 		url: "/about/",
 		icon: "material-symbols:person",
+	},
+
+	//新增内容
+	AboutWebsite: {
+		name: "关于本站",
+		url: "/about-website/",
+		icon: "material-symbols:person",
+	},
+	Places: {
+		name: "足迹",
+		url: "/places/",
+		icon: "material-symbols:location-on",
 	},
 };
 

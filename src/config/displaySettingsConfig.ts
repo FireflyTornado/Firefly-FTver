@@ -32,7 +32,7 @@ export const displaySettingsConfig: DisplaySettingsConfig =
 		layoutSwitchable: true,
 
 		// 卡片边框和阴影开关
-		cardBorderSwitchable: true,
+		cardBorderSwitchable: false,
 
 		// 卡片风格跟随主题色开关
 		cardFollowThemeSwitchable: true,
@@ -40,22 +40,22 @@ export const displaySettingsConfig: DisplaySettingsConfig =
 		// ── 壁纸 (Wallpaper) ──────────────────────────────────
 
 		// 壁纸模式切换开关
-		wallpaperModeSwitchable: true,
+		wallpaperModeSwitchable: false,
 
 		// 全屏壁纸布局切换开关（classic / hero）
-		fullscreenLayoutSwitchable: true,
+		fullscreenLayoutSwitchable: false,
 
 		// 水波纹动画开关
 		wavesSwitchable: true,
 
 		// 渐变过渡效果开关
-		gradientSwitchable: true,
+		gradientSwitchable: false,
 
 		// 横幅标题显示开关
-		bannerTitleSwitchable: true,
+		bannerTitleSwitchable: false,
 
 		// 壁纸轮播开关
-		bannerCarouselSwitchable: true,
+		bannerCarouselSwitchable: false,
 
 		// 全屏壁纸/透明覆盖模式参数调节开关
 		// 设为 false 关闭所有滑块，或用对象形式单独控制每个滑块

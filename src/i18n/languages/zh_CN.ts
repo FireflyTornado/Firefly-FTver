@@ -526,4 +526,44 @@ export const zh_CN: Translation = {
 	[Key.exitImmersiveReading]: "退出沉浸阅读",
 	[Key.tocExpand]: "展开目录",
 	[Key.tocCollapse]: "折叠目录",
+
+
+//个人增加
+	//关于网站
+	[Key.aboutWebsite]: "关于本站",
+
+	//足迹
+	[Key.placesTitle]: "足迹",
+	[Key.placesSubtitle]: "记录我曾经到访过的地方",
+	[Key.placesVisitedProvinces]: "已到访省份",
+
+	[Key.placesStatLocationsUnit]: "个地点",
+	[Key.placesStatVisitsUnit]: "次到访",
+	[Key.placesStatThisYearUnit]: "今年足迹",
+
+	[Key.placesLatestTrip]: "最近一次旅行",
+
+	[Key.placesMap]: "足迹地图",
+	[Key.placesList]: "足迹列表",
+
+	[Key.placesMapLoadFailed]: "地图加载失败",
+	[Key.placesNeedAmapKey]: "需要配置高德地图 Key",
+
+	[Key.placesFilterAllFootprints]: "全部足迹",
+	[Key.placesAreaHighlight]: "区域高亮",
+	[Key.placesClusterDisplay]: "聚合显示",
+	[Key.placesMapOwnerLocation]: "我的位置",
+
+	[Key.placesVisitLabel]: "到访",
+	[Key.placesTimes]: "次",
+
+	[Key.placesFullscreen]: "全屏",
+	[Key.placesRefresh]: "刷新",
+
+	[Key.placesMapCredit]: "地图数据由高德地图提供",
+
+	[Key.placesNoData]: "暂无足迹",
+	[Key.placesNoDataHint]: "还没有记录任何到访地点",
+
+	[Key.placesUnknownProvince]: "未知地区",
 };

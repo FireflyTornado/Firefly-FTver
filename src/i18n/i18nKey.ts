@@ -520,6 +520,46 @@ enum I18nKey {
 	exitImmersiveReading = "exitImmersiveReading",
 	tocExpand = "tocExpand",
 	tocCollapse = "tocCollapse",
+
+
+//个人增加
+	//关于网站
+	aboutWebsite = "aboutWebsite",
+
+	//足迹
+	placesTitle = "placesTitle",
+	placesSubtitle = "placesSubtitle",
+	placesVisitedProvinces = "placesVisitedProvinces",
+
+	placesStatLocationsUnit = "placesStatLocationsUnit",
+	placesStatVisitsUnit = "placesStatVisitsUnit",
+	placesStatThisYearUnit = "placesStatThisYearUnit",
+
+	placesLatestTrip = "placesLatestTrip",
+
+	placesMap = "placesMap",
+	placesList = "placesList",
+
+	placesMapLoadFailed = "placesMapLoadFailed",
+	placesNeedAmapKey = "placesNeedAmapKey",
+
+	placesFilterAllFootprints = "placesFilterAllFootprints",
+	placesAreaHighlight = "placesAreaHighlight",
+	placesClusterDisplay = "placesClusterDisplay",
+	placesMapOwnerLocation = "placesMapOwnerLocation",
+
+	placesVisitLabel = "placesVisitLabel",
+	placesTimes = "placesTimes",
+
+	placesFullscreen = "placesFullscreen",
+	placesRefresh = "placesRefresh",
+
+	placesMapCredit = "placesMapCredit",
+
+	placesNoData = "placesNoData",
+	placesNoDataHint = "placesNoDataHint",
+
+	placesUnknownProvince = "placesUnknownProvince",
 }
 
 export default I18nKey;

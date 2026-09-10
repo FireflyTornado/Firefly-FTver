@@ -10,7 +10,11 @@ export type WidgetComponentType =
 	| "calendar"
 	| "music"
 	| "siteInfo"
-	| "dynamic";
+	| "dynamic"
+	//个人新增
+	| "schedule"
+	| "weather"
+	| "umamiStats";
 
 export type WidgetComponentConfig = {
 	type: WidgetComponentType; // 组件类型

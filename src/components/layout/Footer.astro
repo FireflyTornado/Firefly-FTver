@@ -6,6 +6,16 @@ import { url } from "@/utils/url-utils";
 
 const currentYear = new Date().getFullYear();
 
+// 读取 package.json 获取版本号
+let themeVersion = "unknown";
+try {
+	const packageJsonPath = path.join(process.cwd(), "package.json");
+	const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
+	themeVersion = packageJson.version;
+} catch (error) {
+	console.warn("读取 package.json 版本号失败:", error.message);
+}
+
 // 读取FooterConfig.html文件内容
 let customFooterHtml = "";
 if (footerConfig.enable) {
@@ -19,6 +29,11 @@ if (footerConfig.enable) {
 		customFooterHtml = fs.readFileSync(footerConfigPath, "utf-8");
 		// 移除HTML注释
 		customFooterHtml = customFooterHtml.replace(/<!--[\s\S]*?-->/g, "").trim();
+		// 替换版本号占位符
+		customFooterHtml = customFooterHtml.replace(
+			/__THEME_VERSION__/g,
+			themeVersion,
+		);
 	} catch (error) {
 		console.warn(
 			"FooterConfig.html文件读取失败:",
