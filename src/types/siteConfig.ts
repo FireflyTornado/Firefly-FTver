@@ -97,6 +97,7 @@ export type SiteConfig = {
 		bilibili: boolean; // 哔哩哔哩追番页面开关
 		dynamic: boolean; // 动态页面开关
 		projects: boolean; // 项目展示页开关
+		places: boolean; // 足迹地图页面开关
 	};
 
 	// 分类导航栏开关
@@ -255,4 +256,19 @@ export type SiteConfig = {
 		 */
 		contentMode?: "full" | "summary";
 	};
+
+	// 足迹地图配置（高德地图）
+	placesMap?: {
+		// 高德 Web 端 JS API Key
+		amapKey: string;
+		// 高德安全密钥
+		amapSecurityJsCode: string;
+		// 站点主人位置（地图初始中心和标记点）
+		ownerLocation: {
+			lng: number; // 经度
+			lat: number; // 纬度
+			label: string; // 位置标签文字
+		};
+	};
 };
+
