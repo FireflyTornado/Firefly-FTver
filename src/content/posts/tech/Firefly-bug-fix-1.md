@@ -7,6 +7,8 @@ tags: [Firefly, bug排查, 前端开发]
 category: 技术
 ---
 
+> [!NOTE]
+> 本文记录的修复已通过 [PR #632](https://github.com/CuteLeaf/Firefly/pull/632) 提交至 Firefly 项目，并已由原作者合并。
 
 今天在调整 Firefly 博客的全屏壁纸时，遇到了一个有些奇怪的问题。
 
