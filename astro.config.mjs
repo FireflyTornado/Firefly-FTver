@@ -54,6 +54,7 @@ import { remarkPlantuml } from "./src/plugins/remark-plantuml.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { remarkWikiLink } from "./src/plugins/remark-wiki-link.js";
 import { collectUsedFontCssVars } from "./src/utils/fontHelper";
+import presenceDevApi from "./src/integrations/presence-dev-api";
 
 if (process.env.NODE_ENV === "development") {
 	setMaxListeners(20);
@@ -70,7 +71,8 @@ export default defineConfig({
 	site: siteConfig.site_url,
 
 	base: "/",
-	trailingSlash: "always",
+	// Dev middleware accepts both Presence API URL forms; production stays unchanged.
+	trailingSlash: process.env.NODE_ENV === "development" ? "ignore" : "always",
 
 	// 字体配置 - 只加载实际使用的字体，跳过未引用的以加快构建
 	fonts: (() => {
@@ -117,6 +119,7 @@ export default defineConfig({
 	},
 
 	integrations: [
+		presenceDevApi(),
 		swup({
 			theme: false,
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector

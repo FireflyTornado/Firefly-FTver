@@ -102,7 +102,7 @@ const initialConfig = stateConfig[presence.state];
 </WidgetLayout>
 
 <script>
-	const USE_MOCK_PRESENCE = true;
+	const USE_MOCK_PRESENCE = false;
 	const POLL_INTERVAL = 30_000;
 	const DISPLAY_REFRESH_INTERVAL = 15_000;
 	const OFFLINE_TIMEOUT = 90_000;
@@ -255,7 +255,7 @@ const initialConfig = stateConfig[presence.state];
 				return { ...this.mockPresence };
 			}
 
-			const response = await fetch("/api/presence", {
+			const response = await fetch("/api/presence/", {
 				cache: "no-store",
 				signal: this.listeners?.signal,
 			});
