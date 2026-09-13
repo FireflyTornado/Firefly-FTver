@@ -263,6 +263,12 @@ export type SiteConfig = {
 		amapKey: string;
 		// 高德安全密钥
 		amapSecurityJsCode: string;
+		/** 是否启用行政区边界查询和 Polygon 高亮。默认 true。 */
+		areaHighlight?: boolean;
+		/** DistrictSearch 真实请求的最小发送间隔（毫秒）。默认 400。 */
+		districtQueryInterval?: number;
+		/** 是否在三个行政区字段均为空时，通过高德坐标逆向解析行政区。默认 false。 */
+		reverseGeocode?: boolean;
 		// 站点主人位置（地图初始中心和标记点）
 		ownerLocation: {
 			lng: number; // 经度
@@ -271,4 +277,3 @@ export type SiteConfig = {
 		};
 	};
 };
-

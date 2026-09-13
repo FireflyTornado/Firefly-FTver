@@ -133,27 +133,48 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 //足迹
 const placesCollection = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/places" }),
-	schema: z.object({
-		date: z.coerce.date(),
-		endDate: z.coerce.date().optional(),
-		province: z.string(),
-		city: z.string().optional().default(""),
-		district: z.string().optional().default(""),
-		experience: z.string().optional().default(""),
-		visitCount: z.number().optional().default(1),
-		source: z.enum(["manual", "timeline"]).optional().default("manual"),
-		timelineId: z.string().optional(),
-		category: z.string().optional(),
-		lat: z.number().optional(),
-		lng: z.number().optional(),
-		/** 足迹照片（URL 列表），点击地图点位时轮播展示 */
-		images: z.array(z.string()).optional().default([]),
-		/** 可选外链（如游记文章）；YAML 中 `link:` 留空会被解析为 null，此处归一化为 undefined */
-		link: z
-			.string()
-			.nullish()
-			.transform((v) => v ?? undefined),
-	}),
+	schema: z
+		.object({
+			title: z.string().optional(),
+			date: z.coerce.date(),
+			endDate: z.coerce.date().optional(),
+			category: z.string().optional(),
+			tags: z.array(z.string()).optional().default([]),
+			description: z.string().optional(),
+			/** 一次旅行中包含的实际地点。 */
+			locations: z
+				.array(
+					z.object({
+						name: z.string(),
+						province: z.string().optional(),
+						city: z.string().optional(),
+						district: z.string().optional(),
+						lng: z.number(),
+						lat: z.number(),
+						description: z.string().optional(),
+						images: z.array(z.string()).optional().default([]),
+						exact: z.boolean().optional(),
+						date: z.coerce.date().optional(),
+					}),
+				)
+				.min(1)
+				.optional(),
+			source: z.enum(["manual", "timeline"]).optional().default("manual"),
+			timelineId: z.string().optional(),
+			/** 可选外链（如游记文章）；YAML 中 `link:` 留空会被解析为 null，此处归一化为 undefined */
+			link: z
+				.string()
+				.nullish()
+				.transform((v) => v ?? undefined),
+			/** 旧版单地点字段，仅供过渡期读取；新 Markdown 应使用 locations。 */
+			province: z.string().optional(),
+			city: z.string().optional(),
+			district: z.string().optional(),
+			experience: z.string().optional(),
+			lat: z.number().optional(),
+			lng: z.number().optional(),
+		})
+		.strict(),
 });
 
 export const collections: {

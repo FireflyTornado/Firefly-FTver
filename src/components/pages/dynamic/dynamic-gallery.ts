@@ -1,4 +1,5 @@
 import * as FancyboxModule from "@fancyapps/ui";
+import { showGalleryLightbox } from "@/utils/gallery-lightbox";
 
 type GalleryImage = {
 	alt: string;
@@ -122,14 +123,10 @@ export function registerDynamicGallery(): void {
 				(event) => {
 					event.preventDefault();
 					const Fancybox = FancyboxModule.Fancybox;
-					Fancybox.show(
-						this.images.map((image) => ({
-							src: image.src,
-							type: "image",
-						})),
-						{
-							startIndex: this.activeIndex,
-						},
+					showGalleryLightbox(
+						Fancybox,
+						this.images.map((image) => image.src),
+						this.activeIndex,
 					);
 				},
 			);
@@ -154,12 +151,10 @@ export function registerDynamicGallery(): void {
 
 		private openLightbox(index: number) {
 			const Fancybox = FancyboxModule.Fancybox;
-			Fancybox.show(
-				this.images.map((image) => ({
-					src: image.src,
-					type: "image",
-				})),
-				{ startIndex: index },
+			showGalleryLightbox(
+				Fancybox,
+				this.images.map((image) => image.src),
+				index,
 			);
 		}
 

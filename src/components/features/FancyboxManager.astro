@@ -3,6 +3,11 @@
 ---
 
 <script>
+  import {
+    getGalleryLightboxOptions,
+    showGalleryLightbox,
+  } from "@/utils/gallery-lightbox";
+
   let Fancybox: any;
   const IMG_SELECTOR = ".custom-md img:not(.card-wiki-link img), #post-cover img, .moment-images img";
   const LINK_SELECTOR = ".moment-images a[data-fancybox], [data-fancybox]:not(.moment-images a)";
@@ -80,51 +85,6 @@
     } catch (err) { console.debug("[Fancybox] SVG preprocess error:", src, err); return null; }
   }
 
-  function getCommonOptions() {
-    return {
-      Thumbs: {
-        autoStart: true,
-        showOnStart: "yes",
-      },
-      Toolbar: {
-        display: {
-          left: ["infobar"],
-          middle: [
-            "zoomIn",
-            "zoomOut",
-            "toggle1to1",
-            "rotateCCW",
-            "rotateCW",
-            "flipX",
-            "flipY",
-          ],
-          right: ["slideshow", "thumbs", "close"],
-        },
-      },
-      animated: true,
-      dragToClose: true,
-      keyboard: {
-        Escape: "close",
-        Delete: "close",
-        Backspace: "close",
-        PageUp: "next",
-        PageDown: "prev",
-        ArrowUp: "next",
-        ArrowDown: "prev",
-        ArrowRight: "next",
-        ArrowLeft: "prev",
-      },
-      fitToView: true,
-      preload: 3,
-      infinite: true,
-      Panzoom: {
-        maxScale: 3,
-        minScale: 1,
-      },
-      caption: false,
-    };
-  }
-
   async function preprocessSvgImages() {
     const promises: Promise<void>[] = [];
 
@@ -174,7 +134,7 @@
       Fancybox = mod.Fancybox;
     }
 
-    const commonOptions = getCommonOptions();
+    const commonOptions = getGalleryLightboxOptions();
 
     await preprocessSvgImages();
 
@@ -197,6 +157,17 @@
       source: (el: any) => el.getAttribute("data-src") || el.getAttribute("href"),
     });
 
+  }
+
+  async function openGallery(event: Event) {
+    const detail = (event as CustomEvent<{ images?: string[]; index?: number }>).detail;
+    if (!detail?.images?.length) return;
+    await injectFancyboxCss();
+    if (!Fancybox) {
+      const mod = await import("@fancyapps/ui");
+      Fancybox = mod.Fancybox;
+    }
+    showGalleryLightbox(Fancybox, detail.images, detail.index ?? 0);
   }
 
   function cleanupFancybox() {
@@ -230,6 +201,7 @@
   document.addEventListener("dynamic-gallery:ready", () => {
     requestAnimationFrame(setup);
   });
+  document.addEventListener("firefly:gallery-open", openGallery);
   document.addEventListener("swup:visit:start", cleanupFancybox);
 
   // 加密文章解密后重新绑定灯箱

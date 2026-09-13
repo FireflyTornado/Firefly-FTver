@@ -6,67 +6,84 @@ import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
 import {
-  formatPlaceDateRange,
-  getPlaceCategories,
-  getPlaceYears,
-  getYearKeys,
-  placeToClient,
-  placesFromContent,
-  type PlaceRecord,
+	formatTripDateRange,
+	getTripCategories,
+	getTripYearKeys,
+	getTripYears,
+	type TripRecord,
+	tripsFromContent,
+	tripToClient,
 } from "@/utils/places-utils";
 
 if (!siteConfig.pages.places) {
-  return Astro.redirect("/404/");
+	return Astro.redirect("/404/");
 }
 
 const now = new Date();
 const currentYear = now.getFullYear();
 
-const placeEntries = await getCollection("places");
-const allPlaces: PlaceRecord[] = placesFromContent(
-  placeEntries.map((e) => e.data),
+const tripEntries = await getCollection("places");
+const allTrips: TripRecord[] = tripsFromContent(
+	tripEntries.map((entry) => ({ id: entry.id, ...entry.data })),
 );
 
-const sortedPlaces = [...allPlaces].sort(
-  (a, b) => b.date.getTime() - a.date.getTime(),
+const sortedTrips = [...allTrips].sort(
+	(a, b) => b.date.getTime() - a.date.getTime(),
 );
 
-const placeYears = getPlaceYears(allPlaces);
-const placeCategories = getPlaceCategories(allPlaces);
+const tripYears = getTripYears(allTrips);
+const tripCategories = getTripCategories(allTrips);
 
-const sum = (arr: number[]) => arr.reduce((acc, num) => acc + num, 0);
-const totalVisitCount = sum(sortedPlaces.map((p) => p.visitCount || 1));
-const thisYearVisitCount = sortedPlaces.filter((p) => {
-  const y = p.date.getFullYear();
-  const endY = p.endDate?.getFullYear() ?? y;
-  return y <= currentYear && endY >= currentYear;
+const totalVisitCount = sortedTrips.length;
+const thisYearVisitCount = sortedTrips.filter((trip) => {
+	const y = trip.date.getFullYear();
+	const endY = trip.endDate?.getFullYear() ?? y;
+	return y <= currentYear && endY >= currentYear;
 }).length;
 const uniqueLocationCount = new Set(
-  sortedPlaces.map((p) => `${p.province}|${p.city || p.province}`),
+	sortedTrips.flatMap((trip) =>
+		trip.locations.map(
+			(location) => `${location.name.trim()}|${location.lng}|${location.lat}`,
+		),
+	),
 ).size;
 const uniqueProvinceCount = new Set(
-  sortedPlaces.map((p) => p.province).filter(Boolean),
+	sortedTrips
+		.flatMap((trip) =>
+			trip.locations.map((location) => location.province?.trim() || ""),
+		)
+		.filter(Boolean),
 ).size;
-const latestPlace = sortedPlaces[0];
+const latestTrip = sortedTrips[0];
 
-const clientSortedPlaces = sortedPlaces.map((p, i) => placeToClient(p, i));
+const clientSortedTrips = sortedTrips.map((trip, index) =>
+	tripToClient(trip, index),
+);
 
 const displayTitle = i18n(I18nKey.placesTitle);
 const displaySubtitle = i18n(I18nKey.placesSubtitle);
 const ownerLocation = siteConfig.placesMap?.ownerLocation ?? null;
 const amapKey = siteConfig.placesMap?.amapKey?.trim() || "";
 const amapSecurityJsCode =
-  siteConfig.placesMap?.amapSecurityJsCode?.trim() || "";
+	siteConfig.placesMap?.amapSecurityJsCode?.trim() || "";
+const reverseGeocode = siteConfig.placesMap?.reverseGeocode === true;
+const areaHighlightEnabled = siteConfig.placesMap?.areaHighlight !== false;
+const configuredDistrictQueryInterval = Number(
+	siteConfig.placesMap?.districtQueryInterval,
+);
+const districtQueryInterval = Number.isFinite(configuredDistrictQueryInterval)
+	? Math.max(0, configuredDistrictQueryInterval)
+	: 400;
+const placesDevMode = import.meta.env.DEV;
 
 const placesI18n = {
-  mapLoadFailed: i18n(I18nKey.placesMapLoadFailed),
-  needAmapKey: i18n(I18nKey.placesNeedAmapKey),
-  filterAll: i18n(I18nKey.placesFilterAllFootprints),
-  areaHighlight: i18n(I18nKey.placesAreaHighlight),
-  clusterDisplay: i18n(I18nKey.placesClusterDisplay),
-  ownerLocation: i18n(I18nKey.placesMapOwnerLocation),
-  visitLabel: i18n(I18nKey.placesVisitLabel),
-  times: i18n(I18nKey.placesTimes),
+	mapLoadFailed: i18n(I18nKey.placesMapLoadFailed),
+	needAmapKey: i18n(I18nKey.placesNeedAmapKey),
+	filterAll: i18n(I18nKey.placesFilterAllFootprints),
+	clusterDisplay: i18n(I18nKey.placesClusterDisplay),
+	ownerLocation: i18n(I18nKey.placesMapOwnerLocation),
+	clusterTrips: i18n(I18nKey.placesClusterTrips),
+	locations: i18n(I18nKey.placesLocationCount),
 };
 ---
 
@@ -110,7 +127,7 @@ const placesI18n = {
         </div>
       </div>
 
-      {latestPlace && (
+      {latestTrip && (
         <article class="places-latest mb-8">
           <div class="places-latest-label">
             <Icon name="material-symbols:near-me" is:inline class="text-sm" />
@@ -118,16 +135,16 @@ const placesI18n = {
           </div>
           <div class="places-latest-body">
             <h3 class="places-latest-title dark:text-neutral-100">
-              {latestPlace.province}{latestPlace.city ? ` · ${latestPlace.city}` : ""}
+              {latestTrip.title}
             </h3>
-            {latestPlace.experience && (
-              <p class="places-latest-exp dark:text-neutral-400">{latestPlace.experience}</p>
+            {latestTrip.description && (
+              <p class="places-latest-exp dark:text-neutral-400">{latestTrip.description}</p>
             )}
             <div class="places-latest-meta dark:text-neutral-400">
-              <time datetime={latestPlace.date.toISOString().slice(0, 10)}>
-                {formatPlaceDateRange(latestPlace)}
+              <time datetime={latestTrip.date.toISOString().slice(0, 10)}>
+                {formatTripDateRange(latestTrip)}
               </time>
-              <span class="place-source-tag">{latestPlace.category}</span>
+              {latestTrip.category && <span class="place-source-tag">{latestTrip.category}</span>}
             </div>
           </div>
         </article>
@@ -143,12 +160,12 @@ const placesI18n = {
               <button type="button" class="places-filter-chip is-active" data-filter="all">
                 {i18n(I18nKey.placesFilterAllFootprints)}
               </button>
-              {placeYears.map((year) => (
+              {tripYears.map((year) => (
                 <button type="button" class="places-filter-chip" data-filter={`year:${year}`}>
                   {year}
                 </button>
               ))}
-              {placeCategories.map((cat) => (
+              {tripCategories.map((cat) => (
                 <button type="button" class="places-filter-chip" data-filter={`cat:${cat}`}>
                   {cat}
                 </button>
@@ -173,10 +190,6 @@ const placesI18n = {
               </button>
             </div>
             <div class="places-map-toggles">
-              <label class="places-toggle">
-                <span>{i18n(I18nKey.placesAreaHighlight)}</span>
-                <input type="checkbox" id="places-toggle-area" checked />
-              </label>
               <label class="places-toggle places-toggle--cluster">
                 <span>{i18n(I18nKey.placesClusterDisplay)}</span>
                 <input type="checkbox" id="places-toggle-cluster" checked />
@@ -187,79 +200,154 @@ const placesI18n = {
         <p class="mt-3 text-xs text-neutral-400 dark:text-neutral-500 text-center">{i18n(I18nKey.placesMapCredit)}</p>
       </div>
 
-      <div>
+      <div id="places-trip-list-view">
+        <div id="places-city-context" class="places-city-context" hidden>
+          <button type="button" class="places-context-link" data-city-overview>
+            {i18n(I18nKey.placesBackToTrips)}
+          </button>
+          <span aria-hidden="true">/</span>
+          <strong id="places-city-name" class="dark:text-neutral-100"></strong>
+        </div>
         <h2 class="places-section-title dark:text-neutral-100">{i18n(I18nKey.placesList)}</h2>
-        {sortedPlaces.length === 0 ? (
+        {sortedTrips.length === 0 ? (
           <div class="places-empty">
             <p class="text-neutral-500 dark:text-neutral-400">{i18n(I18nKey.placesNoData)}</p>
             <p class="text-sm text-neutral-400 dark:text-neutral-500 mt-2">{i18n(I18nKey.placesNoDataHint)}</p>
           </div>
         ) : (
           <div class="places-grid" id="places-list">
-            {sortedPlaces.map((place, index) => {
-              const images = (place.images || []).filter(Boolean);
-              const hasImages = images.length > 0;
-              return (
+            {sortedTrips.map((trip, index) => (
               <article
-                class={`place-card${hasImages ? " place-card--has-images" : ""}`}
+                class="place-card trip-card"
                 style={`--stagger: ${index * 0.04}s`}
-                data-years={getYearKeys(place).join(",")}
-                data-category={place.category}
-                data-idx={index}
+                data-years={getTripYearKeys(trip).join(",")}
+                data-category={trip.category}
+                data-trip-id={trip.id}
+                role="button"
+                tabindex="0"
               >
-                {hasImages && (
-                  <div class="place-card-gallery" data-total={images.length} data-index="0">
-                    {images.length > 1 && (
-                      <>
-                        <button type="button" class="place-card-gallery-nav place-card-gallery-prev" aria-label="prev">
-                          <Icon name="material-symbols:chevron-left-rounded" />
-                        </button>
-                        <button type="button" class="place-card-gallery-nav place-card-gallery-next" aria-label="next">
-                          <Icon name="material-symbols:chevron-right-rounded" />
-                        </button>
-                      </>
-                    )}
-                    <div class="place-card-gallery-viewport">
-                      {images.map((src, i) => (
-                        <img
-                          class={`place-card-gallery-img${i === 0 ? " is-active" : ""}`}
-                          src={src}
-                          alt=""
-                          loading="lazy"
-                          data-idx={i}
-                        />
-                      ))}
-                    </div>
-                    {images.length > 1 && (
-                      <div class="place-card-gallery-dots">
-                        {images.map((_, i) => (
-                          <span class={`place-card-gallery-dot${i === 0 ? " is-active" : ""}`} data-idx={i}></span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
                 <div class="place-card-body">
                   <div class="place-card-pin">
-                    <Icon name="material-symbols:location-on" is:inline class="text-lg" />
+                    <Icon name="material-symbols:luggage" is:inline class="text-lg" />
                   </div>
                   <div class="place-card-content">
-                    <h3 class="place-name dark:text-neutral-100">
-                      {place.province || i18n(I18nKey.placesUnknownProvince)}
-                      {place.city ? ` · ${place.city}` : ""}
-                    </h3>
-                    <time class="place-date dark:text-neutral-100" datetime={place.date.toISOString().slice(0, 10)}>
-                      {formatPlaceDateRange(place)}
+                    <h3 class="place-name dark:text-neutral-100">{trip.title}</h3>
+                    <time class="place-date dark:text-neutral-100" datetime={trip.date.toISOString().slice(0, 10)}>
+                      {formatTripDateRange(trip)}
                     </time>
-                    <span class="place-source-tag dark:text-neutral-400">{place.category}</span>
-                    {place.experience && <p class="place-exp dark:text-neutral-100">{place.experience}</p>}
+                    <div class="trip-card-tags">
+                      {trip.category && <span class="place-source-tag dark:text-neutral-400">{trip.category}</span>}
+                      {trip.tags.map((tag) => <span class="place-source-tag dark:text-neutral-400">{tag}</span>)}
+                    </div>
+                    {trip.description && <p class="place-exp trip-card-summary dark:text-neutral-100">{trip.description}</p>}
+                    <p class="trip-card-location-count dark:text-neutral-400">
+                      {trip.locations.length} {i18n(I18nKey.placesLocationCount)}
+                    </p>
                   </div>
                 </div>
               </article>
-              );
-            })}
+            ))}
           </div>
         )}
+      </div>
+
+      <div id="places-trip-detail-view" hidden>
+        {sortedTrips.map((trip) => (
+            <article class="trip-detail" data-trip-detail-id={trip.id} hidden>
+              <div class="trip-detail-actions">
+                <button type="button" class="trip-detail-back" data-trip-back>
+                  <Icon name="material-symbols:arrow-back-rounded" is:inline />
+                  <span data-trip-back-label>{i18n(I18nKey.placesBackToTrips)}</span>
+                </button>
+                <button type="button" class="trip-detail-overview" data-trip-overview hidden>
+                  {i18n(I18nKey.placesBackToTrips)}
+                </button>
+              </div>
+              <p class="trip-detail-label">{i18n(I18nKey.placesTripDetail)}</p>
+              <h2 class="trip-detail-title dark:text-neutral-100">{trip.title}</h2>
+              <time class="trip-detail-date dark:text-neutral-400" datetime={trip.date.toISOString().slice(0, 10)}>
+                {formatTripDateRange(trip)}
+              </time>
+              <div class="trip-card-tags">
+                {trip.category && <span class="place-source-tag dark:text-neutral-400">{trip.category}</span>}
+                {trip.tags.map((tag) => <span class="place-source-tag dark:text-neutral-400">{tag}</span>)}
+              </div>
+              {trip.description && <p class="trip-detail-description dark:text-neutral-100">{trip.description}</p>}
+
+              <h3 class="trip-detail-locations-title dark:text-neutral-100">{i18n(I18nKey.placesLocations)}</h3>
+              <div class="trip-location-list">
+                {trip.locations.map((location, locationIndex) => {
+                  const locationImages = location.images.filter(Boolean);
+                  const area = [location.province, location.city, location.district]
+                    .filter((value, index, values) => value && values.indexOf(value) === index)
+                    .join(" · ");
+                  return (
+                    <article
+                      class="trip-location-card"
+                      data-location-card
+                      data-trip-id={trip.id}
+                      data-location-index={locationIndex}
+                      role="button"
+                      tabindex="0"
+                      aria-expanded="false"
+                    >
+                      <div class="trip-location-summary">
+                        {locationImages[0] && (
+                          <button
+                            type="button"
+                            class="trip-location-cover"
+                            data-location-image="0"
+                            aria-label={`${location.name} 1`}
+                          >
+                            <img src={locationImages[0]} alt="" loading="lazy" />
+                          </button>
+                        )}
+                        <div class="trip-location-main">
+                          <h4 class="trip-location-name dark:text-neutral-100">{location.name}</h4>
+                          <p
+                            class="trip-location-area dark:text-neutral-400"
+                            data-location-area
+                            data-location-date={location.date?.toISOString().slice(0, 10) || ""}
+                          >
+                            {area}{location.date ? ` · ${location.date.toISOString().slice(0, 10)}` : ""}
+                          </p>
+                          {location.description && (
+                            <p class="trip-location-description-summary dark:text-neutral-100">{location.description}</p>
+                          )}
+                          <p class="trip-location-photo-count dark:text-neutral-400">
+                            {locationImages.length} {i18n(I18nKey.galleryPhotos)}
+                          </p>
+                        </div>
+                        <button type="button" class="trip-location-map" data-location-map>
+                          <Icon name="material-symbols:location-on" is:inline />
+                          {i18n(I18nKey.placesViewOnMap)}
+                        </button>
+                      </div>
+                      <div class="trip-location-expanded" hidden>
+                        {location.description && (
+                          <p class="trip-location-description dark:text-neutral-100">{location.description}</p>
+                        )}
+                        {locationImages.length > 0 && (
+                          <div class="trip-location-thumbnails">
+                            {locationImages.map((src, imageIndex) => (
+                              <button
+                                type="button"
+                                class="trip-location-thumbnail"
+                                data-location-image={imageIndex}
+                                aria-label={`${location.name} ${imageIndex + 1}`}
+                              >
+                                <img src={src} alt="" loading="lazy" />
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </article>
+        ))}
       </div>
     </div>
   </div>
@@ -268,86 +356,75 @@ const placesI18n = {
   slot="head"
   is:inline
   define:vars={{
-    clientSortedPlaces,
+    clientSortedTrips,
     placesI18n,
     ownerLocation,
     amapKey,
     amapSecurityJsCode,
+    reverseGeocode,
+    areaHighlightEnabled,
+    districtQueryInterval,
+    placesDevMode,
   }}
 >
 (function () {
   var map = null;
+  /** @type {any} */
+  var browserWindow = window;
   var cluster = null;
   var markers = [];
   var ownerMarker = null;
   var infoWindow = null;
+  var ignorePopupCloseState = false;
   var areaPolygons = [];
-  var areaEnabled = true;
+  var areaRenderToken = 0;
   var clusterEnabled = true;
   var activeFilter = "all";
+  var mapMode = "overview";
+  var selectedCityKey = null;
+  var selectedTripId = null;
+  var selectedLocationKey = null;
+  var tripListScrollY = 0;
   var loadingEl = document.getElementById("places-map-loading");
   var uiBound = false;
   var initToken = 0;
   var amapLoadPromise = null;
+  var reverseGeocodeCache = {};
+  var reverseGeocoder = null;
+  var reverseGeocodeHydrationPromise = null;
+  var districtBoundaryCache = {};
+  var districtBoundaryQueue = Promise.resolve();
+  var districtBoundaryRequestId = 0;
+  var lastDistrictRequestAt = 0;
 
-  // 卡片轮播图触摸滑动支持（独立于地图加载）
-  (function bindCardGallerySwipe() {
-    var startX = 0;
-    var startY = 0;
-    var touched = false;
-    var moved = false;
-    var MOVE_PX = 12;
-
-    document.addEventListener("touchstart", function (e) {
-      var gallery = e.target.closest(".place-card-gallery");
-      if (!gallery) return;
-      var t = e.touches && e.touches[0];
-      if (!t) return;
-      touched = true;
-      moved = false;
-      startX = t.clientX;
-      startY = t.clientY;
-    }, { passive: true });
-
-    document.addEventListener("touchmove", function (e) {
-      if (!touched) return;
-      var t = e.touches && e.touches[0];
-      if (!t) return;
-      if (
-        Math.abs(t.clientX - startX) > MOVE_PX ||
-        Math.abs(t.clientY - startY) > MOVE_PX
-      ) {
-        moved = true;
-      }
-    }, { passive: true });
-
-    document.addEventListener("touchend", function (e) {
-      if (!touched) return;
-      touched = false;
-      if (!moved) return;
-      var gallery = (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].target && e.changedTouches[0].target.closest(".place-card-gallery")) || null;
-      if (!gallery) return;
-      var t = e.changedTouches && e.changedTouches[0];
-      if (!t) return;
-      var dx = t.clientX - startX;
-      var dy = t.clientY - startY;
-      // 水平滑动优先，水平位移大于垂直位移时才切换
-      if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
-        var idx = Number(gallery.getAttribute("data-index") || 0);
-        if (dx < 0) {
-          setCardGalleryIndex(gallery, idx + 1); // 左滑 → 下一张
-        } else {
-          setCardGalleryIndex(gallery, idx - 1); // 右滑 → 上一张
-        }
-      }
-    }, { passive: true });
-  })();
-
-  // 卡片点击 → 滚动到地图并定位对应足迹
+  // 旅行详情中的地点点击 → 滚动到地图并定位对应 Marker
   var pendingTarget = null;
+  function handleInfoWindowClose() {
+    setPlacesPopupOpen(false);
+    if (ignorePopupCloseState) {
+      ignorePopupCloseState = false;
+      return;
+    }
+    if (mapMode === "location" && selectedTripId) {
+      setPlacesState({ mode: "trip", tripId: selectedTripId, locationKey: null }, {
+        keepPopup: true,
+        openLocation: true,
+      });
+    }
+  }
+
+  function closeInfoWindowForRender() {
+    if (!infoWindow) return;
+    ignorePopupCloseState = true;
+    infoWindow.close();
+    window.setTimeout(function () {
+      ignorePopupCloseState = false;
+    }, 0);
+  }
+
   function jumpToPlace(place, lng, lat) {
     if (!map || !place) return false;
-    var AMap = window.AMap;
+    var AMap = browserWindow.AMap;
     if (!AMap) return false;
     var pos = [lng, lat];
     // 先 resize，确保地图容器尺寸正确（首次从屏幕外滚入时尺寸可能为 0）
@@ -369,9 +446,7 @@ const placesI18n = {
           autoMove: false,
           offset: new AMap.Pixel(0, 14),
         });
-        infoWindow.on("close", function () {
-          setPlacesPopupOpen(false);
-        });
+        infoWindow.on("close", handleInfoWindowClose);
       }
       infoWindow.setContent(buildPopupHtml(place));
       setPlacesPopupOpen(true);
@@ -394,28 +469,456 @@ const placesI18n = {
       setTimeout(waitForMapAndJump, 100);
     }
   }
-  // 使用 document 事件委托，兼容 Swup 页面切换
-  document.addEventListener("click", function (e) {
-    var card = e.target.closest(".place-card");
-    if (!card) return;
-    // 轮播图导航按钮不触发跳转
-    if (e.target.closest(".place-card-gallery-nav")) return;
-    var idx = parseInt(card.getAttribute("data-idx"), 10);
-    var place = clientSortedPlaces[idx];
-    if (!place || !isFinite(place.lng) || !isFinite(place.lat)) return;
-    pendingTarget = { place: place, lng: place.lng, lat: place.lat };
+  function findTrip(tripId) {
+    return clientSortedTrips.find(function (trip) {
+      return trip.id === tripId;
+    });
+  }
+
+  function scrollToMap() {
     var mapShell = document.querySelector(".places-map-shell");
     if (mapShell) {
-      // 滚动到地图区域，留出顶部导航栏空间
       var rect = mapShell.getBoundingClientRect();
       var top = rect.top + window.scrollY - 180;
       window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     }
-    // 确保地图已初始化
-    if (!map) {
-      init();
+  }
+
+  function normalizedAdminValue(value) {
+    return typeof value === "string" ? value.trim() : "";
+  }
+
+  function hasAdministrativeInfo(location) {
+    return !!(
+      normalizedAdminValue(location.province) ||
+      normalizedAdminValue(location.city) ||
+      normalizedAdminValue(location.district)
+    );
+  }
+
+  function coordinateCacheKey(location) {
+    var lng = Number(location.rawLng == null ? location.lng : location.rawLng);
+    var lat = Number(location.rawLat == null ? location.lat : location.rawLat);
+    return lng.toFixed(6) + "|" + lat.toFixed(6);
+  }
+
+  function cityKeyFromLocation(location) {
+    var province = normalizedAdminValue(location.province);
+    var city = normalizedAdminValue(location.city);
+    if (!city) return null;
+    return [province, city].join("|");
+  }
+
+  function locationAreaText(location) {
+    return [location.province, location.city, location.district]
+      .map(normalizedAdminValue)
+      .filter(function (value, index, values) {
+        return value && values.indexOf(value) === index;
+      })
+      .join(" · ");
+  }
+
+  function syncLocationAdministrativeLabels() {
+    document.querySelectorAll("[data-location-card]").forEach(function (card) {
+      var trip = findTrip(card.getAttribute("data-trip-id") || "");
+      var index = Number(card.getAttribute("data-location-index") || 0);
+      var location = trip && trip.locations[index];
+      var label = card.querySelector("[data-location-area]");
+      if (!location || !label) return;
+      var area = locationAreaText(location);
+      var date = label.getAttribute("data-location-date") || "";
+      label.textContent = [area, date].filter(Boolean).join(" · ");
+    });
+  }
+
+  function reverseGeocodeLocation(AMap, location) {
+    if (!reverseGeocode || hasAdministrativeInfo(location)) {
+      return Promise.resolve(false);
     }
-    waitForMapAndJump();
+    var key = coordinateCacheKey(location);
+    if (!reverseGeocodeCache[key]) {
+      reverseGeocodeCache[key] = new Promise(function (resolve) {
+        AMap.plugin(["AMap.Geocoder"], function () {
+          if (!reverseGeocoder) reverseGeocoder = new AMap.Geocoder();
+          var lng = Number(location.rawLng == null ? location.lng : location.rawLng);
+          var lat = Number(location.rawLat == null ? location.lat : location.rawLat);
+          reverseGeocoder.getAddress([lng, lat], function (status, result) {
+            var component =
+              status === "complete" && result && result.regeocode
+                ? result.regeocode.addressComponent || {}
+                : {};
+            var province = normalizedAdminValue(component.province);
+            var city = normalizedAdminValue(component.city);
+            var district = normalizedAdminValue(component.district);
+            if (!city && /市$/.test(province)) city = province;
+            resolve(
+              province || city || district
+                ? { province: province, city: city, district: district }
+                : null,
+            );
+          });
+        });
+      });
+    }
+    return reverseGeocodeCache[key].then(function (administrative) {
+      if (!administrative || hasAdministrativeInfo(location)) return false;
+      location.province = administrative.province;
+      location.city = administrative.city;
+      location.district = administrative.district;
+      return true;
+    });
+  }
+
+  function hydrateMissingAdministrativeInfo(AMap) {
+    if (reverseGeocodeHydrationPromise) return reverseGeocodeHydrationPromise;
+    var tasks = [];
+    clientSortedTrips.forEach(function (trip) {
+      (trip.locations || []).forEach(function (location) {
+        if (!hasAdministrativeInfo(location)) {
+          tasks.push(reverseGeocodeLocation(AMap, location));
+        }
+      });
+    });
+    if (!tasks.length) {
+      reverseGeocodeHydrationPromise = Promise.resolve(false);
+      return reverseGeocodeHydrationPromise;
+    }
+    reverseGeocodeHydrationPromise = Promise.all(tasks).then(function (results) {
+      return results.some(Boolean);
+    });
+    return reverseGeocodeHydrationPromise;
+  }
+
+  function locationKey(tripId, locationIndex) {
+    return String(tripId) + "::" + String(locationIndex);
+  }
+
+  function cardLocationKey(card) {
+    return locationKey(
+      card.getAttribute("data-trip-id") || "",
+      Number(card.getAttribute("data-location-index") || 0),
+    );
+  }
+
+  function buildOverviewData() {
+    var groups = {};
+    var unassignedLocations = [];
+    clientSortedTrips.filter(matchesFilter).forEach(function (trip) {
+      (trip.locations || []).forEach(function (location, locationIndex) {
+        if (!isFinite(location.lng) || !isFinite(location.lat)) return;
+        var point = pointFromLocation(trip, location, locationIndex);
+        var key = cityKeyFromLocation(location);
+        if (!key) {
+          unassignedLocations.push(point);
+          return;
+        }
+        if (!groups[key]) {
+          groups[key] = {
+            key: key,
+            province: location.province || "",
+            city: location.city || "",
+            name: location.city,
+            tripIds: [],
+            points: [],
+          };
+        }
+        if (groups[key].tripIds.indexOf(trip.id) < 0) {
+          groups[key].tripIds.push(trip.id);
+        }
+        groups[key].points.push(point);
+      });
+    });
+    var resolvedGroups = Object.keys(groups).map(function (key) {
+      var group = groups[key];
+      var lngTotal = 0;
+      var latTotal = 0;
+      group.points.forEach(function (point) {
+        lngTotal += point.lng;
+        latTotal += point.lat;
+      });
+      group.lng = lngTotal / group.points.length;
+      group.lat = latTotal / group.points.length;
+      return group;
+    });
+    return {
+      cityGroups: resolvedGroups,
+      unassignedLocations: unassignedLocations,
+    };
+  }
+
+  function cityGroups() {
+    return buildOverviewData().cityGroups;
+  }
+
+  function findCityGroup(key) {
+    return cityGroups().find(function (group) {
+      return group.key === key;
+    });
+  }
+
+  function findPointByLocationKey(key) {
+    var found = null;
+    clientSortedTrips.some(function (trip) {
+      return (trip.locations || []).some(function (location, locationIndex) {
+        if (locationKey(trip.id, locationIndex) !== key) return false;
+        found = pointFromLocation(trip, location, locationIndex);
+        return true;
+      });
+    });
+    return found;
+  }
+
+  function setCardExpanded(card, expanded) {
+    if (!card) return;
+    card.setAttribute("aria-expanded", String(expanded));
+    card.classList.toggle("is-expanded", expanded);
+    var content = card.querySelector(".trip-location-expanded");
+    if (content) content.hidden = !expanded;
+  }
+
+  function renderContentForState(options) {
+    options = options || {};
+    syncLocationAdministrativeLabels();
+    var listView = document.getElementById("places-trip-list-view");
+    var detailView = document.getElementById("places-trip-detail-view");
+    var showDetail = mapMode === "trip" || mapMode === "location";
+    if (listView) listView.hidden = showDetail;
+    if (detailView) detailView.hidden = !showDetail;
+    document.querySelectorAll("[data-trip-detail-id]").forEach(function (detail) {
+      detail.hidden = detail.getAttribute("data-trip-detail-id") !== selectedTripId;
+    });
+
+    var cityContext = document.getElementById("places-city-context");
+    var cityName = document.getElementById("places-city-name");
+    var cityGroup = selectedCityKey ? findCityGroup(selectedCityKey) : null;
+    if (cityContext) cityContext.hidden = mapMode !== "city";
+    if (cityName) cityName.textContent = cityGroup ? cityGroup.name : "";
+
+    document.querySelectorAll("[data-trip-detail-id]").forEach(function (detail) {
+      if (detail.getAttribute("data-trip-detail-id") !== selectedTripId) return;
+      var canReturnToCity = !!(cityGroup && cityGroup.tripIds.length > 1);
+      var backLabel = detail.querySelector("[data-trip-back-label]");
+      var overviewButton = detail.querySelector("[data-trip-overview]");
+      if (backLabel) {
+        backLabel.textContent = canReturnToCity ? cityGroup.name : "";
+        if (!canReturnToCity) {
+          backLabel.textContent = overviewButton
+            ? overviewButton.textContent.trim()
+            : "";
+        }
+      }
+      if (overviewButton) overviewButton.hidden = !canReturnToCity;
+    });
+
+    document.querySelectorAll("[data-location-card]").forEach(function (card) {
+      var key = cardLocationKey(card);
+      var selected = key === selectedLocationKey;
+      card.classList.toggle("is-selected", selected);
+      if (options.openLocation) setCardExpanded(card, selected);
+    });
+
+    syncListFilter();
+    if (options.scrollLocation && selectedLocationKey) {
+      window.requestAnimationFrame(function () {
+        var target = Array.from(document.querySelectorAll("[data-location-card]")).find(
+          function (card) {
+            return cardLocationKey(card) === selectedLocationKey;
+          },
+        );
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
+  }
+
+  function setPlacesState(next, options) {
+    options = options || {};
+    if (options.captureScroll) tripListScrollY = window.scrollY;
+    mapMode = next.mode || mapMode;
+    selectedCityKey = Object.prototype.hasOwnProperty.call(next, "cityKey")
+      ? next.cityKey
+      : selectedCityKey;
+    selectedTripId = Object.prototype.hasOwnProperty.call(next, "tripId")
+      ? next.tripId
+      : selectedTripId;
+    selectedLocationKey = Object.prototype.hasOwnProperty.call(next, "locationKey")
+      ? next.locationKey
+      : selectedLocationKey;
+
+    if (mapMode !== "location") pendingTarget = null;
+    renderContentForState(options);
+    if (infoWindow && !options.keepPopup) closeInfoWindowForRender();
+    if (!options.skipMap) {
+      if (map && browserWindow.AMap) refreshMap(browserWindow.AMap);
+      else if (document.getElementById("places-amap")) init();
+    }
+
+    if (mapMode === "location" && selectedLocationKey) {
+      var point = findPointByLocationKey(selectedLocationKey);
+      if (point) {
+        pendingTarget = { place: point, lng: point.lng, lat: point.lat };
+        waitForMapAndJump();
+      }
+    }
+  }
+
+  function selectCity(cityKey) {
+    var group = findCityGroup(cityKey);
+    if (!group || !group.tripIds.length) return;
+    if (group.tripIds.length === 1) {
+      setPlacesState(
+        { mode: "trip", cityKey: cityKey, tripId: group.tripIds[0], locationKey: null },
+        { captureScroll: true, openLocation: true },
+      );
+      return;
+    }
+    setPlacesState(
+      { mode: "city", cityKey: cityKey, tripId: null, locationKey: null },
+      { captureScroll: true, openLocation: true },
+    );
+  }
+
+  function selectTrip(tripId) {
+    var trip = findTrip(tripId);
+    if (!trip) return;
+    setPlacesState(
+      {
+        mode: "trip",
+        cityKey: mapMode === "city" ? selectedCityKey : null,
+        tripId: trip.id,
+        locationKey: null,
+      },
+      { captureScroll: true, openLocation: true },
+    );
+  }
+
+  function showTripList() {
+    setPlacesState(
+      { mode: "overview", cityKey: null, tripId: null, locationKey: null },
+      { openLocation: true },
+    );
+    window.requestAnimationFrame(function () {
+      window.scrollTo({ top: tripListScrollY, behavior: "auto" });
+    });
+  }
+
+  function toggleLocationCard(card) {
+    if (!card) return;
+    var expanded = card.getAttribute("aria-expanded") === "true";
+    var key = cardLocationKey(card);
+    var leavingLocationMode = mapMode === "location";
+    setPlacesState(
+      {
+        mode: leavingLocationMode ? "trip" : mapMode,
+        tripId: selectedTripId,
+        locationKey: expanded ? null : key,
+      },
+      {
+        openLocation: true,
+        skipMap: !leavingLocationMode,
+      },
+    );
+  }
+
+  function openLightbox(images, index) {
+	if (!images || !images.length) return;
+	document.dispatchEvent(
+	  new CustomEvent("firefly:gallery-open", {
+		detail: { images: images.slice(), index: Number(index) || 0 },
+	  }),
+	);
+  }
+
+  // 使用 document 事件委托，兼容 Swup / Astro 页面切换。
+  document.addEventListener("click", function (e) {
+    var overviewButton = e.target.closest("[data-trip-overview], [data-city-overview]");
+    if (overviewButton) {
+      showTripList();
+      return;
+    }
+
+    var back = e.target.closest("[data-trip-back]");
+    if (back) {
+      var cityGroup = selectedCityKey ? findCityGroup(selectedCityKey) : null;
+      if (cityGroup && cityGroup.tripIds.length > 1) {
+        setPlacesState({
+          mode: "city",
+          cityKey: selectedCityKey,
+          tripId: null,
+          locationKey: null,
+        });
+      } else {
+        showTripList();
+      }
+      return;
+    }
+
+	var imageButton = e.target.closest("[data-location-image]");
+	if (imageButton) {
+	  e.preventDefault();
+	  e.stopPropagation();
+	  var imageCard = imageButton.closest("[data-location-card]");
+	  var imageTrip = imageCard && findTrip(imageCard.getAttribute("data-trip-id") || "");
+	  var imageLocationIndex = imageCard
+		? Number(imageCard.getAttribute("data-location-index"))
+		: -1;
+	  var imageLocation = imageTrip && imageTrip.locations[imageLocationIndex];
+	  if (imageLocation) {
+		openLightbox(
+		  imageLocation.images || [],
+		  Number(imageButton.getAttribute("data-location-image")) || 0,
+		);
+	  }
+	  return;
+	}
+
+    var locationButton = e.target.closest("[data-location-map]");
+    if (locationButton) {
+	  e.preventDefault();
+	  e.stopPropagation();
+	  var locationCard = locationButton.closest("[data-location-card]");
+	  var trip = locationCard && findTrip(locationCard.getAttribute("data-trip-id") || "");
+	  var locationIndex = locationCard
+		? Number(locationCard.getAttribute("data-location-index"))
+		: -1;
+      var location = trip && trip.locations[locationIndex];
+      if (!trip || !location) return;
+      setPlacesState(
+        {
+          mode: "location",
+          cityKey: selectedCityKey,
+          tripId: trip.id,
+          locationKey: locationKey(trip.id, locationIndex),
+        },
+        { openLocation: true },
+      );
+      scrollToMap();
+      return;
+    }
+
+	var locationCard = e.target.closest("[data-location-card]");
+	if (locationCard) {
+	  toggleLocationCard(locationCard);
+	  return;
+	}
+
+    var card = e.target.closest(".trip-card");
+    if (!card) return;
+    selectTrip(card.getAttribute("data-trip-id") || "");
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+	if (e.target.closest("[data-location-map], [data-location-image]")) return;
+	var locationCard = e.target.closest("[data-location-card]");
+	if (locationCard) {
+	  e.preventDefault();
+	  toggleLocationCard(locationCard);
+	  return;
+	}
+    var card = e.target.closest(".trip-card");
+    if (!card) return;
+    e.preventDefault();
+    selectTrip(card.getAttribute("data-trip-id") || "");
   });
 
   function hideLoading() {
@@ -441,22 +944,61 @@ const placesI18n = {
       "</div>";
   }
 
-  function matchesFilter(place) {
+  function matchesFilter(trip) {
     if (activeFilter === "all") return true;
     if (activeFilter.indexOf("year:") === 0) {
       var y = Number(activeFilter.slice(5));
-      return (place.years || []).indexOf(y) >= 0;
+      return (trip.years || []).indexOf(y) >= 0;
     }
     if (activeFilter.indexOf("cat:") === 0) {
-      return place.category === activeFilter.slice(4);
+      return trip.category === activeFilter.slice(4);
     }
     return true;
   }
 
-  function filteredPlaces() {
-    return clientSortedPlaces.filter(function (p) {
-      return matchesFilter(p) && p.lng != null && p.lat != null;
+  function filteredTrips() {
+    return clientSortedTrips.filter(function (trip) {
+      if (!matchesFilter(trip)) return false;
+      if (mapMode === "overview") return true;
+      if (mapMode === "city") {
+        return (trip.locations || []).some(function (location) {
+          return cityKeyFromLocation(location) === selectedCityKey;
+        });
+      }
+      return trip.id === selectedTripId;
     });
+  }
+
+  function pointFromLocation(trip, location, locationIndex) {
+    return Object.assign({}, trip, {
+      tripId: trip.id,
+      location: location,
+      locationKey: locationKey(trip.id, locationIndex),
+      name: location.name,
+      province: location.province,
+      city: location.city,
+	  district: location.district || "",
+      lng: location.lng,
+      lat: location.lat,
+      exact: location.exact,
+    });
+  }
+
+  function filteredPoints() {
+    var points = [];
+    filteredTrips().forEach(function (trip) {
+      (trip.locations || []).forEach(function (location, locationIndex) {
+        if (!isFinite(location.lng) || !isFinite(location.lat)) return;
+        if (
+          mapMode === "city" &&
+          cityKeyFromLocation(location) !== selectedCityKey
+        ) {
+          return;
+        }
+        points.push(pointFromLocation(trip, location, locationIndex));
+      });
+    });
+    return points;
   }
 
   function syncListFilter() {
@@ -473,13 +1015,22 @@ const placesI18n = {
       } else if (activeFilter.indexOf("cat:") === 0) {
         show = cat === activeFilter.slice(4);
       }
+      if (show && mapMode === "city") {
+        var trip = findTrip(card.getAttribute("data-trip-id") || "");
+        show = !!(
+          trip &&
+          (trip.locations || []).some(function (location) {
+            return cityKeyFromLocation(location) === selectedCityKey;
+          })
+        );
+      }
       card.classList.toggle("is-hidden", !show);
     });
   }
 
   function clearMarkers() {
     if (infoWindow) {
-      infoWindow.close();
+      closeInfoWindowForRender();
       setPlacesPopupOpen(false);
     }
     if (cluster) {
@@ -496,40 +1047,56 @@ const placesI18n = {
     }
   }
 
-  function clearAreas() {
+  function invalidateAreaRender() {
+    areaRenderToken += 1;
+	return areaRenderToken;
+  }
+
+  function removeAreaPolygons() {
     areaPolygons.forEach(function (p) {
       map && map.remove(p);
     });
     areaPolygons = [];
   }
 
+  function clearAreas() {
+	invalidateAreaRender();
+	removeAreaPolygons();
+  }
+
   function buildPopupHtml(place) {
-    var title =
-      escapeHtml(place.province || "") +
-      (place.city ? " · " + escapeHtml(place.city) : "");
+    var title = escapeHtml(place.name || "");
     var dateText =
       escapeHtml(place.date) +
       (place.endDate ? " — " + escapeHtml(place.endDate) : "");
     var tags = [];
+	var area = [place.province, place.city, place.district]
+	  .filter(function (value, index, values) {
+		return value && values.indexOf(value) === index;
+	  })
+	  .join(" · ");
+    if (area) tags.push(area);
     if (place.category) tags.push(place.category);
+	(place.tags || []).forEach(function (tag) {
+	  tags.push(tag);
+	});
+	if (place.location && place.location.date) {
+	  tags.push(place.location.date);
+	}
     (place.years || []).forEach(function (y) {
       tags.push(String(y));
     });
-    if (place.visitCount > 1) {
-      tags.push(
-        (placesI18n.visitLabel || "到访") +
-          " " +
-          place.visitCount +
-          (placesI18n.times || "次"),
-      );
-    }
     var tagsHtml = tags
       .map(function (t) {
         return '<span class="places-popup-tag">' + escapeHtml(t) + "</span>";
       })
       .join("");
 
-    var images = (place.images || []).filter(Boolean);
+	var images =
+	  (place.location && place.location.images
+		? place.location.images
+		: []
+	  ).filter(Boolean);
     var galleryHtml = "";
     if (images.length) {
       var imgs = images
@@ -593,9 +1160,15 @@ const placesI18n = {
       (tagsHtml
         ? '<div class="places-popup-tags">' + tagsHtml + "</div>"
         : "") +
-      (place.experience
-        ? '<p class="places-popup-exp dark:text-neutral-100">' +
-          escapeHtml(place.experience) +
+	  (place.location && place.location.description
+		? '<p class="places-popup-exp dark:text-neutral-100">' +
+		  escapeHtml(place.location.description) +
+		  "</p>"
+		: "") +
+	  (place.description &&
+	  (!place.location || place.description !== place.location.description)
+		? '<p class="places-popup-exp dark:text-neutral-100">' +
+		  escapeHtml(place.description) +
           "</p>"
         : "") +
       linkHtml +
@@ -610,72 +1183,44 @@ const placesI18n = {
     frame.classList.toggle("is-popup-open", !!open);
   }
 
-  function openPlacePopup(AMap, place, position) {
-    if (!map || !place) return;
-    var pos = position;
-    if (pos && typeof pos.getLng === "function") {
-      pos = [pos.getLng(), pos.getLat()];
-    } else if (pos && typeof pos.lng === "number") {
-      pos = [pos.lng, pos.lat];
-    }
-    if (!pos || pos.length < 2) return;
+  var cityTripPalette = [
+    "#0ea5e9",
+    "#f97316",
+    "#8b5cf6",
+    "#22c55e",
+    "#ec4899",
+    "#eab308",
+    "#06b6d4",
+    "#ef4444",
+  ];
 
-    // 点击具体点位：自动放大到街道级再弹窗
-    var cur = map.getZoom() || 5;
-    var targetZoom = Math.max(cur, 16);
-    if (cur < 16) {
-      map.setZoomAndCenter(targetZoom, pos);
-    } else {
-      map.setCenter(pos);
-    }
-
-    if (!infoWindow) {
-      infoWindow = new AMap.InfoWindow({
-        isCustom: true,
-        autoMove: true,
-        // 弹窗在点位下方展开，避免顶到筛选条
-        offset: new AMap.Pixel(0, 14),
-      });
-      infoWindow.on("close", function () {
-        setPlacesPopupOpen(false);
-      });
-    }
-    infoWindow.setContent(buildPopupHtml(place));
-    setPlacesPopupOpen(true);
-    // 等缩放动画稍后再开弹窗，避免位置跳动
-    setTimeout(function () {
-      if (!map) return;
-      infoWindow.open(map, pos);
-      // 再向下轻移一点视野，给顶部筛选留空
-      try {
-        map.panBy(0, 40);
-      } catch (err) {}
-    }, cur < 16 ? 280 : 0);
+  function cityTripColors() {
+    var colors = {};
+    filteredTrips().forEach(function (trip, index) {
+      colors[trip.id] = cityTripPalette[index % cityTripPalette.length];
+    });
+    return colors;
   }
 
   function pinColor(place) {
-    if (place.category === "学校") return "#ff7a1a";
-    if (place.category === "工作") return "#2bb8ff";
+    if (mapMode === "location" && place.locationKey === selectedLocationKey) {
+      return "#f43f5e";
+    }
+    if (mapMode === "city") {
+      return cityTripColors()[place.tripId] || "#0ea5e9";
+    }
     return "#12d6a8";
   }
 
-  function buildPinHtml(place) {
+  function buildLocationMarkerHtml(place) {
     var color = pinColor(place);
-    var count = place.visitCount || 1;
-    var title = escapeHtml(place.experience || place.city || place.province);
-    if (count > 1) {
-      return (
-        '<div class="places-pin places-pin--count" style="--pin:' +
-        color +
-        '" title="' +
-        title +
-        '"><span>' +
-        count +
-        "</span></div>"
-      );
-    }
+    var title = escapeHtml(place.name || "");
     return (
-      '<div class="places-pin" style="--pin:' +
+      '<div class="places-pin' +
+      (mapMode === "location" && place.locationKey === selectedLocationKey
+        ? " is-active"
+        : "") +
+      '" style="--pin:' +
       color +
       '" title="' +
       title +
@@ -684,8 +1229,71 @@ const placesI18n = {
   }
 
   function pinOffset(AMap, place) {
-    var count = (place && place.visitCount) || 1;
-    return count > 1 ? new AMap.Pixel(-16, -16) : new AMap.Pixel(-12, -12);
+    var active =
+      mapMode === "location" && place && place.locationKey === selectedLocationKey;
+    return new AMap.Pixel(active ? -15 : -12, active ? -15 : -12);
+  }
+
+  function enterLocationState(place, options) {
+    if (!place) return;
+    setPlacesState(
+      {
+        mode: "location",
+        cityKey: selectedCityKey,
+        tripId: place.tripId,
+        locationKey: place.locationKey,
+      },
+      {
+        openLocation: true,
+        scrollLocation: !!(options && options.scrollLocation),
+      },
+    );
+  }
+
+  function buildLocationMarker(AMap, place) {
+    var wrap = document.createElement("div");
+    wrap.innerHTML = buildLocationMarkerHtml(place);
+    var content = wrap.firstElementChild || wrap;
+    bindMarkerActivate(content, function () {
+      enterLocationState(place);
+    });
+    var marker = new AMap.Marker({
+      position: [place.lng, place.lat],
+      title: place.name || "",
+      content: content,
+      offset: pinOffset(AMap, place),
+      extData: place,
+    });
+    marker.on("click", function () {
+      enterLocationState(place);
+    });
+    return marker;
+  }
+
+  function buildCityMarker(AMap, group) {
+    var content = document.createElement("div");
+    content.className = "places-city-marker";
+    content.innerHTML =
+      '<span class="places-city-marker-name">' +
+      escapeHtml(group.name) +
+      '</span><strong class="places-city-marker-count">' +
+      group.tripIds.length +
+      "</strong>";
+    bindMarkerActivate(content, function () {
+      selectCity(group.key);
+    });
+    var marker = new AMap.Marker({
+      position: [group.lng, group.lat],
+      title: group.name,
+      content: content,
+      offset: new AMap.Pixel(-36, -20),
+      extData: group,
+      zIndex: 110,
+    });
+    marker.on("click", function () {
+      selectCity(group.key);
+    });
+    return marker;
   }
 
   function readLngLat(item) {
@@ -788,7 +1396,7 @@ const placesI18n = {
     );
   }
 
-  function zoomToCluster(AMap, event) {
+  function zoomToCluster(event) {
     if (!map) return;
     var now = Date.now();
     if (now - lastClusterZoomAt < 200) return;
@@ -852,7 +1460,7 @@ const placesI18n = {
       if (coords.length === 1) {
         var one = data[0];
         var place = (one && one.place) || null;
-        if (place) openPlacePopup(AMap, place, coords[0]);
+        if (place) enterLocationState(place);
         else map.setZoomAndCenter(Math.max(curZoom, 16), coords[0]);
         return;
       }
@@ -904,54 +1512,79 @@ const placesI18n = {
   }
 
   function clusterDisplayCount(context) {
-    // 以官方 count（聚合内点数）为准；再与 weight 求和取较大值
-    var count = Number(context.count) || 0;
-    var weightSum = 0;
+	if (mapMode === "trip") {
+	  return Math.max(1, (context.clusterData || []).length);
+	}
+	// city 模式下，聚合数字表示当前 cluster 涉及的唯一旅行数。
+	var tripIds = {};
     var list = context.clusterData || [];
     list.forEach(function (item) {
-      if (!item) {
-        weightSum += 1;
-        return;
-      }
-      if (item.place && typeof item.place.visitCount === "number") {
-        weightSum += item.place.visitCount || 1;
-      } else if (typeof item.weight === "number") {
-        weightSum += item.weight;
-      } else {
-        weightSum += 1;
-      }
+      if (!item) return;
+      var place = item.place || {};
+      var tripKey = String(place.tripId == null ? list.indexOf(item) : place.tripId);
+	  tripIds[tripKey] = true;
     });
-    return Math.max(count, weightSum, 1);
+	return Math.max(1, Object.keys(tripIds).length);
   }
 
   function buildMarkers(AMap) {
     clearMarkers();
-    var places = filteredPlaces();
+
+    if (mapMode === "overview") {
+      var overviewData = buildOverviewData();
+      var groups = overviewData.cityGroups;
+      var cityMarkers = groups.map(function (group) {
+        return buildCityMarker(AMap, group);
+      });
+      var unassignedMarkers = overviewData.unassignedLocations.map(function (place) {
+        return buildLocationMarker(AMap, place);
+      });
+      markers = cityMarkers.concat(unassignedMarkers);
+      if (markers.length) map.add(markers);
+
+      if (ownerLocation && ownerLocation.lng && ownerLocation.lat) {
+        ownerMarker = new AMap.Marker({
+          position: [ownerLocation.lng, ownerLocation.lat],
+          title: ownerLocation.label || placesI18n.ownerLocation,
+          content:
+            '<div class="places-owner-dot" title="' +
+            escapeHtml(ownerLocation.label || placesI18n.ownerLocation) +
+            '"></div>',
+          offset: new AMap.Pixel(-8, -8),
+          zIndex: 120,
+        });
+        map.add(ownerMarker);
+      }
+
+      var overviewTargets = ownerMarker ? markers.concat([ownerMarker]) : markers;
+      if (overviewTargets.length > 1) {
+        map.setFitView(overviewTargets, false, [60, 60, 60, 60]);
+      } else if (groups.length === 1 && !unassignedMarkers.length) {
+        map.setZoomAndCenter(8, [groups[0].lng, groups[0].lat]);
+      } else if (overviewData.unassignedLocations.length === 1) {
+        var onlyLocation = overviewData.unassignedLocations[0];
+        map.setZoomAndCenter(14, [onlyLocation.lng, onlyLocation.lat]);
+      } else if (ownerMarker) {
+        map.setZoomAndCenter(5, [ownerLocation.lng, ownerLocation.lat]);
+      } else {
+        map.setZoomAndCenter(5, [108.94, 34.34]);
+      }
+      return;
+    }
+
+    var places = filteredPoints();
     var points = places.map(function (place) {
       return {
         lnglat: [place.lng, place.lat],
-        weight: place.visitCount || 1,
+        weight: 1,
         place: place,
       };
     });
 
-    if (ownerLocation && ownerLocation.lng && ownerLocation.lat) {
-      ownerMarker = new AMap.Marker({
-        position: [ownerLocation.lng, ownerLocation.lat],
-        title: ownerLocation.label || placesI18n.ownerLocation,
-        content:
-          '<div class="places-owner-dot" title="' +
-          escapeHtml(ownerLocation.label || placesI18n.ownerLocation) +
-          '"></div>',
-        offset: new AMap.Pixel(-8, -8),
-        zIndex: 120,
-      });
-      map.add(ownerMarker);
-    }
-
     if (!points.length) return;
+    if (points.length === 1) map.setZoomAndCenter(14, points[0].lnglat);
 
-    if (clusterEnabled && AMap.MarkerCluster) {
+    if (clusterEnabled && mapMode !== "location" && AMap.MarkerCluster) {
       cluster = new AMap.MarkerCluster(map, points, {
         gridSize: 80,
         maxZoom: 19,
@@ -960,12 +1593,15 @@ const placesI18n = {
           var displayCount = clusterDisplayCount(context);
           var el = document.createElement("div");
           el.className = "places-cluster";
-          el.title = displayCount + (placesI18n.times || "次");
+		  el.title =
+			mapMode === "trip"
+			  ? displayCount + " " + (placesI18n.locations || "")
+			  : displayCount + (placesI18n.clusterTrips || " 个旅行");
           el.innerHTML =
             '<span class="places-cluster-count">' + displayCount + "</span>";
           // DOM 激活：桌面用 click，手机用 touchend（自定义 content 时 marker click 不可靠）
           bindMarkerActivate(el, function () {
-            zoomToCluster(AMap, {
+            zoomToCluster({
               clusterData: context.clusterData,
               lnglat: context.marker.getPosition(),
             });
@@ -975,7 +1611,7 @@ const placesI18n = {
           context.marker.setClickable(true);
           context.marker.off("click");
           context.marker.on("click", function () {
-            zoomToCluster(AMap, {
+            zoomToCluster({
               clusterData: context.clusterData,
               lnglat: context.marker.getPosition(),
             });
@@ -984,8 +1620,7 @@ const placesI18n = {
         renderMarker: function (context) {
           var item = (context.data && context.data[0]) || {};
           var place = item.place || {};
-          var pinEl = buildPinHtml(place);
-          // buildPinHtml 返回 HTMLElement 或字符串
+          var pinEl = buildLocationMarkerHtml(place);
           if (typeof pinEl === "string") {
             var wrap = document.createElement("div");
             wrap.innerHTML = pinEl;
@@ -993,7 +1628,7 @@ const placesI18n = {
           }
           if (pinEl && pinEl.nodeType === 1) {
             bindMarkerActivate(pinEl, function () {
-              openPlacePopup(AMap, place, context.marker.getPosition());
+              enterLocationState(place);
             });
           }
           context.marker.setContent(pinEl);
@@ -1002,7 +1637,7 @@ const placesI18n = {
           context.marker.setClickable(true);
           context.marker.off("click");
           context.marker.on("click", function () {
-            openPlacePopup(AMap, place, context.marker.getPosition());
+            enterLocationState(place);
           });
         },
       });
@@ -1010,28 +1645,19 @@ const placesI18n = {
       cluster.on("click", function (event) {
         var data = event.clusterData || [];
         if (data.length > 1) {
-          zoomToCluster(AMap, event);
+          zoomToCluster(event);
         } else if (data.length === 1 && data[0] && data[0].place) {
-          var ll = readLngLat(data[0]) || event.lnglat;
-          openPlacePopup(AMap, data[0].place, ll);
+          enterLocationState(data[0].place);
         }
       });
     } else {
       markers = places.map(function (place) {
-        var marker = new AMap.Marker({
-          position: [place.lng, place.lat],
-          title: place.experience || place.city || place.province,
-          content: buildPinHtml(place),
-          offset: pinOffset(AMap, place),
-          extData: place,
-        });
-        marker.on("click", function () {
-          openPlacePopup(AMap, place, marker.getPosition());
-        });
-        return marker;
+        return buildLocationMarker(AMap, place);
       });
       map.add(markers);
     }
+
+    if (mapMode === "location") return;
 
     var fitTargets = markers.slice();
     if (!fitTargets.length && cluster) {
@@ -1039,107 +1665,309 @@ const placesI18n = {
         return new AMap.Marker({ position: p.lnglat, visible: false });
       });
       map.add(fitTargets);
-      map.setFitView(
-        ownerMarker ? fitTargets.concat([ownerMarker]) : fitTargets,
-        false,
-        [60, 60, 60, 60],
-      );
+	  if (points.length > 1) {
+		map.setFitView(
+		  fitTargets,
+		  false,
+		  [60, 60, 60, 60],
+		);
+	  }
       map.remove(fitTargets);
       return;
     }
 
-    if (fitTargets.length || ownerMarker) {
-      map.setFitView(
-        ownerMarker
-          ? (fitTargets.length ? fitTargets : []).concat([ownerMarker])
-          : fitTargets,
-        false,
-        [60, 60, 60, 60],
-      );
+	if (fitTargets.length > 1) {
+      map.setFitView(fitTargets, false, [60, 60, 60, 60]);
     }
   }
 
-  /** 从当前筛选结果提取要高亮的市/区（不去整省） */
+  /** 按填写到的最细层级提取行政区：区/县/旗 → 市 → 省。 */
   function visitedCityTargets() {
-    var seen = {};
-    var list = [];
-    filteredPlaces().forEach(function (p) {
-      var city = (p.city || "").trim();
+    var targets = {};
+    filteredPoints().forEach(function (p) {
       var province = (p.province || "").trim();
+	  var city = (p.city || "").trim();
+	  var district = (p.district || "").trim();
       var name = "";
-      var level = "city";
+	  var level = "province";
 
-      if (city) {
-        if (/[区县旗]$/.test(city)) {
-          name = city;
-          level = "district";
-        } else if (/市$/.test(city)) {
-          name = city;
-        } else if (
-          /^(北京|天津|上海|重庆)$/.test(city) ||
-          city === province
-        ) {
-          name = city + "市";
-        } else {
-          name = city + "市";
-        }
-      } else if (/^(北京|天津|上海|重庆)/.test(province)) {
-        // 仅有省份且为直辖市时，高亮整市
-        name = province.replace(/市$/, "") + "市";
-      } else {
-        // 普通省且无城市信息：跳过，避免点亮整省
-        return;
-      }
+	  if (district) {
+		name = district;
+		level = "district";
+	  } else if (city) {
+		name = city;
+		level = "city";
+	  } else if (province) {
+		name = province;
+		level = "province";
+	  }
 
-      if (!name || seen[name]) return;
-      seen[name] = true;
-      list.push({ name: name, level: level });
+	  if (!name) return;
+	  var key = [province, city, district, level].join("|");
+	  var query = [province, city, district]
+		.filter(function (value, index, values) {
+		  return value && values.indexOf(value) === index;
+		})
+		.join("");
+	  if (!targets[key]) {
+		targets[key] = {
+		  key: key,
+		  name: name,
+		  query: query || name,
+		  level: level,
+		  province: province,
+		  city: city,
+		  district: district,
+		};
+	  }
     });
-    return list;
+	return Object.keys(targets).map(function (key) {
+	  return targets[key];
+	});
+  }
+
+  function selectDistrictCandidate(target, result) {
+	var candidates =
+	  result && Array.isArray(result.districtList) ? result.districtList : [];
+	for (var i = 0; i < candidates.length; i += 1) {
+	  var candidate = candidates[i];
+	  if (!candidate || String(candidate.name || "").trim() !== target.name) continue;
+	  var boundaries = Array.isArray(candidate.boundaries)
+		? candidate.boundaries.filter(function (ring) {
+			return ring && ring.length >= 3;
+		  })
+		: [];
+	  if (boundaries.length) return boundaries;
+	}
+	return null;
+  }
+
+  function waitForDistrictDispatchSlot() {
+	return new Promise(function (resolve) {
+	  function wait() {
+		var now =
+		  browserWindow.performance &&
+		  typeof browserWindow.performance.now === "function"
+			? browserWindow.performance.now()
+			: Date.now();
+		var elapsed = lastDistrictRequestAt
+		  ? now - lastDistrictRequestAt
+		  : Infinity;
+		var delay = Math.max(0, districtQueryInterval - elapsed);
+		if (!delay) {
+		  resolve();
+		  return;
+		}
+		window.setTimeout(wait, delay);
+	  }
+	  wait();
+	});
+  }
+
+  async function searchDistrict(AMap, target, keyword, diagnostics) {
+	await waitForDistrictDispatchSlot();
+	return new Promise(function (resolve) {
+		var requestId = ++districtBoundaryRequestId;
+		var settled = false;
+		var dispatchClock =
+		  browserWindow.performance &&
+		  typeof browserWindow.performance.now === "function"
+			? browserWindow.performance.now()
+			: Date.now();
+		var elapsedSincePreviousRequest = lastDistrictRequestAt
+		  ? dispatchClock - lastDistrictRequestAt
+		  : null;
+		lastDistrictRequestAt = dispatchClock;
+		if (placesDevMode) {
+		  console.log("[places-amap] district request dispatch", {
+			requestId: requestId,
+			targetKey: target.key,
+			query: keyword,
+			timestamp: Date.now(),
+			elapsedSincePreviousRequest: elapsedSincePreviousRequest,
+			configuredInterval: districtQueryInterval,
+		  });
+		}
+		function finish(status, result) {
+		  if (settled) return;
+		  settled = true;
+		  window.clearTimeout(timeoutId);
+		  var candidates =
+			result && Array.isArray(result.districtList) ? result.districtList : [];
+		  var boundaries =
+			status === "complete" ? selectDistrictCandidate(target, result) : null;
+		  if (placesDevMode) {
+			console.log("[places-amap] boundary request result", {
+			  requestId: requestId,
+			  renderTokenAtStart: diagnostics.renderToken,
+			  currentRenderToken: areaRenderToken,
+			  targetKey: target.key,
+			  status: status,
+			  candidateCount: candidates.length,
+			  boundaryCount: boundaries ? boundaries.length : 0,
+			});
+		  }
+		  resolve(boundaries);
+		}
+		var timeoutId = window.setTimeout(function () {
+		  finish("timeout", null);
+		}, 10000);
+		try {
+		  var search = new AMap.DistrictSearch({
+			level: target.level,
+			extensions: "all",
+			subdistrict: 0,
+		  });
+		  search.search(keyword, function (status, result) {
+			finish(status, result);
+		  });
+		} catch (error) {
+		  finish("error", null);
+		}
+	});
+  }
+
+  function resolveDistrictTarget(AMap, target, diagnostics) {
+	if (Object.prototype.hasOwnProperty.call(districtBoundaryCache, target.key)) {
+	  if (placesDevMode) {
+		console.log("[places-amap] boundary cache hit", {
+		  renderToken: diagnostics.renderToken,
+		  mode: diagnostics.mode,
+		  targetKey: target.key,
+		  boundaryCount: districtBoundaryCache[target.key].length,
+		});
+	  }
+	  return Promise.resolve(districtBoundaryCache[target.key]);
+	}
+
+	var queued = districtBoundaryQueue.then(function () {
+	  // 轮到本任务时再查一次缓存，避免队列中同一 target 重复请求。
+	  if (Object.prototype.hasOwnProperty.call(districtBoundaryCache, target.key)) {
+		if (placesDevMode) {
+		  console.log("[places-amap] boundary cache hit", {
+			renderToken: diagnostics.renderToken,
+			mode: diagnostics.mode,
+			targetKey: target.key,
+			boundaryCount: districtBoundaryCache[target.key].length,
+		  });
+		}
+		return districtBoundaryCache[target.key];
+	  }
+	  return searchDistrict(AMap, target, target.query, diagnostics).then(
+		function (boundaries) {
+		  if (boundaries || target.query === target.name) return boundaries;
+		  return searchDistrict(AMap, target, target.name, diagnostics);
+		},
+		function () {
+		  if (target.query === target.name) return null;
+		  return searchDistrict(AMap, target, target.name, diagnostics);
+		},
+	  );
+	}).then(function (boundaries) {
+	  if (boundaries && boundaries.length) {
+		districtBoundaryCache[target.key] = boundaries;
+		if (placesDevMode) {
+		  console.log("[places-amap] boundary resolved", {
+			renderToken: diagnostics.renderToken,
+			mode: diagnostics.mode,
+			targetKey: target.key,
+			boundaryCount: boundaries.length,
+		  });
+		}
+	  } else if (placesDevMode) {
+		console.warn("[places-amap] boundary failed", {
+		  renderToken: diagnostics.renderToken,
+		  mode: diagnostics.mode,
+		  targetKey: target.key,
+		});
+	  }
+	  return boundaries;
+	});
+
+	// 队列只负责串行化 DistrictSearch，单个失败不会阻断后续任务。
+	districtBoundaryQueue = queued.then(
+	  function () {},
+	  function () {},
+	);
+	return queued;
   }
 
   function drawAreas(AMap) {
-    clearAreas();
-    if (!areaEnabled) return;
+	if (!areaHighlightEnabled) return;
+	var token = invalidateAreaRender();
     var targets = visitedCityTargets();
-    if (!targets.length) return;
+	var renderMode = mapMode;
 
     AMap.plugin(["AMap.DistrictSearch"], function () {
-      targets.forEach(function (target) {
-        var search = new AMap.DistrictSearch({
-          level: target.level,
-          extensions: "all",
-          subdistrict: 0,
-        });
-        search.search(target.name, function (status, result) {
-          if (
-            status !== "complete" ||
-            !result.districtList ||
-            !result.districtList[0]
-          ) {
-            return;
-          }
-          var bounds = result.districtList[0].boundaries || [];
-          bounds.forEach(function (ring) {
-            var polygon = new AMap.Polygon({
-              path: ring,
-              strokeWeight: 1.5,
-              strokeColor: "#38bdf8",
-              fillColor: "#38bdf8",
-              fillOpacity: 0.22,
-              bubble: true,
-            });
-            map.add(polygon);
-            areaPolygons.push(polygon);
-          });
-        });
-      });
+	  var tasks = targets.map(function (target) {
+		return resolveDistrictTarget(AMap, target, {
+		  renderToken: token,
+		  mode: renderMode,
+		});
+	  });
+	  Promise.allSettled(tasks).then(function (results) {
+		if (token !== areaRenderToken || !map) {
+		  if (placesDevMode) {
+			console.log("[places-amap] polygons commit skipped", {
+			  token: token,
+			  currentRenderToken: areaRenderToken,
+			  mode: renderMode,
+			  targets: targets.map(function (target) {
+				return target.key;
+			  }),
+			});
+		  }
+		  return;
+		}
+		var paths = [];
+		results.forEach(function (result, index) {
+		  var match = result.status === "fulfilled" ? result.value : null;
+		  if (!match) {
+			if (placesDevMode) {
+			  console.warn(
+				"[places-amap] district boundary unresolved",
+				targets[index],
+			  );
+			}
+			return;
+		  }
+		  match.forEach(function (ring) {
+			paths.push(ring);
+		  });
+		});
+		if (token !== areaRenderToken || !map) return;
+		var polygons = paths.map(function (ring) {
+		  return new AMap.Polygon({
+			path: ring,
+			strokeWeight: 1.5,
+			strokeColor: "#38bdf8",
+			fillColor: "#38bdf8",
+			fillOpacity: 0.22,
+			bubble: true,
+		  });
+		});
+		if (token !== areaRenderToken || !map) return;
+		var oldPolygons = areaPolygons.slice();
+		if (polygons.length) map.add(polygons);
+		if (oldPolygons.length) map.remove(oldPolygons);
+		areaPolygons = polygons;
+		if (placesDevMode) {
+		  console.log("[places-amap] polygons committed", {
+			token: token,
+			mode: renderMode,
+			targets: targets.map(function (target) {
+			  return target.key;
+			}),
+			polygonCount: polygons.length,
+		  });
+		}
+	  });
     });
   }
 
   function refreshMap(AMap) {
     buildMarkers(AMap);
-    drawAreas(AMap);
+	if (areaHighlightEnabled) drawAreas(AMap);
   }
 
   function setGalleryIndex(gallery, nextIndex) {
@@ -1155,21 +1983,17 @@ const placesI18n = {
     });
   }
 
-  function setCardGalleryIndex(gallery, nextIndex) {
-    var total = Number(gallery.getAttribute("data-total") || 0);
-    if (!total) return;
-    var index = ((nextIndex % total) + total) % total;
-    gallery.setAttribute("data-index", String(index));
-    gallery.querySelectorAll(".place-card-gallery-img").forEach(function (img, i) {
-      img.classList.toggle("is-active", i === index);
-    });
-    gallery.querySelectorAll(".place-card-gallery-dot").forEach(function (dot, i) {
-      dot.classList.toggle("is-active", i === index);
-    });
+  function syncClusterToggleState() {
+    var clusterToggle = document.getElementById("places-toggle-cluster");
+    if (clusterToggle) clusterEnabled = !!clusterToggle.checked;
   }
 
   function bindUi(AMap) {
-    if (uiBound) return;
+	syncClusterToggleState();
+    if (uiBound) {
+      refreshMap(AMap);
+      return;
+    }
     uiBound = true;
     var filterBar = document.getElementById("places-map-filters");
     if (filterBar) {
@@ -1180,17 +2004,12 @@ const placesI18n = {
         filterBar.querySelectorAll(".places-filter-chip").forEach(function (el) {
           el.classList.toggle("is-active", el === btn);
         });
-        syncListFilter();
-        refreshMap(AMap);
-      });
-    }
-
-    var areaToggle = document.getElementById("places-toggle-area");
-    if (areaToggle) {
-      areaToggle.addEventListener("change", function () {
-        areaEnabled = !!areaToggle.checked;
-        if (areaEnabled) drawAreas(AMap);
-        else clearAreas();
+        setPlacesState({
+          mode: "overview",
+          cityKey: null,
+          tripId: null,
+          locationKey: null,
+        });
       });
     }
 
@@ -1207,7 +2026,6 @@ const placesI18n = {
       var closeBtn = e.target.closest(".places-popup-close");
       if (closeBtn && infoWindow) {
         infoWindow.close();
-        setPlacesPopupOpen(false);
         return;
       }
 
@@ -1235,39 +2053,11 @@ const placesI18n = {
         }
         return;
       }
-
-      // 卡片图片轮播
-      var cardGallery = e.target.closest(".place-card-gallery");
-      if (cardGallery) {
-        var cardIdx = Number(cardGallery.getAttribute("data-index") || 0);
-        if (e.target.closest(".place-card-gallery-prev")) {
-          e.preventDefault();
-          e.stopPropagation();
-          setCardGalleryIndex(cardGallery, cardIdx - 1);
-          return;
-        }
-        if (e.target.closest(".place-card-gallery-next")) {
-          e.preventDefault();
-          e.stopPropagation();
-          setCardGalleryIndex(cardGallery, cardIdx + 1);
-          return;
-        }
-        var cardDot = e.target.closest(".place-card-gallery-dot");
-        if (cardDot) {
-          e.preventDefault();
-          e.stopPropagation();
-          setCardGalleryIndex(cardGallery, Number(cardDot.getAttribute("data-idx") || 0));
-        }
-      }
     });
 
     var refreshBtn = document.getElementById("places-ctrl-refresh");
     if (refreshBtn) {
       refreshBtn.addEventListener("click", function () {
-        if (infoWindow) {
-          infoWindow.close();
-          setPlacesPopupOpen(false);
-        }
         activeFilter = "all";
         if (filterBar) {
           filterBar.querySelectorAll(".places-filter-chip").forEach(function (el) {
@@ -1277,8 +2067,12 @@ const placesI18n = {
             );
           });
         }
-        syncListFilter();
-        refreshMap(AMap);
+        setPlacesState({
+          mode: "overview",
+          cityKey: null,
+          tripId: null,
+          locationKey: null,
+        });
         refreshBtn.classList.add("is-spinning");
         window.setTimeout(function () {
           refreshBtn.classList.remove("is-spinning");
@@ -1330,6 +2124,8 @@ const placesI18n = {
       clearMarkers();
       clearAreas();
     } catch (e) {}
+    infoWindow = null;
+    ignorePopupCloseState = false;
     if (map) {
       try {
         map.destroy();
@@ -1357,7 +2153,7 @@ const placesI18n = {
   }
 
   function loadAmap() {
-    if (window.AMap) return Promise.resolve(window.AMap);
+    if (browserWindow.AMap) return Promise.resolve(browserWindow.AMap);
     if (amapLoadPromise) return amapLoadPromise;
     if (window.__placesAmapPromise) {
       amapLoadPromise = window.__placesAmapPromise;
@@ -1378,10 +2174,13 @@ const placesI18n = {
           reject(new Error("NO_LOADER"));
           return;
         }
+		var plugins = ["AMap.MarkerCluster", "AMap.Scale"];
+		if (areaHighlightEnabled) plugins.push("AMap.DistrictSearch");
+        if (reverseGeocode) plugins.push("AMap.Geocoder");
         window.AMapLoader.load({
           key: amapKey,
           version: "2.0",
-          plugins: ["AMap.MarkerCluster", "AMap.DistrictSearch", "AMap.Scale"],
+          plugins: plugins,
         })
           .then(function (AMap) {
             resolve(AMap);
@@ -1426,6 +2225,8 @@ const placesI18n = {
     var container = document.getElementById("places-amap");
     if (!container) return;
 
+	syncClusterToggleState();
+
     loadingEl = document.getElementById("places-map-loading");
     if (loadingEl) loadingEl.classList.remove("is-hidden");
 
@@ -1434,6 +2235,7 @@ const placesI18n = {
     // 已有可用实例：只补 resize（Swup/Loader 后尺寸常为 0）
     if (map && container.querySelector("canvas, .amap-layers")) {
       hideLoading();
+      bindUi(browserWindow.AMap);
       scheduleMapResize();
       return;
     }
@@ -1461,6 +2263,13 @@ const placesI18n = {
         hideLoading();
         bindUi(AMap);
         refreshMap(AMap);
+        if (reverseGeocode) {
+          void hydrateMissingAdministrativeInfo(AMap).then(function (changed) {
+            if (!changed || token !== initToken || !map) return;
+            renderContentForState();
+            refreshMap(AMap);
+          });
+        }
         scheduleMapResize();
         if (window.ResizeObserver && el) {
           var resizeObserver = new ResizeObserver(function () {
@@ -1552,11 +2361,17 @@ const placesI18n = {
   }
 
   function onPlacesPageEnter(fromSwup) {
-    if (!document.getElementById("places-amap")) return;
     if (fromSwup) {
+	  mapMode = "overview";
+	  selectedCityKey = null;
+	  selectedTripId = null;
+	  selectedLocationKey = null;
+	  pendingTarget = null;
       destroyMap();
       resetAmapLoadCache();
     }
+    if (!document.getElementById("places-amap")) return;
+    renderContentForState();
     scheduleBoot(fromSwup ? 100 : 48);
   }
 
@@ -1866,6 +2681,24 @@ const placesI18n = {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 0.85rem;
   }
+	.places-city-context {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.75rem;
+		font-size: 0.9rem;
+	}
+	.places-city-context[hidden] {
+		display: none;
+	}
+	.places-context-link,
+	.trip-detail-overview {
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: var(--primary);
+		cursor: pointer;
+	}
   .place-card {
     display: flex;
     gap: 0.75rem;
@@ -1882,112 +2715,224 @@ const placesI18n = {
     background: color-mix(in oklch, var(--primary) 8%, var(--card-bg-transparent));
     border-color: var(--primary);
   }
-  /* 有图片时：卡片变为垂直布局，轮播图在顶部 */
-  .place-card--has-images {
-    flex-direction: column;
-    padding: 0;
-    overflow: hidden;
-  }
-  .place-card--has-images .place-card-body {
-    display: flex;
-    gap: 0.75rem;
-    padding: 0.85rem 1rem 1rem;
-  }
+	.trip-card:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 3px;
+	}
+	.trip-card .place-card-body {
+		display: flex;
+		gap: 0.75rem;
+		width: 100%;
+	}
+	.place-card-content {
+		min-width: 0;
+		width: 100%;
+	}
+	.trip-card-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+	}
+	.trip-card-summary {
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
+	.trip-card-location-count {
+		margin-top: 0.65rem;
+		font-size: 0.78rem;
+		opacity: 0.7;
+	}
+	.trip-detail[hidden],
+	#places-trip-detail-view[hidden],
+	#places-trip-list-view[hidden] {
+		display: none;
+	}
+	.trip-detail {
+		border: 1px solid var(--line-divider);
+		border-radius: 1rem;
+		background: var(--card-bg);
+		padding: 1.1rem;
+	}
+	.trip-detail-back,
+	.trip-detail-overview,
+	.trip-location-map {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		border: 1px solid var(--line-divider);
+		border-radius: 0.65rem;
+		background: color-mix(in oklch, var(--primary) 7%, var(--card-bg));
+		color: var(--primary);
+		cursor: pointer;
+		transition: border-color 0.15s ease, background 0.15s ease;
+	}
+	.trip-detail-actions {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.7rem;
+	}
+	.trip-detail-back {
+		padding: 0.45rem 0.75rem;
+		font-size: 0.85rem;
+	}
+	.trip-detail-overview {
+		padding: 0.45rem 0.75rem;
+		font-size: 0.85rem;
+	}
+	.trip-detail-overview[hidden] {
+		display: none;
+	}
+	.trip-detail-back:hover,
+	.trip-location-map:hover {
+		border-color: var(--primary);
+		background: color-mix(in oklch, var(--primary) 13%, var(--card-bg));
+	}
+	.trip-detail-label {
+		margin-top: 1rem;
+		font-size: 0.78rem;
+		color: var(--primary);
+	}
+	.trip-detail-title {
+		margin-top: 0.2rem;
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+	.trip-detail-date {
+		display: block;
+		margin-top: 0.35rem;
+		font-size: 0.85rem;
+		opacity: 0.7;
+	}
+	.trip-detail-description {
+		margin-top: 0.9rem;
+		line-height: 1.75;
+	}
+	.trip-detail-locations-title {
+		margin-top: 1.25rem;
+		font-size: 1.05rem;
+		font-weight: 700;
+	}
+	.trip-location-list {
+		display: grid;
+		gap: 0.65rem;
+		margin-top: 0.65rem;
+	}
+	.trip-location-card {
+		border: 1px solid var(--line-divider);
+		border-radius: 0.8rem;
+		background: color-mix(in oklch, var(--primary) 3%, var(--card-bg));
+		overflow: hidden;
+		cursor: pointer;
+		transition: border-color 0.15s ease, background 0.15s ease;
+	}
+	.trip-location-card:hover,
+	.trip-location-card.is-expanded {
+		border-color: color-mix(in oklch, var(--primary) 55%, var(--line-divider));
+		background: color-mix(in oklch, var(--primary) 6%, var(--card-bg));
+	}
+	.trip-location-card.is-selected {
+		border-color: var(--primary);
+		box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 18%, transparent);
+	}
+	.trip-location-card:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+	.trip-location-summary {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 0.8rem 0.9rem;
+	}
+	.trip-location-cover {
+		display: block;
+		width: 5rem;
+		height: 4rem;
+		overflow: hidden;
+		flex-shrink: 0;
+		padding: 0;
+		border: 0;
+		border-radius: 0.6rem;
+		background: transparent;
+		cursor: zoom-in;
+	}
+	.trip-location-cover img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.trip-location-main {
+		min-width: 0;
+		flex: 1;
+	}
+	.trip-location-name {
+		font-weight: 650;
+	}
+	.trip-location-area {
+		margin-top: 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.7;
+	}
+	.trip-location-description-summary {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: 0.3rem;
+		font-size: 0.85rem;
+		opacity: 0.82;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+	.trip-location-photo-count {
+		margin-top: 0.35rem;
+		font-size: 0.75rem;
+		opacity: 0.65;
+	}
+	.trip-location-map {
+		flex-shrink: 0;
+		padding: 0.4rem 0.65rem;
+		font-size: 0.78rem;
+	}
+	.trip-location-expanded[hidden] {
+		display: none;
+	}
+	.trip-location-expanded {
+		padding: 0 0.9rem 0.9rem;
+		border-top: 1px solid var(--line-divider);
+	}
+	.trip-location-description {
+		padding-top: 0.8rem;
+		font-size: 0.9rem;
+		line-height: 1.7;
+	}
+	.trip-location-thumbnails {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+		gap: 0.5rem;
+		margin-top: 0.75rem;
+	}
+	.trip-location-thumbnail {
+		aspect-ratio: 4 / 3;
+		padding: 0;
+		border: 1px solid var(--line-divider);
+		border-radius: 0.55rem;
+		overflow: hidden;
+		background: transparent;
+		cursor: zoom-in;
+	}
+	.trip-location-thumbnail img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.2s ease;
+	}
+	.trip-location-thumbnail:hover img {
+		transform: scale(1.04);
+	}
   .place-card.is-hidden {
     display: none;
-  }
-  /* 卡片轮播图 */
-  .place-card-gallery {
-    position: relative;
-    width: 100%;
-  }
-  .place-card-gallery-viewport {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-  }
-  .place-card-gallery-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.4s ease;
-  }
-  .place-card:hover .place-card-gallery-img.is-active {
-    transform: scale(1.06);
-  }
-  .place-card-gallery-img.is-active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .place-card-gallery-nav {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    display: grid;
-    width: 1.75rem;
-    height: 1.75rem;
-    place-items: center;
-    border: 0;
-    border-radius: 50%;
-    background: rgb(0 0 0 / 48%);
-    color: white;
-    cursor: pointer;
-    font-size: 1.75rem;
-    line-height: 1;
-    transform: translateY(-50%);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, background 0.15s ease;
-  }
-  .place-card-gallery:hover .place-card-gallery-nav {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .place-card-gallery-nav:hover {
-    background: rgb(0 0 0 / 72%);
-  }
-  .place-card-gallery-nav svg {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  .place-card-gallery-prev {
-    left: 0.75rem;
-  }
-  .place-card-gallery-next {
-    right: 0.75rem;
-  }
-  .place-card-gallery-dots {
-    position: absolute;
-    bottom: 6px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-  .place-card-gallery:hover .place-card-gallery-dots {
-    opacity: 1;
-  }
-  .place-card-gallery-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.15s ease, width 0.15s ease;
-  }
-  .place-card-gallery-dot.is-active {
-    background: #fff;
-    width: 14px;
-    border-radius: 3px;
   }
   .place-card-pin {
     color: var(--primary);
@@ -2038,6 +2983,16 @@ const placesI18n = {
       height: 420px;
       min-height: 360px;
     }
+		.trip-location-summary {
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.trip-location-main {
+			min-width: calc(100% - 5.8rem);
+		}
+		.trip-location-map {
+			margin-left: auto;
+		}
   }
 </style>
 
@@ -2057,18 +3012,49 @@ const placesI18n = {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
-  .places-pin--count {
-    width: 32px;
-    height: 32px;
-    display: grid;
-    place-items: center;
-    font-size: 13px;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  .places-pin.is-active {
+    width: 28px;
+    height: 28px;
+    box-shadow:
+      0 0 0 5px color-mix(in oklch, var(--pin, #f43f5e) 45%, transparent),
+      0 6px 18px color-mix(in oklch, var(--pin, #f43f5e) 70%, transparent);
   }
-  .places-pin--count span {
-    line-height: 1;
+  .places-city-marker {
+    display: inline-flex;
+    min-width: 72px;
+    min-height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.55rem;
+    padding: 0.45rem 0.55rem 0.45rem 0.75rem;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--primary) 88%, #0891b2);
+    color: #fff;
+    box-shadow: 0 6px 18px rgb(15 23 42 / 24%);
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .places-city-marker-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .places-city-marker-count {
+    display: grid;
+    min-width: 1.55rem;
+    height: 1.55rem;
+    place-items: center;
+    padding: 0 0.3rem;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 92%);
+    color: #0f766e;
+    font-size: 0.78rem;
+  }
+  :root.dark .places-city-marker {
+    border-color: rgb(255 255 255 / 75%);
+    background: color-mix(in oklch, var(--primary) 72%, #0f172a);
+    box-shadow: 0 8px 22px rgb(0 0 0 / 45%);
   }
   .places-cluster {
     width: 44px;

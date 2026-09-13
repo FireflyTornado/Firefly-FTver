@@ -521,8 +521,7 @@ enum I18nKey {
 	tocExpand = "tocExpand",
 	tocCollapse = "tocCollapse",
 
-
-//个人增加
+	//个人增加
 	//关于网站
 	aboutWebsite = "aboutWebsite",
 
@@ -544,12 +543,9 @@ enum I18nKey {
 	placesNeedAmapKey = "placesNeedAmapKey",
 
 	placesFilterAllFootprints = "placesFilterAllFootprints",
-	placesAreaHighlight = "placesAreaHighlight",
 	placesClusterDisplay = "placesClusterDisplay",
 	placesMapOwnerLocation = "placesMapOwnerLocation",
-
-	placesVisitLabel = "placesVisitLabel",
-	placesTimes = "placesTimes",
+	placesClusterTrips = "placesClusterTrips",
 
 	placesFullscreen = "placesFullscreen",
 	placesRefresh = "placesRefresh",
@@ -560,6 +556,11 @@ enum I18nKey {
 	placesNoDataHint = "placesNoDataHint",
 
 	placesUnknownProvince = "placesUnknownProvince",
+	placesBackToTrips = "placesBackToTrips",
+	placesTripDetail = "placesTripDetail",
+	placesLocationCount = "placesLocationCount",
+	placesLocations = "placesLocations",
+	placesViewOnMap = "placesViewOnMap",
 }
 
 export default I18nKey;

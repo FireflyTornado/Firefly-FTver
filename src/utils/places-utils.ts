@@ -1,48 +1,71 @@
-import { lookupCityCoords } from "@/data/china-city-coords";
+export interface PlaceLocation {
+	name: string;
+	province?: string;
+	city?: string;
+	district?: string;
+	lng: number;
+	lat: number;
+	description?: string;
+	images: string[];
+	exact?: boolean;
+	date?: Date;
+}
 
-export interface PlaceRecord {
+export interface TripRecord {
+	id: string;
+	title: string;
 	date: Date;
 	endDate?: Date;
-	province: string;
-	city: string;
-	district: string;
-	experience: string;
-	visitCount: number;
+	category?: string;
+	tags: string[];
+	description?: string;
+	locations: PlaceLocation[];
 	source: "manual" | "timeline";
 	timelineId?: string;
-	category: string;
-	lat?: number;
-	lng?: number;
-	images: string[];
 	link?: string;
 }
 
-type ContentPlace = {
+type ContentTrip = {
+	id?: string;
+	title?: string;
 	date: Date;
 	endDate?: Date;
-	province: string;
+	category?: string;
+	tags?: string[];
+	description?: string;
+	locations?: Array<{
+		name: string;
+		province?: string;
+		city?: string;
+		district?: string;
+		lng: number;
+		lat: number;
+		description?: string;
+		images?: string[];
+		exact?: boolean;
+		date?: Date;
+	}>;
+	source?: "manual" | "timeline";
+	timelineId?: string;
+	link?: string;
+	/** 旧版单地点字段，仅用于过渡期兼容。 */
+	province?: string;
 	city?: string;
 	district?: string;
 	experience?: string;
-	visitCount?: number;
-	source?: "manual" | "timeline";
-	timelineId?: string;
-	category?: string;
 	lat?: number;
 	lng?: number;
-	images?: string[];
-	link?: string;
 };
 
-/** 未手写 category 时，按经历文案粗分类，供地图筛选胶囊使用 */
-export function inferPlaceCategory(place: {
+/** 未手写 category 时，按旅行描述粗分类，供地图筛选使用。 */
+export function inferTripCategory(trip: {
+	description?: string;
 	experience?: string;
 	timelineId?: string;
-	source?: string;
 	category?: string;
 }): string {
-	if (place.category?.trim()) return place.category.trim();
-	const text = `${place.experience || ""} ${place.timelineId || ""}`;
+	if (trip.category?.trim()) return trip.category.trim();
+	const text = `${trip.description || trip.experience || ""} ${trip.timelineId || ""}`;
 	if (/小学|中学|高中|学院|大学|学校|完小|教育|education|school/.test(text)) {
 		return "学校";
 	}
@@ -56,110 +79,153 @@ export function inferPlaceCategory(place: {
 	return "旅游";
 }
 
-export function resolvePlaceCoords(place: {
-	province: string;
-	city?: string;
+function resolveLegacyCoords(place: {
 	lat?: number;
 	lng?: number;
-}): { lng: number; lat: number } | null {
+}): { lng: number; lat: number; exact: boolean } | null {
 	if (
 		typeof place.lat === "number" &&
 		typeof place.lng === "number" &&
 		Number.isFinite(place.lat) &&
 		Number.isFinite(place.lng)
 	) {
-		return { lng: place.lng, lat: place.lat };
+		return { lng: place.lng, lat: place.lat, exact: true };
 	}
-	const found = lookupCityCoords(place.province, place.city);
-	if (!found) return null;
-	return { lng: found[0], lat: found[1] };
+	return null;
 }
 
-export function placesFromContent(entries: ContentPlace[]): PlaceRecord[] {
-	return entries.map((p) => ({
-		date: p.date,
-		endDate: p.endDate,
-		province: p.province,
-		city: p.city || "",
-		district: p.district || "",
-		experience: p.experience || "",
-		visitCount: p.visitCount || 1,
-		source: p.source || "manual",
-		timelineId: p.timelineId,
-		category: inferPlaceCategory(p),
-		lat: p.lat,
-		lng: p.lng,
-		images: (p.images || []).filter(Boolean),
-		link: p.link?.trim() || undefined,
-	}));
+/**
+ * 将 Content Collection 数据归一化为 TripRecord。
+ * 新数据直接使用 locations；旧版顶层地点字段会临时转换为单元素 locations。
+ */
+export function tripsFromContent(entries: ContentTrip[]): TripRecord[] {
+	return entries.map((trip, index) => {
+		const declaredLocations: PlaceLocation[] = (trip.locations || []).map(
+			(location) => ({
+				...location,
+				province: location.province?.trim() || undefined,
+				city: location.city?.trim() || undefined,
+				district: location.district?.trim() || undefined,
+				description: location.description?.trim() || undefined,
+				images: (location.images || []).filter(Boolean),
+				exact: location.exact ?? true,
+			}),
+		);
+		const legacyProvince = trip.province || "";
+		const legacyCity = trip.city || "";
+		const legacyCoords = resolveLegacyCoords({
+			lat: trip.lat,
+			lng: trip.lng,
+		});
+		const legacyLocations: PlaceLocation[] =
+			declaredLocations.length === 0 && legacyCoords
+				? [
+						{
+							name:
+								trip.experience?.trim() ||
+								trip.district?.trim() ||
+								legacyCity ||
+								legacyProvince,
+							province: legacyProvince,
+							city: legacyCity,
+							district: trip.district?.trim() || undefined,
+							lng: legacyCoords.lng,
+							lat: legacyCoords.lat,
+							description: trip.experience?.trim() || undefined,
+							images: [],
+							exact: legacyCoords.exact,
+						},
+					]
+				: [];
+		const locations =
+			declaredLocations.length > 0 ? declaredLocations : legacyLocations;
+		const primaryLocation = locations[0];
+		const description = trip.description?.trim() || trip.experience?.trim();
+		const fallbackTitle = primaryLocation?.name || "";
+
+		return {
+			id: trip.id || `trip-${index}`,
+			title:
+				trip.title?.trim() ||
+				description ||
+				fallbackTitle ||
+				`Trip ${index + 1}`,
+			date: trip.date,
+			endDate: trip.endDate,
+			category: inferTripCategory(trip),
+			tags: (trip.tags || []).map((tag) => tag.trim()).filter(Boolean),
+			description,
+			locations,
+			source: trip.source || "manual",
+			timelineId: trip.timelineId,
+			link: trip.link?.trim() || undefined,
+		};
+	});
 }
 
-export function getPlaceYears(places: PlaceRecord[]): number[] {
+export function getTripYears(trips: TripRecord[]): number[] {
 	const years = new Set<number>();
-	for (const p of places) {
-		years.add(p.date.getFullYear());
-		if (p.endDate) years.add(p.endDate.getFullYear());
+	for (const trip of trips) {
+		years.add(trip.date.getFullYear());
+		if (trip.endDate) years.add(trip.endDate.getFullYear());
 	}
 	return [...years].sort((a, b) => b - a);
 }
 
-export function getPlaceCategories(places: PlaceRecord[]): string[] {
+export function getTripCategories(trips: TripRecord[]): string[] {
 	const set = new Set<string>();
-	for (const p of places) {
-		if (p.category) set.add(p.category);
+	for (const trip of trips) {
+		if (trip.category) set.add(trip.category);
 	}
 	const preferred = ["学校", "工作", "旅游"];
-	const rest = [...set].filter((c) => !preferred.includes(c)).sort();
-	return [...preferred.filter((c) => set.has(c)), ...rest];
+	const rest = [...set]
+		.filter((category) => !preferred.includes(category))
+		.sort();
+	return [...preferred.filter((category) => set.has(category)), ...rest];
 }
 
-export function getYearKeys(place: PlaceRecord): number[] {
-	const start = place.date.getFullYear();
-	const end = place.endDate?.getFullYear() ?? start;
+export function getTripYearKeys(trip: TripRecord): number[] {
+	const start = trip.date.getFullYear();
+	const end = trip.endDate?.getFullYear() ?? start;
 	const keys: number[] = [];
-	for (let y = start; y <= end; y++) keys.push(y);
+	for (let year = start; year <= end; year++) keys.push(year);
 	return keys;
 }
 
-export function formatPlaceDateRange(place: PlaceRecord): string {
-	const start = place.date.toISOString().slice(0, 10);
-	if (place.endDate) {
-		return `${start} — ${place.endDate.toISOString().slice(0, 10)}`;
+export function formatTripDateRange(trip: TripRecord): string {
+	const start = trip.date.toISOString().slice(0, 10);
+	if (trip.endDate) {
+		return `${start} — ${trip.endDate.toISOString().slice(0, 10)}`;
 	}
 	return start;
 }
 
-export function placeToClient(place: PlaceRecord, index = 0) {
-	const hasExact =
-		typeof place.lat === "number" &&
-		typeof place.lng === "number" &&
-		Number.isFinite(place.lat) &&
-		Number.isFinite(place.lng);
-	const coords = resolvePlaceCoords(place);
-	// 精确坐标也做极小偏移（约 10~20m），避免同点位被 MarkerCluster 合成 1 个导致数量变成 1
-	// 无精确坐标时偏移稍大，避免同城完全重叠
-	const step = hasExact ? 0.00015 : 0.012;
-	const jitterLng = coords ? ((index % 7) - 3) * step : 0;
-	const jitterLat = coords
-		? ((Math.floor(index / 7) % 7) - 3) * step * 0.85
-		: 0;
+export function tripToClient(trip: TripRecord, index = 0) {
+	const locations = trip.locations.map((location, locationIndex) => {
+		// 城市回退坐标做较大偏移；精确地点只做约 10~20m 的偏移以避免完全重叠。
+		const step = location.exact === false ? 0.012 : 0.00015;
+		const pointIndex = index * 11 + locationIndex;
+		return {
+			...location,
+			rawLng: location.lng,
+			rawLat: location.lat,
+			date: location.date ? location.date.toISOString().slice(0, 10) : "",
+			lng: location.lng + ((pointIndex % 7) - 3) * step,
+			lat: location.lat + ((Math.floor(pointIndex / 7) % 7) - 3) * step * 0.85,
+		};
+	});
 
 	return {
-		province: place.province,
-		city: place.city || "",
-		district: place.district || "",
-		experience: place.experience || "",
-		visitCount: place.visitCount || 1,
-		date: place.date.toISOString().split("T")[0],
-		endDate: place.endDate ? place.endDate.toISOString().split("T")[0] : "",
-		years: getYearKeys(place),
-		year: place.date.getFullYear(),
-		source: place.source,
-		category: place.category,
-		lat: coords ? coords.lat + jitterLat : null,
-		lng: coords ? coords.lng + jitterLng : null,
-		images: place.images || [],
-		link: place.link || "",
-		exact: hasExact,
+		id: trip.id,
+		title: trip.title,
+		description: trip.description || "",
+		date: trip.date.toISOString().slice(0, 10),
+		endDate: trip.endDate ? trip.endDate.toISOString().slice(0, 10) : "",
+		years: getTripYearKeys(trip),
+		category: trip.category || "",
+		tags: trip.tags,
+		locations,
+		source: trip.source,
+		link: trip.link || "",
 	};
 }
