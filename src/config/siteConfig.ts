@@ -361,37 +361,6 @@ export const siteConfig: SiteConfig = {
 		contentMode: "full",
 	},
 
-	//足迹
-	placesMap: {
-		// 高德 Web 端 JS API Key
-		amapKey: "090e501aa2cd417e078dfada6a95db07",
-		// 高德安全密钥
-		amapSecurityJsCode: "2fabc347f23c1a8466d83f3f5027ac44",
-		// 是否启用 Places 行政区区域高亮。
-		// true：根据 Location 中填写的 province / city / district，
-		//       调用高德 DistrictSearch 查询边界并绘制 Polygon。
-		// false：完全停止行政区边界查询与填色，不产生 DistrictSearch API 调用；
-		//        Marker、Trip、Location 及其它地图显示不受影响。
-		// 如果希望尽量节省高德 API 配额，可设置为 false。
-		areaHighlight: false,
-		// 高德 DistrictSearch 真实请求的最小发送间隔，单位为毫秒。
-		// 用于限制行政区查询 QPS；例如 QPS=3 时理论间隔约为 333ms，
-		// 建议设置为 400ms 或更高，以保留安全余量。
-		// 已命中 boundary cache 的行政区不会再请求 API，也不会等待此间隔。
-		// 此配置只作用于 DistrictSearch，不影响 Marker 或普通地图显示。
-		districtQueryInterval: 400,
-		// 是否在 province / city / district 全为空时按坐标反查行政区。
-		// false（默认）：不发起反查，缺失行政区的地点仍显示 Marker，但不参与行政区填色。
-		// true：自动补齐运行时行政区信息，会产生额外的高德逆地理编码 API 调用。
-		reverseGeocode: false,
-		// 站点主人位置（地图初始中心和标记点）
-		ownerLocation: {
-			lng: 117.3,
-			lat: 30.5,
-			label: "我",
-		},
-	},
-
 	// 站点语言，在本配置文件顶部SITE_LANG定义
 	lang: SITE_LANG,
 

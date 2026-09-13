@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { siteConfig } from "@/config";
+import { placesMapConfig, siteConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
@@ -62,14 +62,13 @@ const clientSortedTrips = sortedTrips.map((trip, index) =>
 
 const displayTitle = i18n(I18nKey.placesTitle);
 const displaySubtitle = i18n(I18nKey.placesSubtitle);
-const ownerLocation = siteConfig.placesMap?.ownerLocation ?? null;
-const amapKey = siteConfig.placesMap?.amapKey?.trim() || "";
-const amapSecurityJsCode =
-	siteConfig.placesMap?.amapSecurityJsCode?.trim() || "";
-const reverseGeocode = siteConfig.placesMap?.reverseGeocode === true;
-const areaHighlightEnabled = siteConfig.placesMap?.areaHighlight !== false;
+const ownerLocation = placesMapConfig.ownerLocation;
+const amapKey = placesMapConfig.amapKey?.trim() || "";
+const amapSecurityJsCode = placesMapConfig.amapSecurityJsCode?.trim() || "";
+const reverseGeocode = placesMapConfig.reverseGeocode === true;
+const areaHighlightEnabled = placesMapConfig.areaHighlight !== false;
 const configuredDistrictQueryInterval = Number(
-	siteConfig.placesMap?.districtQueryInterval,
+	placesMapConfig.districtQueryInterval,
 );
 const districtQueryInterval = Number.isFinite(configuredDistrictQueryInterval)
 	? Math.max(0, configuredDistrictQueryInterval)
@@ -82,7 +81,6 @@ const placesI18n = {
 	filterAll: i18n(I18nKey.placesFilterAllFootprints),
 	clusterDisplay: i18n(I18nKey.placesClusterDisplay),
 	ownerLocation: i18n(I18nKey.placesMapOwnerLocation),
-	clusterTrips: i18n(I18nKey.placesClusterTrips),
 	locations: i18n(I18nKey.placesLocationCount),
 };
 ---
@@ -1264,9 +1262,6 @@ const placesI18n = {
       offset: pinOffset(AMap, place),
       extData: place,
     });
-    marker.on("click", function () {
-      enterLocationState(place);
-    });
     return marker;
   }
 
@@ -1398,12 +1393,19 @@ const placesI18n = {
 
   function zoomToCluster(event) {
     if (!map) return;
+    var data = (event && event.clusterData) || [];
+    if (!data.length) return;
+    if (data.length === 1) {
+      var singlePlace = data[0] && data[0].place;
+      if (singlePlace) enterLocationState(singlePlace);
+      return;
+    }
+
     var now = Date.now();
     if (now - lastClusterZoomAt < 200) return;
     lastClusterZoomAt = now;
 
     try {
-      var data = (event && event.clusterData) || [];
       var coordMap = {};
 
       function addCoord(lng, lat) {
@@ -1452,16 +1454,16 @@ const placesI18n = {
       var curZoom = map.getZoom() || 5;
 
       if (!coords.length && center) {
-        map.setZoomAndCenter(Math.min(curZoom + 3, 18), center);
+        map.setZoomAndCenter(Math.min(curZoom + 3, 19), center);
         return;
       }
       if (!coords.length) return;
 
       if (coords.length === 1) {
-        var one = data[0];
-        var place = (one && one.place) || null;
-        if (place) enterLocationState(place);
-        else map.setZoomAndCenter(Math.max(curZoom, 16), coords[0]);
+        map.setZoomAndCenter(
+          Math.min(Math.max(curZoom + 2, 17), 19),
+          coords[0],
+        );
         return;
       }
 
@@ -1489,7 +1491,7 @@ const placesI18n = {
 
       // 每次点击至少 +2 级，保证 9→8+1 之后再点 8 还能继续拆开
       var zoom = Math.max(spanZoom, curZoom + 2);
-      zoom = Math.min(zoom, 18);
+      zoom = Math.min(zoom, 19);
       map.setZoomAndCenter(zoom, mid);
     } catch (err) {
       console.error("[places-amap] zoomToCluster failed", err);
@@ -1503,7 +1505,7 @@ const placesI18n = {
           }
         }
         if (fb) {
-          map.setZoomAndCenter(Math.min((map.getZoom() || 5) + 3, 18), fb);
+          map.setZoomAndCenter(Math.min((map.getZoom() || 5) + 3, 19), fb);
         }
       } catch (err2) {
         console.error("[places-amap] zoom fallback failed", err2);
@@ -1512,19 +1514,7 @@ const placesI18n = {
   }
 
   function clusterDisplayCount(context) {
-	if (mapMode === "trip") {
-	  return Math.max(1, (context.clusterData || []).length);
-	}
-	// city 模式下，聚合数字表示当前 cluster 涉及的唯一旅行数。
-	var tripIds = {};
-    var list = context.clusterData || [];
-    list.forEach(function (item) {
-      if (!item) return;
-      var place = item.place || {};
-      var tripKey = String(place.tripId == null ? list.indexOf(item) : place.tripId);
-	  tripIds[tripKey] = true;
-    });
-	return Math.max(1, Object.keys(tripIds).length);
+    return Math.max(1, (context.clusterData || []).length);
   }
 
   function buildMarkers(AMap) {
@@ -1593,10 +1583,7 @@ const placesI18n = {
           var displayCount = clusterDisplayCount(context);
           var el = document.createElement("div");
           el.className = "places-cluster";
-		  el.title =
-			mapMode === "trip"
-			  ? displayCount + " " + (placesI18n.locations || "")
-			  : displayCount + (placesI18n.clusterTrips || " 个旅行");
+          el.title = displayCount + " " + (placesI18n.locations || "");
           el.innerHTML =
             '<span class="places-cluster-count">' + displayCount + "</span>";
           // DOM 激活：桌面用 click，手机用 touchend（自定义 content 时 marker click 不可靠）
@@ -1610,12 +1597,6 @@ const placesI18n = {
           context.marker.setOffset(new AMap.Pixel(-22, -22));
           context.marker.setClickable(true);
           context.marker.off("click");
-          context.marker.on("click", function () {
-            zoomToCluster({
-              clusterData: context.clusterData,
-              lnglat: context.marker.getPosition(),
-            });
-          });
         },
         renderMarker: function (context) {
           var item = (context.data && context.data[0]) || {};
@@ -1636,20 +1617,9 @@ const placesI18n = {
           context.marker.setExtData(place);
           context.marker.setClickable(true);
           context.marker.off("click");
-          context.marker.on("click", function () {
-            enterLocationState(place);
-          });
         },
       });
 
-      cluster.on("click", function (event) {
-        var data = event.clusterData || [];
-        if (data.length > 1) {
-          zoomToCluster(event);
-        } else if (data.length === 1 && data[0] && data[0].place) {
-          enterLocationState(data[0].place);
-        }
-      });
     } else {
       markers = places.map(function (place) {
         return buildLocationMarker(AMap, place);

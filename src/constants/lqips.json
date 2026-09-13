@@ -37,12 +37,6 @@
   "src:content/projects/images/firefly.avif": "b5b0b3bcb6bbe0e0df",
   "src:assets/images/avatar1.png": "e8c5c5e3b7b9c99b9b",
   "src:assets/images/DesktopWallpaper/b1.png": "494243243d5c2e3438",
-  "public:places/images/海盐-2025.04/百尺路桥.jpg": "4a48494b4b484d5045",
-  "public:places/images/海盐-2025.04/海盐宾馆.jpg": "1b161243372f7a6260",
-  "public:places/images/海盐-2025.04/核电科技馆.jpg": "89929f7a80866c6556",
-  "public:places/images/海盐-2025.04/天仙湖公园3.jpg": "2d282047404f504835",
-  "public:places/images/海盐-2025.04/天仙湖公园2.jpg": "0d111c2627233d3620",
-  "public:places/images/海盐-2025.04/天仙湖公园.jpg": "443d34231f236c6558",
   "public:places/images/嘉兴-2025.04/秀洲公园2.jpg": "182f6120200a443c27",
   "public:places/images/嘉兴-2025.04/秀洲公园.jpg": "384048454a525c5849",
   "public:places/images/北京-2026.05/长安街.jpg": "9ab8d76e92bd646c70",
@@ -58,5 +52,11 @@
   "public:places/images/南京-2026.02/总统府.jpg": "8babc66488b1837c68",
   "public:places/images/上海-2025.08/外滩.jpg": "282c271e1b18443524",
   "public:places/images/上海-2025.08/东方明珠2.jpg": "443925313543645d58",
-  "public:places/images/上海-2025.08/东方明珠.jpg": "110e1d46383834313d"
+  "public:places/images/上海-2025.08/东方明珠.jpg": "110e1d46383834313d",
+  "public:places/images/海盐-2025.12/核电科技馆.jpg": "89929f7a80866c6556",
+  "public:places/images/海盐-2025.03/百尺路桥.jpg": "4a48494b4b484d5045",
+  "public:places/images/海盐-2025.03/海盐宾馆.jpg": "1b161243372f7a6260",
+  "public:places/images/海盐-2025.03/天仙湖公园3.jpg": "2d282047404f504835",
+  "public:places/images/海盐-2025.03/天仙湖公园2.jpg": "0d111c2627233d3620",
+  "public:places/images/海盐-2025.03/天仙湖公园.jpg": "443d34231f236c6558"
 }
