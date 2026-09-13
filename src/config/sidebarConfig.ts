@@ -136,6 +136,13 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: true,
 		},
 		{
+			// 组件类型：当前状态组件（暂用前端 mock 数据）
+			type: "presence",
+			enable: true,
+			position: "sticky",
+			showOnPostPage: true,
+		},
+		{
 			// 组件类型：天气组件
 			type: "weather",
 			// 是否启用该组件
@@ -280,6 +287,12 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 是否启用该组件
 			enable: true,
 			// 是否在文章详情页显示
+			showOnPostPage: true,
+		},
+		{
+			// 组件类型：当前状态组件（暂用前端 mock 数据）
+			type: "presence",
+			enable: true,
 			showOnPostPage: true,
 		},
 		{

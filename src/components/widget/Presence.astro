@@ -1,0 +1,614 @@
+---
+import WidgetLayout from "@/components/common/WidgetLayout.astro";
+
+export interface Presence {
+	state: "online" | "coding" | "gaming" | "music" | "idle" | "offline";
+	title: string;
+	app?: string;
+	detail?: string;
+	since?: number;
+	updatedAt: number;
+}
+
+interface Props {
+	class?: string;
+	style?: string;
+}
+
+const { class: className, style } = Astro.props;
+const showDevPreview = import.meta.env.DEV;
+
+const presence: Presence = {
+	state: "coding",
+	title: "正在写代码",
+	app: "Visual Studio Code",
+	detail: "正在维护博客",
+	since: Date.now() - 25 * 60 * 1000,
+	updatedAt: Date.now(),
+};
+
+const stateConfig: Record<
+	Presence["state"],
+	{ icon: string; label: string; status: string }
+> = {
+	online: { icon: "🟢", label: "在线", status: "Online" },
+	coding: { icon: "💻", label: "编程", status: "Online" },
+	gaming: { icon: "🎮", label: "游戏", status: "Online" },
+	music: { icon: "🎵", label: "音乐", status: "Online" },
+	idle: { icon: "☕", label: "暂离", status: "Idle" },
+	offline: { icon: "🌙", label: "离线", status: "Offline" },
+};
+
+const initialConfig = stateConfig[presence.state];
+---
+
+<WidgetLayout
+	id="presence-widget"
+	showTitle={false}
+	class={className}
+	style={style}
+>
+	<presence-widget data-state={presence.state}>
+		<div class="presence-heading">What am I doing?</div>
+
+		<div class="presence-content" data-presence-content aria-live="polite">
+			<div class="presence-icon" data-presence-icon aria-hidden="true">
+				{initialConfig.icon}
+			</div>
+			<div class="presence-copy">
+				<strong class="presence-title" data-presence-title>{presence.title}</strong>
+				<span class="presence-app" data-presence-app>{presence.app}</span>
+				<p class="presence-detail" data-presence-detail>{presence.detail}</p>
+			</div>
+		</div>
+
+		<div class="presence-footer">
+			<span class="presence-dot" data-presence-dot aria-hidden="true"></span>
+			<span data-presence-status>{initialConfig.status}</span>
+			<span class="presence-duration" data-presence-duration>· 25 分钟</span>
+		</div>
+
+		<!-- DEV_PREVIEW_START: 删除此区块即可移除开发状态切换器。 -->
+		{showDevPreview && (
+			<div class="presence-preview" aria-label="Presence 开发预览">
+				<span class="presence-preview-label">DEV</span>
+				<div class="presence-preview-actions">
+					{(
+						["online", "coding", "gaming", "music", "idle", "offline"] as const
+					).map((state) => (
+						<button
+							type="button"
+							data-presence-preview={state}
+							aria-pressed={state === presence.state ? "true" : "false"}
+						>
+							{stateConfig[state].icon}
+							<span class="sr-only">预览 {stateConfig[state].label} 状态</span>
+						</button>
+					))}
+					<button
+						type="button"
+						data-presence-stale
+						aria-pressed="false"
+						title="模拟 120 秒未上报"
+					>
+						⏱️
+						<span class="sr-only">模拟状态上报超时</span>
+					</button>
+				</div>
+			</div>
+		)}
+		<!-- DEV_PREVIEW_END -->
+	</presence-widget>
+</WidgetLayout>
+
+<script>
+	const USE_MOCK_PRESENCE = true;
+	const POLL_INTERVAL = 30_000;
+	const DISPLAY_REFRESH_INTERVAL = 15_000;
+	const OFFLINE_TIMEOUT = 90_000;
+	const MOCK_STALE_AGE = 120_000;
+
+	type PresenceState =
+		| "online"
+		| "coding"
+		| "gaming"
+		| "music"
+		| "idle"
+		| "offline";
+
+	interface PresenceData {
+		state: PresenceState;
+		title: string;
+		app?: string;
+		detail?: string;
+		since?: number;
+		updatedAt: number;
+	}
+
+	const previewPresence = (state: PresenceState): PresenceData => {
+		const previews: Record<
+			PresenceState,
+			Omit<PresenceData, "state" | "since" | "updatedAt">
+		> = {
+			online: { title: "在线中", detail: "欢迎来逛逛" },
+			coding: {
+				title: "正在写代码",
+				app: "Visual Studio Code",
+				detail: "正在维护博客",
+			},
+			gaming: {
+				title: "正在玩游戏",
+				app: "Steam",
+				detail: "在短暂休息中",
+			},
+			music: {
+				title: "正在听音乐",
+				app: "Music",
+				detail: "让旋律陪伴工作",
+			},
+			idle: { title: "暂时离开", detail: "稍后回来" },
+			offline: { title: "当前离线", detail: "下次见" },
+		};
+
+		return {
+			state,
+			...previews[state],
+			since: Date.now() - 25 * 60 * 1000,
+			updatedAt: Date.now(),
+		};
+	};
+
+	const clientStateConfig: Record<
+		PresenceState,
+		{ icon: string; status: string }
+	> = {
+		online: { icon: "🟢", status: "Online" },
+		coding: { icon: "💻", status: "Online" },
+		gaming: { icon: "🎮", status: "Online" },
+		music: { icon: "🎵", status: "Online" },
+		idle: { icon: "☕", status: "Idle" },
+		offline: { icon: "🌙", status: "Offline" },
+	};
+
+	class PresenceWidget extends HTMLElement {
+		private presence: PresenceData = previewPresence("coding");
+		private mockPresence: PresenceData = previewPresence("coding");
+		private mockHeartbeatPaused = false;
+		private initialized = false;
+		private loading = false;
+		private lastRenderedSignature = "";
+		private pollTimer?: number;
+		private displayTimer?: number;
+		private transitionTimer?: number;
+		private listeners?: AbortController;
+
+		connectedCallback() {
+			if (this.initialized) return;
+			this.initialized = true;
+			this.listeners = new AbortController();
+			const { signal } = this.listeners;
+			this.lastRenderedSignature = this.getDisplaySignature(
+				this.getDisplayPresence(),
+			);
+
+			this.querySelectorAll<HTMLButtonElement>("[data-presence-preview]").forEach(
+				(button) => {
+					button.addEventListener("click", () => {
+						const state = button.dataset.presencePreview as PresenceState;
+						this.mockHeartbeatPaused = false;
+						this.mockPresence = previewPresence(state);
+						this.presence = { ...this.mockPresence };
+						this.renderPresence(true);
+					}, { signal });
+				},
+			);
+
+			this.querySelector<HTMLButtonElement>("[data-presence-stale]")?.addEventListener(
+				"click",
+				() => {
+					this.mockHeartbeatPaused = true;
+					this.mockPresence = {
+						...this.mockPresence,
+						updatedAt: Date.now() - MOCK_STALE_AGE,
+					};
+					this.presence = { ...this.mockPresence };
+					this.renderPresence(true);
+				},
+				{ signal },
+			);
+
+			document.addEventListener("visibilitychange", this.handleVisibilityChange, {
+				signal,
+			});
+
+			void this.refreshPresence(false);
+			this.pollTimer = window.setInterval(
+				() => void this.refreshPresence(true),
+				POLL_INTERVAL,
+			);
+			this.displayTimer = window.setInterval(
+				() => this.renderPresence(true),
+				DISPLAY_REFRESH_INTERVAL,
+			);
+		}
+
+		disconnectedCallback() {
+			this.initialized = false;
+			this.listeners?.abort();
+			this.listeners = undefined;
+			window.clearInterval(this.pollTimer);
+			window.clearInterval(this.displayTimer);
+			window.clearTimeout(this.transitionTimer);
+			this.pollTimer = undefined;
+			this.displayTimer = undefined;
+			this.transitionTimer = undefined;
+		}
+
+		private async loadPresence(): Promise<PresenceData> {
+			if (USE_MOCK_PRESENCE) {
+				if (!this.mockHeartbeatPaused) {
+					this.mockPresence = {
+						...this.mockPresence,
+						updatedAt: Date.now(),
+					};
+				}
+				return { ...this.mockPresence };
+			}
+
+			const response = await fetch("/api/presence", {
+				cache: "no-store",
+				signal: this.listeners?.signal,
+			});
+			if (!response.ok) {
+				throw new Error(`Presence request failed with status ${response.status}`);
+			}
+
+			return (await response.json()) as PresenceData;
+		}
+
+		private async refreshPresence(animate: boolean) {
+			if (document.visibilityState === "hidden" || this.loading) return;
+			this.loading = true;
+
+			try {
+				this.presence = await this.loadPresence();
+			} catch (error) {
+				const wasAborted =
+					error instanceof DOMException && error.name === "AbortError";
+				if (import.meta.env.DEV && !wasAborted) {
+					console.warn("Unable to refresh presence; keeping the last state.", error);
+				}
+			} finally {
+				this.loading = false;
+				if (this.isConnected) this.renderPresence(animate);
+			}
+		}
+
+		private getDisplayPresence(): PresenceData {
+			if (Date.now() - this.presence.updatedAt <= OFFLINE_TIMEOUT) {
+				return this.presence;
+			}
+
+			return {
+				...this.presence,
+				state: "offline",
+				title: "当前离线",
+				app: undefined,
+				detail: "下次见",
+			};
+		}
+
+		private getDisplaySignature(presence: PresenceData): string {
+			return JSON.stringify([
+				presence.state,
+				presence.title,
+				presence.app,
+				presence.detail,
+				presence.since,
+			]);
+		}
+
+		private renderPresence(animate: boolean) {
+			const content = this.querySelector<HTMLElement>("[data-presence-content]");
+			const displayPresence = this.getDisplayPresence();
+			const signature = this.getDisplaySignature(displayPresence);
+			const shouldAnimate =
+				animate && signature !== this.lastRenderedSignature;
+			if (shouldAnimate) content?.classList.add("is-changing");
+
+			window.clearTimeout(this.transitionTimer);
+			this.transitionTimer = window.setTimeout(
+				() => {
+					const currentDisplay = this.getDisplayPresence();
+					const config = clientStateConfig[currentDisplay.state];
+					this.dataset.state = currentDisplay.state;
+					this.setText("[data-presence-icon]", config.icon);
+					this.setText("[data-presence-title]", currentDisplay.title);
+					this.setOptionalText("[data-presence-app]", currentDisplay.app);
+					this.setOptionalText("[data-presence-detail]", currentDisplay.detail);
+					this.setText("[data-presence-status]", config.status);
+					this.updateDuration();
+					this.lastRenderedSignature = this.getDisplaySignature(currentDisplay);
+
+					this.querySelectorAll<HTMLButtonElement>("[data-presence-preview]").forEach(
+						(button) => {
+							button.setAttribute(
+								"aria-pressed",
+								String(button.dataset.presencePreview === this.presence.state),
+							);
+						},
+					);
+					this.querySelector<HTMLButtonElement>("[data-presence-stale]")?.setAttribute(
+						"aria-pressed",
+						String(this.mockHeartbeatPaused),
+					);
+
+					requestAnimationFrame(() => content?.classList.remove("is-changing"));
+				},
+				shouldAnimate ? 120 : 0,
+			);
+		}
+
+		private updateDuration() {
+			const duration = this.querySelector<HTMLElement>("[data-presence-duration]");
+			if (!duration) return;
+
+			if (!this.presence.since || this.getDisplayPresence().state === "offline") {
+				duration.hidden = true;
+				return;
+			}
+
+			const minutes = Math.max(
+				1,
+				Math.floor((Date.now() - this.presence.since) / 60_000),
+			);
+			duration.hidden = false;
+			duration.textContent =
+				minutes < 60
+					? `· ${minutes} 分钟`
+					: `· ${Math.floor(minutes / 60)} 小时 ${minutes % 60} 分钟`;
+		}
+
+		private setText(selector: string, value: string) {
+			const element = this.querySelector<HTMLElement>(selector);
+			if (element) element.textContent = value;
+		}
+
+		private setOptionalText(selector: string, value?: string) {
+			const element = this.querySelector<HTMLElement>(selector);
+			if (!element) return;
+			element.hidden = !value;
+			element.textContent = value ?? "";
+		}
+
+		private handleVisibilityChange = () => {
+			if (document.visibilityState === "visible") {
+				void this.refreshPresence(true);
+			}
+		};
+	}
+
+	if (!customElements.get("presence-widget")) {
+		customElements.define("presence-widget", PresenceWidget);
+	}
+</script>
+
+<style>
+	presence-widget {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.presence-heading {
+		color: rgb(115 115 115);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	:global(.dark) .presence-heading {
+		color: rgb(163 163 163);
+	}
+
+	.presence-content {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		min-width: 0;
+		opacity: 1;
+		transform: translateY(0);
+		transition:
+			opacity 220ms ease,
+			transform 220ms ease;
+	}
+
+	.presence-content.is-changing {
+		opacity: 0;
+		transform: translateY(0.25rem);
+	}
+
+	.presence-icon {
+		display: grid;
+		place-items: center;
+		flex: 0 0 2.5rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: calc(var(--radius-large) * 0.65);
+		background: var(--btn-regular-bg);
+		font-size: 1.2rem;
+		line-height: 1;
+	}
+
+	.presence-copy {
+		display: flex;
+		min-width: 0;
+		flex-direction: column;
+	}
+
+	.presence-title {
+		overflow: hidden;
+		color: rgb(23 23 23);
+		font-size: 1rem;
+		line-height: 1.4;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	:global(.dark) .presence-title {
+		color: rgb(245 245 245);
+	}
+
+	.presence-app {
+		overflow: hidden;
+		margin-top: 0.05rem;
+		color: var(--primary);
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.35;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.presence-detail {
+		overflow: hidden;
+		margin: 0.25rem 0 0;
+		color: rgb(115 115 115);
+		font-size: 0.75rem;
+		line-height: 1.35;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	:global(.dark) .presence-detail {
+		color: rgb(163 163 163);
+	}
+
+	.presence-footer {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		border-top: 1px solid var(--line-divider);
+		padding-top: 0.75rem;
+		color: rgb(82 82 82);
+		font-size: 0.75rem;
+		font-weight: 600;
+	}
+
+	:global(.dark) .presence-footer {
+		color: rgb(212 212 212);
+	}
+
+	.presence-dot {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 999px;
+		background: #22c55e;
+		box-shadow: 0 0 0 0 rgb(34 197 94 / 35%);
+		animation: presence-breathe 2.4s ease-out infinite;
+	}
+
+	presence-widget[data-state="idle"] .presence-dot {
+		background: #eab308;
+		animation: none;
+	}
+
+	presence-widget[data-state="offline"] .presence-dot {
+		background: #a3a3a3;
+		animation: none;
+	}
+
+	.presence-duration {
+		color: rgb(115 115 115);
+		font-weight: 500;
+	}
+
+	:global(.dark) .presence-duration {
+		color: rgb(163 163 163);
+	}
+
+	.presence-preview {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		border-top: 1px dashed var(--line-divider);
+		padding-top: 0.75rem;
+	}
+
+	.presence-preview-label {
+		color: rgb(163 163 163);
+		font-family: monospace;
+		font-size: 0.625rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+
+	.presence-preview-actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.3rem;
+	}
+
+	.presence-preview button {
+		display: grid;
+		place-items: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		border-radius: 0.45rem;
+		background: var(--btn-regular-bg);
+		cursor: pointer;
+		font-size: 0.875rem;
+		transition:
+			background-color 150ms ease,
+			transform 150ms ease;
+	}
+
+	.presence-preview button:hover,
+	.presence-preview button:focus-visible,
+	.presence-preview button[aria-pressed="true"] {
+		background: var(--btn-regular-bg-hover);
+		outline: none;
+		transform: translateY(-1px);
+	}
+
+	.presence-preview button[aria-pressed="true"] {
+		box-shadow: inset 0 0 0 1px var(--primary);
+	}
+
+	@keyframes presence-breathe {
+		0%,
+		55%,
+		100% {
+			box-shadow: 0 0 0 0 rgb(34 197 94 / 30%);
+		}
+		25% {
+			box-shadow: 0 0 0 0.28rem rgb(34 197 94 / 0%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.presence-content,
+		.presence-preview button {
+			transition: none;
+		}
+
+		.presence-dot {
+			animation: none;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.presence-heading {
+			letter-spacing: 0.05em;
+		}
+
+		.presence-icon {
+			flex-basis: 2.375rem;
+			width: 2.375rem;
+			height: 2.375rem;
+		}
+	}
+</style>
