@@ -1,13 +1,10 @@
-export const PRESENCE_STATES = [
-	"online",
-	"coding",
-	"gaming",
-	"music",
-	"idle",
-	"offline",
-] as const;
+import {
+	type PresenceState,
+	presenceConfig,
+	resolvePresenceContent,
+} from "../config/presenceConfig";
 
-export type PresenceState = (typeof PRESENCE_STATES)[number];
+export type { PresenceState } from "../config/presenceConfig";
 
 export interface PresenceData {
 	state: PresenceState;
@@ -26,11 +23,12 @@ export interface PresenceUpdate {
 	since?: number;
 }
 
+const initialPresence = resolvePresenceContent(
+	presenceConfig.behavior.previewState,
+);
+
 let currentPresence: PresenceData = {
-	state: "coding",
-	title: "正在写代码",
-	app: "Visual Studio Code",
-	detail: "正在维护博客",
+	...initialPresence,
 	since: Date.now() - 25 * 60 * 1000,
 	updatedAt: Date.now(),
 };

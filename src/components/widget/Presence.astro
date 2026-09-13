@@ -1,14 +1,12 @@
 ---
 import WidgetLayout from "@/components/common/WidgetLayout.astro";
-
-export interface Presence {
-	state: "online" | "coding" | "gaming" | "music" | "idle" | "offline";
-	title: string;
-	app?: string;
-	detail?: string;
-	since?: number;
-	updatedAt: number;
-}
+import {
+	getPresenceStateConfig,
+	PRESENCE_STATES,
+	presenceConfig,
+	resolvePresenceContent,
+} from "@/config/presenceConfig";
+import type { PresenceData } from "@/utils/presence-store";
 
 interface Props {
 	class?: string;
@@ -18,28 +16,16 @@ interface Props {
 const { class: className, style } = Astro.props;
 const showDevPreview = import.meta.env.DEV;
 
-const presence: Presence = {
-	state: "coding",
-	title: "正在写代码",
-	app: "Visual Studio Code",
-	detail: "正在维护博客",
+const presence: PresenceData = {
+	...resolvePresenceContent(presenceConfig.behavior.previewState),
 	since: Date.now() - 25 * 60 * 1000,
 	updatedAt: Date.now(),
 };
 
-const stateConfig: Record<
-	Presence["state"],
-	{ icon: string; label: string; status: string }
-> = {
-	online: { icon: "🟢", label: "在线", status: "Online" },
-	coding: { icon: "💻", label: "编程", status: "Online" },
-	gaming: { icon: "🎮", label: "游戏", status: "Online" },
-	music: { icon: "🎵", label: "音乐", status: "Online" },
-	idle: { icon: "☕", label: "暂离", status: "Idle" },
-	offline: { icon: "🌙", label: "离线", status: "Offline" },
-};
-
-const initialConfig = stateConfig[presence.state];
+const initialConfig = getPresenceStateConfig(presence.state);
+const initialIllustration = presenceConfig.ui.useIllustration
+	? initialConfig.illustration
+	: undefined;
 ---
 
 <WidgetLayout
@@ -48,12 +34,34 @@ const initialConfig = stateConfig[presence.state];
 	class={className}
 	style={style}
 >
-	<presence-widget data-state={presence.state}>
+	<presence-widget
+		data-state={presence.state}
+		data-availability={initialConfig.availability}
+	>
 		<div class="presence-heading">What am I doing?</div>
 
 		<div class="presence-content" data-presence-content aria-live="polite">
-			<div class="presence-icon" data-presence-icon aria-hidden="true">
-				{initialConfig.icon}
+			<div
+				class="presence-media"
+				data-presence-media
+				data-mode={initialIllustration ? "illustration" : "icon"}
+				data-illustration={initialIllustration ?? ""}
+				aria-hidden="true"
+			>
+				<span
+					class="presence-media-icon"
+					data-presence-icon
+					hidden={Boolean(initialIllustration)}
+				>
+					{initialConfig.icon}
+				</span>
+				<img
+					class="presence-media-illustration"
+					data-presence-illustration
+					src={initialIllustration}
+					alt=""
+					hidden={!initialIllustration}
+				/>
 			</div>
 			<div class="presence-copy">
 				<strong class="presence-title" data-presence-title>{presence.title}</strong>
@@ -73,16 +81,16 @@ const initialConfig = stateConfig[presence.state];
 			<div class="presence-preview" aria-label="Presence 开发预览">
 				<span class="presence-preview-label">DEV</span>
 				<div class="presence-preview-actions">
-					{(
-						["online", "coding", "gaming", "music", "idle", "offline"] as const
-					).map((state) => (
+					{PRESENCE_STATES.map((state) => (
 						<button
 							type="button"
 							data-presence-preview={state}
 							aria-pressed={state === presence.state ? "true" : "false"}
 						>
-							{stateConfig[state].icon}
-							<span class="sr-only">预览 {stateConfig[state].label} 状态</span>
+							{getPresenceStateConfig(state).icon}
+							<span class="sr-only">
+								预览 {getPresenceStateConfig(state).title} 状态
+							</span>
 						</button>
 					))}
 					<button
@@ -102,77 +110,35 @@ const initialConfig = stateConfig[presence.state];
 </WidgetLayout>
 
 <script>
+	import {
+		getPresenceStateConfig,
+		presenceConfig,
+		resolvePresenceContent,
+		type PresenceState,
+	} from "@/config/presenceConfig";
+	import type { PresenceData } from "@/utils/presence-store";
+
 	const USE_MOCK_PRESENCE = false;
 	const POLL_INTERVAL = 30_000;
 	const DISPLAY_REFRESH_INTERVAL = 15_000;
 	const OFFLINE_TIMEOUT = 90_000;
 	const MOCK_STALE_AGE = 120_000;
 
-	type PresenceState =
-		| "online"
-		| "coding"
-		| "gaming"
-		| "music"
-		| "idle"
-		| "offline";
-
-	interface PresenceData {
-		state: PresenceState;
-		title: string;
-		app?: string;
-		detail?: string;
-		since?: number;
-		updatedAt: number;
-	}
-
 	const previewPresence = (state: PresenceState): PresenceData => {
-		const previews: Record<
-			PresenceState,
-			Omit<PresenceData, "state" | "since" | "updatedAt">
-		> = {
-			online: { title: "在线中", detail: "欢迎来逛逛" },
-			coding: {
-				title: "正在写代码",
-				app: "Visual Studio Code",
-				detail: "正在维护博客",
-			},
-			gaming: {
-				title: "正在玩游戏",
-				app: "Steam",
-				detail: "在短暂休息中",
-			},
-			music: {
-				title: "正在听音乐",
-				app: "Music",
-				detail: "让旋律陪伴工作",
-			},
-			idle: { title: "暂时离开", detail: "稍后回来" },
-			offline: { title: "当前离线", detail: "下次见" },
-		};
-
 		return {
-			state,
-			...previews[state],
+			...resolvePresenceContent(state),
 			since: Date.now() - 25 * 60 * 1000,
 			updatedAt: Date.now(),
 		};
 	};
 
-	const clientStateConfig: Record<
-		PresenceState,
-		{ icon: string; status: string }
-	> = {
-		online: { icon: "🟢", status: "Online" },
-		coding: { icon: "💻", status: "Online" },
-		gaming: { icon: "🎮", status: "Online" },
-		music: { icon: "🎵", status: "Online" },
-		idle: { icon: "☕", status: "Idle" },
-		offline: { icon: "🌙", status: "Offline" },
-	};
-
 	class PresenceWidget extends HTMLElement {
-		private presence: PresenceData = previewPresence("coding");
-		private mockPresence: PresenceData = previewPresence("coding");
+		private presence: PresenceData = previewPresence(
+			presenceConfig.behavior.previewState,
+		);
+		private mockPresence: PresenceData = previewPresence(
+			presenceConfig.behavior.previewState,
+		);
 		private mockHeartbeatPaused = false;
 		private initialized = false;
 		private loading = false;
@@ -187,6 +153,15 @@ const initialConfig = stateConfig[presence.state];
 			this.initialized = true;
 			this.listeners = new AbortController();
 			const { signal } = this.listeners;
+			const illustration = this.querySelector<HTMLImageElement>(
+				"[data-presence-illustration]",
+			);
+			illustration?.addEventListener("load", this.handleIllustrationLoad, {
+				signal,
+			});
+			illustration?.addEventListener("error", this.handleIllustrationError, {
+				signal,
+			});
 			this.lastRenderedSignature = this.getDisplaySignature(
 				this.getDisplayPresence(),
 			);
@@ -291,10 +266,7 @@ const initialConfig = stateConfig[presence.state];
 
 			return {
 				...this.presence,
-				state: "offline",
-				title: "当前离线",
-				app: undefined,
-				detail: "下次见",
+				...resolvePresenceContent(presenceConfig.behavior.offlineState),
 			};
 		}
 
@@ -320,9 +292,10 @@ const initialConfig = stateConfig[presence.state];
 			this.transitionTimer = window.setTimeout(
 				() => {
 					const currentDisplay = this.getDisplayPresence();
-					const config = clientStateConfig[currentDisplay.state];
+					const config = getPresenceStateConfig(currentDisplay.state);
 					this.dataset.state = currentDisplay.state;
-					this.setText("[data-presence-icon]", config.icon);
+					this.dataset.availability = config.availability;
+					this.updateMedia(config.icon, config.illustration);
 					this.setText("[data-presence-title]", currentDisplay.title);
 					this.setOptionalText("[data-presence-app]", currentDisplay.app);
 					this.setOptionalText("[data-presence-detail]", currentDisplay.detail);
@@ -353,7 +326,10 @@ const initialConfig = stateConfig[presence.state];
 			const duration = this.querySelector<HTMLElement>("[data-presence-duration]");
 			if (!duration) return;
 
-			if (!this.presence.since || this.getDisplayPresence().state === "offline") {
+			if (
+				!this.presence.since ||
+				this.getDisplayPresence().state === presenceConfig.behavior.offlineState
+			) {
 				duration.hidden = true;
 				return;
 			}
@@ -373,6 +349,81 @@ const initialConfig = stateConfig[presence.state];
 			const element = this.querySelector<HTMLElement>(selector);
 			if (element) element.textContent = value;
 		}
+
+		private updateMedia(iconValue: string, illustration?: string) {
+			const media = this.querySelector<HTMLElement>("[data-presence-media]");
+			const icon = this.querySelector<HTMLElement>("[data-presence-icon]");
+			const image = this.querySelector<HTMLImageElement>(
+				"[data-presence-illustration]",
+			);
+			if (!media || !icon || !image) return;
+
+			icon.textContent = iconValue;
+			const nextIllustration = presenceConfig.ui.useIllustration
+				? illustration
+				: undefined;
+			media.dataset.illustration = nextIllustration ?? "";
+
+			if (!nextIllustration) {
+				image.removeAttribute("src");
+				this.showIconFallback();
+				return;
+			}
+
+			if (image.getAttribute("src") !== nextIllustration) {
+				this.showIconFallback();
+				image.src = nextIllustration;
+				return;
+			}
+
+			if (image.complete && image.naturalWidth > 0) {
+				this.showLoadedIllustration();
+			} else {
+				this.showIconFallback();
+			}
+		}
+
+		private showIconFallback() {
+			const media = this.querySelector<HTMLElement>("[data-presence-media]");
+			const icon = this.querySelector<HTMLElement>("[data-presence-icon]");
+			const image = this.querySelector<HTMLImageElement>(
+				"[data-presence-illustration]",
+			);
+			if (!media || !icon || !image) return;
+			media.dataset.mode = "icon";
+			icon.hidden = false;
+			image.hidden = true;
+		}
+
+		private showLoadedIllustration() {
+			const media = this.querySelector<HTMLElement>("[data-presence-media]");
+			const icon = this.querySelector<HTMLElement>("[data-presence-icon]");
+			const image = this.querySelector<HTMLImageElement>(
+				"[data-presence-illustration]",
+			);
+			if (
+				!media ||
+				!icon ||
+				!image ||
+				!media.dataset.illustration ||
+				image.getAttribute("src") !== media.dataset.illustration ||
+				image.naturalWidth === 0
+			) {
+				return;
+			}
+
+			media.dataset.mode = "illustration";
+			icon.hidden = true;
+			image.hidden = false;
+		}
+
+		private handleIllustrationLoad = () => {
+			this.showLoadedIllustration();
+		};
+
+		private handleIllustrationError = () => {
+			this.showIconFallback();
+		};
 
 		private setOptionalText(selector: string, value?: string) {
 			const element = this.querySelector<HTMLElement>(selector);
@@ -429,16 +480,40 @@ const initialConfig = stateConfig[presence.state];
 		transform: translateY(0.25rem);
 	}
 
-	.presence-icon {
+	.presence-media {
 		display: grid;
 		place-items: center;
 		flex: 0 0 2.5rem;
 		width: 2.5rem;
 		height: 2.5rem;
+	}
+
+	.presence-media[data-mode="illustration"] {
+		flex-basis: 3.25rem;
+		width: 3.25rem;
+		height: 3.25rem;
+	}
+
+	.presence-media-icon {
+		display: grid;
+		place-items: center;
+		width: 100%;
+		height: 100%;
 		border-radius: calc(var(--radius-large) * 0.65);
 		background: var(--btn-regular-bg);
 		font-size: 1.2rem;
 		line-height: 1;
+	}
+
+	.presence-media-illustration {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.presence-media [hidden] {
+		display: none;
 	}
 
 	.presence-copy {
@@ -509,12 +584,12 @@ const initialConfig = stateConfig[presence.state];
 		animation: presence-breathe 2.4s ease-out infinite;
 	}
 
-	presence-widget[data-state="idle"] .presence-dot {
+	presence-widget[data-availability="idle"] .presence-dot {
 		background: #eab308;
 		animation: none;
 	}
 
-	presence-widget[data-state="offline"] .presence-dot {
+	presence-widget[data-availability="offline"] .presence-dot {
 		background: #a3a3a3;
 		animation: none;
 	}
@@ -605,10 +680,16 @@ const initialConfig = stateConfig[presence.state];
 			letter-spacing: 0.05em;
 		}
 
-		.presence-icon {
+		.presence-media[data-mode="icon"] {
 			flex-basis: 2.375rem;
 			width: 2.375rem;
 			height: 2.375rem;
+		}
+
+		.presence-media[data-mode="illustration"] {
+			flex-basis: 3rem;
+			width: 3rem;
+			height: 3rem;
 		}
 	}
 </style>

@@ -1,10 +1,9 @@
-import type { AstroIntegration } from "astro";
 import type { IncomingMessage, ServerResponse } from "node:http";
+import type { AstroIntegration } from "astro";
+import { PRESENCE_STATES, type PresenceState } from "../config/presenceConfig";
 import {
-	PRESENCE_STATES,
-	type PresenceState,
-	type PresenceUpdate,
 	getPresence,
+	type PresenceUpdate,
 	updatePresence,
 } from "../utils/presence-store";
 

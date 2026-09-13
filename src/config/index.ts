@@ -39,6 +39,11 @@ export type {
 	NavBarConfig,
 	PlacesMapConfig,
 	PlantUMLConfig,
+	PresenceAvailability,
+	PresenceBehavior,
+	PresenceProcessRule,
+	PresenceStateConfig,
+	PresenceUiConfig,
 	ProfileConfig,
 	SakuraConfig,
 	SidebarLayoutConfig,
@@ -79,6 +84,19 @@ export { navBarConfig, navBarSearchConfig } from "./navBarConfig"; // 导航栏�
 export { live2dWidgetConfig, spineModelConfig } from "./pioConfig"; // 看板娘配置
 export { placesMapConfig } from "./placesMapConfig"; // Places 高德地图配置
 export { plantumlConfig } from "./plantumlConfig"; // PlantUML 图表配置
+export type {
+	AgentPresenceState,
+	PresenceContent,
+	PresenceContentOverrides,
+	PresenceState,
+	ProcessRule,
+} from "./presenceConfig";
+export {
+	getPresenceStateConfig,
+	PRESENCE_STATES,
+	presenceConfig,
+	resolvePresenceContent,
+} from "./presenceConfig"; // Presence 状态与进程映射配置
 export { profileConfig } from "./profileConfig"; // 用户资料配置
 // 布局配置
 export { sidebarLayoutConfig } from "./sidebarConfig"; // 侧边栏布局配置

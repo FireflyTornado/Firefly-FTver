@@ -26,6 +26,7 @@ src/config/
 ├── pioConfig.ts              # 看板娘配置（Spine、Live2D）
 ├── mermaidConfig.ts          # Mermaid 图表配置
 ├── plantumlConfig.ts         # PlantUML 图表配置
+├── presenceConfig.ts         # Presence 状态与 Windows 进程映射配置
 ├── profileConfig.ts          # 用户资料配置
 ├── sidebarConfig.ts          # 侧边栏布局配置
 ├── sponsorConfig.ts          # 打赏配置
@@ -67,6 +68,7 @@ import { profileConfig } from "@/config/profileConfig";
 | `navBarConfig.ts` | 导航栏配置（动态链接、LinkPresets 链接预设、搜索配置） |
 | `pioConfig.ts` | 看板娘配置（Spine 模型、Live2D 模型） |
 | `plantumlConfig.ts` | PlantUML 图表渲染配置 |
+| `presenceConfig.ts` | Presence 状态显示、Windows 进程映射和回退行为配置 |
 | `profileConfig.ts` | 用户资料配置（头像、姓名、社交链接） |
 | `sidebarConfig.ts` | 侧边栏布局配置（左侧/右侧/移动端组件列表） |
 | `sponsorConfig.ts` | 打赏配置（打赏方式、打赏者列表） |
