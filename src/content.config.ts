@@ -54,6 +54,38 @@ type ProjectData = {
 	lang: string;
 };
 
+type PlaceLocationData = {
+	name: string;
+	province?: string;
+	city?: string;
+	district?: string;
+	lng: number;
+	lat: number;
+	description?: string;
+	images: string[];
+	exact?: boolean;
+	date?: Date;
+};
+
+type PlacesData = {
+	title?: string;
+	date: Date;
+	endDate?: Date;
+	category?: string;
+	tags: string[];
+	description?: string;
+	locations?: PlaceLocationData[];
+	source: "manual" | "timeline";
+	timelineId?: string;
+	link?: string;
+	province?: string;
+	city?: string;
+	district?: string;
+	experience?: string;
+	lat?: number;
+	lng?: number;
+};
+
 type ContentCollection<T> = CollectionConfig<
 	ZodType<T>,
 	ReturnType<typeof glob>
@@ -131,7 +163,7 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 });
 
 //足迹
-const placesCollection = defineCollection({
+const placesCollection: ContentCollection<PlacesData> = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/places" }),
 	schema: z
 		.object({

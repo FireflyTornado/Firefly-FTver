@@ -25,6 +25,26 @@ export interface TripRecord {
 	link?: string;
 }
 
+export interface ClientPlaceLocation extends Omit<PlaceLocation, "date"> {
+	rawLng: number;
+	rawLat: number;
+	date: string;
+}
+
+export interface ClientTrip {
+	id: string;
+	title: string;
+	description: string;
+	date: string;
+	endDate: string;
+	years: number[];
+	category: string;
+	tags: string[];
+	locations: ClientPlaceLocation[];
+	source: "manual" | "timeline";
+	link: string;
+}
+
 type ContentTrip = {
 	id?: string;
 	title?: string;
@@ -200,7 +220,7 @@ export function formatTripDateRange(trip: TripRecord): string {
 	return start;
 }
 
-export function tripToClient(trip: TripRecord, index = 0) {
+export function tripToClient(trip: TripRecord, index = 0): ClientTrip {
 	const locations = trip.locations.map((location, locationIndex) => {
 		// 城市回退坐标做较大偏移；精确地点只做约 10~20m 的偏移以避免完全重叠。
 		const step = location.exact === false ? 0.012 : 0.00015;
