@@ -4,6 +4,7 @@ import {
 	DETECT_INTERVAL,
 	HEARTBEAT_INTERVAL,
 	IDLE_TIMEOUT,
+	TOKEN,
 } from "./config";
 import { getWindowsActivity } from "./windows";
 
@@ -20,6 +21,11 @@ let apiUnavailable = false;
 let lastApiWarningAt = 0;
 let lastDetectionWarningAt = 0;
 
+type ApiFailure =
+	| { kind: "authentication"; status: 401 | 403 }
+	| { kind: "http"; status: number }
+	| { kind: "network" };
+
 function presenceSignature(presence: PresencePayload): string {
 	return JSON.stringify(presence);
 }
@@ -31,17 +37,25 @@ function logPresence(presence: PresencePayload): void {
 
 async function postPresence(presence: PresencePayload): Promise<void> {
 	try {
+		const headers: Record<string, string> = {
+			"Content-Type": "application/json; charset=utf-8",
+		};
+		if (TOKEN) headers.Authorization = `Bearer ${TOKEN}`;
+
 		const response = await fetch(API_URL, {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/json; charset=utf-8",
-			},
+			headers,
 			body: JSON.stringify(presence),
 			signal: AbortSignal.timeout(10_000),
 		});
 
 		if (!response.ok) {
-			throw new Error(`Presence API returned HTTP ${response.status}`);
+			if (response.status === 401 || response.status === 403) {
+				logApiFailure({ kind: "authentication", status: response.status });
+			} else {
+				logApiFailure({ kind: "http", status: response.status });
+			}
+			return;
 		}
 
 		if (apiUnavailable) {
@@ -49,13 +63,27 @@ async function postPresence(presence: PresencePayload): Promise<void> {
 		}
 		apiUnavailable = false;
 	} catch {
-		const now = Date.now();
-		if (!apiUnavailable || now - lastApiWarningAt >= ERROR_LOG_INTERVAL) {
-			console.warn("[Presence] API unavailable, will retry");
-			lastApiWarningAt = now;
-		}
-		apiUnavailable = true;
+		logApiFailure({ kind: "network" });
 	}
+}
+
+function logApiFailure(failure: ApiFailure): void {
+	const now = Date.now();
+	if (!apiUnavailable || now - lastApiWarningAt >= ERROR_LOG_INTERVAL) {
+		if (failure.kind === "authentication") {
+			console.warn(
+				`[Presence Agent] Authentication failed (HTTP ${failure.status}). Check PRESENCE_TOKEN.`,
+			);
+		} else if (failure.kind === "http") {
+			console.warn(
+				`[Presence] API returned HTTP ${failure.status}, will retry`,
+			);
+		} else {
+			console.warn("[Presence] API unavailable, will retry");
+		}
+		lastApiWarningAt = now;
+	}
+	apiUnavailable = true;
 }
 
 async function flushReports(): Promise<void> {
@@ -129,6 +157,7 @@ async function startAgent(): Promise<void> {
 
 	console.log("[Presence] Agent started");
 	console.log(`[Presence] API: ${API_URL}`);
+	console.log(`[Presence] Token: ${TOKEN ? "configured" : "not configured"}`);
 	console.log(
 		`[Presence] Detect: ${DETECT_INTERVAL}ms · Heartbeat: ${HEARTBEAT_INTERVAL}ms · Idle: ${IDLE_TIMEOUT}ms`,
 	);

@@ -35,6 +35,9 @@ function readApiUrl(): string {
 }
 
 export const API_URL: string = readApiUrl();
+// 本地开发 API 不要求认证，因此 token 允许未设置或留空。
+// 生产环境通过 PRESENCE_TOKEN 注入；源码中绝不提供真实默认值。
+export const TOKEN: string = process.env.PRESENCE_TOKEN?.trim() ?? "";
 export const DETECT_INTERVAL: number = readPositiveNumber(
 	"PRESENCE_DETECT_INTERVAL",
 	DEFAULT_DETECT_INTERVAL,
