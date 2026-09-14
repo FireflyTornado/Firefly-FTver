@@ -1,0 +1,22 @@
+[Unit]
+Description=Nightbug Presence API
+After=network.target
+
+[Service]
+Type=simple
+User=presence
+Group=presence
+WorkingDirectory=/opt/nightbug-presence
+EnvironmentFile=/etc/nightbug-presence.env
+ExecStart=/usr/bin/node /opt/nightbug-presence/dist/index.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/nightbug-presence
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,5 +1,7 @@
 packages:
   - '.'
+  - 'server/presence'
+injectWorkspacePackages: true
 allowBuilds:
   esbuild: true
   workerd: true
