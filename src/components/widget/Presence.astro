@@ -26,6 +26,8 @@ const initialConfig = getPresenceStateConfig(presence.state);
 const initialIllustration = presenceConfig.ui.useIllustration
 	? initialConfig.illustration
 	: undefined;
+const { pollInterval, offlineTimeout, displayRefreshInterval } =
+	presenceConfig.frontend;
 ---
 
 <WidgetLayout
@@ -37,6 +39,9 @@ const initialIllustration = presenceConfig.ui.useIllustration
 	<presence-widget
 		data-state={presence.state}
 		data-availability={initialConfig.availability}
+		data-poll-interval={pollInterval}
+		data-offline-timeout={offlineTimeout}
+		data-display-refresh-interval={displayRefreshInterval}
 	>
 		<div class="presence-heading">What am I doing?</div>
 
@@ -119,9 +124,6 @@ const initialIllustration = presenceConfig.ui.useIllustration
 	import type { PresenceData } from "@/utils/presence-store";
 
 	const USE_MOCK_PRESENCE = false;
-	const POLL_INTERVAL = 30_000;
-	const DISPLAY_REFRESH_INTERVAL = 15_000;
-	const OFFLINE_TIMEOUT = 90_000;
 	const MOCK_STALE_AGE = 120_000;
 
 	const previewPresence = (state: PresenceState): PresenceData => {
@@ -147,10 +149,18 @@ const initialIllustration = presenceConfig.ui.useIllustration
 		private displayTimer?: number;
 		private transitionTimer?: number;
 		private listeners?: AbortController;
+		private pollInterval = 0;
+		private offlineTimeout = 0;
+		private displayRefreshInterval = 0;
 
 		connectedCallback() {
 			if (this.initialized) return;
 			this.initialized = true;
+			this.pollInterval = Number(this.dataset.pollInterval);
+			this.offlineTimeout = Number(this.dataset.offlineTimeout);
+			this.displayRefreshInterval = Number(
+				this.dataset.displayRefreshInterval,
+			);
 			this.listeners = new AbortController();
 			const { signal } = this.listeners;
 			const illustration = this.querySelector<HTMLImageElement>(
@@ -199,11 +209,11 @@ const initialIllustration = presenceConfig.ui.useIllustration
 			void this.refreshPresence(false);
 			this.pollTimer = window.setInterval(
 				() => void this.refreshPresence(true),
-				POLL_INTERVAL,
+				this.pollInterval,
 			);
 			this.displayTimer = window.setInterval(
 				() => this.renderPresence(true),
-				DISPLAY_REFRESH_INTERVAL,
+				this.displayRefreshInterval,
 			);
 		}
 
@@ -260,7 +270,7 @@ const initialIllustration = presenceConfig.ui.useIllustration
 		}
 
 		private getDisplayPresence(): PresenceData {
-			if (Date.now() - this.presence.updatedAt <= OFFLINE_TIMEOUT) {
+			if (Date.now() - this.presence.updatedAt <= this.offlineTimeout) {
 				return this.presence;
 			}
 

@@ -24,11 +24,14 @@ export function resolvePresence(
 	}
 
 	const normalizedProcess = processName.trim().toLowerCase();
-	const rule = processRules.find(
-		(candidate) => candidate.process.toLowerCase() === normalizedProcess,
-	);
-	const state = rule?.state ?? presenceConfig.behavior.fallbackState;
-	return resolvePresenceContent(state, rule);
+	for (const rule of processRules) {
+		const process = rule.processes.find(
+			(candidate) => candidate.process.toLowerCase() === normalizedProcess,
+		);
+		if (process) return resolvePresenceContent(rule.state, process);
+	}
+
+	return resolvePresenceContent(presenceConfig.behavior.fallbackState);
 }
 
 export function getPresenceForActivity(

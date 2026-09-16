@@ -1,11 +1,10 @@
-const DEFAULT_API_URL = "http://localhost:4321/api/presence/update/";
-const DEFAULT_DETECT_INTERVAL = 5_000;
-const DEFAULT_HEARTBEAT_INTERVAL = 30_000;
-const DEFAULT_IDLE_TIMEOUT = 600_000;
+import { presenceConfig } from "../../src/config/presenceConfig";
+
+const agentDefaults = presenceConfig.agent;
 
 function readPositiveNumber(name: string, fallback: number): number {
 	const rawValue = process.env[name];
-	if (rawValue === undefined) return fallback;
+	if (rawValue === undefined || rawValue.trim() === "") return fallback;
 
 	const value = Number(rawValue);
 	if (Number.isFinite(value) && value > 0) return value;
@@ -16,7 +15,9 @@ function readPositiveNumber(name: string, fallback: number): number {
 
 function readApiUrl(): string {
 	const rawValue = process.env.PRESENCE_API_URL;
-	if (rawValue === undefined) return DEFAULT_API_URL;
+	if (rawValue === undefined || rawValue.trim() === "") {
+		return agentDefaults.apiUrl;
+	}
 
 	const value = rawValue.trim();
 	try {
@@ -29,9 +30,9 @@ function readApiUrl(): string {
 	}
 
 	console.warn(
-		`[Presence] Invalid PRESENCE_API_URL, using default ${DEFAULT_API_URL}`,
+		`[Presence] Invalid PRESENCE_API_URL, using default ${agentDefaults.apiUrl}`,
 	);
-	return DEFAULT_API_URL;
+	return agentDefaults.apiUrl;
 }
 
 export const API_URL: string = readApiUrl();
@@ -40,13 +41,13 @@ export const API_URL: string = readApiUrl();
 export const TOKEN: string = process.env.PRESENCE_TOKEN?.trim() ?? "";
 export const DETECT_INTERVAL: number = readPositiveNumber(
 	"PRESENCE_DETECT_INTERVAL",
-	DEFAULT_DETECT_INTERVAL,
+	agentDefaults.detectInterval,
 );
 export const HEARTBEAT_INTERVAL: number = readPositiveNumber(
 	"PRESENCE_HEARTBEAT_INTERVAL",
-	DEFAULT_HEARTBEAT_INTERVAL,
+	agentDefaults.heartbeatInterval,
 );
 export const IDLE_TIMEOUT: number = readPositiveNumber(
 	"PRESENCE_IDLE_TIMEOUT",
-	DEFAULT_IDLE_TIMEOUT,
+	agentDefaults.idleTimeout,
 );

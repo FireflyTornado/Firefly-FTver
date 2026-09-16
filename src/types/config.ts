@@ -37,8 +37,11 @@ export type { Live2DWidgetConfig, SpineModelConfig } from "./pioConfig";
 export type { PlacesMapConfig } from "./placesMapConfig";
 export type { PlantUMLConfig } from "./plantumlConfig";
 export type {
+	PresenceAgentConfig,
 	PresenceAvailability,
 	PresenceBehavior,
+	PresenceFrontendConfig,
+	PresenceProcess,
 	PresenceProcessRule,
 	PresenceStateConfig,
 	PresenceUiConfig,
