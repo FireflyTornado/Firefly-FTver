@@ -43,7 +43,7 @@ export function registerDynamicGallery(): void {
 			this.images.slice(0, 6).forEach(({ element, alt }, index) => {
 				const button = document.createElement("button");
 				button.type = "button";
-				button.className = "dynamic-gallery-grid-item";
+				button.className = "page-gallery-grid-item";
 				button.setAttribute(
 					"aria-label",
 					(this.dataset.viewImage || "View image {index}").replace(
@@ -65,7 +65,7 @@ export function registerDynamicGallery(): void {
 				button.append(element);
 				if (index === 5 && this.images.length > 6) {
 					const more = document.createElement("span");
-					more.className = "dynamic-gallery-more";
+					more.className = "page-gallery-more";
 					more.textContent = `+${this.images.length - 6}`;
 					button.append(more);
 				}
@@ -89,7 +89,7 @@ export function registerDynamicGallery(): void {
 			this.images.forEach(({ element, alt }, index) => {
 				const button = document.createElement("button");
 				button.type = "button";
-				button.className = "dynamic-gallery-thumbnail";
+				button.className = "page-gallery-thumbnail";
 				button.dataset.index = String(index);
 				button.setAttribute(
 					"aria-label",
