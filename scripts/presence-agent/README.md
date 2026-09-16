@@ -10,7 +10,7 @@ pnpm presence:agent
 连接正式 Presence API 时，在启动 Agent 的同一个 PowerShell 会话中设置地址和 Token：
 
 ```powershell
-$env:PRESENCE_API_URL="https://inn.nightbugclub.cn/api/presence/update/"
+$env:PRESENCE_API_URL="https://example.com/api/presence/update/"
 $env:PRESENCE_TOKEN="<YOUR_TOKEN>"
 pnpm presence:agent
 ```

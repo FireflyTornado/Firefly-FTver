@@ -35,8 +35,8 @@ export const presenceConfig = {
 		// 普通在线状态，也作为未识别程序的默认回退状态。
 		online: {
 			icon: "🟢",
-			title: "在线中",
-			detail: "正在使用电脑",
+			title: "在线",
+			detail: "正在电脑前",
 			status: "Online",
 			availability: "online",
 		},
@@ -45,7 +45,7 @@ export const presenceConfig = {
 			icon: "💻",
 			title: "正在写代码",
 			app: "Visual Studio Code",
-			detail: "专注工作中",
+			detail: "工作中",
 			status: "Online",
 			availability: "online",
 		},
@@ -53,8 +53,8 @@ export const presenceConfig = {
 		gaming: {
 			icon: "🎮",
 			title: "正在玩游戏",
-			app: "Minecraft",
-			detail: "游戏时间",
+			app: "",
+			detail: "娱乐时间",
 			status: "Online",
 			availability: "online",
 		},
@@ -63,7 +63,25 @@ export const presenceConfig = {
 			icon: "🎵",
 			title: "正在听音乐",
 			app: "Spotify",
-			detail: "正在播放音乐",
+			detail: "放松一下",
+			status: "Online",
+			availability: "online",
+		},
+		// 浏览器。
+		surfing: {
+			icon: "🌏",
+			title: "正在冲浪",
+			app: "Microsoft Edge",
+			detail: "可能在看“任何东西”",
+			status: "Online",
+			availability: "online",
+		},
+		//聊天
+		chating: {
+			icon: "💬",
+			title: "正在聊天",
+			app: "QQ",
+			detail: "和朋友聊天中",
 			status: "Online",
 			availability: "online",
 		},
@@ -71,7 +89,7 @@ export const presenceConfig = {
 		idle: {
 			icon: "☕",
 			title: "暂时离开",
-			detail: "稍后回来",
+			detail: "稍后回来~",
 			status: "Idle",
 			availability: "idle",
 		},
@@ -79,7 +97,7 @@ export const presenceConfig = {
 		offline: {
 			icon: "🌙",
 			title: "当前离线",
-			detail: "下次见",
+			detail: "似了喵",
 			status: "Offline",
 			availability: "offline",
 		},
@@ -96,18 +114,29 @@ export const presenceConfig = {
 			app: "Visual Studio Code",
 		},
 		{
-			process: "MinecraftLauncher.exe",
+			process: "javaw.exe",
 			state: "gaming",
 			app: "Minecraft",
 		},
 		{
-			process: "Spotify.exe",
+			process: "cloudmusic.exe",
 			state: "music",
 			app: "Spotify",
 		},
 		{
-			process: "javaw.exe",
-			state: "online",
+			process: "msedge.exe",
+			state: "surfing",
+			app: "Microsoft Edge",
+		},
+		{
+			process: "QQ.exe",
+			state: "chating",
+			app: "QQ",
+		},
+		{
+			process: "Weixin.exe",
+			state: "chating",
+			app: "微信",
 		},
 	],
 
@@ -120,7 +149,7 @@ export const presenceConfig = {
 		// updatedAt 超过前端离线阈值时使用；Agent 不会上报此状态。
 		offlineState: "offline",
 		// 首次渲染和 DEV Preview mock 数据使用的默认状态。
-		previewState: "coding",
+		previewState: "online",
 	},
 } as const;
 

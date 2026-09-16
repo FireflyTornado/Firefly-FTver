@@ -1,12 +1,12 @@
 ---
-title: "一次真实的 Git 上游合并实践：从分叉、冲突到合并"
+title: "一次 Git 上游分支合并记录"
 published: 2026-09-12
-tags: [Git, Firefly, 前端开发]
-description: "记录一次将 upstream/master 合并到个人 master 的完整过程：为什么选择 merge --no-ff、如何处理真实冲突、怎样理解 Merge Editor，以及如何借助 Git 历史和 worktree 复盘整个过程。"
+tags: [Git, Firefly, 前端]
+description: "记录一次将 upstream/master 合并到个人 master 的过程。"
 category: 学习
 ---
 
-这次我比较完整地走了一遍 Git 在真实项目里的使用流程。
+今天我比较完整地走了一遍 Git 在真实项目里的使用流程。
 
 我本身并不是第一次写代码，也不是第一次见到 `git add`、`git commit`、`git push` 这些命令。以前开发时也会把代码提交到 GitHub，但那种使用方式更多只是把 Git 当成一个“保存版本、上传代码”的工具。
 

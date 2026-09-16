@@ -2,8 +2,8 @@
 title: Firefly bug修复：由 localStorage 引发的配置失效bug
 published: 2026-09-11
 pinned: false
-description: 记录 Firefly 全屏壁纸 Hero 布局被旧 localStorage 值覆盖的问题，以及从配置读取链路入手定位并修复问题的过程。。
-tags: [Firefly, bug排查, 前端开发]
+description: 记录 Firefly 全屏壁纸 Hero 布局被旧 localStorage 值覆盖的问题，以及从配置读取链路入手定位并修复问题的过程。
+tags: [Firefly, 前端]
 category: 技术
 ---
 

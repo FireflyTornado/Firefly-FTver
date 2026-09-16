@@ -2,7 +2,7 @@
 title: "Git Branch 常用内容"
 published: 2026-09-13
 tags: [Git]
-description: "本文整理 Git 中常用的分支相关命令，包括命令用途、适用场景、执行前后的分支结构变化，以及必要注意事项。"
+description: "本文整理 Git 中常用的分支相关命令。"
 category: 学习
 ---
 
