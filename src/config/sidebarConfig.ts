@@ -141,7 +141,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: false,
 		},
 	],
-	
+
 	// 右侧边栏组件配置列表
 	rightComponents: [
 		{

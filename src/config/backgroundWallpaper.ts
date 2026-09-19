@@ -45,7 +45,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			//"assets/images/DesktopWallpaper/d4.avif",
 			//"assets/images/DesktopWallpaper/d5.avif",
 			//"assets/images/DesktopWallpaper/d6.avif",
-			"assets/images/DesktopWallpaper/b1.png"
+			"assets/images/DesktopWallpaper/b1.png",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
@@ -78,9 +78,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 主页横幅主标题字体大小
 			titleSize: "4.5rem",
 			// 主页横幅副标题
-			subtitle: [
-				"Indulge in the dreamlike summerdays.",
-			],
+			subtitle: ["Indulge in the dreamlike summerdays."],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
 			typewriter: {

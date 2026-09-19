@@ -73,7 +73,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-		// 娱乐及其子菜单
+	// 娱乐及其子菜单
 	links.push({
 		name: "娱乐",
 		url: "#",
@@ -261,7 +261,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/sponsor/",
 		icon: "material-symbols:favorite",
 		pageKey: "sponsor",
-	},	
+	},
 	About: {
 		name: "关于我",
 		url: "/about/",

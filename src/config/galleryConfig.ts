@@ -37,11 +37,10 @@ export const galleryConfig: GalleryConfig = {
 		{
 			id: "250501",
 			name: "暮色",
-			description:
-				"暮色四合，星光闪烁。",
+			description: "暮色四合，星光闪烁。",
 			location: "阜阳市",
 			date: "2025-05-01",
-			tags: ["随拍","夜景"],
+			tags: ["随拍", "夜景"],
 		},
 	],
 
