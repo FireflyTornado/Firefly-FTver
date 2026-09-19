@@ -1,14 +1,16 @@
+import type { Socket } from "node:net";
 import { getPresenceForActivity, type PresencePayload } from "./activity";
+import { getAgentCommand, runAgentCommand } from "./commands";
 import {
-	API_URL,
-	DETECT_INTERVAL,
-	HEARTBEAT_INTERVAL,
-	IDLE_TIMEOUT,
-	TOKEN,
+	formatConfigSource,
+	loadRuntimeConfig,
+	type RuntimeAgentConfig,
 } from "./config";
+import { type WorkerCommand, type WorkerEvent, WorkerPipeServer } from "./ipc";
 import { getWindowsActivity } from "./windows";
 
 const ERROR_LOG_INTERVAL = 60_000;
+const shutdownController = new AbortController();
 
 let currentPresence: PresencePayload | undefined;
 let pendingReport: PresencePayload | undefined;
@@ -17,14 +19,22 @@ let heartbeatTimer: NodeJS.Timeout | undefined;
 let reporting = false;
 let detecting = false;
 let stopping = false;
+let paused = false;
 let apiUnavailable = false;
 let lastApiWarningAt = 0;
 let lastDetectionWarningAt = 0;
+let lastSuccessfulSyncAt: number | undefined;
+let runtimeConfig: RuntimeAgentConfig;
+let pipeServer: WorkerPipeServer | undefined;
 
 type ApiFailure =
 	| { kind: "authentication"; status: 401 | 403 }
 	| { kind: "http"; status: number }
 	| { kind: "network" };
+
+function emit(event: WorkerEvent): void {
+	pipeServer?.broadcast(event);
+}
 
 function presenceSignature(presence: PresencePayload): string {
 	return JSON.stringify(presence);
@@ -40,30 +50,37 @@ async function postPresence(presence: PresencePayload): Promise<void> {
 		const headers: Record<string, string> = {
 			"Content-Type": "application/json; charset=utf-8",
 		};
-		if (TOKEN) headers.Authorization = `Bearer ${TOKEN}`;
-
-		const response = await fetch(API_URL, {
+		if (runtimeConfig.token)
+			headers.Authorization = `Bearer ${runtimeConfig.token}`;
+		const response = await fetch(runtimeConfig.apiUrl, {
 			method: "POST",
 			headers,
 			body: JSON.stringify(presence),
-			signal: AbortSignal.timeout(10_000),
+			signal: AbortSignal.any([
+				shutdownController.signal,
+				AbortSignal.timeout(10_000),
+			]),
 		});
-
 		if (!response.ok) {
 			if (response.status === 401 || response.status === 403) {
 				logApiFailure({ kind: "authentication", status: response.status });
 			} else {
 				logApiFailure({ kind: "http", status: response.status });
 			}
+			emit({ type: "sync-failed" });
 			return;
 		}
-
-		if (apiUnavailable) {
-			console.log("[Presence] API connection restored");
-		}
+		if (apiUnavailable) console.log("[Presence] API connection restored");
 		apiUnavailable = false;
+		lastSuccessfulSyncAt = Date.now();
+		emit({
+			type: "sync-success",
+			at: new Date(lastSuccessfulSyncAt).toISOString(),
+		});
 	} catch {
+		if (stopping) return;
 		logApiFailure({ kind: "network" });
+		emit({ type: "sync-failed" });
 	}
 }
 
@@ -88,7 +105,7 @@ function logApiFailure(failure: ApiFailure): void {
 
 async function flushReports(): Promise<void> {
 	if (reporting) return;
-	while (pendingReport && !stopping) {
+	while (pendingReport && !stopping && !paused) {
 		reporting = true;
 		const presence = pendingReport;
 		pendingReport = undefined;
@@ -101,32 +118,88 @@ function resetHeartbeatTimer(): void {
 	if (heartbeatTimer) clearInterval(heartbeatTimer);
 	heartbeatTimer = setInterval(() => {
 		if (currentPresence) queueReport(currentPresence, false);
-	}, HEARTBEAT_INTERVAL);
+	}, runtimeConfig.heartbeatInterval);
 }
 
 function queueReport(presence: PresencePayload, resetHeartbeat: boolean): void {
-	pendingReport = presence;
 	if (resetHeartbeat) resetHeartbeatTimer();
+	if (paused) return;
+	pendingReport = presence;
 	void flushReports();
+}
+
+function sendStatus(client: Socket): void {
+	pipeServer?.send(client, {
+		type: "current-state",
+		title: currentPresence?.title ?? "正在检测",
+	});
+	pipeServer?.send(client, {
+		type: "last-sync",
+		at: lastSuccessfulSyncAt
+			? new Date(lastSuccessfulSyncAt).toISOString()
+			: null,
+	});
+	pipeServer?.send(client, { type: paused ? "paused" : "resumed" });
+}
+
+function handleWorkerCommand(command: WorkerCommand, client: Socket): void {
+	if (command.type === "get-status") {
+		sendStatus(client);
+		return;
+	}
+	if (command.type === "get-config-summary") {
+		pipeServer?.send(client, {
+			type: "config-summary",
+			requestId: command.requestId,
+			config: {
+				apiUrl: runtimeConfig.apiUrl,
+				detectInterval: runtimeConfig.detectInterval,
+				heartbeatInterval: runtimeConfig.heartbeatInterval,
+				idleTimeout: runtimeConfig.idleTimeout,
+				tokenConfigured: Boolean(runtimeConfig.token),
+			},
+		});
+		return;
+	}
+	if (command.type === "pause") {
+		paused = true;
+		pendingReport = undefined;
+		emit({ type: "paused" });
+		return;
+	}
+	if (command.type === "resume") {
+		paused = false;
+		emit({ type: "resumed" });
+		if (currentPresence) queueReport(currentPresence, true);
+		return;
+	}
+	if (command.type === "sync-now") {
+		if (!paused && currentPresence) queueReport(currentPresence, false);
+		return;
+	}
+	void stopAgent();
 }
 
 async function detectActivity(): Promise<void> {
 	if (detecting || stopping) return;
 	detecting = true;
-
 	try {
-		const activity = await getWindowsActivity();
-		const nextPresence = getPresenceForActivity(activity, IDLE_TIMEOUT);
+		const activity = await getWindowsActivity(shutdownController.signal);
+		const nextPresence = getPresenceForActivity(
+			activity,
+			runtimeConfig.idleTimeout,
+		);
 		const changed =
 			!currentPresence ||
 			presenceSignature(nextPresence) !== presenceSignature(currentPresence);
-
 		if (changed) {
 			currentPresence = nextPresence;
 			logPresence(nextPresence);
 			queueReport(nextPresence, true);
+			emit({ type: "status-changed", title: nextPresence.title });
 		}
 	} catch {
+		if (stopping) return;
 		const now = Date.now();
 		if (now - lastDetectionWarningAt >= ERROR_LOG_INTERVAL) {
 			console.warn(
@@ -139,33 +212,67 @@ async function detectActivity(): Promise<void> {
 	}
 }
 
-function stopAgent(): void {
+async function stopAgent(): Promise<void> {
 	if (stopping) return;
 	stopping = true;
 	if (detectTimer) clearInterval(detectTimer);
 	if (heartbeatTimer) clearInterval(heartbeatTimer);
+	pendingReport = undefined;
+	shutdownController.abort();
+	pipeServer?.stop();
+	pipeServer = undefined;
 	console.log("[Presence] Agent stopped");
-	process.exit(0);
+	process.exitCode = 0;
 }
 
-async function startAgent(): Promise<void> {
+async function startAgent(config: RuntimeAgentConfig): Promise<void> {
 	if (process.platform !== "win32") {
 		console.error("[Presence] This prototype currently supports Windows only");
 		process.exitCode = 1;
 		return;
 	}
-
+	runtimeConfig = config;
+	pipeServer = new WorkerPipeServer(handleWorkerCommand);
+	if ((await pipeServer.start()) === "already-running") {
+		console.log("[Presence Agent] Already running.");
+		pipeServer = undefined;
+		return;
+	}
 	console.log("[Presence] Agent started");
-	console.log(`[Presence] API: ${API_URL}`);
-	console.log(`[Presence] Token: ${TOKEN ? "configured" : "not configured"}`);
 	console.log(
-		`[Presence] Detect: ${DETECT_INTERVAL}ms · Heartbeat: ${HEARTBEAT_INTERVAL}ms · Idle: ${IDLE_TIMEOUT}ms`,
+		`[Presence] API: ${config.apiUrl} [${formatConfigSource(config.sources.apiUrl)}]`,
+	);
+	console.log(
+		`[Presence] Token: ${config.token ? "configured" : "not configured"} [${formatConfigSource(config.sources.token)}]`,
+	);
+	console.log(
+		`[Presence] Detect: ${config.detectInterval}ms [${formatConfigSource(config.sources.detectInterval)}] · Heartbeat: ${config.heartbeatInterval}ms [${formatConfigSource(config.sources.heartbeatInterval)}] · Idle: ${config.idleTimeout}ms [${formatConfigSource(config.sources.idleTimeout)}]`,
 	);
 	await detectActivity();
-	detectTimer = setInterval(() => void detectActivity(), DETECT_INTERVAL);
+	if (!stopping)
+		detectTimer = setInterval(
+			() => void detectActivity(),
+			config.detectInterval,
+		);
 }
 
-process.once("SIGINT", stopAgent);
-process.once("SIGTERM", stopAgent);
+async function main(): Promise<void> {
+	const arguments_ = process.argv.slice(2);
+	const command = getAgentCommand(arguments_);
+	const config = await loadRuntimeConfig({
+		loadToken: !command || command === "show-config",
+	});
+	if (command) {
+		await runAgentCommand(command, config);
+		return;
+	}
+	process.once("SIGINT", () => void stopAgent());
+	process.once("SIGTERM", () => void stopAgent());
+	await startAgent(config);
+}
 
-void startAgent();
+void main().catch((error: unknown) => {
+	const detail = error instanceof Error ? ` ${error.message}` : "";
+	console.error(`[Presence Agent] Unable to start.${detail}`);
+	process.exitCode = 1;
+});

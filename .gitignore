@@ -1,6 +1,17 @@
 # build output
 dist/
 
+# standalone Presence Agent build output
+release/
+.temp/
+
+# Presence Agent development runtime files
+scripts/presence-agent/config.json
+scripts/presence-agent/token.dat
+scripts/presence-agent/logs/
+scripts/presence-agent/tray-helper/bin/
+scripts/presence-agent/tray-helper/obj/
+
 # generated vndb covers
 public/vndb-covers/
 
@@ -9,6 +20,7 @@ public/vndb-covers/
 
 # dependencies
 node_modules/
+server/presence/node_modules
 
 # logs
 npm-debug.log*

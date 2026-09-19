@@ -1,0 +1,6 @@
+{
+	"apiUrl": "https://example.com/api/presence/update/",
+	"detectInterval": 5000,
+	"heartbeatInterval": 30000,
+	"idleTimeout": 600000
+}

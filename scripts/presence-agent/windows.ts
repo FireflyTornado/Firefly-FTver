@@ -69,7 +69,9 @@ export interface WindowsActivity {
 	idleMs: number;
 }
 
-export async function getWindowsActivity(): Promise<WindowsActivity> {
+export async function getWindowsActivity(
+	signal?: AbortSignal,
+): Promise<WindowsActivity> {
 	const { stdout } = await execFileAsync(
 		"powershell.exe",
 		[
@@ -83,6 +85,7 @@ export async function getWindowsActivity(): Promise<WindowsActivity> {
 			encoding: "utf8",
 			timeout: 8_000,
 			windowsHide: true,
+			signal,
 		},
 	);
 	const activity = JSON.parse(stdout.trim()) as Partial<WindowsActivity>;

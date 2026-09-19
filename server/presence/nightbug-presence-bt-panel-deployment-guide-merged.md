@@ -17,7 +17,9 @@
 
 ---
 
-## 1. 最终架构
+## 1. 架构与部署约定
+
+**服务架构与职责划分**
 
 ```text
 Windows Presence Agent
@@ -51,6 +53,18 @@ Nginx
 Fastify Presence API
 ```
 
+对外接口边界：
+
+```text
+Windows Agent
+→ POST https://example.com/api/presence/update/
+→ 需要 Bearer Token
+
+网站前端
+→ GET https://example.com/api/presence/
+→ 不需要、也不应知道 Bearer Token
+```
+
 职责划分：
 
 ```text
@@ -71,9 +85,7 @@ Fastify
 └─ JSON 持久化
 ```
 
----
-
-## 2. 前置环境
+**前置环境**
 
 推荐：
 
@@ -108,9 +120,86 @@ openssl version
 /etc/systemd/system/nightbug-presence.service
 ```
 
+**推荐的宝塔配置方式**
+
+本项目推荐：
+
+```text
+宝塔网站
+    ↓
+主站 Nginx 配置
+    ↓
+include extension/example.com/*.conf
+    ↓
+presence.conf
+    ↓
+127.0.0.1:8765
+```
+
+优点：
+
+- Presence 与主站配置解耦
+- 更新主站时不容易误删
+- 卸载时只需要删除 `presence.conf`
+- 不依赖宝塔图形化反向代理自动生成复杂规则
+
+**推荐目录结构**
+
+```text
+/opt/nightbug-presence/
+├── dist/
+├── node_modules/
+├── package.json
+└── ...
+
+/var/lib/nightbug-presence/
+└── presence.json
+
+/etc/
+└── nightbug-presence.env
+
+/etc/systemd/system/
+└── nightbug-presence.service
+
+/www/server/panel/vhost/nginx/extension/example.com/
+└── presence.conf
+```
+
+**推荐权限**
+
+程序目录：
+
+```text
+root:root
+0755
+```
+
+状态目录：
+
+```text
+presence:presence
+0750
+```
+
+环境变量：
+
+```text
+root:root
+0600
+```
+
+服务进程：
+
+```text
+User=presence
+Group=presence
+```
+
 ---
 
-## 3. 在宝塔中创建或确认网站
+## 2. 准备网站与运行环境
+
+**创建或确认网站**
 
 如果站点已经存在，跳过本节。
 
@@ -142,9 +231,7 @@ PHP：纯静态 / 不使用 PHP
 
 确认域名已经绑定。
 
----
-
-## 4. 配置 DNS
+**配置 DNS**
 
 在 DNS 服务商处设置：
 
@@ -180,9 +267,7 @@ Resolve-DnsName example.com
 nslookup example.com
 ```
 
----
-
-## 5. 在宝塔中配置 SSL
+**配置 SSL**
 
 进入：
 
@@ -211,66 +296,22 @@ https://example.com
 
 ---
 
-## 6. 本地 Windows 构建 Presence Release
+## 3. 构建并上传 Presence
 
-在项目根目录：
+推荐将**源码与 lockfile 放到 Linux 服务器，在 Linux 环境中安装依赖、构建并生成 production release**。宝塔只负责提供终端或文件管理入口，构建本身仍按普通 Linux 环境完成。
 
-```powershell
-pnpm install
-pnpm presence:server:build
-```
+> [!TIP]
+> 生产运行目录 `/opt/nightbug-presence` 只存放最终 Release；源码建议临时放在 `/tmp/Firefly`，不要把源码工作目录和正式运行目录混在一起。
 
-删除旧 release：
+**将源码上传到服务器**
 
-```powershell
-Remove-Item -Recurse -Force .\release-presence -ErrorAction SilentlyContinue
-```
-
-生成生产 release：
+推荐从 Windows PowerShell 使用 `scp`：
 
 ```powershell
-pnpm --filter @nightbug/presence --prod deploy .\release-presence
+scp -r .\Firefly ubuntu@<SERVER_IP>:/tmp/
 ```
 
-检查：
-
-```powershell
-Get-ChildItem .\release-presence
-Get-ChildItem .\release-presence\dist
-Test-Path .\release-presence\dist\index.js
-```
-
-最后一条应返回：
-
-```text
-True
-```
-
----
-
-## 7. 上传 Release 与部署文件
-
-推荐使用 `scp`：
-
-```powershell
-scp -r .\release-presence ubuntu@<SERVER_IP>:/tmp/nightbug-presence-release
-```
-
-上传 systemd 文件：
-
-```powershell
-scp .\deploy\presence\nightbug-presence.service `
-  ubuntu@<SERVER_IP>:/tmp/nightbug-presence.service
-```
-
-上传 env 示例：
-
-```powershell
-scp .\deploy\presence\nightbug-presence.env.example `
-  ubuntu@<SERVER_IP>:/tmp/nightbug-presence.env.example
-```
-
-也可以通过：
+也可以在宝塔中进入：
 
 ```text
 宝塔面板
@@ -279,11 +320,78 @@ scp .\deploy\presence\nightbug-presence.env.example `
 → 上传
 ```
 
-但大量 `node_modules` 文件不建议走浏览器上传。
+如果项目通过 Git 管理，也可以直接在宝塔终端或 SSH 中执行：
 
----
+```bash
+cd /tmp
+git clone <YOUR_REPOSITORY_URL> Firefly
+```
 
-## 8. 创建系统用户与目录
+进入项目：
+
+```bash
+cd /tmp/Firefly
+```
+
+如果目录中带有 Windows 或其他平台生成的 `node_modules`，不要直接复用：
+
+```bash
+rm -rf node_modules
+find . -type d -name node_modules -prune -exec rm -rf {} +
+```
+
+**在 Linux 上安装依赖并构建**
+
+```bash
+pnpm install --frozen-lockfile
+pnpm presence:server:build
+
+rm -rf /tmp/nightbug-presence-release
+
+pnpm --filter @nightbug/presence \
+  --prod \
+  deploy \
+  /tmp/nightbug-presence-release
+```
+
+确认：
+
+```bash
+ls -l /tmp/nightbug-presence-release/dist/index.js
+```
+
+### 可选：Windows 本地生成 Release
+
+如果依赖均为跨平台 JavaScript 包，也可以继续在 Windows 本地构建：
+
+```powershell
+pnpm install
+pnpm presence:server:build
+Remove-Item -Recurse -Force .\release-presence -ErrorAction SilentlyContinue
+pnpm --filter @nightbug/presence --prod deploy .\release-presence
+Test-Path .\release-presence\dist\index.js
+scp -r .\release-presence ubuntu@<SERVER_IP>:/tmp/nightbug-presence-release
+```
+
+也可以通过宝塔文件管理上传到 `/tmp`，但大量 `node_modules` 文件不适合通过浏览器上传。
+
+> [!NOTE]
+> 如果 Windows Release 在 Linux 上出现 `MODULE_NOT_FOUND`、`ERR_DLOPEN_FAILED`、`Exec format error`、模块加载失败或 systemd 启动后立即退出，直接改用前面的 Linux 原生构建流程。不要直接复制 Windows 项目中的 `node_modules`。
+
+**部署配置文件**
+
+后面的环境变量、systemd 与 Nginx 配置都可以直接在宝塔终端中通过命令创建，因此不要求必须预先上传模板。
+
+如果希望使用仓库中的现成模板，也可以上传：
+
+```powershell
+scp .\deploy\presence\nightbug-presence.service ubuntu@<SERVER_IP>:/tmp/nightbug-presence.service
+scp .\deploy\presence\nightbug-presence.env.example ubuntu@<SERVER_IP>:/tmp/nightbug-presence.env.example
+```
+
+## 4. 安装并启动 Presence 服务
+
+**创建系统用户与目录**
 
 进入：
 
@@ -327,9 +435,7 @@ ls -ld /opt/nightbug-presence
 ls -ld /var/lib/nightbug-presence
 ```
 
----
-
-## 9. 安装 Release
+**安装 Release**
 
 清空旧程序：
 
@@ -355,86 +461,21 @@ sudo chown -R root:root /opt/nightbug-presence
 ls -l /opt/nightbug-presence/dist/index.js
 ```
 
-### 9.1 Windows Release 在 Linux 上无法运行时
+**生成生产 Token**
 
-> [!NOTE]
-> 如果 Windows 生成的 Release 在 Linux 上出现 `MODULE_NOT_FOUND`、`ERR_DLOPEN_FAILED`、`Exec format error`、模块加载失败或 systemd 启动后立即退出，通常是跨平台依赖、原生二进制、符号链接或权限差异导致。此时应删除有问题的 Release，改为在 Linux 上重新安装依赖并本地构建。  
-> 如果 Windows Release 正常，则直接继续下一节。
-
-停止服务（如果已经启动）：
-
-```bash
-sudo systemctl stop nightbug-presence
-```
-
-删除有问题的 release：
-
-```bash
-rm -rf /tmp/nightbug-presence-release
-sudo rm -rf /opt/nightbug-presence/*
-```
-
-不要删除：
-
-```text
-/var/lib/nightbug-presence
-/etc/nightbug-presence.env
-```
-
-上传完整源码，例如：
-
-```powershell
-scp -r .\Firefly ubuntu@<SERVER_IP>:/tmp/
-```
-
-服务器执行：
-
-```bash
-cd /tmp/Firefly
-```
-
-删除 Windows 依赖：
-
-```bash
-rm -rf node_modules
-find . -type d -name node_modules -prune -exec rm -rf {} +
-```
-
-重新安装：
-
-```bash
-pnpm install --frozen-lockfile
-```
-
-重新构建：
-
-```bash
-pnpm presence:server:build
-```
-
-重新生成 Linux release：
-
-```bash
-rm -rf /tmp/nightbug-presence-release
-
-pnpm --filter @nightbug/presence   --prod   deploy   /tmp/nightbug-presence-release
-```
-
-重新部署：
-
-```bash
-sudo rm -rf /opt/nightbug-presence/*
-sudo cp -a /tmp/nightbug-presence-release/. /opt/nightbug-presence/
-sudo chown -R root:root /opt/nightbug-presence
-```
-
----
-
-## 10. 生成生产 Token
+推荐生成 32 字节随机 Token：
 
 ```bash
 openssl rand -hex 32
 ```
+
+如果系统没有 OpenSSL，也可以：
+
+```bash
+python3 -c "import secrets; print(secrets.token_hex(32))"
+```
+
+Token 需要同时配置在 Linux Server 与 Windows Agent，两边必须完全一致。
 
 不要：
 
@@ -446,75 +487,86 @@ openssl rand -hex 32
 
 建议保存到密码管理器。
 
----
+**创建环境变量文件**
 
-## 11. 创建环境变量文件
+推荐在：
 
-复制：
-
-```bash
-sudo cp   /tmp/nightbug-presence.env.example   /etc/nightbug-presence.env
+```text
+宝塔面板
+→ 终端
 ```
 
-编辑：
+直接执行：
 
 ```bash
-sudo nano /etc/nightbug-presence.env
-```
+sudo install -m 600 /dev/null /etc/nightbug-presence.env
 
-内容：
-
-```env
-PRESENCE_TOKEN=你的真实随机token
+sudo tee /etc/nightbug-presence.env > /dev/null <<'EOF_ENV'
+PRESENCE_TOKEN=替换为真实随机token
 PRESENCE_HOST=127.0.0.1
 PRESENCE_PORT=8765
 PRESENCE_STATE_FILE=/var/lib/nightbug-presence/presence.json
+EOF_ENV
 ```
 
-设置权限：
+然后：
 
 ```bash
 sudo chown root:root /etc/nightbug-presence.env
 sudo chmod 600 /etc/nightbug-presence.env
-```
-
-检查：
-
-```bash
 sudo ls -l /etc/nightbug-presence.env
 ```
 
-应类似：
-
-```text
--rw------- 1 root root ...
-```
-
----
-
-## 12. 安装 systemd 服务
-
-复制：
+如果已经上传 env 示例，也可以继续采用：
 
 ```bash
-sudo cp   /tmp/nightbug-presence.service   /etc/systemd/system/nightbug-presence.service
+sudo cp /tmp/nightbug-presence.env.example /etc/nightbug-presence.env
+sudo nano /etc/nightbug-presence.env
 ```
 
-重新加载：
+**创建 systemd 服务**
+
+推荐直接在终端创建：
+
+```bash
+sudo tee /etc/systemd/system/nightbug-presence.service > /dev/null <<'EOF_SERVICE'
+[Unit]
+Description=Nightbug Presence Service
+After=network.target
+
+[Service]
+Type=simple
+User=presence
+Group=presence
+WorkingDirectory=/opt/nightbug-presence
+EnvironmentFile=/etc/nightbug-presence.env
+ExecStart=/usr/bin/node /opt/nightbug-presence/dist/index.js
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/nightbug-presence
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
+EOF_SERVICE
+```
+
+如果已经上传仓库里的 service 文件，也可以：
+
+```bash
+sudo cp /tmp/nightbug-presence.service /etc/systemd/system/nightbug-presence.service
+```
+
+随后：
 
 ```bash
 sudo systemctl daemon-reload
-```
-
-启用并立即启动：
-
-```bash
 sudo systemctl enable --now nightbug-presence
-```
-
-检查：
-
-```bash
 sudo systemctl status nightbug-presence
 ```
 
@@ -524,83 +576,9 @@ sudo systemctl status nightbug-presence
 Active: active (running)
 ```
 
----
+## 5. 配置 Nginx 与公网访问
 
-## 13. systemd 故障排查
-
-最近日志：
-
-```bash
-sudo journalctl   -u nightbug-presence   -n 100   --no-pager
-```
-
-实时日志：
-
-```bash
-sudo journalctl -u nightbug-presence -f
-```
-
-常见问题：
-
-### 13.1 缺少 Token
-
-检查：
-
-```bash
-sudo cat /etc/nightbug-presence.env
-```
-
-### 13.2 找不到入口
-
-```bash
-ls -l /opt/nightbug-presence/dist/index.js
-```
-
-### 13.3 状态目录不可写
-
-```bash
-ls -ld /var/lib/nightbug-presence
-```
-
-修复：
-
-```bash
-sudo chown -R presence:presence /var/lib/nightbug-presence
-sudo chmod 750 /var/lib/nightbug-presence
-```
-
----
-
-## 14. 先测试 Fastify 本机 API
-
-GET：
-
-```bash
-curl -i http://127.0.0.1:8765/api/presence/
-```
-
-预期：
-
-```text
-200 OK
-Cache-Control: no-store
-```
-
-测试无认证 POST：
-
-```bash
-curl -i   -X POST   http://127.0.0.1:8765/api/presence/update/   -H 'Content-Type: application/json; charset=utf-8'   --data '{"state":"coding","title":"正在写代码"}'
-```
-
-应返回：
-
-```text
-401 Unauthorized
-```
-
----
-
-## 15. 在宝塔中配置 Nginx
+### 在宝塔中配置 Nginx
 
 推荐两种方式：
 
@@ -611,7 +589,7 @@ B. 独立 extension/presence.conf
 
 对于本项目，更推荐 **B**。
 
-### 15.1 直接编辑站点配置
+**直接编辑站点配置**
 
 进入：
 
@@ -648,7 +626,7 @@ proxy_pass http://127.0.0.1:8765;
 
 末尾不要额外加 `/`。
 
-### 15.2 推荐：独立 extension 配置
+**推荐：独立 extension 配置**
 
 如果主站已经存在类似：
 
@@ -670,7 +648,28 @@ include /www/server/panel/vhost/nginx/extension/example.com/*.conf;
 presence.conf
 ```
 
-内容：
+可以直接在宝塔文件编辑器中写入下面的配置；也可以在宝塔终端执行：
+
+```bash
+sudo mkdir -p /www/server/panel/vhost/nginx/extension/example.com
+
+sudo tee /www/server/panel/vhost/nginx/extension/example.com/presence.conf > /dev/null <<'EOF_NGINX'
+location ~ ^/api/presence(?:/|/update/?)?$ {
+    proxy_pass http://127.0.0.1:8765;
+    proxy_http_version 1.1;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    client_max_body_size 16k;
+    add_header Cache-Control "no-store" always;
+}
+EOF_NGINX
+```
+
+面板文件编辑器中对应的内容为：
 
 ```nginx
 location ~ ^/api/presence(?:/|/update/?)?$ {
@@ -697,9 +696,7 @@ Presence 独立配置
 
 以后卸载时只需删除 `presence.conf`。
 
----
-
-## 16. 是否使用宝塔“反向代理”图形界面
+**是否使用宝塔“反向代理”图形界面**
 
 部分宝塔版本提供：
 
@@ -726,9 +723,7 @@ Cache-Control no-store
 
 因此更推荐直接维护 Nginx 配置，而不是完全依赖图形界面生成规则。
 
----
-
-## 17. 检查并重载 Nginx
+**检查并重载 Nginx**
 
 终端执行：
 
@@ -759,9 +754,7 @@ sudo systemctl reload nginx
 
 优先“重载”，无必要不要“重启”。
 
----
-
-## 18. DNS 尚未生效时测试
+**DNS 尚未生效时测试**
 
 ```bash
 curl -k -i   -H "Host: example.com"   https://127.0.0.1/api/presence/
@@ -779,7 +772,36 @@ Nginx
 
 ---
 
-## 19. DNS 正常后的公网 GET 测试
+## 6. 验证部署
+
+**测试 Fastify 本机 API**
+
+GET：
+
+```bash
+curl -i http://127.0.0.1:8765/api/presence/
+```
+
+预期：
+
+```text
+200 OK
+Cache-Control: no-store
+```
+
+测试无认证 POST：
+
+```bash
+curl -i   -X POST   http://127.0.0.1:8765/api/presence/update/   -H 'Content-Type: application/json; charset=utf-8'   --data '{"state":"coding","title":"正在写代码"}'
+```
+
+应返回：
+
+```text
+401 Unauthorized
+```
+
+**公网 GET**
 
 ```bash
 curl -i https://example.com/api/presence/
@@ -792,9 +814,7 @@ curl -i https://example.com/api/presence/
 Cache-Control: no-store
 ```
 
----
-
-## 20. 公网无 Token POST 测试
+**公网无 Token POST**
 
 ```bash
 curl -i   -X POST   https://example.com/api/presence/update/   -H 'Content-Type: application/json; charset=utf-8'   --data '{"state":"coding","title":"正在写代码"}'
@@ -806,9 +826,7 @@ curl -i   -X POST   https://example.com/api/presence/update/   -H 'Content-Type:
 401 Unauthorized
 ```
 
----
-
-## 21. 公网正确 Token POST 测试
+**公网正确 Token POST**
 
 进入 root shell：
 
@@ -842,9 +860,7 @@ curl https://example.com/api/presence/
 exit
 ```
 
----
-
-## 22. 检查端口安全
+**检查端口安全**
 
 ```bash
 sudo ss -lntp | grep 8765
@@ -876,7 +892,9 @@ sudo systemctl restart nightbug-presence
 
 ---
 
-## 23. 在宝塔中查看日志
+## 7. 日常运维与更新
+
+### 查看日志
 
 进入：
 
@@ -907,9 +925,7 @@ sudo systemctl status nightbug-presence
 curl http://127.0.0.1:8765/api/presence/
 ```
 
----
-
-## 24. Presence 日志
+**Presence 日志**
 
 宝塔终端执行：
 
@@ -923,9 +939,7 @@ sudo journalctl -u nightbug-presence -f
 sudo journalctl   -u nightbug-presence   -n 100   --no-pager
 ```
 
----
-
-## 25. 更新 Presence 服务
+### 更新 Presence 服务
 
 本地重新构建：
 
@@ -978,9 +992,7 @@ sudo systemctl status nightbug-presence
 curl http://127.0.0.1:8765/api/presence/
 ```
 
----
-
-## 26. 回滚
+**回滚**
 
 停止：
 
@@ -1006,9 +1018,7 @@ sudo mv   /opt/nightbug-presence.backup   /opt/nightbug-presence
 sudo systemctl start nightbug-presence
 ```
 
----
-
-## 27. 修改 Token
+**修改 Token**
 
 生成新 Token：
 
@@ -1036,9 +1046,7 @@ sudo systemctl restart nightbug-presence
 
 Windows Agent 也必须同步修改。
 
----
-
-## 28. 修改端口
+**修改端口**
 
 编辑：
 
@@ -1066,9 +1074,7 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
----
-
-## 29. 清空状态
+**清空状态**
 
 ```bash
 sudo systemctl stop nightbug-presence
@@ -1080,9 +1086,55 @@ sudo systemctl start nightbug-presence
 
 ---
 
-## 30. 宝塔环境常见问题
+## 8. 故障排查
 
-### 30.1 保存 Nginx 配置失败
+### systemd 故障排查
+
+最近日志：
+
+```bash
+sudo journalctl   -u nightbug-presence   -n 100   --no-pager
+```
+
+实时日志：
+
+```bash
+sudo journalctl -u nightbug-presence -f
+```
+
+常见问题：
+
+**缺少 Token**
+
+检查：
+
+```bash
+sudo cat /etc/nightbug-presence.env
+```
+
+**找不到入口**
+
+```bash
+ls -l /opt/nightbug-presence/dist/index.js
+```
+
+**状态目录不可写**
+
+```bash
+ls -ld /var/lib/nightbug-presence
+```
+
+修复：
+
+```bash
+sudo chown -R presence:presence /var/lib/nightbug-presence
+sudo chmod 750 /var/lib/nightbug-presence
+```
+
+### 宝塔环境常见问题
+
+
+**保存 Nginx 配置失败**
 
 执行：
 
@@ -1099,7 +1151,7 @@ include 路径错误
 proxy_pass 拼写错误
 ```
 
-### 30.2 502 Bad Gateway
+**502 Bad Gateway**
 
 ```bash
 sudo systemctl status nightbug-presence
@@ -1108,7 +1160,7 @@ curl http://127.0.0.1:8765/api/presence/
 
 本机 API 也失败，说明问题在 Presence，不在宝塔。
 
-### 30.3 404
+**404**
 
 检查：
 
@@ -1126,7 +1178,7 @@ curl http://127.0.0.1:8765/api/presence/
 include /www/server/panel/vhost/nginx/extension/example.com/*.conf;
 ```
 
-### 30.4 API 被缓存
+**API 被缓存**
 
 ```bash
 curl -I https://example.com/api/presence/
@@ -1138,7 +1190,7 @@ curl -I https://example.com/api/presence/
 Cache-Control: no-store
 ```
 
-### 30.5 401 Unauthorized
+**401 Unauthorized**
 
 通常说明代理链路已经通了，只是 Token 不匹配。
 
@@ -1158,9 +1210,9 @@ PRESENCE_TOKEN
 
 ---
 
-# 完整卸载
+## 9. 完整卸载
 
-## 31. 卸载顺序
+**卸载顺序**
 
 建议：
 
@@ -1178,18 +1230,14 @@ PRESENCE_TOKEN
 11. 清理临时文件
 ```
 
----
-
-## 32. 停止并禁用服务
+**停止并禁用服务**
 
 ```bash
 sudo systemctl stop nightbug-presence
 sudo systemctl disable nightbug-presence
 ```
 
----
-
-## 33. 删除 systemd service
+**删除 systemd service**
 
 ```bash
 sudo rm -f   /etc/systemd/system/nightbug-presence.service
@@ -1202,11 +1250,10 @@ sudo systemctl daemon-reload
 sudo systemctl reset-failed
 ```
 
----
+### 删除 Nginx Presence 配置
 
-## 34. 从宝塔删除 Nginx Presence 配置
 
-### 独立 extension 文件
+**独立 extension 文件**
 
 进入：
 
@@ -1228,7 +1275,7 @@ presence.conf
 sudo rm -f   /www/server/panel/vhost/nginx/extension/example.com/presence.conf
 ```
 
-### 如果直接写进站点配置
+**如果直接写进站点配置**
 
 进入：
 
@@ -1258,9 +1305,7 @@ location ~ ^/api/presence(?:/|/update/?)?$ {
 
 保存。
 
----
-
-## 35. 检查并重载 Nginx
+**检查并重载 Nginx**
 
 ```bash
 sudo nginx -t
@@ -1281,25 +1326,15 @@ sudo systemctl reload nginx
 → 重载配置
 ```
 
----
-
-## 36. 删除程序文件
+**删除程序、配置与状态数据**
 
 ```bash
 sudo rm -rf /opt/nightbug-presence
 ```
 
----
-
-## 37. 删除环境变量
-
 ```bash
 sudo rm -f /etc/nightbug-presence.env
 ```
-
----
-
-## 38. 删除或备份状态数据
 
 直接删除：
 
@@ -1315,9 +1350,7 @@ sudo cp   /var/lib/nightbug-presence/presence.json   ~/presence.json.backup
 
 再删除状态目录。
 
----
-
-## 39. 删除 presence 系统用户
+**删除 presence 系统用户**
 
 ```bash
 sudo userdel presence
@@ -1331,9 +1364,7 @@ id presence
 
 应提示不存在。
 
----
-
-## 40. 清理临时文件
+**清理临时文件**
 
 ```bash
 sudo rm -rf /tmp/nightbug-presence-release
@@ -1342,9 +1373,7 @@ sudo rm -f /tmp/nightbug-presence.service
 sudo rm -f /tmp/nightbug-presence.env.example
 ```
 
----
-
-## 41. 是否删除宝塔网站
+**是否删除宝塔网站**
 
 如果 Presence 只是现有网站中的一个 API：
 
@@ -1363,9 +1392,7 @@ sudo rm -f /tmp/nightbug-presence.env.example
 
 删除前确认网站文件、SSL、日志等是否需要保留。
 
----
-
-## 42. 是否卸载 Node.js
+**是否卸载 Node.js**
 
 如果服务器还有其他 Node 服务，不要卸载。
 
@@ -1376,9 +1403,7 @@ sudo apt remove nodejs
 sudo apt autoremove
 ```
 
----
-
-## 43. 卸载后检查
+**卸载后检查**
 
 检查服务：
 
@@ -1416,88 +1441,9 @@ sudo systemctl reload nginx
 
 ---
 
-## 44. 推荐的宝塔配置方式
+## 10. 检查清单与后续说明
 
-本项目推荐：
-
-```text
-宝塔网站
-    ↓
-主站 Nginx 配置
-    ↓
-include extension/example.com/*.conf
-    ↓
-presence.conf
-    ↓
-127.0.0.1:8765
-```
-
-优点：
-
-- Presence 与主站配置解耦
-- 更新主站时不容易误删
-- 卸载时只需要删除 `presence.conf`
-- 不依赖宝塔图形化反向代理自动生成复杂规则
-
----
-
-## 45. 推荐目录结构
-
-```text
-/opt/nightbug-presence/
-├── dist/
-├── node_modules/
-├── package.json
-└── ...
-
-/var/lib/nightbug-presence/
-└── presence.json
-
-/etc/
-└── nightbug-presence.env
-
-/etc/systemd/system/
-└── nightbug-presence.service
-
-/www/server/panel/vhost/nginx/extension/example.com/
-└── presence.conf
-```
-
----
-
-## 46. 推荐权限
-
-程序目录：
-
-```text
-root:root
-0755
-```
-
-状态目录：
-
-```text
-presence:presence
-0750
-```
-
-环境变量：
-
-```text
-root:root
-0600
-```
-
-服务进程：
-
-```text
-User=presence
-Group=presence
-```
-
----
-
-## 47. 部署完成检查清单
+### 部署完成检查清单
 
 ```text
 [ ] 宝塔网站存在
@@ -1525,9 +1471,7 @@ Group=presence
 [ ] 8765 仅监听 127.0.0.1
 ```
 
----
-
-## 48. 卸载完成检查清单
+### 卸载完成检查清单
 
 ```text
 [ ] nightbug-presence 已停止
@@ -1544,9 +1488,7 @@ Group=presence
 [ ] 原主站仍正常
 ```
 
----
-
-## 49. 结语
+### 结语
 
 建议长期保持：
 

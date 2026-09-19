@@ -177,11 +177,14 @@ export const presenceConfig = {
 
 	// ── Windows Agent 默认参数 (Agent) ──────────────────────
 	// 以下时间值单位均为毫秒。对应环境变量设置了非空合法值时，会优先于这里的默认值。
-	// PRESENCE_TOKEN 不属于普通配置，始终只从环境变量读取，切勿把真实 Token 写在这里。
+	// PRESENCE_TOKEN 不属于普通配置，不应写入这里或 config.json。
+	// 运行时 Token 优先从 PRESENCE_TOKEN 环境变量读取，否则从 EXE 同级 token.dat 通过 DPAPI CurrentUser 解密。
+	// 使用 pnpm dev 进入开发服务器，然后使用 pnpm presence:agent 启动开发 agent，此时会从此处读取配置。
+	// 一般无需修改这里的参数。
 	agent: {
 		// Agent 上报状态的 POST 地址。
 		// 默认指向 pnpm dev 提供的本地无认证接口；仅供dev服务器使用。
-		// PRESENCE_API_URL 实际使用时由powershell设置的环境变量覆盖，因此一般情况下无需在配置文件修改这个值。
+		// PRESENCE_API_URL 实际使用时由powershell设置的环境变量覆盖。
 		apiUrl: "http://localhost:4321/api/presence/update/",
 
 		// 检测 Windows 前台进程及系统 Idle 时长的频率，当前为每 5 秒一次。
