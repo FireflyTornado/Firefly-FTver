@@ -75,6 +75,14 @@ export type SiteConfig = {
 			alt?: string; // 图片alt文本
 		};
 		title?: string; // 导航栏标题，如果不设置则使用 title
+		/** 启用后使用横向标题图替代 Logo + 文字标题 */
+		titleImage?: {
+			enabled: boolean;
+			type: "image" | "url";
+			value: string; // 本地图片路径或网络图片url
+			valueDark?: string; // 暗色模式标题图，不设置则亮暗色共用 value
+			alt?: string; // 图片替代文本，不设置则使用导航栏标题
+		};
 		widthFull?: boolean; // 导航栏是否占满屏幕宽度
 		menuAlign?: "left" | "center"; // 导航菜单对齐方式（仅桌面端菜单）
 		followTheme?: boolean; // 导航栏图标和标题是否跟随主题色

@@ -122,6 +122,18 @@ export const siteConfig: SiteConfig = {
 		},
 		// 导航栏标题
 		title: "Nightbug Inn",
+		// 横向站点标题图；启用后替代上方 Logo + 导航栏标题文字
+		// type: "image" 支持 public 路径（以 / 开头）和 src 路径，type: "url" 支持网络图片
+		// 可设置 valueDark 供暗色模式使用；不设置则亮暗色共用 value
+		// 建议宽高比 3:1
+		titleImage: {
+			enabled: true,
+			type: "image",
+			value: "assets/images/navbar/navbar-img.png",
+			valueDark: "assets/images/navbar/navbar-img.png",
+			// 图片无法显示时的替代文字，也会供屏幕阅读器识别；建议填写站点名称
+			alt: "Nightbug Inn",
+		},
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: true,
 		// 导航菜单对齐方式，left：左对齐，center：居中

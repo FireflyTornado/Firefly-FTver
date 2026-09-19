@@ -74,15 +74,26 @@ const logoAlt = logoConfig?.alt || siteConfig.title;
 const logoIsImage = logoConfig?.type === "image" || logoConfig?.type === "url";
 const logoBaseClass = "navbar-logo h-7 w-7 mb-1 mr-2 object-contain";
 
-const logoFiles = import.meta.glob<ImageMetadata>(
+// 横向标题图启用时，替代 Logo + 文字标题；未启用则保持原有展示方式
+const titleImageConfig = siteConfig.navbar.titleImage;
+const useTitleImage =
+	titleImageConfig?.enabled === true && !!titleImageConfig.value;
+const titleImageAlt = titleImageConfig?.alt || navbarTitle;
+const titleImageBaseClass =
+	"navbar-title-image h-12 sm:h-13 max-h-full w-auto max-w-48 sm:max-w-72 object-contain";
+
+const navbarImageFiles = import.meta.glob<ImageMetadata>(
 	"../../**/*.{png,jpg,jpeg,webp,avif,gif,svg}",
 	{ import: "default" },
 );
 
 // 仅 src 目录下的本地图片交给 Astro 优化，public 目录和网络图片直接用原地址
-async function resolveLocalLogo(value: string): Promise<ImageMetadata | null> {
+async function resolveLocalNavbarImage(
+	type: "icon" | "image" | "url" | undefined,
+	value: string,
+): Promise<ImageMetadata | null> {
 	if (
-		logoConfig?.type !== "image" ||
+		type !== "image" ||
 		!value ||
 		value.startsWith("/") ||
 		value.startsWith("http")
@@ -92,7 +103,7 @@ async function resolveLocalLogo(value: string): Promise<ImageMetadata | null> {
 	const normalizedPath = path
 		.normalize(path.join("../../", value))
 		.replace(/\\/g, "/");
-	const file = logoFiles[normalizedPath];
+	const file = navbarImageFiles[normalizedPath];
 	return file ? await file() : null;
 }
 
@@ -118,10 +129,56 @@ const logoVariants = await Promise.all(
 			class: variant.themeClass
 				? `${logoBaseClass} ${variant.themeClass}`
 				: logoBaseClass,
-			image: await resolveLocalLogo(variant.value),
+			image: await resolveLocalNavbarImage(logoConfig?.type, variant.value),
 			src: logoConfig?.type === "url" ? variant.value : url(variant.value),
 		})),
 );
+
+const titleImageLightValue = titleImageConfig?.value || "";
+const titleImageDarkValue = titleImageConfig?.valueDark || "";
+const hasDarkTitleImage =
+	!!titleImageDarkValue && titleImageDarkValue !== titleImageLightValue;
+
+const titleImageVariants = useTitleImage
+	? await Promise.all(
+			(hasDarkTitleImage
+				? [
+						{
+							value: titleImageLightValue,
+							theme: "light",
+							themeClass: "dark:hidden",
+						},
+						{
+							value: titleImageDarkValue,
+							theme: "dark",
+							themeClass: "hidden dark:block",
+						},
+					]
+				: [
+						{
+							value: titleImageLightValue,
+							theme: "light",
+							themeClass: "",
+						},
+					]
+			)
+				.filter((variant) => !!variant.value)
+				.map(async (variant) => ({
+					theme: variant.theme,
+					class: variant.themeClass
+						? `${titleImageBaseClass} ${variant.themeClass}`
+						: titleImageBaseClass,
+					image: await resolveLocalNavbarImage(
+						titleImageConfig?.type,
+						variant.value,
+					),
+					src:
+						titleImageConfig?.type === "url"
+							? variant.value
+							: url(variant.value),
+				})),
+		)
+	: [];
 ---
 <div id="navbar" class="z-50" style={`--navbar-glass-blur: ${navbarBlur}px;`} data-transparent-mode={navbarTransparentMode} data-is-home={isHomePageCheck} data-full-width={navbarWidthFull}>
     <script is:inline define:vars={{
@@ -165,28 +222,48 @@ const logoVariants = await Promise.all(
                     "flex flex-row items-center text-md",
                     siteConfig.navbar.followTheme ? "text-(--primary)" : "dark:text-white text-black"
                 ]} style="font-family: var(--font-navbar-title, inherit)">
-                                    {logoConfig?.type === "icon" ? (
-                                        <Icon name={logoConfig.value || "material-symbols:home-pin-outline"} class="navbar-logo text-[1.75rem] mb-1 mr-2" />
-                                    ) : logoIsImage && logoVariants.length > 0 ? (
-                                        logoVariants.map((variant) => variant.image ? (
-                                            <Picture
-                                                src={variant.image}
-                                                alt={logoAlt}
-                                                class={variant.class}
-                                                data-logo-theme={variant.theme}
-                                                formats={getImageFormats()}
-                                                fallbackFormat={getFallbackFormat()}
-                                                widths={[28, 56]}
-                                                loading="eager"
-                                                fetchpriority="high"
-                                            />
-                                        ) : (
-                                            <img src={variant.src} alt={logoAlt} class={variant.class} data-logo-theme={variant.theme} fetchpriority="high" />
-                                        ))
-                                    ) : (
-                                        <Icon name="material-symbols:home-pin-outline" class="navbar-logo text-[1.75rem] mb-1 mr-2" />
-                                    )}
-                    {navbarTitle}
+                    {useTitleImage && titleImageVariants.length > 0 ? (
+                        titleImageVariants.map((variant) => variant.image ? (
+                            <Picture
+                                src={variant.image}
+                                alt={titleImageAlt}
+                                class={variant.class}
+                                data-title-image-theme={variant.theme}
+                                formats={getImageFormats()}
+                                fallbackFormat={getFallbackFormat()}
+                                widths={[128, 256, 384]}
+                                loading="eager"
+                                fetchpriority="high"
+                            />
+                        ) : (
+                            <img src={variant.src} alt={titleImageAlt} class={variant.class} data-title-image-theme={variant.theme} fetchpriority="high" />
+                        ))
+                    ) : (
+                        <>
+                            {logoConfig?.type === "icon" ? (
+                                <Icon name={logoConfig.value || "material-symbols:home-pin-outline"} class="navbar-logo text-[1.75rem] mb-1 mr-2" />
+                            ) : logoIsImage && logoVariants.length > 0 ? (
+                                logoVariants.map((variant) => variant.image ? (
+                                    <Picture
+                                        src={variant.image}
+                                        alt={logoAlt}
+                                        class={variant.class}
+                                        data-logo-theme={variant.theme}
+                                        formats={getImageFormats()}
+                                        fallbackFormat={getFallbackFormat()}
+                                        widths={[28, 56]}
+                                        loading="eager"
+                                        fetchpriority="high"
+                                    />
+                                ) : (
+                                    <img src={variant.src} alt={logoAlt} class={variant.class} data-logo-theme={variant.theme} fetchpriority="high" />
+                                ))
+                            ) : (
+                                <Icon name="material-symbols:home-pin-outline" class="navbar-logo text-[1.75rem] mb-1 mr-2" />
+                            )}
+                            {navbarTitle}
+                        </>
+                    )}
                 </div>
             </a>
             <div class:list={[
