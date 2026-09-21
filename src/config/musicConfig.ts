@@ -69,7 +69,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				cover: "/assets/music/cover/森林狂想曲.jpg",
 				lrc: "",
 			},
-						{
+			{
 				name: "风屿",
 				artist: "闫东炜",
 				url: "/assets/music/风屿.mp3",
