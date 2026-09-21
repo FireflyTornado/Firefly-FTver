@@ -22,7 +22,7 @@ category: 学习
 
 ---
 
-# 一、先明确目标：我要保留的是“分叉过、又重新合并”的真实历史
+# 先明确目标：我要保留的是“分叉过、又重新合并”的真实历史
 
 我的项目基于 Firefly 继续修改。
 
@@ -89,7 +89,7 @@ git merge --no-ff upstream/master
 
 ---
 
-# 二、真正值得记录的不是命令，而是三类不同的冲突
+# 真正值得记录的不是命令，而是三类不同的冲突
 
 这次合并过程中，Git 自动处理了不少文件，但以下几类冲突需要我自己判断：
 
@@ -124,7 +124,7 @@ src/config/siteConfig.ts
 
 ---
 
-# 三、第一类冲突：个人配置不应该被“官方默认值”覆盖
+# 第一类冲突：个人配置不应该被“官方默认值”覆盖
 
 `siteConfig.ts` 和 `profileConfig.ts` 都属于非常典型的个人配置冲突。
 
@@ -161,7 +161,7 @@ src/config/siteConfig.ts
 
 ---
 
-# 四、第二类冲突：文本能合上，不代表逻辑一定正确
+# 第二类冲突：文本能合上，不代表逻辑一定正确
 
 `navBarConfig.ts` 让我更直观地体会到了这一点。
 
@@ -201,7 +201,7 @@ GitHub 链接也改成了自己的仓库，还增加了 Bilibili 等个人链接
 
 ---
 
-# 五、最关键的案例：Footer 不是“选哪一边”，而是一次真正的架构迁移
+# 最关键的案例：Footer 不是“选哪一边”，而是一次真正的架构迁移
 
 这次最值得记录的其实不是前面的配置冲突，而是 Footer。
 
@@ -213,7 +213,7 @@ GitHub 链接也改成了自己的仓库，还增加了 Bilibili 等个人链接
 
 这三者一起看，才能理解官方这次到底改了什么。
 
-## 5.1 `FooterConfig.html`：官方只提供入口，而我已经真正使用了它
+## `FooterConfig.html`：官方只提供入口，而我已经真正使用了它
 
 官方最新版的 `FooterConfig.html` 基本只是一个说明：
 
@@ -241,7 +241,7 @@ GitHub 链接也改成了自己的仓库，还增加了 Bilibili 等个人链接
 
 但真正复杂的问题并不在 HTML 本身，而在它和 `Footer.astro` 的配合方式。
 
-## 5.2 官方已经移除了旧的 `footerConfig` 机制
+## 官方已经移除了旧的 `footerConfig` 机制
 
 我的旧 `Footer.astro` 中有：
 
@@ -298,7 +298,7 @@ FooterConfig.html
 
 > **这不是随手删除，而是一次明确的架构重构。**
 
-## 5.3 我又不能简单接受官方 `Footer.astro`
+## 我又不能简单接受官方 `Footer.astro`
 
 问题在于，我自己的旧版 Footer 还有一个官方没有的功能。
 
@@ -319,7 +319,7 @@ customFooterHtml = customFooterHtml.replace(
 
 > **采用官方的新架构，同时把我真正需要的功能迁移过去。**
 
-## 5.4 最终 Footer 是怎么合出来的
+## 最终 Footer 是怎么合出来的
 
 最终版做了几件事。
 
@@ -346,7 +346,7 @@ customFooterHtml = customFooterHtml.replace(
 
 ---
 
-# 六、`modify/delete` 冲突真正考验的是“是否理解重构意图”
+# `modify/delete` 冲突真正考验的是“是否理解重构意图”
 
 `footerConfig.ts` 的冲突类型是 `CONFLICT (modify/delete)`。
 
@@ -382,7 +382,7 @@ git rm src/config/footerConfig.ts
 
 ---
 
-# 七、我最后形成了一套自己的冲突判断方法
+# 我最后形成了一套自己的冲突判断方法
 
 这次合并之后，我觉得真正有价值的不是记住“哪个按钮怎么点”，而是形成了一套更稳定的判断方式。
 
@@ -420,7 +420,7 @@ Footer 就是典型例子。
 
 ---
 
-# 八、这次使用到的工作流，其实可以压缩成很少几步
+# 这次使用到的工作流，其实可以压缩成很少几步
 
 虽然这篇文章讨论了很多细节，但真正的上游同步流程其实很短。
 
@@ -483,7 +483,7 @@ git push origin master
 
 ---
 
-# 九、合并结束后，我才真正体会到 Git 历史的价值
+# 合并结束后，我才真正体会到 Git 历史的价值
 
 这次 Merge Commit 是 `dcaed5bc`。
 
@@ -524,7 +524,7 @@ git show dcaed5bc:src/components/layout/Footer.astro
 
 ---
 
-# 十、worktree 让我把这段历史真正“摊开”来看
+# worktree 让我把这段历史真正“摊开”来看
 
 为了更方便地做 old / upstream / new 三方对比，我没有把主工作区来回切换到旧提交，而是用了 `git worktree`。
 
@@ -601,7 +601,7 @@ worktree 只是“为某个历史节点临时打开一个额外工作目录”�
 
 ---
 
-# 十一、这次合并之后，我对 Git 的理解发生了什么变化
+# 这次合并之后，我对 Git 的理解发生了什么变化
 
 以前我对 Git 的理解更接近：
 
@@ -631,7 +631,7 @@ worktree 只是“为某个历史节点临时打开一个额外工作目录”�
 
 <a id="git-knowledge-summary"></a>
 
-# 十二、这次实践涉及的 Git 知识完整总结
+# 这次实践涉及的 Git 知识完整总结
 
 下面把这次实际使用到的知识集中整理一次。
 
@@ -1277,7 +1277,7 @@ Git 不能替代这些步骤。
 
 ---
 
-# 十三、以后同步 upstream，我准备使用的标准流程
+# 以后同步 upstream，我准备使用的标准流程
 
 以后官方继续更新，我会先：
 
@@ -1361,7 +1361,7 @@ git log --graph --oneline --decorate -20
 
 ---
 
-# 十四、这次实践让我对 Git 的理解发生了什么变化
+# 这次实践让我对 Git 的理解发生了什么变化
 
 以前我对 Git 的理解更接近 `修改文件 → git add → git commit → git push`。现在，我开始把 Git 理解成：
 
@@ -1410,7 +1410,7 @@ history graph
 
 ---
 
-# 十五、结语
+# 结语
 
 这次我原本只是想做一件很简单的事：
 

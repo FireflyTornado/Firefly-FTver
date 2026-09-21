@@ -1,6 +1,6 @@
 ---
 title: 客栈的“营业状态”——实时 Presence 小组件
-description: 从一个很小的侧边栏想法出发，记录我如何为静态 Astro 博客设计一套实时 Presence 系统，以及它背后的本地 Agent、服务端与前端是如何协作的。
+description: 让静态网站“活起来”！记录我如何为静态 Astro 博客设计一套实时 Presence 系统，以及它背后的本地 Agent、服务端与前端是如何协作的。
 published: 2026-09-18
 tags: [blog, 前端, 组件]
 category: 技术
@@ -74,7 +74,7 @@ Presence 真正需要回答的问题只是：
 
 生产环境一直保持：
 
-```ts
+```ts title="astro.config.mjs"
 output: "static"
 ```
 
@@ -273,7 +273,7 @@ Presence 需要知道的是“正在使用哪一类程序”，而不是“正�
 
 例如多个程序可以共享同一个状态：
 
-```ts
+```ts title="src/config/presenceConfig.ts"
 {
   state: "chating",
   processes: [
@@ -346,7 +346,7 @@ config.json
 
 例如：
 
-```json
+```json title="config.json"
 {
   "apiUrl": "https://example.com/api/presence/update/",
   "detectInterval": 5000,
