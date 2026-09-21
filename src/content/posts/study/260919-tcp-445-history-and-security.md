@@ -203,12 +203,10 @@ EternalBlue 通常与 **CVE-2017-0144** 联系在一起。它危险的地方在�
 ```text
 2017-03-14
 Microsoft 发布 MS17-010
-        │
-        ▼
+        ↓
 2017-04
 Shadow Brokers 公开相关攻击工具
-        │
-        ▼
+        ↓
 攻击能力迅速扩散
 ```
 
@@ -240,20 +238,15 @@ Shadow Brokers 公开相关攻击工具
 
 ```text
 一台机器感染
-      │
-      ▼
+      ↓
 扫描其他可达主机
-      │
-      ▼
+      ↓
 寻找存在漏洞的 SMBv1
-      │
-      ▼
+      ↓
 利用漏洞传播
-      │
-      ▼
+      ↓
 新的机器感染
-      │
-      ▼
+      ↓
 继续扫描
 ```
 
@@ -412,8 +405,7 @@ NotPetya 留下的教训比 WannaCry 又向前走了一步：**修复漏洞很�
 
 ```text
 Internet
-   │
-   ▼
+   ↓
 公网 IP:445
 ```
 
@@ -425,14 +417,11 @@ Internet
 
 ```text
 Internet
-   │
-   ▼
+   ↓
 VPN / WireGuard / Tailscale
-   │
-   ▼
+   ↓
 可信内部网络
-   │
-   ▼
+   ↓
 TCP 445 / SMB
 ```
 
