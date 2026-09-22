@@ -7,7 +7,8 @@ import { url } from "@/utils/url-utils";
 const config = musicPlayerConfig;
 
 const localPlaylist =
-	config.mode === "local" && config.local?.playlist
+	(config.mode === "local" || config.mode === "hybrid") &&
+	config.local?.playlist
 		? config.local.playlist.map((song) => {
 				const isFullUrl = (path: string) => /^https?:\/\//.test(path);
 				return {
@@ -407,9 +408,19 @@ const managerConfigStr = JSON.stringify({
         state.initializing = true;
 
         try {
-            if (config.mode === 'meting' && config.meting) {
-                await fetchMetingData();
-            } else if (config.mode === 'local') {
+			if (config.mode === 'meting' && config.meting) {
+				await fetchMetingData();
+			} else if (config.mode === 'hybrid') {
+				try {
+					if (config.meting) await fetchMetingData();
+				} catch (e) {
+					// 混合模式下 API 不可用时，仍允许本地歌曲正常工作。
+					if (config.localPlaylist.length === 0) throw e;
+					console.warn('Meting APIs failed, using local playlist only', e);
+				}
+
+				state.playlist = state.playlist.concat(config.localPlaylist || []);
+			} else if (config.mode === 'local') {
                 state.playlist = config.localPlaylist || [];
             }
 

@@ -1,6 +1,6 @@
 ---
 title: 客栈的“营业状态”——实时 Presence 小组件
-description: 从一个很小的侧边栏想法出发，记录我如何为静态 Astro 博客设计一套实时 Presence 系统，以及它背后的本地 Agent、服务端与前端是如何协作的。
+description: 让静态网站“活起来”！记录我如何为静态 Astro 博客设计一套实时 Presence 系统，以及它背后的本地 Agent、服务端与前端是如何协作的。
 published: 2026-09-18
 tags: [blog, 前端, 组件]
 category: 技术
@@ -74,7 +74,7 @@ Presence 真正需要回答的问题只是：
 
 生产环境一直保持：
 
-```ts
+```ts title="astro.config.mjs"
 output: "static"
 ```
 
@@ -273,7 +273,7 @@ Presence 需要知道的是“正在使用哪一类程序”，而不是“正�
 
 例如多个程序可以共享同一个状态：
 
-```ts
+```ts title="src/config/presenceConfig.ts"
 {
   state: "chating",
   processes: [
@@ -346,7 +346,7 @@ config.json
 
 例如：
 
-```json
+```json title="config.json"
 {
   "apiUrl": "https://example.com/api/presence/update/",
   "detectInterval": 5000,
@@ -474,39 +474,15 @@ Cache-Control: no-store
 
 回头看整个开发过程，我真正满意的并不是用了多少技术，而是几个最后保留下来的边界。
 
-## 静态站点继续保持静态
+**静态站点继续保持静态**：Presence 不值得让整个博客改成 SSR，实时功能应该独立出去，而不是改变网站本身的部署方式。
 
-Presence 不值得让整个博客改成 SSR。
+**本地只采集真正必要的信息**：知道“正在使用哪类程序”已经足够，没有必要知道窗口标题、URL 或文件内容。
 
-实时功能应该独立出去，而不是改变网站本身的部署方式。
+**Offline 应该被推导，而不是主动上报**：电脑突然关机时，本来就无法保证最后一次请求一定发得出去，所以让前端根据 `updatedAt` 判断是否离线，反而更可靠。
 
-## 本地只采集真正必要的信息
+**Secret 不进入普通配置**：普通配置使用 JSON，Token 使用 DPAPI，二者各自解决不同的问题。
 
-知道“正在使用哪类程序”已经足够，没有必要知道窗口标题、URL 或文件内容。
-
-## Offline 应该被推导，而不是主动上报
-
-电脑突然关机时，本来就无法保证最后一次请求一定发得出去。
-
-所以让前端根据 `updatedAt` 判断是否离线，反而更可靠。
-
-## Secret 不进入普通配置
-
-普通配置使用 JSON。
-
-Token 使用 DPAPI。
-
-二者各自解决不同的问题。
-
-## 前端、Agent、服务端互相解耦
-
-前端只关心 GET API。
-
-Agent 只关心如何判断状态以及 POST 到哪里。
-
-服务端只关心接收、保存和提供状态。
-
-这样任何一层将来都可以单独替换，而不需要把整套系统推倒重来。
+**前端、Agent、服务端互相解耦**：前端只关心 GET API，Agent 只关心如何判断状态以及 POST 到哪里，服务端只关心接收、保存和提供状态，各司其职。这样任何一层将来都可以单独替换，而不需要把整套系统推倒重来。
 
 ---
 
