@@ -63,6 +63,8 @@ export const zh_TW: Translation = {
 	[Key.musicFailedLyrics]: "歌詞加載失敗",
 	[Key.musicNoSongs]: "暫無歌曲",
 	[Key.musicError]: "播放器錯誤",
+	[Key.musicTimeout]: "歌單請求逾時",
+	[Key.musicRetry]: "重新取得",
 	[Key.musicPlay]: "播放",
 	[Key.musicPause]: "暫停",
 	[Key.musicProgress]: "播放進度",

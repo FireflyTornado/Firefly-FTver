@@ -17,7 +17,10 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	// 播放模式：'list'=列表循环, 'one'=单曲循环, 'random'=随机播放
 	playMode: "random",
 
-	// 是否显启用歌词
+	// 随机策略：仅随机模式生效，'simple'=每次独立随机抽取, 'queue'=打乱队列且一轮内不重复
+	randomMode: "queue",
+
+	// 是否启用歌词
 	showLyrics: false,
 
 	// Meting API 配置
@@ -25,6 +28,12 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 		// Meting API 地址
 		// 默认使用官方 API，也可以使用自定义 API
 		api: "https://api.moeyao.cn/meting/?server=:server&type=:type&id=:id",
+		// API 请求方式："sequential" 依次尝试主接口和备用接口，"single" 仅使用主接口
+		requestMode: "sequential",
+		// 多 API 歌单选择：仅在 sequential 模式生效。"first" 使用首个有效结果，"largest" 请求全部并选择歌曲最多的结果
+		apiSelectionMode: "first",
+		// 每个 API 请求的超时时间（毫秒）
+		timeoutMs: 10000,
 		// 音乐平台：netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 		server: "netease",
 		// 类型：song=单曲, playlist=歌单, album=专辑, search=搜索, artist=艺术家
@@ -33,11 +42,11 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 		id: "18370245453",
 		// 认证 token（可选）
 		auth: "",
-		// 备用 API 配置（当主 API 失败时使用）
+		// 备用 API 配置（当主 API 超时或失败时使用）
 		fallbackApis: [
 			"https://api.injahow.cn/meting/?server=:server&type=:type&id=:id",
 			"https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r",
-			"https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r",
+			// 	"https://www.bilibili.uno/api?server=:server&type=:type&id=:id",
 		],
 	},
 

@@ -35,6 +35,7 @@ const managerConfigStr = JSON.stringify({
 	localPlaylist: localPlaylist,
 	volume: config.volume ?? 0.7,
 	playMode: config.playMode ?? "list",
+	randomMode: config.randomMode ?? "simple",
 	showLyrics: config.showLyrics ?? true,
 	i18n: {
 		noPlaying: i18n(I18nKey.musicNoPlaying),
@@ -49,6 +50,7 @@ const managerConfigStr = JSON.stringify({
 		failedLyrics: i18n(I18nKey.musicFailedLyrics),
 		noSongs: i18n(I18nKey.musicNoSongs),
 		error: i18n(I18nKey.musicError),
+		timeout: i18n(I18nKey.musicTimeout),
 		play: i18n(I18nKey.musicPlay),
 		pause: i18n(I18nKey.musicPause),
 		progress: i18n(I18nKey.musicProgress),
@@ -118,7 +120,8 @@ const managerConfigStr = JSON.stringify({
         currentLrcIndex: -1,
         initialized: false,
         initializing: false,
-        error: null
+		error: null,
+		errorRetryable: false
     };
 
     // Map config playMode string to number
@@ -126,53 +129,196 @@ const managerConfigStr = JSON.stringify({
     else if (config.playMode === 'one') state.playMode = 1;
     else state.playMode = 0;
 
+	// Queue shuffle keeps every track unique within a round and records
+	// actual playback history so Previous can return to the prior track.
+	var randomQueue = [];
+	var randomHistory = [];
+	var randomHistoryStart = 0;
+	var randomHistoryCount = 0;
+
+	function resetRandomState() {
+		randomQueue = [];
+		randomHistory = [];
+		randomHistoryStart = 0;
+		randomHistoryCount = 0;
+	}
+
+	function pushRandomHistory(index) {
+		var limit = state.playlist.length;
+		if (limit === 0) return;
+
+		if (randomHistoryCount < limit) {
+			var insertIndex = (randomHistoryStart + randomHistoryCount) % limit;
+			randomHistory[insertIndex] = index;
+			randomHistoryCount++;
+			return;
+		}
+
+		// Overwrite the oldest entry without shifting the entire array.
+		randomHistory[randomHistoryStart] = index;
+		randomHistoryStart = (randomHistoryStart + 1) % limit;
+	}
+
+	function popRandomHistory() {
+		if (randomHistoryCount === 0) return null;
+
+		var limit = state.playlist.length;
+		var lastIndex = (randomHistoryStart + randomHistoryCount - 1) % limit;
+		var index = randomHistory[lastIndex];
+		randomHistoryCount--;
+
+		if (randomHistoryCount === 0) {
+			randomHistory = [];
+			randomHistoryStart = 0;
+		}
+
+		return index;
+	}
+
+	function refillRandomQueue(excludeIndex) {
+		var indices = [];
+		for (var i = 0; i < state.playlist.length; i++) {
+			if (i !== excludeIndex) indices.push(i);
+		}
+
+		// Fisher-Yates shuffle produces an unbiased random permutation.
+		for (var j = indices.length - 1; j > 0; j--) {
+			var swapIndex = Math.floor(Math.random() * (j + 1));
+			var temp = indices[j];
+			indices[j] = indices[swapIndex];
+			indices[swapIndex] = temp;
+		}
+
+		randomQueue = indices;
+	}
+
+	function getNextQueueIndex() {
+		if (state.playlist.length <= 1) return state.currentIndex;
+		if (randomQueue.length === 0) refillRandomQueue(state.currentIndex);
+		return randomQueue.pop();
+	}
+
     // ── Event helpers ────────────────────────────────────────
     function emit(name, detail) {
         window.dispatchEvent(new CustomEvent(name, { detail: detail || {} }));
     }
 
     // ── Meting fetch ─────────────────────────────────────────
+	async function fetchMetingJson(fetchUrl, timeoutMs) {
+		var controller = new AbortController();
+		var timeoutId = setTimeout(function () {
+			controller.abort();
+		}, timeoutMs);
+
+		try {
+			var res = await fetch(fetchUrl, { signal: controller.signal });
+			if (!res.ok) throw new Error('HTTP ' + res.status);
+			return await res.json();
+		} catch (e) {
+			if (controller.signal.aborted) {
+				var timeoutError = new Error('Meting API request timed out');
+				timeoutError.isTimeout = true;
+				throw timeoutError;
+			}
+			throw e;
+		} finally {
+			clearTimeout(timeoutId);
+		}
+	}
+
+	async function fetchPlaylistFromApi(baseApi, m, timeoutMs) {
+		var fetchUrl = baseApi
+			.replace(':server', m.server)
+			.replace(':type', m.type)
+			.replace(':id', m.id)
+			.replace(':r', Math.random());
+		if (m.auth) fetchUrl += '&auth=' + m.auth;
+
+		var data = await fetchMetingJson(fetchUrl, timeoutMs);
+		if (!Array.isArray(data) || data.length === 0) {
+			throw new Error('Meting API returned an empty playlist');
+		}
+		return data;
+	}
+
+	function applyMetingPlaylist(data) {
+		state.playlist = data.map(function (item) {
+			return {
+				name: item.title || item.name || 'Unknown',
+				artist: item.author || item.artist || 'Unknown',
+				url: item.url,
+				pic: item.pic || item.cover || '',
+				lrc: item.lrc
+			};
+		});
+	}
+
+	function createMetingFetchError(hasTimeout) {
+		var error = new Error(hasTimeout ? 'Meting API request timed out' : 'All Meting APIs failed');
+		error.isTimeout = hasTimeout;
+		return error;
+	}
+
     async function fetchMetingData() {
         if (!config.meting) return;
         var m = config.meting;
-        var apis = [m.api].concat(m.fallbackApis || []);
+		var apis = m.requestMode === 'single'
+			? [m.api]
+			: [m.api].concat(m.fallbackApis || []);
+		var timeoutMs = Number(m.timeoutMs);
+		if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) timeoutMs = 8000;
+		var hasTimeout = false;
+		apis = apis.filter(function (api) { return !!api; });
+
+		if (m.apiSelectionMode === 'largest' && apis.length > 1) {
+			var results = await Promise.allSettled(apis.map(function (baseApi) {
+				return fetchPlaylistFromApi(baseApi, m, timeoutMs);
+			}));
+			var largestPlaylist = null;
+
+			results.forEach(function (result, index) {
+				if (result.status === 'fulfilled') {
+					if (!largestPlaylist || result.value.length > largestPlaylist.length) {
+						largestPlaylist = result.value;
+					}
+					return;
+				}
+
+				if (result.reason && result.reason.isTimeout) hasTimeout = true;
+				console.warn('Meting API failed for ' + apis[index], result.reason);
+			});
+
+			if (largestPlaylist) {
+				applyMetingPlaylist(largestPlaylist);
+				return;
+			}
+			throw createMetingFetchError(hasTimeout);
+		}
 
         for (var i = 0; i < apis.length; i++) {
             var baseApi = apis[i];
-            if (!baseApi) continue;
             try {
-                var fetchUrl = baseApi
-                    .replace(':server', m.server)
-                    .replace(':type', m.type)
-                    .replace(':id', m.id)
-                    .replace(':r', Math.random());
-                if (m.auth) fetchUrl += '&auth=' + m.auth;
-
-                var res = await fetch(fetchUrl);
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                var data = await res.json();
-
-                if (Array.isArray(data) && data.length > 0) {
-                    state.playlist = data.map(function (item) {
-                        return {
-                            name: item.title || item.name || 'Unknown',
-                            artist: item.author || item.artist || 'Unknown',
-                            url: item.url,
-                            pic: item.pic || item.cover || '',
-                            lrc: item.lrc
-                        };
-                    });
-                    return;
-                }
+				var data = await fetchPlaylistFromApi(baseApi, m, timeoutMs);
+				applyMetingPlaylist(data);
+				return;
             } catch (e) {
+				if (e && e.isTimeout) hasTimeout = true;
                 console.warn('Meting API failed for ' + baseApi, e);
             }
         }
-        throw new Error('All Meting APIs failed');
+		throw createMetingFetchError(hasTimeout);
     }
 
     // ── Lyrics ───────────────────────────────────────────────
+	var lyricsLoadVersion = 0;
+	var lyricsController = null;
+
     function loadLyrics(track) {
+		var version = ++lyricsLoadVersion;
+		if (lyricsController) {
+			lyricsController.abort();
+			lyricsController = null;
+		}
         state.lyrics = [];
         state.currentLrcIndex = -1;
 
@@ -186,16 +332,26 @@ const managerConfigStr = JSON.stringify({
             || /\.(lrc|txt)(\?|#|$)/i.test(track.lrc);
 
         if (isLrcUrl) {
+			lyricsController = new AbortController();
+			var controller = lyricsController;
             emit('fm:lyrics', { lyrics: [], status: 'loading' });
-            fetch(track.lrc)
-                .then(function (r) { return r.text(); })
+			fetch(track.lrc, { signal: controller.signal })
+				.then(function (r) {
+					if (!r.ok) throw new Error('HTTP ' + r.status);
+					return r.text();
+				})
                 .then(function (text) {
+					if (version !== lyricsLoadVersion) return;
                     state.lyrics = parseLRC(text);
                     emit('fm:lyrics', { lyrics: state.lyrics, status: 'loaded' });
                 })
-                .catch(function () {
+				.catch(function (e) {
+					if (version !== lyricsLoadVersion || (e && e.name === 'AbortError')) return;
                     state.lyrics = [];
                     emit('fm:lyrics', { lyrics: [], status: 'failed' });
+				})
+				.finally(function () {
+					if (version === lyricsLoadVersion) lyricsController = null;
                 });
         } else {
             state.lyrics = parseLRC(track.lrc);
@@ -290,7 +446,12 @@ const managerConfigStr = JSON.stringify({
         }
         var nextIndex;
         if (state.playMode === 2) {
-            nextIndex = Math.floor(Math.random() * state.playlist.length);
+			if (config.randomMode === 'queue') {
+				nextIndex = getNextQueueIndex();
+				if (nextIndex !== state.currentIndex) pushRandomHistory(state.currentIndex);
+			} else {
+				nextIndex = Math.floor(Math.random() * state.playlist.length);
+			}
         } else {
             nextIndex = (state.currentIndex + 1) % state.playlist.length;
         }
@@ -300,7 +461,16 @@ const managerConfigStr = JSON.stringify({
     function playPrev() {
         var prevIndex;
         if (state.playMode === 2) {
-            prevIndex = Math.floor(Math.random() * state.playlist.length);
+			if (config.randomMode === 'queue') {
+				if (randomHistoryCount === 0) {
+					audio.currentTime = 0;
+					return;
+				}
+				prevIndex = popRandomHistory();
+				randomQueue.push(state.currentIndex);
+			} else {
+				prevIndex = Math.floor(Math.random() * state.playlist.length);
+			}
         } else {
             prevIndex = (state.currentIndex - 1 + state.playlist.length) % state.playlist.length;
         }
@@ -308,6 +478,7 @@ const managerConfigStr = JSON.stringify({
     }
 
     function setPlayMode(mode) {
+		if (mode !== state.playMode) resetRandomState();
         state.playMode = mode;
         emit('fm:mode', { playMode: mode });
     }
@@ -346,6 +517,12 @@ const managerConfigStr = JSON.stringify({
         if (index === state.currentIndex && !audio.paused) {
             togglePlay();
         } else {
+			if (state.playMode === 2 && config.randomMode === 'queue' && index !== state.currentIndex) {
+				pushRandomHistory(state.currentIndex);
+				randomQueue = randomQueue.filter(function (queuedIndex) {
+					return queuedIndex !== index;
+				});
+			}
             loadTrack(index, true);
         }
     }
@@ -403,9 +580,18 @@ const managerConfigStr = JSON.stringify({
     });
 
     // ── Init (idempotent) ────────────────────────────────────
-    async function init() {
-        if (state.initialized || state.initializing) return;
+	async function init(force) {
+		if ((state.initialized && !force) || state.initializing) return;
         state.initializing = true;
+
+		if (force) {
+			state.initialized = false;
+			state.error = null;
+			state.errorRetryable = false;
+			state.playlist = [];
+			resetRandomState();
+			emit('fm:loading');
+		}
 
         try {
 			if (config.mode === 'meting' && config.meting) {
@@ -431,6 +617,7 @@ const managerConfigStr = JSON.stringify({
                 var startIndex = 0;
                 if (state.playMode === 2) {
                     startIndex = Math.floor(Math.random() * state.playlist.length);
+					if (config.randomMode === 'queue') refillRandomQueue(startIndex);
                 }
 
                 state.initialized = true;
@@ -455,6 +642,10 @@ const managerConfigStr = JSON.stringify({
             }
         } catch (e) {
             console.error('Music Manager init error:', e);
+			var isTimeout = !!(e && e.isTimeout);
+			var errorMessage = isTimeout ? config.i18n.timeout : config.i18n.error;
+			state.error = errorMessage;
+			state.errorRetryable = config.mode === 'meting' && isTimeout;
             state.initialized = true;
             emit('fm:init', {
                 playlist: [],
@@ -462,7 +653,11 @@ const managerConfigStr = JSON.stringify({
                 volume: state.volume,
                 isMuted: state.isMuted
             });
-            emit('fm:error', { message: config.i18n.error });
+			emit('fm:error', {
+				message: errorMessage,
+				retryable: state.errorRetryable,
+				reason: isTimeout ? 'timeout' : 'error'
+			});
         } finally {
             state.initializing = false;
         }
@@ -471,6 +666,7 @@ const managerConfigStr = JSON.stringify({
     // ── Public API ───────────────────────────────────────────
     window.__fireflyMusic = {
         init: init,
+		retry: function () { return init(true); },
         getState: function () {
             var track = state.playlist[state.currentIndex] || null;
             return {
@@ -490,6 +686,7 @@ const managerConfigStr = JSON.stringify({
                 currentLrcIndex: state.currentLrcIndex,
                 initialized: state.initialized,
                 error: state.error,
+				errorRetryable: state.errorRetryable,
                 config: config
             };
         },

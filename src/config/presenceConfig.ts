@@ -114,51 +114,29 @@ export const presenceConfig = {
 	processRules: [
 		{
 			state: "coding",
-			processes: [
-				{
-					process: "Code.exe",
-					app: "Visual Studio Code",
-				},
-			],
+			processes: [{ process: "Code.exe", app: "Visual Studio Code" }],
 		},
 		{
 			state: "gaming",
 			processes: [
-				{
-					process: "javaw.exe",
-					app: "Minecraft",
-				},
+				{ process: "java.exe", app: "Minecraft" },
+				{ process: "bf1.exe", app: "Battlefield 1" },
+				{ process: "bf6.exe", app: "Battlefield 6" },
 			],
 		},
 		{
 			state: "music",
-			processes: [
-				{
-					process: "cloudmusic.exe",
-					app: "Spotify",
-				},
-			],
+			processes: [{ process: "cloudmusic.exe", app: "网易云音乐" }],
 		},
 		{
 			state: "surfing",
-			processes: [
-				{
-					process: "msedge.exe",
-					app: "Microsoft Edge",
-				},
-			],
+			processes: [{ process: "msedge.exe", app: "Microsoft Edge" }],
 		},
 		{
 			state: "chating",
 			processes: [
-				{
-					process: "QQ.exe",
-					app: "QQ",
-				},
-				{
-					process: "Weixin.exe",
-					app: "微信",
-				},
+				{ process: "QQ.exe", app: "QQ" },
+				{ process: "Weixin.exe", app: "微信" },
 			],
 		},
 	],

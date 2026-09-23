@@ -138,8 +138,14 @@ const widgetId =
 
 <!-- Loading Overlay -->
     <div class="music-loading absolute inset-0 z-20 flex flex-col items-center justify-center bg-white/60 dark:bg-[#1e1e1e]/60 backdrop-blur-[2px] transition-opacity duration-300 opacity-0 pointer-events-none rounded-xl" aria-busy="true" aria-hidden="true">
-    <div class="w-8 h-8 text-(--primary) animate-spin">
+    <div class="music-loading-spinner w-8 h-8 text-(--primary) animate-spin">
         <Icon name="material-symbols:sync-rounded" class="text-3xl" aria-hidden="true" />
+    </div>
+    <div class="music-retry hidden flex-col items-center gap-2 px-4 text-center" role="alert">
+        <p class="music-retry-message text-sm font-medium text-neutral-700 dark:text-neutral-200"></p>
+        <button class="btn-music-retry rounded-lg bg-(--primary) px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-80" type="button">
+            {i18n(I18nKey.musicRetry)}
+        </button>
     </div>
 </div>
 </div>

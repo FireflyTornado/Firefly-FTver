@@ -27,6 +27,7 @@ declare global {
 		__pagefindLoading?: Promise<void>;
 		__fireflyMusic?: {
 			init: () => Promise<void>;
+			retry: () => Promise<void>;
 			getState: () => {
 				playlist: Array<{
 					name: string;
@@ -56,6 +57,7 @@ declare global {
 				currentLrcIndex: number;
 				initialized: boolean;
 				error: string | null;
+				errorRetryable: boolean;
 				config: Record<string, unknown>;
 			};
 			togglePlay: () => void;

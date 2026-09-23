@@ -9,6 +9,9 @@ export type MusicPlayerConfig = {
 	// 播放模式：'list'=列表循环, 'one'=单曲循环, 'random'=随机播放
 	playMode?: "list" | "one" | "random";
 
+	// 随机策略：'simple'=每次独立随机抽取, 'queue'=打乱队列且一轮内不重复
+	randomMode?: "simple" | "queue";
+
 	// 是否显示歌词
 	showLyrics?: boolean;
 
@@ -22,6 +25,15 @@ export type MusicPlayerConfig = {
 	meting?: {
 		// Meting API 地址
 		api?: string;
+
+		// API 请求方式：'sequential'=依次尝试主接口和备用接口, 'single'=仅使用主接口
+		requestMode?: "sequential" | "single";
+
+		// 多 API 歌单选择：'first'=首个有效结果, 'largest'=并行请求并选择歌曲最多的结果
+		apiSelectionMode?: "first" | "largest";
+
+		// 每个 API 请求的超时时间（毫秒）
+		timeoutMs?: number;
 
 		// 音乐平台：netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 		server?: "netease" | "tencent" | "kugou" | "xiami" | "baidu";

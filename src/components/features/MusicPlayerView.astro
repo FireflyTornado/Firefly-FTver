@@ -22,6 +22,7 @@ const viewConfigStr = JSON.stringify({
 		failedLyrics: i18n(I18nKey.musicFailedLyrics),
 		noSongs: i18n(I18nKey.musicNoSongs),
 		error: i18n(I18nKey.musicError),
+		timeout: i18n(I18nKey.musicTimeout),
 		play: i18n(I18nKey.musicPlay),
 		pause: i18n(I18nKey.musicPause),
 		noCover: i18n(I18nKey.musicNoCover),
@@ -88,6 +89,10 @@ const viewConfigStr = JSON.stringify({
         var ui = {
             widget: widget,
             loading: widget.querySelector('.music-loading'),
+			loadingSpinner: widget.querySelector('.music-loading-spinner'),
+			retryPanel: widget.querySelector('.music-retry'),
+			retryMessage: widget.querySelector('.music-retry-message'),
+			btnRetry: widget.querySelector('.btn-music-retry'),
             cover: widget.querySelector('.music-cover'),
             title: widget.querySelector('.music-title'),
             artist: widget.querySelector('.music-artist'),
@@ -125,6 +130,7 @@ const viewConfigStr = JSON.stringify({
         var _critical = [ui.btnPlay, ui.btnRepeat, ui.btnMute, ui.volContainer,
             ui.btnDrawer, ui.btnLrc, ui.lrcDrawer, ui.lrcContainer,
             ui.progressContainer, ui.btnNext, ui.btnPrev, ui.loading,
+			ui.loadingSpinner, ui.retryPanel, ui.retryMessage, ui.btnRetry,
             ui.cover, ui.title, ui.artist, ui.playlistContainer, ui.itemTemplate];
         if (_critical.some(function(el) { return !el; })) return;
 
@@ -149,11 +155,28 @@ const viewConfigStr = JSON.stringify({
         // ── UI update functions ──────────────────────────────────
         function setLoading(bool) {
             if (bool) {
+				ui.loadingSpinner.classList.remove('hidden');
+				ui.retryPanel.classList.add('hidden');
+				ui.retryPanel.classList.remove('flex');
                 ui.loading.classList.remove('opacity-0', 'pointer-events-none');
+				ui.loading.setAttribute('aria-busy', 'true');
+				ui.loading.setAttribute('aria-hidden', 'false');
             } else {
                 ui.loading.classList.add('opacity-0', 'pointer-events-none');
+				ui.loading.setAttribute('aria-busy', 'false');
+				ui.loading.setAttribute('aria-hidden', 'true');
             }
         }
+
+		function showRetry(message) {
+			ui.retryMessage.innerText = message || cfg.i18n.timeout;
+			ui.loadingSpinner.classList.add('hidden');
+			ui.retryPanel.classList.remove('hidden');
+			ui.retryPanel.classList.add('flex');
+			ui.loading.classList.remove('opacity-0', 'pointer-events-none');
+			ui.loading.setAttribute('aria-busy', 'false');
+			ui.loading.setAttribute('aria-hidden', 'false');
+		}
 
         function updatePlayStateUI(isPlaying) {
             if (isPlaying) {
@@ -489,6 +512,10 @@ const viewConfigStr = JSON.stringify({
             setLoading(false);
 
             if (s.playlist.length === 0) {
+				if (s.errorRetryable) {
+					showRetry(s.error);
+					return;
+				}
                 ui.title.innerText = s.error || cfg.i18n.noSongs;
                 return;
             }
@@ -527,6 +554,10 @@ const viewConfigStr = JSON.stringify({
             handlers[name] = fn;
             window.addEventListener(name, fn);
         }
+
+		on('fm:loading', function () {
+			setLoading(true);
+		});
 
         on('fm:init', function (e) {
             var d = e.detail;
@@ -576,6 +607,10 @@ const viewConfigStr = JSON.stringify({
         });
 
         on('fm:error', function (e) {
+			if (e.detail.retryable) {
+				showRetry(e.detail.message);
+				return;
+			}
             ui.title.innerText = e.detail.message || cfg.i18n.error;
         });
 
@@ -585,6 +620,7 @@ const viewConfigStr = JSON.stringify({
         ui.btnPrev.addEventListener('click', function () { mgr.playPrev(); });
         ui.btnRepeat.addEventListener('click', function () { mgr.cyclePlayMode(); });
         ui.btnMute.addEventListener('click', function () { mgr.toggleMute(); });
+		ui.btnRetry.addEventListener('click', function () { mgr.retry(); });
 
         ui.volContainer.addEventListener('click', function (e) {
             var rect = ui.volContainer.getBoundingClientRect();
