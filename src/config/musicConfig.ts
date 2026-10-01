@@ -85,6 +85,13 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				cover: "/assets/music/cover/风屿.jpg",
 				lrc: "",
 			},
+			{
+				name: "世界这么大还是遇见你",
+				artist: "程响",
+				url: "/assets/music/世界这么大还是遇见你.mp3",
+				cover: "/assets/music/cover/世界这么大还是遇见你.jpg",
+				lrc: "/assets/music/lrc/世界这么大还是遇见你.lrc",
+			},
 		],
 	},
 };
