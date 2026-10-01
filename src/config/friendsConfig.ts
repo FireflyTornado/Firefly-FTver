@@ -50,6 +50,16 @@ export const friendsConfig: FriendLink[] = [
 		weight: 8,
 		enabled: true,
 	},
+	{
+		title: "MRWindの小破站",
+		imgurl: "https://mrwind.top/api/v3/objects/avatar/t075g493urtayt8qqk.jpg",
+		desc: "Winfred（MRWind）的个人小站，前后端开发入门中，在这里沉淀代码笔记与日常发电，偶尔发电",
+		siteurl: "https://mrwind.top",
+		tags: ["Blog"],
+		weight: 8,
+		enabled: true,
+	},
+
 ];
 
 // 获取启用的友链并进行排序
