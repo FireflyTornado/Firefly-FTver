@@ -79,7 +79,7 @@ docs(readme): update installation instructions
 ```text
 feat: add user search
 fix: handle empty response
-```---
+```
 
 ---
 
