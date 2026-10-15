@@ -49,26 +49,26 @@ seriesOrder: 1
 }
 
 /* ---------- 地图 / 战线 / 地缘格局图：宽幅展示 ---------- */
-.custom-md center:has(> figure > img[src*="Map%20Europe%20alliances"]),
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Balkans"]),
-.custom-md center:has(> figure > img[src*="Austria%20Hungary%20ethnic"]),
-.custom-md center:has(> figure > img[src*="The%20Russo-British%20Pact%20in%201907"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src*="Map%20Europe%20alliances"]) > figure,
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Balkans"]) > figure,
-.custom-md center:has(> figure > img[src*="Austria%20Hungary%20ethnic"]) > figure,
-.custom-md center:has(> figure > img[src*="The%20Russo-British%20Pact%20in%201907"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src*="Map%20Europe%20alliances"]) img,
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Balkans"]) img,
-.custom-md center:has(> figure > img[src*="Austria%20Hungary%20ethnic"]) img,
-.custom-md center:has(> figure > img[src*="The%20Russo-British%20Pact%20in%201907"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -76,46 +76,46 @@ seriesOrder: 1
 }
 
 /* ---------- 单独出现的纵向人物肖像：桌面端右浮 ---------- */
-.custom-md center:has(> figure > img[src*="Portrait%20of%20Otto%20von%20Bismarck"]),
-.custom-md center:has(> figure > img[src*="Alfred%20von%20Schlieffen%201906"]),
-.custom-md center:has(> figure > img[src*="Gavrilo%20princip.jpg"]),
-.custom-md center:has(> figure > img[src*="Kaiser%20Guillermo%20II%201914.png"]),
-.custom-md center:has(> figure > img[src*="Nicholas%20II,%201914.jpg"]),
-.custom-md center:has(> figure > img[src*="Edward%20Grey,%201st%20Viscount"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) {
   float: right;
   width: min(34%, var(--history-portrait-width));
   margin: 0.35rem 0 1.15rem 1.5rem;
 }
 
-.custom-md center:has(> figure > img[src*="Portrait%20of%20Otto%20von%20Bismarck"]) > figure,
-.custom-md center:has(> figure > img[src*="Alfred%20von%20Schlieffen%201906"]) > figure,
-.custom-md center:has(> figure > img[src*="Gavrilo%20princip.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Kaiser%20Guillermo%20II%201914.png"]) > figure,
-.custom-md center:has(> figure > img[src*="Nicholas%20II,%201914.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Edward%20Grey,%201st%20Viscount"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) > figure {
   width: 100%;
   max-width: none;
   margin: 0;
 }
 
-.custom-md center:has(> figure > img[src*="Portrait%20of%20Otto%20von%20Bismarck"]) img,
-.custom-md center:has(> figure > img[src*="Alfred%20von%20Schlieffen%201906"]) img,
-.custom-md center:has(> figure > img[src*="Gavrilo%20princip.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Kaiser%20Guillermo%20II%201914.png"]) img,
-.custom-md center:has(> figure > img[src*="Nicholas%20II,%201914.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Edward%20Grey,%201st%20Viscount"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: 20rem;
   object-fit: contain;
 }
 
-.custom-md center:has(> figure > img[src*="Portrait%20of%20Otto%20von%20Bismarck"]) figcaption,
-.custom-md center:has(> figure > img[src*="Alfred%20von%20Schlieffen%201906"]) figcaption,
-.custom-md center:has(> figure > img[src*="Gavrilo%20princip.jpg"]) figcaption,
-.custom-md center:has(> figure > img[src*="Kaiser%20Guillermo%20II%201914.png"]) figcaption,
-.custom-md center:has(> figure > img[src*="Nicholas%20II,%201914.jpg"]) figcaption,
-.custom-md center:has(> figure > img[src*="Edward%20Grey,%201st%20Viscount"]) figcaption {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) figcaption {
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -178,21 +178,21 @@ seriesOrder: 1
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src*="Portrait%20of%20Otto%20von%20Bismarck"]),
-.custom-md center:has(> figure > img[src*="Alfred%20von%20Schlieffen%201906"]),
-.custom-md center:has(> figure > img[src*="Gavrilo%20princip.jpg"]),
-.custom-md center:has(> figure > img[src*="Kaiser%20Guillermo%20II%201914.png"]),
-.custom-md center:has(> figure > img[src*="Nicholas%20II,%201914.jpg"]),
-.custom-md center:has(> figure > img[src*="Edward%20Grey,%201st%20Viscount"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) {
     float: none;
     width: min(100%, var(--history-portrait-mobile-width));
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src*="Map%20Europe%20alliances"]) img,
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Balkans"]) img,
-.custom-md center:has(> figure > img[src*="Austria%20Hungary%20ethnic"]) img,
-.custom-md center:has(> figure > img[src*="The%20Russo-British%20Pact%20in%201907"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -232,7 +232,7 @@ seriesOrder: 1
 
 德国统一改变了欧洲原有的力量平衡。如果法国与俄罗斯同时成为敌人，德国就可能面临两线作战。
 
-![1890 年奥托·冯·俾斯麦肖像](https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Otto%20von%20Bismarck%20(by%20Franz%20Seraph%20von%20Lenbach,%201890).jpg)
+![1890 年奥托·冯·俾斯麦肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp)
 
 俾斯麦执政时期，德国外交的一个重要目标，就是避免法国找到强大的大陆盟友。他试图维持与奥匈、俄国之间复杂而灵活的关系，让德国尽量处在欧洲外交体系的中心。
 
@@ -283,7 +283,7 @@ seriesOrder: 1
 
 后来，意大利甚至在 1915 年转而加入协约国一方作战。
 
-![19 世纪末至 20 世纪初法国讽刺画中的三国同盟](https://commons.wikimedia.org/wiki/Special:FilePath/Caricature%20of%20the%20Triple%20alliance.jpg)
+![19 世纪末至 20 世纪初法国讽刺画中的三国同盟](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Caricature-of-the-Triple-alliance--ff-ccf435d3d519.lwiv80ti4.webp)
 
 ### 法国如何打破外交孤立？
 
@@ -299,7 +299,7 @@ seriesOrder: 1
 
 1891—1894 年间，法俄关系逐步从外交接近转变为军事安排，并最终形成正式的 **法俄同盟**。
 
-![1896 年尼古拉二世访法期间，俄国皇室与法国总统菲利·福尔共同出席亚历山大三世桥奠基仪式](https://commons.wikimedia.org/wiki/Special:FilePath/Voyage%20du%20tsar%20(Nicolas%20II%20et%20la%20tsarine%20Alexandra%20Feodorovna%20en%20pr%C3%A9sence%20de%20F%C3%A9lix%20Faure%20posant%20la%20premi%C3%A8re%20pierre%20du)%20pont%20Alexandre%20III%20-%20btv1b532609488.jpg)
+![1896 年尼古拉二世访法期间，俄国皇室与法国总统菲利·福尔共同出席亚历山大三世桥奠基仪式](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Voyage-du-tsar-%28Nicolas-II-et-la-tsarine-Alexandra-Feodorovna-en-pr%C3%A9sence-de-F%C3%A9lix-Faure-posant-la-premi%C3%A8re-pierr--ff-4000ec99ec3f.3nsewg25ox.webp)
 
 法国与俄罗斯分别位于德国西、东两侧。两国结盟，使德国必须认真考虑同时与两国作战的风险。
 
@@ -321,7 +321,7 @@ seriesOrder: 1
 
 特别是在此后的摩洛哥危机中，德国试图挑战法国在摩洛哥的地位，反而进一步推动英法靠近。
 
-![1903 年表现英法友好关系的“英法协约”主题明信片](https://commons.wikimedia.org/wiki/Special:FilePath/Entente%20Cordiale%20dancing.png)
+![1903 年表现英法友好关系的“英法协约”主题明信片](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Entente-Cordiale-dancing--ff-ee34bd91195d.9o0l16br9m.webp)
 
 ### 英国和俄罗斯为什么也能和解？
 
@@ -343,7 +343,7 @@ seriesOrder: 1
 
 于是，1907 年英国与俄罗斯签订 **《英俄协约》**。
 
-![1907 年英俄协约划分波斯势力范围示意图](https://commons.wikimedia.org/wiki/Special:FilePath/The%20Russo-British%20Pact%20in%201907.jpg)
+![1907 年英俄协约划分波斯势力范围示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp)
 
 双方围绕波斯、阿富汗和西藏等问题划定或确认各自利益范围，以减少长期以来在亚洲发生直接冲突的可能。
 
@@ -382,7 +382,7 @@ seriesOrder: 1
 - 如果对手的盟友介入，我是否必须提前行动？
 - 如果现在退让，下一场危机中会不会更不利？
 
-![1914 年欧洲主要国家及联盟关系分布示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Map%20Europe%20alliances%201914-en.svg)
+![1914 年欧洲主要国家及联盟关系分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg)
 
 ---
 
@@ -426,7 +426,7 @@ seriesOrder: 1
 >
 > 奥地利与匈牙利各有自己的政府和议会，共奉同一位君主。外交、共同军队及其经费由两部分共享的机构处理，因此帝国决策需要协调维也纳与布达佩斯两套政府。
 
-![1910 年奥匈帝国主要民族与语言群体分布图](https://commons.wikimedia.org/wiki/Special:FilePath/Austria%20Hungary%20ethnic.svg)
+![1910 年奥匈帝国主要民族与语言群体分布图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg)
 
 奥匈领导层担心，塞尔维亚吸引帝国内南斯拉夫人口的行动会引起其他民族效仿，动摇整个多民族帝国的政治结构。塞尔维亚越强，这种威胁感也就越强。
 
@@ -438,7 +438,7 @@ seriesOrder: 1
 
 1908 年，奥匈帝国干脆正式吞并了这一地区。
 
-![1908 年《小日报》描绘波斯尼亚危机的政治讽刺画](https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Petit%20Journal%20Balkan%20Crisis%20(1908).jpg)
+![1908 年《小日报》描绘波斯尼亚危机的政治讽刺画](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Le-Petit-Journal-Balkan-Crisis-%281908%29--ff-8d3e9d1b0faa.4qs47bxzio.webp)
 
 这立即引发严重危机。波斯尼亚拥有大量南斯拉夫人口，其中包括很多塞尔维亚人。塞尔维亚民族主义者希望这些地区未来能够与塞尔维亚结合，而奥匈的吞并也使得这种希望破灭。
 
@@ -462,7 +462,7 @@ seriesOrder: 1
 
 1912 年，塞尔维亚、保加利亚、希腊、黑山组成巴尔干同盟，对奥斯曼帝国发动战争。
 
-![1912 年第一次巴尔干战争期间贝尔格莱德的动员场景](https://commons.wikimedia.org/wiki/Special:FilePath/Mobilization%20for%20the%20First%20Balkan%20War,%20Belgrade%201912.jpg)
+![1912 年第一次巴尔干战争期间贝尔格莱德的动员场景](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-for-the-First-Balkan-War%2C-Belgrade-1912--ff-bde8f78d9e87.51ey0hd7ob.webp)
 
 奥斯曼帝国在欧洲的统治迅速崩溃。
 
@@ -470,7 +470,7 @@ seriesOrder: 1
 
 战争结束后，塞尔维亚的领土和人口得到显著扩张。
 
-![1912 年第一次巴尔干战争期间的塞尔维亚军官与士兵](https://commons.wikimedia.org/wiki/Special:FilePath/Srpska%20vojska%20u%20Albaniji%201912.jpg)
+![1912 年第一次巴尔干战争期间的塞尔维亚军官与士兵](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Srpska-vojska-u-Albaniji-1912--ff-9f8e967fb5fc.1vzg1jiss4.webp)
 
 这对塞尔维亚是一场民族国家扩张的胜利。
 
@@ -486,7 +486,7 @@ seriesOrder: 1
 
 **时间可能不站在奥匈帝国这一边。**
 
-![1913 年巴尔干半岛各国疆界与领土分布示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Map%20of%20the%20Balkans%20%281913%29%20-%20fr.svg)
+![1913 年巴尔干半岛各国疆界与领土分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg)
 
 ## 俄罗斯为什么不能简单放弃塞尔维亚？
 
@@ -521,7 +521,7 @@ seriesOrder: 1
 >
 > “无畏号”集中配置十门 12 英寸重型主炮，并采用蒸汽轮机，最高航速约为 21 节。重型主炮与较高航速的组合成为这一代战列舰的鲜明特征，“无畏舰”也由舰名变成了一类战列舰的通称。
 
-![约 1906—1907 年停泊中的英国“无畏号”战列舰](https://upload.wikimedia.org/wikipedia/commons/7/71/HMS_Dreadnought_1906.jpg)
+![约 1906—1907 年停泊中的英国“无畏号”战列舰](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/HMS_Dreadnought_1906--ff-2e8c7659ea1c.4cloggpomu.webp)
 
 海军竞争加深了德英之间的战略互疑，使双方越来越把彼此视为潜在敌人。
 
@@ -556,7 +556,7 @@ seriesOrder: 1
 > [!NOTE]
 > “施里芬计划”这个名称本身带有后来的概括性质。1914 年德国实际执行的部署并不是简单照搬施里芬早年的一份固定蓝图，而是在多年总参谋部规划基础上不断调整形成的西线作战方案。
 
-![1906 年的阿尔弗雷德·冯·施里芬](https://commons.wikimedia.org/wiki/Special:FilePath/Alfred%20von%20Schlieffen%201906%20%28cropped%29.jpg)
+![1906 年的阿尔弗雷德·冯·施里芬](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp)
 
 俄罗斯疆域辽阔，动员速度被认为相对较慢，而法国的军事力量则可以更快集中在德国西部边境。
 
@@ -585,7 +585,7 @@ seriesOrder: 1
 
 1914 年 6 月 28 日，奥匈帝国皇储弗朗茨·斐迪南前往萨拉热窝访问。
 
-![1914 年 6 月 28 日，弗朗茨·斐迪南与妻子索菲在随行人员陪同下离开萨拉热窝市政厅](https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20Ferdinand%20%26%20Sophie%20Leave%20Sarajevo%20Guildhall.jpg)
+![1914 年 6 月 28 日，弗朗茨·斐迪南与妻子索菲在随行人员陪同下离开萨拉热窝市政厅](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Franz-Ferdinand-%26-Sophie-Leave-Sarajevo-Guildhall--ff-0881c37fdb88.9rk6yw4tzi.webp)
 
 这一天本身就具有高度象征意义。
 
@@ -627,7 +627,7 @@ seriesOrder: 1
 
 最常被提到的是 **“统一或死亡”** 组织，也就是后来广为人知的“黑手会”。
 
-![加夫里洛·普林西普](https://commons.wikimedia.org/wiki/Special:FilePath/Gavrilo%20princip.jpg)
+![加夫里洛·普林西普](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp)
 
 黑手会内部有塞尔维亚军官和情报人员参与，其中部分人物确实为刺杀者提供了帮助。
 
@@ -661,7 +661,7 @@ seriesOrder: 1
 
 匈牙利首相蒂萨最初就反对立即发动战争。
 
-[grid] ![1914 年前后的奥匈外交大臣莱奥波德·贝希托尔德](https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Count%20Leopold%20Berchtold%20(cropped).jpg) ![1912 年前后的匈牙利政治家伊什特万·蒂萨](https://commons.wikimedia.org/wiki/Special:FilePath/Tisza%20Istv%C3%A1n%20portr%C3%A9ja.jpg) [/grid]
+[grid] ![1914 年前后的奥匈外交大臣莱奥波德·贝希托尔德](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Count-Leopold-Berchtold-%28cropped%29--ff-6438ef34d9ce.362d7v0s30.webp) ![1912 年前后的匈牙利政治家伊什特万·蒂萨](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Tisza-Istv%C3%A1n-portr%C3%A9ja--ff-496ba96d1ddd.1ht0aoahx8.webp) [/grid]
 
 他的担忧之一，是吞并更多塞尔维亚人口反而会进一步破坏帝国内部脆弱的民族平衡；他也担心俄国介入导致欧洲战争。
 
@@ -675,7 +675,7 @@ seriesOrder: 1
 
 后世通常把这种支持承诺概括为德国给奥匈的 **“空头支票”**；这一称呼并非当时正式文件的名称。
 
-![约 1914 年的德国皇帝威廉二世](https://commons.wikimedia.org/wiki/Special:FilePath/Kaiser%20Guillermo%20II%201914.png)
+![约 1914 年的德国皇帝威廉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp)
 
 德国的承诺使奥匈领导层相信，即使俄罗斯介入，自己也不会孤立无援，因而更愿意对塞尔维亚采取军事行动。
 
@@ -713,7 +713,7 @@ seriesOrder: 1
 
 于是，奥匈有意把一场原本可以围绕“调查刺杀”展开的外交交涉，推向了一场国家主权危机。
 
-[grid] ![1914 年 7 月 23 日奥匈外交大臣贝希托尔德致驻贝尔格莱德公使的文书影像](https://upload.wikimedia.org/wikipedia/commons/6/6c/Ultimatum_k.u.k_serbien.png) ![1914 年 7 月 28 日奥匈帝国对塞尔维亚宣战电报](https://commons.wikimedia.org/wiki/Special:FilePath/TelegramWW1.jpg) [/grid]
+[grid] ![1914 年 7 月 23 日奥匈外交大臣贝希托尔德致驻贝尔格莱德公使的文书影像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Ultimatum_k.u.k_serbien--ff-37fb6e09a65a.7q34csim6.webp) ![1914 年 7 月 28 日奥匈帝国对塞尔维亚宣战电报](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/TelegramWW1--ff-8444fdcb4b17.4922iqwlyx.webp) [/grid]
 
 ---
 
@@ -745,7 +745,7 @@ seriesOrder: 1
 
 如果俄罗斯再次在德国和奥匈压力下退让，它担心自己在巴尔干的影响力和大国信誉都会受到打击。
 
-![1914 年的俄罗斯皇帝尼古拉二世](https://commons.wikimedia.org/wiki/Special:FilePath/Nicholas%20II,%201914.jpg)
+![1914 年的俄罗斯皇帝尼古拉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp)
 
 但俄罗斯也面临一个军事难题：
 
@@ -828,11 +828,11 @@ seriesOrder: 1
 
 英国外交大臣格雷曾推动大国调停；德国皇帝威廉二世与俄国沙皇尼古拉二世之间进行了著名的“威利—尼基”电报往来；德国、俄罗斯、英国和奥匈之间也曾交换不同的妥协方案。
 
-![英国外交大臣爱德华·格雷肖像](https://commons.wikimedia.org/wiki/Special:FilePath/Edward%20Grey,%201st%20Viscount%20Grey%20of%20Falloden.jpg)
+![英国外交大臣爱德华·格雷肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp)
 
 外交协商尚未结束，军事部署的时限却不断压缩各国核实意图、修改条件的时间。
 
-![1914 年 8 月 1 日柏林街头民众聚集听取动员令](https://commons.wikimedia.org/wiki/Special:FilePath/Mobilization%20order%20is%20read%20out%20in%20Berlin,%201%20August%201914.jpg)
+![1914 年 8 月 1 日柏林街头民众聚集听取动员令](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-order-is-read-out-in-Berlin%2C-1-August-1914--ff-9a2ef4ee502e.73uqojbsq1.webp)
 
 ---
 

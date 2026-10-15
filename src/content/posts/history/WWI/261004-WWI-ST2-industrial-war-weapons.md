@@ -162,7 +162,7 @@ seriesOrder: 6
 
 英国陆军十分重视快速、准确的步枪射击训练。战争初期，在蒙斯等战斗中，训练有素的英国正规军能够打出很高的射击密度。
 
-[grid] ![瑞典陆军博物馆收藏的 李-恩菲尔德 Mk III 步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Lee-Enfield_Mk_III_%28No_1_Mk_3%29_-_AM.032056_%28LHS%29.jpg) ![一战时期安装 Pattern 1907（1907式）刺刀的李-恩菲尔德步枪](https://commons.wikimedia.org/wiki/Special:FilePath/SMLE_rifle_with_bayonet_fixed.jpg) [/grid]
+[grid] ![瑞典陆军博物馆收藏的 李-恩菲尔德 Mk III 步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Lee-Enfield_Mk_III_%28No_1_Mk_3%29_-_AM.032056_%28LHS%29--ff-5a162e040f74.2a5vsf20jz.webp) ![一战时期安装 Pattern 1907（1907式）刺刀的李-恩菲尔德步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/SMLE_rifle_with_bayonet_fixed--ff-1f374e3d38a1.60v1dnqvz5.webp) [/grid]
 
 一战的实战需求又推动了李-恩菲尔德的改进。
 
@@ -189,7 +189,7 @@ Mauser 98 的影响远不止于一战。其双前锁耳、控制进弹、抽壳�
 
 战争期间，更短的 **毛瑟 98AZ 卡宾枪** 被突击部队、骑兵和部分专业兵种广泛使用。
 
-![德国毛瑟98式步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Gewehr_98.jpg)
+![德国毛瑟98式步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Gewehr_98--ff-4487d78bc876.1ow8647k81.webp)
 
 ## Lebel M1886/93（勒贝尔 M1886/93 步枪）：背着历史包袱的武器
 
@@ -207,7 +207,7 @@ Mauser 98 的影响远不止于一战。其双前锁耳、控制进弹、抽壳�
 
 无烟火药燃烧更充分，能在较小口径下获得更高弹速，烟雾和残渣也少得多。于是，步兵武器从大口径黑火药时代真正进入了现代小口径步枪时代。
 
-![法国勒贝尔 Mle 1886 步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Lebel_Mle._1886.JPG)
+![法国勒贝尔 Mle 1886 步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Lebel_Mle._1886--ff-1c483a29d62b.51ey0ho4lp.webp)
 
 问题在于，法国当时为了尽快发挥新火药的优势，在新枪设计中沿用了许多成熟零件和旧有设计。
 
@@ -235,13 +235,13 @@ Mauser 98 的影响远不止于一战。其双前锁耳、控制进弹、抽壳�
 | M1903 Springfield（M1903 斯普林菲尔德） | 美国 | 5 发内置弹仓，桥夹装填 | 美国战前标准步枪，明显受到毛瑟技术路线影响 |
 | U.S. M1917 Enfield（美国 M1917 恩菲尔德） | 美国 | .30-06，内置弹仓 | 由英国 P14 生产体系改造而来，实际成为美国远征军更常见的步枪 |
 
-[grid] ![瑞典陆军博物馆收藏的俄国莫辛-纳甘 M1891 步兵步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Mosin-Nagant_M1891_-_Ryssland_-_AM.032971.jpg) ![瑞典陆军博物馆收藏的奥匈曼利夏 M1895 直拉式步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Mannlicher_M1895_from_the_Swedish_Army_Museum.jpg) [/grid]
+[grid] ![瑞典陆军博物馆收藏的俄国莫辛-纳甘 M1891 步兵步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mosin-Nagant_M1891_-_Ryssland_-_AM.032971--ff-63db537adf10.8okho0jx85.webp) ![瑞典陆军博物馆收藏的奥匈曼利夏 M1895 直拉式步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mannlicher_M1895_from_the_Swedish_Army_Museum--ff-3302be799f48.mv8xha5m.webp) [/grid]
 
 莫辛-纳甘仍然属于比较传统的旋转后拉式枪机，射手需要抬起枪机柄解锁，再向后拉动；曼利夏 M1895 的直拉式枪机则把旋转闭锁动作交给枪机内部机构完成，射手只需要前后直拉枪机柄。
 
 卡尔卡诺 M91 的不同之处则在于装填方式。它使用 6 发漏夹。士兵不是把子弹从桥夹压进弹仓后抽走桥夹，而是连同金属漏夹一起压入弹仓；最后一发送入枪膛后，空漏夹会从弹仓下方掉出。
 
-[grid] ![瑞典陆军博物馆收藏的意大利 Carcano M1891 步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Carcano_M1891.jpg) ![瑞典陆军博物馆收藏的美国 M1917 Enfield 步枪](https://commons.wikimedia.org/wiki/Special:FilePath/M1917_Enfield_right_side.jpg) [/grid]
+[grid] ![瑞典陆军博物馆收藏的意大利 Carcano M1891 步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Carcano_M1891--ff-b130dd2251d5.70b4qttmtp.webp) ![瑞典陆军博物馆收藏的美国 M1917 Enfield 步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/M1917_Enfield_right_side--ff-4bc908ab2bca.232nwzfv6w.webp) [/grid]
 
 ### M1917 Enfield（M1917 恩菲尔德步枪）：美国远征军最常见的步枪并不是 M1903
 
@@ -283,7 +283,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 > → 复进并装入下一发  
 > → 射手再次扣扳机即可继续射击
 
-![保存至今的法国 RSC M1917 半自动步枪](https://commons.wikimedia.org/wiki/Special:FilePath/FSA-1917-detoured.jpg)
+![保存至今的法国 RSC M1917 半自动步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/FSA-1917-detoured--ff-e5ef1aab100b.2ksplkh8nr.webp)
 
 沿用现役 8 mm Lebel 弹药，使法国不必为新枪重建弹药供应体系。澳大利亚战争纪念馆将这一点列为 RSC 被选中投入有限生产的原因之一。
 
@@ -301,7 +301,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 6.5 mm 有坂弹产生的后坐力也明显小于许多欧洲大口径全威力步枪弹，更适合一支相对轻便的自动武器。
 
-![芬兰军事博物馆收藏的 Fedorov Avtomat M1916 自动步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Fedorov_avtomat.jpg)
+![芬兰军事博物馆收藏的 Fedorov Avtomat M1916 自动步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Fedorov_avtomat--ff-785abb02be1d.4g5ae6to80.webp)
 
 图拉国家武器博物馆的资料记载，装备这种武器的一个专门连队隶属于第 189 伊兹梅尔团，并在 **1916 年 12 月被送往前线**；俄军飞行员也曾使用这种武器。
 
@@ -339,7 +339,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 但早期军用瞄准镜的性能和可靠性远不如今天。安装座可能松动，镜片质量差异很大，倍率也不高；有些瞄准镜还不得不偏置在机匣一侧，以免妨碍装填。
 
-![1918 年 5 月，法国 Badonviller，一支带光学瞄准镜并经过伪装的美军 Springfield 狙击步枪](https://commons.wikimedia.org/wiki/Special:FilePath/American_First_World_War_Official_Exchange_Collection_Q103350.jpg)
+![1918 年 5 月，法国 Badonviller，一支带光学瞄准镜并经过伪装的美军 Springfield 狙击步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/American_First_World_War_Official_Exchange_Collection_Q103350--ff-1083c273a06a.60v1dnqvkr.webp)
 
 英军还建立专门训练，要求射手学习：
 
@@ -375,7 +375,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 这意味着法国 VB 系统在特定条件下甚至可以使用实弹，而不必每次换用空包弹。
 
-[grid] ![一战期间法国士兵向美军海军陆战队演示 VB 枪榴弹发射器](https://commons.wikimedia.org/wiki/Special:FilePath/111-SC-2123_-_French_Soldiers_demonstrating_use_of_rifle_grenades_-_NARA_-_55165599_%28cropped%29.jpg) ![1916 年 Viven-Bessières 枪榴弹结构图](https://commons.wikimedia.org/wiki/Special:FilePath/Gewehr-Granate_VB.jpg) [/grid]
+[grid] ![一战期间法国士兵向美军海军陆战队演示 VB 枪榴弹发射器](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/111-SC-2123_-_French_Soldiers_demonstrating_use_of_rifle_grenades_-_NARA_-_55165599_%28cropped%29--ff-a74471837b6d.46h6nacjj.webp) ![1916 年 Viven-Bessières 枪榴弹结构图](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Gewehr-Granate_VB--ff-30ddb0c1c696.8l0vqaqucj.webp) [/grid]
 
 于是，步兵开始获得一种处于手榴弹与迫击炮之间的火力：
 
@@ -436,7 +436,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 德国的 **MG 08** 则保留了更多马克沁原始结构。它同样可靠，同样可以长时间射击，但整套系统十分沉重。枪本身、水冷套筒、沉重的滑橇式枪架、弹药箱、备件和冷却水共同组成了一个完整的重机枪阵地。
 
-[grid] ![1916 年索姆河战役期间的英军 维克斯重机枪组](https://commons.wikimedia.org/wiki/Special:FilePath/Vickers_machine_gun_crew_with_gas_masks.jpg) ![德国 MG 08 重机枪与滑橇式枪架](https://commons.wikimedia.org/wiki/Special:FilePath/Maschinengewehr_08_%28MG_08%29_on_sled_mount_-_Braunschweigisches_Landesmuseum_-_DSC04729.JPG) [/grid]
+[grid] ![1916 年索姆河战役期间的英军 维克斯重机枪组](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Vickers_machine_gun_crew_with_gas_masks--ff-e834b8463a34.3yf8plsazj.webp) ![德国 MG 08 重机枪与滑橇式枪架](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Maschinengewehr_08_%28MG_08%29_on_sled_mount_-_Braunschweigisches_Landesmuseum_-_DSC04729--ff-aef5dddf0893.1ow8647kdf.webp) [/grid]
 
 重机枪需要多人操作：搬运枪架、水和弹药，观察目标，排除故障并维持供弹。
 
@@ -458,7 +458,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 但到了前线，这些复杂功能带来的好处，并不足以弥补可靠性上的不足。
 
-[grid] ![巴黎陆军博物馆收藏的 St. Étienne Mle 1907 机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Mitrailleuse_Saint-Etienne_mod%C3%A8le_1907%2C_Mus%C3%A9e_de_l%27Arm%C3%A9e.jpg) ![博物馆收藏的 Hotchkiss M1914 重机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Hotchkiss%2C_1914.jpg) [/grid]
+[grid] ![巴黎陆军博物馆收藏的 St. Étienne Mle 1907 机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mitrailleuse_Saint-Etienne_mod%C3%A8le_1907%2C_Mus%C3%A9e_de_lArm%C3%A9e--ff-d94c54ae8b25.70b4qwqi8p.webp) ![博物馆收藏的 Hotchkiss M1914 重机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Hotchkiss%2C_1914--ff-c36eec169780.54yjy7h7ar.webp) [/grid]
 
 法国最终越来越依赖 **Hotchkiss M1914（哈奇开斯 M1914 重机枪）**。
 
@@ -488,7 +488,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 但它的内部工作方式不同。施瓦茨洛泽采用**延迟开锁 / 延迟自由枪机思路**，依靠机械结构和强力复进簧防止枪机在膛压仍很高时过早打开，而不是让枪管与枪机像马克沁那样共同后坐完成循环。
 
-![罗马步兵博物馆收藏的 Schwarzlose M07/12 重机枪、弹箱与布质弹链](https://commons.wikimedia.org/wiki/Special:FilePath/Schwarzlose_MG_M07_12.jpg)
+![罗马步兵博物馆收藏的 Schwarzlose M07/12 重机枪、弹箱与布质弹链](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Schwarzlose_MG_M07_12--ff-dddc8093d469.32ira5imhq.webp)
 
 这种方案的吸引力之一，是可以减少一部分复杂运动部件。
 
@@ -500,7 +500,7 @@ M1903 仍然大量装备美军，也用于精确射击和狙击任务。
 
 最醒目的地方，是机匣侧面的**多列式弹药供弹盒**。这种装置把大量子弹分成数列排列，整盒从侧面送入机枪。射击机构逐列取弹，看上去很像一只被不断横向推进的金属抽屉。
 
-![1918 年皮亚韦河战线，意大利士兵搬运 FIAT–Revelli Modello 1914 重机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Italian_Army_-_World_War_I_-_Italian_troops_carry_a_Fiat%E2%80%93Revelli_Modello_1914_machine_gun_on_the_Piave_front%2C_1918.jpg)
+![1918 年皮亚韦河战线，意大利士兵搬运 FIAT–Revelli Modello 1914 重机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Italian_Army_-_World_War_I_-_Italian_troops_carry_a_Fiat%E2%80%93Revelli_Modello_1914_machine_gun_on_the_Piave_front%2C_191--ff-17d05056a11c.73uqojmpmh.webp)
 
 它也需要通过润滑弹药来保证机构顺畅运转。
 
@@ -533,7 +533,7 @@ John Moses Browning（约翰·摩西·勃朗宁）设计的新机枪在 **1917 �
 
 但内部并不是马克沁复制品，而是勃朗宁自己的短后坐自动机构。
 
-[grid] ![美国陆军中尉 Val Browning 与 Browning M1917 重机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Val_Browning_M1917.jpg) ![美国陆军通信兵资料中的 1918 年 Browning M1917 水冷重机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Browning_Heavy_Machine_Gun%2C_water_cooled%2C_M1917%2C_1918%2C_WWI_%2832916860696%29.jpg) [/grid]
+[grid] ![美国陆军中尉 Val Browning 与 Browning M1917 重机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Val_Browning_M1917--ff-dd2c07ea338e.2dphq4v3iq.webp) ![美国陆军通信兵资料中的 1918 年 Browning M1917 水冷重机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Browning_Heavy_Machine_Gun%2C_water_cooled%2C_M1917%2C_1918%2C_WWI_%2832916860696%29--ff-62321f291b8a.szqqnxvpd.webp) [/grid]
 
 它在测试中的持续射击能力给美国军方留下了深刻印象，随后迅速进入大规模生产。
 
@@ -557,7 +557,7 @@ John Moses Browning（约翰·摩西·勃朗宁）设计的新机枪在 **1917 �
 
 也就是说，当欧洲大国还把“机枪”首先理解为架在三脚架或滑橇上的重型装备时，轻机枪的基本形态其实已经开始出现。
 
-![1916 年索姆河战役中英军展示缴获的德军武器，其中包括一挺麦德森轻机枪](https://commons.wikimedia.org/wiki/Special:FilePath/The_Battle_of_the_Somme%2C_July-november_1916_Q132.jpg)
+![1916 年索姆河战役中英军展示缴获的德军武器，其中包括一挺麦德森轻机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/The_Battle_of_the_Somme%2C_July-november_1916_Q132--ff-1c0990a9f522.3nsewgd2sr.webp)
 
 澳大利亚战争纪念馆保存着一挺 **Madsen M1902/04**，其记录显示，它在 1916 年 7 月 23 日波济耶尔被澳军第 4 营从德军手中缴获。
 
@@ -578,7 +578,7 @@ John Moses Browning（约翰·摩西·勃朗宁）设计的新机枪在 **1917 �
 - 两脚架；
 - 可以由步兵直接携带的整体结构。
 
-![1918 年阿兹布鲁克战役期间的英军 刘易斯轻机枪组](https://commons.wikimedia.org/wiki/Special:FilePath/British_Lewis_gun_team_Battle_of_Hazebrouck_1918_IWM_Q_10902.jpg)
+![1918 年阿兹布鲁克战役期间的英军 刘易斯轻机枪组](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/British_Lewis_gun_team_Battle_of_Hazebrouck_1918_IWM_Q_10902--ff-5c30dfcdb7c6.7so08ka8ji.webp)
 
 战争中后期，英国步兵的火力组织因此发生了重要变化。
 
@@ -603,7 +603,7 @@ John Moses Browning（约翰·摩西·勃朗宁）设计的新机枪在 **1917 �
 
 但那些最严厉的负面评价，往往把**美军 .30-06 改型的问题**与法国原版 8 mm 勒贝尔型混为一谈。
 
-[grid] ![1918 年索姆地区法军士兵操作 绍沙轻机枪](https://commons.wikimedia.org/wiki/Special:FilePath/French_soldier_with_Chauchat_taken_by_Jacques_Ridel_in_Le_Monchel_May_1918.jpg) ![博物馆收藏的绍沙Mle 1915 轻机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Chauchat_1_%2850643241222%29_%28cropped%29.jpg) [/grid]
+[grid] ![1918 年索姆地区法军士兵操作 绍沙轻机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/French_soldier_with_Chauchat_taken_by_Jacques_Ridel_in_Le_Monchel_May_1918--ff-28be1fb5ceba.1lcm8eehhw.webp) ![博物馆收藏的绍沙Mle 1915 轻机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Chauchat_1_%2850643241222%29_%28cropped%29--ff-8cde9ce39fdd.4922ir7is4.webp) [/grid]
 
 | 机枪 | 类型 | 冷却 / 供弹 | 战场角色 |
 | --- | --- | --- | --- |
@@ -631,7 +631,7 @@ John Moses Browning（约翰·摩西·勃朗宁）设计的新机枪在 **1917 �
 
 可和需要沉重滑橇枪架的 MG 08 相比，它已经能够由更小的枪组搬运和使用。
 
-[grid] ![1917 年卡波雷托战役中的德军突击分队，携带 MG 08/15](https://commons.wikimedia.org/wiki/Special:FilePath/Plotone_d%27assalto_tedesco_con_MG0815.jpg) ![博物馆保存的 MG 08/15 轻量化马克沁机枪](https://commons.wikimedia.org/wiki/Special:FilePath/MG_08-15.JPG) [/grid]
+[grid] ![1917 年卡波雷托战役中的德军突击分队，携带 MG 08/15](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Plotone_dassalto_tedesco_con_MG0815--ff-bde4ae426be1.92qxeyp39d.webp) ![博物馆保存的 MG 08/15 轻量化马克沁机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/MG_08-15--ff-583b529b580a.6writ40kbv.webp) [/grid]
 
 沿用成熟的马克沁机构，便于利用现有生产体系，但也限制了减重幅度。
 
@@ -655,7 +655,7 @@ BAR 更像一支被放大、强化并能够全自动射击的步枪：
 
 **自动步枪（automatic rifle）。**
 
-![1918 年 2 月，John Browning 之子 Val Browning 中尉手持 M1918 BAR](https://commons.wikimedia.org/wiki/Special:FilePath/Val_Browning_M1918_BAR.jpg)
+![1918 年 2 月，John Browning 之子 Val Browning 中尉手持 M1918 BAR](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Val_Browning_M1918_BAR--ff-8f53f77bc2e0.39lz5l4ryv.webp)
 
 BAR 在一战中投入时间较晚，因此它对 1918 年战局的实际影响不能和维克斯、MG 08 或刘易斯相提并论。
 
@@ -712,7 +712,7 @@ BAR 在一战中投入时间较晚，因此它对 1918 年战局的实际影响�
 
 半自动手枪则试图让火药燃气或后坐能量自动完成退壳、复进与下一发装填。
 
-[grid] ![博物馆收藏的德国 Luger P08（鲁格 P08）半自动手枪](https://commons.wikimedia.org/wiki/Special:FilePath/Luger_P08_%286971793777%29.jpg) ![美国陆军 1912 年手册中的 Colt M1911 半自动手枪](https://commons.wikimedia.org/wiki/Special:FilePath/Colt_M1911_Pistol_from_1912_Army_manual.png) [/grid]
+[grid] ![博物馆收藏的德国 Luger P08（鲁格 P08）半自动手枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Luger_P08_%286971793777%29--ff-1dc827318e47.1ow8647kbj.webp) ![美国陆军 1912 年手册中的 Colt M1911 半自动手枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Colt_M1911_Pistol_from_1912_Army_manual--ff-b688feed9031.pg4sy4t0a.webp) [/grid]
 
 德国的 **Pistole 08（P08，鲁格手枪）**和美国的 **M1911**，正好代表一战前夕两种已经成熟的军用半自动手枪。
 
@@ -740,7 +740,7 @@ BAR 在一战中投入时间较晚，因此它对 1918 年战局的实际影响�
 - 原本仍可使用普通 8 发弹匣；
 - 后来还能使用 32 发 **Trommelmagazin 08（TM 08）蜗形弹鼓**。
 
-![安装木制枪托与 32 发 Trommelmagazin 08 弹鼓的 Lange Pistole 08（LP 08，“炮兵鲁格”）](https://commons.wikimedia.org/wiki/Special:FilePath/Arty08.jpg)
+![安装木制枪托与 32 发 Trommelmagazin 08 弹鼓的 Lange Pistole 08（LP 08，“炮兵鲁格”）](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Arty08--ff-54be4e4ceea4.3uvmrvz7ux.webp)
 
 最初，这套设计主要是为了让炮兵等专业人员获得一种比步枪更紧凑、比普通手枪更稳定的自卫武器。
 
@@ -832,7 +832,7 @@ M1911 的现有产能无法及时满足需求。于是，美国没有等待新�
 
 但只要看一眼外形，就会发现它和后来 MP 18、汤普森或者 MP 40 完全不像同一类武器。
 
-![Villar Perosa M1915 双联手枪弹自动武器](https://commons.wikimedia.org/wiki/Special:FilePath/Villar-Perosa_M15.jpg)
+![Villar Perosa M1915 双联手枪弹自动武器](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Villar-Perosa_M15--ff-9532c73489d7.mv8xhaci.webp)
 
 Villar Perosa 实际上把**两套独立自动机构并排装在一起**：
 
@@ -854,7 +854,7 @@ Royal Armouries 对它的描述很准确：
 
 它由 **Villar Perosa M1915 的一套枪管—机匣组件**改造而来，并增加新的击发机构与单发 / 连发选择。
 
-![由 Villar Perosa 单侧机构发展而来的 OVP Modello 1918](https://commons.wikimedia.org/wiki/Special:FilePath/Ovp_1918.jpg)
+![由 Villar Perosa 单侧机构发展而来的 OVP Modello 1918](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Ovp_1918--ff-5b104f97d2d6.54yjy7h7g8.webp)
 
 | Villar Perosa M1915 | OVP Modello 1918 |
 | --- | --- |
@@ -885,7 +885,7 @@ MP 18 使用 **9×19 mm Parabellum** 手枪弹。
 
 最初的供弹装置，正是与 LP 08 同一体系的 **32 发 Trommelmagazin 08 蜗形弹鼓**。与 LP 08 相比，MP 18 可以全自动射击。
 
-![Braunschweigisches Landesmuseum 收藏的 Bergmann MP 18,I，配 32 发蜗牛形弹鼓](https://commons.wikimedia.org/wiki/Special:FilePath/Bergmann_MP18.1_submachine_gun_with_drum_magazine%2C_Theodor_Bergmann%2C_Suhl%2C_Germany%2C_1918-1920_AD_-_Braunschweigisches_Landesmuseum_-_DSC04716.JPG)
+![Braunschweigisches Landesmuseum 收藏的 Bergmann MP 18,I，配 32 发蜗牛形弹鼓](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Bergmann_MP18.1_submachine_gun_with_drum_magazine%2C_Theodor_Bergmann%2C_Suhl%2C_Germany%2C_1918-1920_AD_-_Braunschweigis--ff-16a0070b9420.1apsf8z998.webp)
 
 MP 18 的整体形态已经非常接近后来几十年的冲锋枪：
 
@@ -980,7 +980,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 这意味着炮手不需要每打一发都重新把整门炮推回原位，再重新瞄准。
 
-![法国 M1897式75毫米野战炮（法国75炮）](https://commons.wikimedia.org/wiki/Special:FilePath/French_75_mm_field_gun_and_limber_-_Imperial_War_Museum_1.jpg)
+![法国 M1897式75毫米野战炮（法国75炮）](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/French_75_mm_field_gun_and_limber_-_Imperial_War_Museum_1--ff-a51bb2150a1f.szqqnxvrl.webp)
 
 再配合快速炮闩、定装弹药、炮盾和瞄准装置，法国 75 炮可以达到当时非常惊人的射速。
 
@@ -1001,7 +1001,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 1916 年索姆河战役期间，英军发射的炮弹数量以千万计，其中很大一部分就是由 18 磅炮打出的。它既可以发射榴霰弹，也逐渐更多使用高爆弹和烟幕弹。
 
-[grid] ![1914 年加拿大瓦尔卡捷营地的 QF 18磅炮 野战炮](https://commons.wikimedia.org/wiki/Special:FilePath/QF_18-pounder_Valcartier_Quebec_1914.jpg) ![都柏林 Collins Barracks 馆藏的 QF 18磅炮 野战炮](https://commons.wikimedia.org/wiki/Special:FilePath/QF_18_Pounder_at_Collins_Barracks.jpg) [/grid]
+[grid] ![1914 年加拿大瓦尔卡捷营地的 QF 18磅炮 野战炮](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/QF_18-pounder_Valcartier_Quebec_1914--ff-b78d4852e2e4.1ht0aoleyv.webp) ![都柏林 Collins Barracks 馆藏的 QF 18磅炮 野战炮](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/QF_18_Pounder_at_Collins_Barracks--ff-e23d76d67caa.73uqojmps6.webp) [/grid]
 
 ## 7.7 cm FK 96 n.A.（7.7厘米 FK 96 n.A. 野战炮）：同一代野战炮的另一条路线
 
@@ -1011,7 +1011,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 德军将这种野战炮与榴弹炮、中重型火炮配合使用，分别承担野战支援与工事破坏等任务。
 
-[grid] ![1918 年摄影资料中的德国 7.7 cm FK 96 n.A. 野战炮与弹药](https://commons.wikimedia.org/wiki/Special:FilePath/7.7_cm_FK_96_n.A._With_Ammunition.jpeg) ![Battlefields Park 展出的 7.7 cm FK 96 n.A. 野战炮](https://commons.wikimedia.org/wiki/Special:FilePath/7.7_cm_FK_96_n.A._Battlefields_Park_01.jpg) [/grid]
+[grid] ![1918 年摄影资料中的德国 7.7 cm FK 96 n.A. 野战炮与弹药](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/7.7_cm_FK_96_n.A._With_Ammunition--ff-d059ebd5958e.3gp710qwto.webp) ![Battlefields Park 展出的 7.7 cm FK 96 n.A. 野战炮](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/7.7_cm_FK_96_n.A._Battlefields_Park_01--ff-84ee8ded6d4a.pg4sy4tee.webp) [/grid]
 
 ## 当 75 mm 不再够用：榴弹炮与重炮
 
@@ -1021,7 +1021,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 英国的 **9.2 英寸榴弹炮**就是典型代表之一。
 
-![1917 年阿拉斯战役前，英军 9.2 英寸榴弹炮隐藏在伪装网下](https://commons.wikimedia.org/wiki/Special:FilePath/9.2inchHowitzer91stBatteryRGAArras1April1917.jpg)
+![1917 年阿拉斯战役前，英军 9.2 英寸榴弹炮隐藏在伪装网下](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/9.2inchHowitzer91stBatteryRGAArras1April1917--ff-88b7cc29d9f0.6poaxoeegr.webp)
 
 德国也拥有强大的重炮基础。
 
@@ -1043,7 +1043,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 炮弹接近目标上空时，时间引信引爆少量装药，把内部弹丸从弹体前方高速推出。
 
-[grid] ![1915 年英军 18磅炮 Mk VI 榴霰弹结构图，可见内部大量弹丸](https://commons.wikimedia.org/wiki/Special:FilePath/18pdrShrapnelDiagram1.jpg) ![1916 年英军 18磅炮 高爆弹结构图](https://commons.wikimedia.org/wiki/Special:FilePath/18pdrHEShellDiagram.jpg) [/grid]
+[grid] ![1915 年英军 18磅炮 Mk VI 榴霰弹结构图，可见内部大量弹丸](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/18pdrShrapnelDiagram1--ff-ca74ab8f8f13.9ddr817fsz.webp) ![1916 年英军 18磅炮 高爆弹结构图](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/18pdrHEShellDiagram--ff-caaf8d2a40c0.7p4eauh5mq.webp) [/grid]
 
 在战前机动作战设想中，榴霰弹非常理想：
 
@@ -1132,7 +1132,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 与早期那些需要点火、撞击或复杂操作的手榴弹相比，这种结构更适合紧张的战壕环境。
 
-[grid] ![1918 年 7 月，皇家苏格兰团突击队领取米尔斯手榴弹](https://commons.wikimedia.org/wiki/Special:FilePath/11th_Royal_Scots_raiding_party_12-07-1918.jpg) ![巴黎陆军博物馆收藏的英国 Mills Bomb Mk I（米尔斯手榴弹）](https://commons.wikimedia.org/wiki/Special:FilePath/Mills_bomb_Mk_I-997.493-IMG_7525-white.jpg) [/grid]
+[grid] ![1918 年 7 月，皇家苏格兰团突击队领取米尔斯手榴弹](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/11th_Royal_Scots_raiding_party_12-07-1918--ff-512118dae147.icwxiinct.webp) ![巴黎陆军博物馆收藏的英国 Mills Bomb Mk I（米尔斯手榴弹）](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mills_bomb_Mk_I-997.493-IMG_7525-white--ff-8c4e056964a2.7ehkhp1xwx.webp) [/grid]
 
 ## Stielhandgranate（木柄手榴弹）：手榴弹的另一种形象
 
@@ -1144,7 +1144,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 木柄不仅方便握持，还增加了投掷时的杠杆长度，使士兵能够把手榴弹扔得更远。早期型号和一战中常见的型号，主要依靠爆炸冲击杀伤，而不像米尔斯手榴弹那样强调破片杀伤。
 
-![原装1917型德国木柄手榴弹](https://commons.wikimedia.org/wiki/Special:FilePath/Stielhandgranate17.JPG)
+![原装1917型德国木柄手榴弹](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Stielhandgranate17--ff-e1dc0e0ab77e.5j4zp2pied.webp)
 
 两种武器都很成功，却反映出不同的设计取向：
 
@@ -1170,7 +1170,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 军用堑壕型 M1897 通常具有较短枪管，并增加了带刺刀座的护罩结构，可以安装刺刀。
 
-![美国国家枪械博物馆收藏、安装刺刀的 Winchester Model 1897 堑壕霰弹枪](https://commons.wikimedia.org/wiki/Special:FilePath/M1897_with_bayonet.jpg)
+![美国国家枪械博物馆收藏、安装刺刀的 Winchester Model 1897 堑壕霰弹枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/M1897_with_bayonet--ff-be2fc34c819b.99u5abedgm.webp)
 
 它使用鹿弹时，一次射击会射出多枚较大的弹丸。
 
@@ -1210,7 +1210,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 也就是说，炮手不需要像普通火炮那样反复开闩、装填、闭闩。
 
-![一战时期的3英寸斯托克斯迫击炮](https://commons.wikimedia.org/wiki/Special:FilePath/The_Portuguese_Expeditionary_Corps_on_the_Western_Front,_1917-1918_Q6440.jpg)
+![一战时期的3英寸斯托克斯迫击炮](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/The_Portuguese_Expeditionary_Corps_on_the_Western_Front%2C_1917-1918_Q6440--ff-ce12dd187f3e.5molmsil4c.webp)
 
 这种结构后来成为现代迫击炮最经典的技术路线之一。
 
@@ -1239,7 +1239,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 - 金属底座；
 - 可调方向和高低角。
 
-![布鲁塞尔军事博物馆收藏的德国 7.58 cm leichter 掷雷器](https://commons.wikimedia.org/wiki/Special:FilePath/German_7.58_cm_minenwerfer.jpg)
+![布鲁塞尔军事博物馆收藏的德国 7.58 cm leichter 掷雷器](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/German_7.58_cm_minenwerfer--ff-db3a5cfb812a.58i5vxa9zy.webp)
 
 1916 年的新型 **n.A.（neuer Art，新式）**进一步简化了结构并减轻了重量，并使用能够旋转的底座。
 
@@ -1273,7 +1273,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 射程有限，装置沉重，燃料危险，操作人员又很容易成为优先射击目标。
 
-[grid] ![1916 年德军 Double Kleif M.1915 火焰喷射器小组](https://commons.wikimedia.org/wiki/Special:FilePath/A_squad_with_Double_Kleif_M.1915_Flammenwerfer.jpg) ![美国档案中的德国火焰喷射器实物照片](https://commons.wikimedia.org/wiki/Special:FilePath/111-SC-2076_-_Chemical_Warfare_Service_-_German_flamethrower_or_flame_projector_-_NARA_-_55165505.jpg) [/grid]
+[grid] ![1916 年德军 Double Kleif M.1915 火焰喷射器小组](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/A_squad_with_Double_Kleif_M.1915_Flammenwerfer--ff-c025108365c5.1e9ecysbwt.webp) ![美国档案中的德国火焰喷射器实物照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/111-SC-2076_-_Chemical_Warfare_Service_-_German_flamethrower_or_flame_projector_-_NARA_-_55165505--ff-dabaa5e04e2b.6m4ozylbse.webp) [/grid]
 
 ## 堑壕刀与棍棒：工业化战争并没有让近身格斗消失
 
@@ -1285,7 +1285,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 于是，一战前线重新出现了大量极其直接的近战工具。
 
-![美国 Fort Lewis 军事博物馆收藏的 M1917 堑壕刀](https://commons.wikimedia.org/wiki/Special:FilePath/U.S._M1917_trench_knife.jpg)
+![美国 Fort Lewis 军事博物馆收藏的 M1917 堑壕刀](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/U.S._M1917_trench_knife--ff-dae116f02971.4qs47c8wp9.webp)
 
 美军 **M1917 trench knife（M1917 堑壕刀）**几乎就是一件纯粹为了格斗而设计的武器，带有明显的护拳结构。
 
@@ -1332,7 +1332,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 | 光气 | 毒性更高，症状可能延迟 | 防护失误时危险更大 |
 | 芥子气 | 伤害皮肤、眼睛与呼吸道，污染持续时间长 | 适合污染阵地、道路和集结区 |
 
-![1918 年梅特伦前线佩戴呼吸器的皇家苏格兰团士兵](https://commons.wikimedia.org/wiki/Special:FilePath/12th_Royal_Scots_in_gas_masks_25-06-1918.jpg)
+![1918 年梅特伦前线佩戴呼吸器的皇家苏格兰团士兵](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/12th_Royal_Scots_in_gas_masks_25-06-1918--ff-5d403477f86d.7i16fev074.webp)
 
 防护也在同步进化。
 
@@ -1352,7 +1352,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 大量投射器会被成排埋设，再用电路同时点火。
 
-[grid] ![一战期间英军士兵为一组 利文斯投射器 装填毒气弹](https://commons.wikimedia.org/wiki/Special:FilePath/Livens_gas_projector_loading.jpg) ![1917 年加拿大部队使用的 利文斯投射器 阵地](https://commons.wikimedia.org/wiki/Special:FilePath/CWM_-_Livens_Projector.jpg) [/grid]
+[grid] ![一战期间英军士兵为一组 利文斯投射器 装填毒气弹](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Livens_gas_projector_loading--ff-c6ec466a508b.7p4eauh5zl.webp) ![1917 年加拿大部队使用的 利文斯投射器 阵地](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/CWM_-_Livens_Projector--ff-762b809082f5.9o0l16mo65.webp) [/grid]
 
 它的设计思路非常直接：
 
@@ -1395,7 +1395,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 飞机越稳定，通常也意味着越不灵活。面对机动性越来越强的专用战斗机，B.E.2 这类侦察机开始显得缓慢而脆弱。
 
-[grid] ![1916—1917 年英国皇家飞行队正在服役的 B.E.2c 侦察机](https://commons.wikimedia.org/wiki/Special:FilePath/Operational_B.E.2c.jpg) ![伦敦帝国战争博物馆收藏的 皇家飞机制造厂 B.E.2c](https://commons.wikimedia.org/wiki/Special:FilePath/Royal_aircraft_factory_BE2c_at_the_Imperial_War_Museum.jpg) [/grid]
+[grid] ![1916—1917 年英国皇家飞行队正在服役的 B.E.2c 侦察机](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Operational_B.E.2c--ff-cd1bd6cc9452.232nwzfv93.webp) ![伦敦帝国战争博物馆收藏的 皇家飞机制造厂 B.E.2c](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Royal_aircraft_factory_BE2c_at_the_Imperial_War_Museum--ff-a5a828c5f03a.4922ir7j1n.webp) [/grid]
 
 ## Fokker Eindecker（福克 E 单翼战斗机）：让子弹穿过螺旋桨
 
@@ -1418,7 +1418,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 1915 年，福克 E 单翼战斗机把这一技术真正投入实战。
 
-![保存至今的 Fokker E.III Eindecker（福克 E.III 单翼战斗机）](https://commons.wikimedia.org/wiki/Special:FilePath/Fokker_E.III_Eindecker_%28210-16%29_%2819036385131%29.jpg)
+![保存至今的 Fokker E.III Eindecker（福克 E.III 单翼战斗机）](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Fokker_E.III_Eindecker_%28210-16%29_%2819036385131%29--ff-d57fa8fa2963.1zj1z9mscr.webp)
 
 同步射击此前已有探索，福克则把实用同步机枪与飞机结合，形成了可供前线使用的系统。
 
@@ -1451,7 +1451,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 法国 **斯帕德 XIII** 则更强调速度、坚固结构和俯冲性能。
 
-[grid] ![1917 年投入使用的 Sopwith F.1 Camel（索普威思“骆驼”战斗机）](https://commons.wikimedia.org/wiki/Special:FilePath/1917_Sopwith_F.1_Camel.jpg) ![法国 斯帕德 XIII 战斗机](https://commons.wikimedia.org/wiki/Special:FilePath/SPAD_XIII_USAF.jpg) [/grid]
+[grid] ![1917 年投入使用的 Sopwith F.1 Camel（索普威思“骆驼”战斗机）](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/1917_Sopwith_F.1_Camel--ff-6b446ce668ff.6m4ozylbug.webp) ![法国 斯帕德 XIII 战斗机](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/SPAD_XIII_USAF--ff-2a03a940abdc.szqqnxw0y.webp) [/grid]
 
 到 1917—1918 年，一战战斗机已经从“给侦察机随便装一挺枪”发展为专门围绕空战设计的武器平台。
 
@@ -1469,7 +1469,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 英国很常见的解决方案，是把 **刘易斯机枪**安装在 **斯卡夫环形枪架**上。环形枪架允许机枪沿机舱周围转动，并通过平衡结构帮助射手抬高或压低枪口。
 
-[grid] ![1918 年 9 月 Handley Page（汉德利·佩季）轰炸机前舱观察员使用安装在 斯卡夫环形枪架上的 刘易斯机枪](https://commons.wikimedia.org/wiki/Special:FilePath/The_Royal_Flying_Corps_on_the_Western_Front%2C_1914-1918_Q9973.jpg) ![保存于 Bristol F.2B 上的 斯卡夫环形枪架与 刘易斯机枪安装结构](https://commons.wikimedia.org/wiki/Special:FilePath/Scarff_ring_sc.jpg) [/grid]
+[grid] ![1918 年 9 月 Handley Page（汉德利·佩季）轰炸机前舱观察员使用安装在 斯卡夫环形枪架上的 刘易斯机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/The_Royal_Flying_Corps_on_the_Western_Front%2C_1914-1918_Q9973--ff-f5821eb203a0.96ajcllawd.webp) ![保存于 Bristol F.2B 上的 斯卡夫环形枪架与 刘易斯机枪安装结构](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Scarff_ring_sc--ff-712f7dbe8a8f.64enbdjynj.webp) [/grid]
 
 于是，同一架双座飞机上可以同时存在两种不同的航空机枪使用方式：
 
@@ -1495,7 +1495,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 英国则发展出 **汉德利·佩季 O/100、O/400** 等大型双发轰炸机。
 
-[grid] ![1917 年德国哥达轰炸机挂载炸弹](https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv_Bild_146-1971-045-48%2C_Flugzeug_wird_mit_Bomben_best%C3%BCckt.jpg) ![1918 年汉德利·佩季 O/400 双发重型轰炸机](https://commons.wikimedia.org/wiki/Special:FilePath/Handley_Page_O-400.jpg) [/grid]
+[grid] ![1917 年德国哥达轰炸机挂载炸弹](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Bundesarchiv_Bild_146-1971-045-48%2C_Flugzeug_wird_mit_Bomben_best%C3%BCckt--ff-92d30c0c8f84.32ira5im6k.webp) ![1918 年汉德利·佩季 O/400 双发重型轰炸机](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Handley_Page_O-400--ff-aef184a4d899.4g5ae6to9z.webp) [/grid]
 
 到了 1918 年，飞机已经明显分化为多种承担专门任务的机型：
 
@@ -1523,7 +1523,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 > → 尝试计算提前量  
 > → 对飞过阵地的飞机射击
 
-[grid] ![一战时期安装在临时高射枪架上的 Lewis 机枪](https://commons.wikimedia.org/wiki/Special:FilePath/INGENIOUS_ANTI-AIRCRAFT_GUN._A_Lewis_gun_for_anti-aircraft_purposes%2C_Bestanddeelnr_158-1949.jpg) ![1918 年 3 月，美军士兵用 Hotchkiss M1914 向德国观察机射击](https://commons.wikimedia.org/wiki/Special:FilePath/American_soldiers_HD-SN-99-02281.JPEG) [/grid]
+[grid] ![一战时期安装在临时高射枪架上的 Lewis 机枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/INGENIOUS_ANTI-AIRCRAFT_GUN._A_Lewis_gun_for_anti-aircraft_purposes%2C_Bestanddeelnr_158-1949--ff-4b5ab147aa43.b9p22wi7s.webp) ![1918 年 3 月，美军士兵用 Hotchkiss M1914 向德国观察机射击](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/American_soldiers_HD-SN-99-02281--ff-f9452c2ea97a.3k8syqjzoh.webp) [/grid]
 
 飞机移动很快，子弹飞抵时目标已经离开原位，因此射手须预留提前量。
 
@@ -1573,7 +1573,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 西线壕沟往往有数米宽。“小威利”的短履带车体容易使车辆在跨壕时失去有效支撑，无法顺利通过。
 
-![1915 年试验中的 “小威利” 坦克原型](https://commons.wikimedia.org/wiki/Special:FilePath/Little_Willie1915.jpg)
+![1915 年试验中的 “小威利” 坦克原型](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Little_Willie1915--ff-550fe01c33ae.6poaxoeetg.webp)
 
 工程师 William Tritton 与 Walter Gordon Wilson 随后改变思路。
 
@@ -1603,7 +1603,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 设计者担心装备火炮的坦克在近距离会被敌军步兵包围，因此用更多机枪增强反步兵能力。
 
-[grid] ![1916 年英国马克 I 型坦克与乘员](https://commons.wikimedia.org/wiki/Special:FilePath/Mark_I_series_tank.jpg) ![1916 年 9 月 15 日弗莱尔—库尔斯莱特战斗前的马克 I 型“Clan Leslie”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Tank_preparing_to_advance_at_Flers-Courcelette_15-09-1916_IWM_Q_5574.jpg) [/grid]
+[grid] ![1916 年英国马克 I 型坦克与乘员](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mark_I_series_tank--ff-edbbe80fd9ca.1ht0aolewf.webp) ![1916 年 9 月 15 日弗莱尔—库尔斯莱特战斗前的马克 I 型“Clan Leslie”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Tank_preparing_to_advance_at_Flers-Courcelette_15-09-1916_IWM_Q_5574--ff-24cdd8db3cc5.7w7m6a3bl5.webp) [/grid]
 
 1916 年 9 月 15 日，马克 I 型在索姆河战役中的弗莱尔—库尔斯莱特第一次投入实战。
 
@@ -1631,7 +1631,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 其中一个非常实际的变化，是把油箱从靠近乘员舱的位置移到车体后部更安全的地方。
 
-[grid] ![1917 年康布雷战役中陷入德军战壕的英国马克 IV 型“Hyacinth”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/A_Mark_IV_%28Male%29_tank_of_%27H%27_Battalion%2C_%27Hyacinth%27%2C_ditched_in_a_German_trench_while_supporting_1st_Battalion%2C_Leicestershire_Regiment_near_Ribecourt_during_the_Battle_of_Cambrai%2C_20_November_1917._Q6432.jpg) ![博文顿坦克博物馆保存的马克 IV 型“Excellent”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Mark_IV_%28Excellent%29_front-left_2017_Bovington.jpg) [/grid]
+[grid] ![1917 年康布雷战役中陷入德军战壕的英国马克 IV 型“Hyacinth”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/A_Mark_IV_%28Male%29_tank_of_H_Battalion%2C_Hyacinth%2C_ditched_in_a_German_trench_while_supporting_1st_Battalion%2C_Leices--ff-5f841ecb5d58.icwxlfiza.webp) ![博文顿坦克博物馆保存的马克 IV 型“Excellent”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mark_IV_%28Excellent%29_front-left_2017_Bovington--ff-10951a7b5662.3gp710qx8f.webp) [/grid]
 
 1917 年康布雷战役中，大批马克 IV 型集中投入进攻。
 
@@ -1645,7 +1645,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 此前英国重型坦克的转向十分麻烦，需要多名乘员共同操作不同变速机构。马克 V 型引入更强的 **Ricardo 150 马力发动机**和改进的周转式转向传动系统。驾驶员终于能够更直接地通过控制左右履带速度进行转向。
 
-[grid] ![一战时期英国马克 V 型“雄性”重型坦克官方照片](https://commons.wikimedia.org/wiki/Special:FilePath/British_Mark_V_%28male%29_tank.jpg) ![博文顿坦克博物馆保存的英国马克 V 型坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Mark_V_tank_Bovington_Flickr_4773871655.jpg) [/grid]
+[grid] ![一战时期英国马克 V 型“雄性”重型坦克官方照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/British_Mark_V_%28male%29_tank--ff-bde7682b275c.etazspku7.webp) ![博文顿坦克博物馆保存的英国马克 V 型坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mark_V_tank_Bovington_Flickr_4773871655--ff-dccec4e7ef05.8dxnuv4p1f.webp) [/grid]
 
 它仍然慢，仍然重，乘员环境仍然恶劣。
 
@@ -1659,7 +1659,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 它的车体像一个巨大的装甲箱，前部突出一个用于压倒铁丝网的“船首”，75 mm 短炮则偏置安装在车体右前侧，另外配有哈奇开斯机枪。
 
-![索米尔装甲博物馆保存的施耐德 CA1](https://commons.wikimedia.org/wiki/Special:FilePath/Schneider_CA1._Mus%C3%A9e_des_Blind%C3%A9s%2C_Saumur%2C_France._11-7-2022_%2853274810286%29.jpg)
+![索米尔装甲博物馆保存的施耐德 CA1](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Schneider_CA1._Mus%C3%A9e_des_Blind%C3%A9s%2C_Saumur%2C_France._11-7-2022_%2853274810286%29--ff-2836d9b1c635.4g5ae6toi5.webp)
 
 它的问题和早期很多坦克一样：
 
@@ -1677,7 +1677,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 可为了容纳武器、乘员和机械系统，车体前后都远远伸出较短的履带之外。
 
-![一战时期法国圣沙蒙坦克，可清楚看到远远伸出履带前方的车鼻](https://commons.wikimedia.org/wiki/Special:FilePath/Char_St_Chamond_tank.jpg)
+![一战时期法国圣沙蒙坦克，可清楚看到远远伸出履带前方的车鼻](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Char_St_Chamond_tank--ff-324d552893a3.58i5vxa9xr.webp)
 
 在平整地面上，这种布局并不一定糟糕。
 
@@ -1711,7 +1711,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 武器主要是哈奇开斯机枪，而不是大口径火炮。
 
-[grid] ![1918 年 8 月法国 Grevillers 附近跨越战壕的 A型中型“惠比特”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Whippet%2C_Aug_1918.jpg) ![布鲁塞尔皇家军事博物馆收藏的 A型中型“惠比特”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Whippet.jpg) [/grid]
+[grid] ![1918 年 8 月法国 Grevillers 附近跨越战壕的 A型中型“惠比特”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Whippet%2C_Aug_1918--ff-6f5b0b4ad21f.8l0vqaqunm.webp) ![布鲁塞尔皇家军事博物馆收藏的 A型中型“惠比特”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Whippet--ff-623c570cb77e.7so08ka8xf.webp) [/grid]
 
 重型坦克突破防线、较快车辆扩大战果的分工，在战间期得到继续发展。
 
@@ -1732,7 +1732,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 **主要武器安装在一个可以 360° 旋转的炮塔里。**
 
-[grid] ![1918 年 9 月 26 日，阿贡森林前线与美军共同前进的两辆法国雷诺 FT](https://commons.wikimedia.org/wiki/Special:FilePath/American_troops_going_forward_to_the_battle_line_in_the_Forest_of_Argonne._France,_September_26,_1918._-_NARA_-_530748.jpg) ![保存于博物馆中的 雷诺 FT轻型坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Renault_FT_%E2%80%98753%E2%80%99_%2837632013970%29.jpg) [/grid]
+[grid] ![1918 年 9 月 26 日，阿贡森林前线与美军共同前进的两辆法国雷诺 FT](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/American_troops_going_forward_to_the_battle_line_in_the_Forest_of_Argonne._France%2C_September_26%2C_1918._-_NARA_-_5--ff-18125ad615e9.8dxnuv4osj.webp) ![保存于博物馆中的 雷诺 FT轻型坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Renault_FT_%E2%80%98753%E2%80%99_%2837632013970%29--ff-2300cc96d482.3rc0u665gn.webp) [/grid]
 
 这套布局后来几乎成了坦克的标准布局：
 
@@ -1763,7 +1763,7 @@ BAR、Fedorov 与 MP 18 对弹药威力和自动火力作出了不同取舍：
 
 A7V 外形更像一个巨大的装甲箱，前部安装 57 mm 火炮，车体周围布置多挺 MG 08 机枪，需要数量众多的乘员。
 
-[grid] ![1918 年德国 A7V“Wotan”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/A7V_Wotan.jpg) ![1918 年新西兰士兵检查被俘获的德国 A7V“Schnuck”坦克](https://commons.wikimedia.org/wiki/Special:FilePath/A7V_tank,_Sept_1918.jpg) [/grid]
+[grid] ![1918 年德国 A7V“Wotan”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/A7V_Wotan--ff-68e52f2492af.4n8i9mftjl.webp) ![1918 年新西兰士兵检查被俘获的德国 A7V“Schnuck”坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/A7V_tank%2C_Sept_1918--ff-c8e6362615c4.3k8syqjzny.webp) [/grid]
 
 A7V 拥有一些优于英国早期坦克的机械设计，但德国只制造了大约 20 辆，数量与英法相差悬殊。德国装甲部队还大量使用缴获的英军坦克。
 
@@ -1813,7 +1813,7 @@ A7V 拥有一些优于英国早期坦克的机械设计，但德国只制造了�
 - 单发装填；
 - 后坐力极强。
 
-[grid] ![1918 年英军军官在德军战壕中查看缴获的 M1918 反坦克步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Two_of_our_officers_with_a_German_anti-tank_gun_%284687973105%29.jpg) ![法国陆军博物馆收藏的 毛瑟 M1918 反坦克步枪](https://commons.wikimedia.org/wiki/Special:FilePath/Mauser_Tank-Gewehr_M1918.jpg) [/grid]
+[grid] ![1918 年英军军官在德军战壕中查看缴获的 M1918 反坦克步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Two_of_our_officers_with_a_German_anti-tank_gun_%284687973105%29--ff-64852992eba9.1sfu3u0n76.webp) ![法国陆军博物馆收藏的 毛瑟 M1918 反坦克步枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Mauser_Tank-Gewehr_M1918--ff-7b8680d22744.7lksd4o3c5.webp) [/grid]
 
 Tankgewehr 的思路非常直接：
 
@@ -1871,7 +1871,7 @@ Tankgewehr 的思路非常直接：
 
 中国方面曾尝试从美国采购生产设备，但采购、运输、生产组织和时间上的困难，使刘将军步枪未能进入大规模生产。
 
-![瑞典陆军博物馆收藏的 1915 年刘将军步枪试验枪](https://commons.wikimedia.org/wiki/Special:FilePath/General_Liu_rifle_-_1915.jpg)
+![瑞典陆军博物馆收藏的 1915 年刘将军步枪试验枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/General_Liu_rifle_-_1915--ff-42ee22705890.1apsf8z9cq.webp)
 
 ### Huot Automatic Rifle（霍特自动步枪）：把已经淘汰的 Ross（罗斯）步枪“救回来”
 
@@ -1889,7 +1889,7 @@ Tankgewehr 的思路非常直接：
 
 最终得到的武器，从外形上仍能看出罗斯步枪的痕迹，用途却已完全不同。
 
-[grid] ![Major Robert Blair 与 霍特自动步枪试验枪](https://commons.wikimedia.org/wiki/Special:FilePath/Major_Robert_Blair_with_Huot.jpg) ![霍特自动步枪与刘易斯轻机枪的比较照片](https://commons.wikimedia.org/wiki/Special:FilePath/Huot_and_Lewis_-_1.jpg) [/grid]
+[grid] ![Major Robert Blair 与 霍特自动步枪试验枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Major_Robert_Blair_with_Huot--ff-e43869132e6f.7p4eauh608.webp) ![霍特自动步枪与刘易斯轻机枪的比较照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Huot_and_Lewis_-_1--ff-5e83d11e4536.51ey0ho4l0.webp) [/grid]
 
 Huot 并不是“完全不能用”。
 
@@ -1935,7 +1935,7 @@ John Pedersen 并不要求士兵放弃 M1903 Springfield。
 
 它使用威力远低于 .30-06 的专用 .30 口径弹药，并通过长弹匣供弹。经过专门改造的 M1903 Mk I 机匣侧面还开有抛壳口。
 
-[grid] ![Springfield Armory Museum 保存的 佩德森装置](https://commons.wikimedia.org/wiki/Special:FilePath/U.S._AUTOMATIC_PISTOL%2C_CAL..30%2C_MODEL_OF_1918_%28PEDERSEN_DEVICE%29.jpg) ![安装 佩德森装置 的 M1903 Mk I 与相关套件](https://commons.wikimedia.org/wiki/Special:FilePath/Kit_for_Pedersen_Device.jpg) [/grid]
+[grid] ![Springfield Armory Museum 保存的 佩德森装置](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/U.S._AUTOMATIC_PISTOL%2C_CAL..30%2C_MODEL_OF_1918_%28PEDERSEN_DEVICE%29--ff-c3af73937bc2.icwxiinw3.webp) ![安装 佩德森装置 的 M1903 Mk I 与相关套件](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Kit_for_Pedersen_Device--ff-3c0ac4ae3741.64enbdjyh8.webp) [/grid]
 
 为了保密，美国甚至把它称作：
 
@@ -1986,7 +1986,7 @@ John Pedersen 并不要求士兵放弃 M1903 Springfield。
 
 到 1918 年，已经出现可以测试的 **Annihilator I** 原型；不过最早的一批型号在战争结束时仍没有准备好投入实战。
 
-[grid] ![1915 年的 John T. Thompson，后来 Auto-Ordnance 与汤普森冲锋枪项目的核心推动者](https://commons.wikimedia.org/wiki/Special:FilePath/John_Taliaferro_Thompson%2C_U.S._Army_officer%2C_founder_of_the_Auto-Ordnance_Corporation%2C_and_inventor_of_the_Thompson_submachine_gun_LCCN2014647521_%28cropped%29.jpg) ![战后由 Annihilator 系列继续演化而来的 Thompson Model 1921 冲锋枪](https://commons.wikimedia.org/wiki/Special:FilePath/Thompson_1921_submachine_gun.jpg) [/grid]
+[grid] ![1915 年的 John T. Thompson，后来 Auto-Ordnance 与汤普森冲锋枪项目的核心推动者](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/John_Taliaferro_Thompson%2C_U.S._Army_officer%2C_founder_of_the_Auto-Ordnance_Corporation%2C_and_inventor_of_the_Thomps--ff-6c062f0e5937.4g5ae6toaz.webp) ![战后由 Annihilator 系列继续演化而来的 Thompson Model 1921 冲锋枪](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Thompson_1921_submachine_gun--ff-121dff35f8fc.6f1h4iz6un.webp) [/grid]
 
 > [!NOTE]
 > 右图为战后发展的 Thompson M1921，并非 Annihilator 原型。
@@ -2003,7 +2003,7 @@ Auto-Ordnance 继续修改供弹、枪托、瞄具和机匣结构。1919—1920 
 
 这个方向会让人很自然地想到后来的“中间威力弹”和突击步枪。
 
-![Ribeyrolles 1918 自动卡宾枪的现代展示图](https://commons.wikimedia.org/wiki/Special:FilePath/Ribeyrolle1918.jpg)
+![Ribeyrolles 1918 自动卡宾枪的现代展示图](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Ribeyrolle1918--ff-d30754d46171.3yf8plsaw9.webp)
 
 但“思路像未来”不等于“当时已经成熟”。
 
@@ -2035,7 +2035,7 @@ Ribeyrolles 的试验没有证明它具备足够可靠性和有效射程，战�
 
 后人通常称它为 **Standschütze Hellriegel M1915**。
 
-[grid] ![1915 年奥匈军 Hellriegel 实验自动武器测试照片](https://commons.wikimedia.org/wiki/Special:FilePath/Brzostrelka_Hellriegel_-_1.jpg) ![Hellriegel 实验武器及其供弹装置的另一张测试照片](https://commons.wikimedia.org/wiki/Special:FilePath/Brzostrelka_Hellriegel_-_3.jpg) [/grid]
+[grid] ![1915 年奥匈军 Hellriegel 实验自动武器测试照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Brzostrelka_Hellriegel_-_1--ff-5b7db570f913.pg4sy4szp.webp) ![Hellriegel 实验武器及其供弹装置的另一张测试照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Brzostrelka_Hellriegel_-_3--ff-67a5dd24a106.3yf8plsami.webp) [/grid]
 
 问题是，我们缺少真正完整的设计文件。
 
@@ -2059,7 +2059,7 @@ Ribeyrolles 的试验没有证明它具备足够可靠性和有效射程，战�
 
 它的机构很是缩小版的马克沁式肘节闭锁系统，供弹装置更奇怪：使用多列弹夹，将弹药逐列送入机匣。
 
-![今天保存的神秘 9 mm 马克沁式实验自动武器](https://commons.wikimedia.org/wiki/Special:FilePath/Schwarzlose_SMG.png)
+![今天保存的神秘 9 mm 马克沁式实验自动武器](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Schwarzlose_SMG--ff-57f5c24e2a6e.7i16fev0ps.webp)
 
 真正确定的事实反而很少。我们不知道：
 
@@ -2097,7 +2097,7 @@ Ribeyrolles 的试验没有证明它具备足够可靠性和有效射程，战�
 
 从体量上说，它已经非常接近“陆地战舰”这个词的字面含义。
 
-![1928 年演习中的法国 FCM 2C“Berry”](https://commons.wikimedia.org/wiki/Special:FilePath/Berry_in_1928_%28moar_contrast_%2B_cropped%29.jpg)
+![1928 年演习中的法国 FCM 2C“Berry”](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Berry_in_1928_%28moar_contrast_%2B_cropped%29--ff-8f620e7b46e6.362d7vbovv.webp)
 
 但它没赶上一战。
 
@@ -2117,7 +2117,7 @@ Ribeyrolles 的试验没有证明它具备足够可靠性和有效射程，战�
 
 整车甚至大到必须考虑分段运输，到前线附近再完成组装。
 
-![1918 年德国 K-Wagen 超重型坦克原型照片](https://commons.wikimedia.org/wiki/Special:FilePath/German_K_Panzerkampfwagen_1918.jpg)
+![1918 年德国 K-Wagen 超重型坦克原型照片](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/German_K_Panzerkampfwagen_1918--ff-2f632b7f2d9d.1ht0aolesf.webp)
 
 两辆原型车在停战时已经接近完成，却没有机会投入战斗。
 
@@ -2131,7 +2131,7 @@ A7V 实战以后，德国人很容易发现它最大的先天问题之一：
 
 它采用类似英国 Mark 系列的环绕式履带，让履带包围整个车体轮廓。
 
-![1918 年 A7V-U 原型车](https://commons.wikimedia.org/wiki/Special:FilePath/A7V-U.jpg)
+![1918 年 A7V-U 原型车](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/A7V-U--ff-7e7069285f72.7so08ka8gi.webp)
 
 项目没有进入量产。
 
@@ -2143,7 +2143,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 到 1918 年，这种轻型坦克已经制造出原型，军方也制定了后续生产计划，但停战让德国本土的大规模计划终止。
 
-[grid] ![德国坦克博物馆展示的 LK II / Strv m/21 系车辆](https://commons.wikimedia.org/wiki/Special:FilePath/Leichter_Kampfwagen_II_%28Version_MG%29_%2839076260322%29.jpg) ![LK II 的装甲与车体结构展示](https://commons.wikimedia.org/wiki/Special:FilePath/Leichter_Kampfwagen_II_Vernietete_Panzerung.jpg) [/grid]
+[grid] ![德国坦克博物馆展示的 LK II / Strv m/21 系车辆](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Leichter_Kampfwagen_II_%28Version_MG%29_%2839076260322%29--ff-e3f48c4bf134.szqqnxvtk.webp) ![LK II 的装甲与车体结构展示](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Leichter_Kampfwagen_II_Vernietete_Panzerung--ff-11dbe537ac97.2h93nuo60w.webp) [/grid]
 
 故事并没有在 1918 年结束。
 
@@ -2159,7 +2159,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 它拥有两个直径接近九米的巨大前轮，后方则使用一个小得多的转向轮，整车看起来更像一台装有武器的巨型三轮机械。
 
-![试验中的俄国沙皇坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Tsar_tank.jpg)
+![试验中的俄国沙皇坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Tsar_tank--ff-8fb8781f5161.7zr83zweb4.webp)
 
 真正试验时，问题也非常直观。
 
@@ -2173,7 +2173,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 它让六个巨大的框架连接成一条环形结构，整个框架围绕中央动力舱不断翻转，试图直接压过铁丝网与宽阔障碍。
 
-[grid] ![法国第一型 Boirault Machine 原型](https://commons.wikimedia.org/wiki/Special:FilePath/Appareil_Boirault_1914.jpg) ![试验中行进的 Boirault Machine](https://commons.wikimedia.org/wiki/Special:FilePath/Boirault_machine_underway.jpg) [/grid]
+[grid] ![法国第一型 Boirault Machine 原型](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Appareil_Boirault_1914--ff-cf53128527e7.6il328s96w.webp) ![试验中行进的 Boirault Machine](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Boirault_machine_underway--ff-7d16b7ceac86.6writ40k3g.webp) [/grid]
 
 然而，它的速度极慢，转向困难，体积巨大，几乎无法成为真正实用的战场车辆。
 
@@ -2193,7 +2193,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 于是 Pioneer Tractor Company 制造了一个巨大的管状框架，让履带沿外圈运行，而真正需要装甲保护的乘员舱则缩在中央。
 
-![1918 年美国 骨架坦克 原型](https://commons.wikimedia.org/wiki/Special:FilePath/AD1116719-014_Skeleton_Tank.jpg)
+![1918 年美国 骨架坦克 原型](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/AD1116719-014_Skeleton_Tank--ff-94e40d667c98.6f1h4iz6fn.webp)
 
 美国陆军资料显示，这辆原型车只有大约 9 吨，却仍保持约 25 英尺的车长，希望同时获得：
 
@@ -2218,7 +2218,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 今天看，这种“油电传动”思路并不陌生。
 
-![1918 年美国 霍尔特油电坦克 原型](https://commons.wikimedia.org/wiki/Special:FilePath/Holt_prototype_gas_electric_tank.jpg)
+![1918 年美国 霍尔特油电坦克 原型](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Holt_prototype_gas_electric_tank--ff-533ac0388492.70b4qttmw8.webp)
 
 问题在于，当时的发动机、电气设备和整车重量很难实现理想匹配。
 
@@ -2232,7 +2232,7 @@ Joseph Vollmer 设计的 **Leichter Kampfwagen II（LK II）** 代表完全相�
 
 它是一辆非常小的双人轻型坦克，使用成熟的汽车工业部件，设计目标之一就是廉价和大规模生产。
 
-![1918 年 Aberdeen Proving Ground 的 福特3吨M1918坦克](https://commons.wikimedia.org/wiki/Special:FilePath/Ford_Three-ton.jpg)
+![1918 年 Aberdeen Proving Ground 的 福特3吨M1918坦克](https://img.nightbugclub.cn/posts/history/WWI/261004-WWI-ST2-industrial-war-weapons/Ford_Three-ton--ff-b1eb18d47bfb.6poaxoeeq5.webp)
 
 美国一度为它准备了极大的生产计划，但战事结束、测试结果和军方需求变化让原有计划失去了实施的必要。
 

@@ -50,29 +50,29 @@ seriesOrder: 4
 
 /* ---------- 地图 / 战线 / 地缘格局图：宽幅展示 ---------- */
 /* 按文章实际地图文件名增删以下选择器。 */
-.custom-md center:has(> figure > img[src*="Verdun%20and%20Vincinity%20-%20Map.jpg"]),
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Battle%20of%20Jutland%2C%201916.svg"]),
-.custom-md center:has(> figure > img[src*="EasternFront1916b.jpg"]),
-.custom-md center:has(> figure > img[src*="Battle%20of%20the%20Somme%201916%20map.png"]),
-.custom-md center:has(> figure > img[src*="West%20bank%20of%20the%20Meuse%2C%20Verdun%2C%201916.png"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Verdun-and-Vincinity---Map--ff-0bc7d1f06cea.2dphq4s2td.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Map-of-the-Battle-of-Jutland%2C-1916--ff-776226cf2507.9o0l16jnse.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/EasternFront1916b--ff-c4a4021ccf5e.73uqojjp55.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Battle-of-the-Somme-1916-map--ff-da3c7d8d7f8f.2rvxh00dlr.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/West-bank-of-the-Meuse%2C-Verdun%2C-1916--ff-a117a4ae2590.1ht0aoiedn.webp"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src*="Verdun%20and%20Vincinity%20-%20Map.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Battle%20of%20Jutland%2C%201916.svg"]) > figure,
-.custom-md center:has(> figure > img[src*="EasternFront1916b.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Battle%20of%20the%20Somme%201916%20map.png"]) > figure,
-.custom-md center:has(> figure > img[src*="West%20bank%20of%20the%20Meuse%2C%20Verdun%2C%201916.png"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Verdun-and-Vincinity---Map--ff-0bc7d1f06cea.2dphq4s2td.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Map-of-the-Battle-of-Jutland%2C-1916--ff-776226cf2507.9o0l16jnse.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/EasternFront1916b--ff-c4a4021ccf5e.73uqojjp55.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Battle-of-the-Somme-1916-map--ff-da3c7d8d7f8f.2rvxh00dlr.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/West-bank-of-the-Meuse%2C-Verdun%2C-1916--ff-a117a4ae2590.1ht0aoiedn.webp"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src*="Verdun%20and%20Vincinity%20-%20Map.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Map%20of%20the%20Battle%20of%20Jutland%2C%201916.svg"]) img,
-.custom-md center:has(> figure > img[src*="EasternFront1916b.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Battle%20of%20the%20Somme%201916%20map.png"]) img,
-.custom-md center:has(> figure > img[src*="West%20bank%20of%20the%20Meuse%2C%20Verdun%2C%201916.png"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Verdun-and-Vincinity---Map--ff-0bc7d1f06cea.2dphq4s2td.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Map-of-the-Battle-of-Jutland%2C-1916--ff-776226cf2507.9o0l16jnse.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/EasternFront1916b--ff-c4a4021ccf5e.73uqojjp55.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Battle-of-the-Somme-1916-map--ff-da3c7d8d7f8f.2rvxh00dlr.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/West-bank-of-the-Meuse%2C-Verdun%2C-1916--ff-a117a4ae2590.1ht0aoiedn.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -81,38 +81,38 @@ seriesOrder: 4
 
 /* ---------- 单独出现的纵向人物肖像：桌面端右浮 ---------- */
 /* 已经在 [grid] 中的人物不要加入这里。 */
-.custom-md center:has(> figure > img[src*="Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg"]),
-.custom-md center:has(> figure > img[src*="Photo%20of%20Philippe%20P%C3%A9tain.jpg"]),
-.custom-md center:has(> figure > img[src*="%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg"]),
-.custom-md center:has(> figure > img[src*="Douglas%20Haig.jpg"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp"]) {
   float: right;
   width: min(34%, var(--history-portrait-width));
   margin: 0.35rem 0 1.15rem 1.5rem;
 }
 
-.custom-md center:has(> figure > img[src*="Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Photo%20of%20Philippe%20P%C3%A9tain.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg"]) > figure,
-.custom-md center:has(> figure > img[src*="Douglas%20Haig.jpg"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp"]) > figure {
   width: 100%;
   max-width: none;
   margin: 0;
 }
 
-.custom-md center:has(> figure > img[src*="Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Photo%20of%20Philippe%20P%C3%A9tain.jpg"]) img,
-.custom-md center:has(> figure > img[src*="%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg"]) img,
-.custom-md center:has(> figure > img[src*="Douglas%20Haig.jpg"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: 20rem;
   object-fit: contain;
 }
 
-.custom-md center:has(> figure > img[src*="Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg"]) figcaption,
-.custom-md center:has(> figure > img[src*="Photo%20of%20Philippe%20P%C3%A9tain.jpg"]) figcaption,
-.custom-md center:has(> figure > img[src*="%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg"]) figcaption,
-.custom-md center:has(> figure > img[src*="Douglas%20Haig.jpg"]) figcaption {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp"]) figcaption {
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -175,20 +175,20 @@ seriesOrder: 4
     margin: 1.25rem auto;
   }
 
-  .custom-md center:has(> figure > img[src*="Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg"]),
-  .custom-md center:has(> figure > img[src*="Photo%20of%20Philippe%20P%C3%A9tain.jpg"]),
-  .custom-md center:has(> figure > img[src*="%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg"]),
-  .custom-md center:has(> figure > img[src*="Douglas%20Haig.jpg"]) {
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp"]),
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp"]),
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp"]),
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp"]) {
     float: none;
     width: min(100%, var(--history-portrait-mobile-width));
     margin: 1.25rem auto;
   }
 
-  .custom-md center:has(> figure > img[src*="Verdun%20and%20Vincinity%20-%20Map.jpg"]) img,
-  .custom-md center:has(> figure > img[src*="Map%20of%20the%20Battle%20of%20Jutland%2C%201916.svg"]) img,
-  .custom-md center:has(> figure > img[src*="EasternFront1916b.jpg"]) img,
-  .custom-md center:has(> figure > img[src*="Battle%20of%20the%20Somme%201916%20map.png"]) img,
-  .custom-md center:has(> figure > img[src*="West%20bank%20of%20the%20Meuse%2C%20Verdun%2C%201916.png"]) img {
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Verdun-and-Vincinity---Map--ff-0bc7d1f06cea.2dphq4s2td.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Map-of-the-Battle-of-Jutland%2C-1916--ff-776226cf2507.9o0l16jnse.svg"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/EasternFront1916b--ff-c4a4021ccf5e.73uqojjp55.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Battle-of-the-Somme-1916-map--ff-da3c7d8d7f8f.2rvxh00dlr.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/West-bank-of-the-Meuse%2C-Verdun%2C-1916--ff-a117a4ae2590.1ht0aoiedn.webp"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -215,7 +215,7 @@ seriesOrder: 4
 
 炮火一遍遍犁过这片土地，将一切化为焦土，留下连绵的弹坑。即使只为夺取一处阵地，也可能付出数以万计的伤亡。
 
-![1916 年凡尔登 304 高地战壕中的法国第 87 步兵团士兵](https://commons.wikimedia.org/wiki/Special:FilePath/French%20soldiers%20of%20the%2087th%20Regiment%20shelter%20in%20their%20trenches%20at%20Hill%20304%20at%20Verdun.jpg)
+![1916 年凡尔登 304 高地战壕中的法国第 87 步兵团士兵](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/French-soldiers-of-the-87th-Regiment-shelter-in-their-trenches-at-Hill-304-at-Verdun--ff-ca15139ba785.2h93nul5hp.webp)
 
 1915 年，毒气、潜艇、加里波利远征与东线突破都未能结束战争。
 
@@ -243,7 +243,7 @@ seriesOrder: 4
 
 因此，消耗战真正要比较的是：**能不能让敌人的损失速度超过其补充、恢复和重新组织的速度，同时确保己方仍能继续作战。**
 
-![1916 年 9 月，索姆河战场上借助轨道搬运 15 英寸榴弹炮炮弹的士兵](https://commons.wikimedia.org/wiki/Special:FilePath/15inchHowitzerShellEnglebelmerWoodSeptember1916.jpg)
+![1916 年 9 月，索姆河战场上借助轨道搬运 15 英寸榴弹炮炮弹的士兵](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/15inchHowitzerShellEnglebelmerWoodSeptember1916--ff-dca04678e128.7w7m6a0axm.webp)
 
 在后来的索姆河战场上，一枚重型榴弹炮的炮弹，就需要士兵借助轨道来搬运。把炮弹送到炮口，只是整个补给过程的最后一步；在此之前，还要经过钢铁生产、炸药制造、弹药装填、仓储和长途运输。
 
@@ -278,7 +278,7 @@ seriesOrder: 4
 
 德国总参谋长 **埃里希·冯·法尔肯海因（Erich von Falkenhayn）** 因而把希望重新放在对法国的进攻。
 
-![德国总参谋长埃里希·冯·法尔肯海因](https://commons.wikimedia.org/wiki/Special:FilePath/Erich%20von%20Falkenhayn%2C%201861-1922%20LCCN2002714158.jpg)
+![德国总参谋长埃里希·冯·法尔肯海因](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Erich-von-Falkenhayn%2C-1861-1922-LCCN2002714158--ff-0119a7aaba52.7lksd4l2q2.webp)
 
 法尔肯海因在马恩河战役后接替毛奇。此时，德国速胜的希望已经落空。他需要解决的，是接下来怎样打，才能迫使敌方接受谈判。
 
@@ -290,7 +290,7 @@ seriesOrder: 4
 
 这并不意味着凡尔登已经被完全包围。但从德军角度看，攻击这里，似乎有机会在相对有限的战场上形成局部优势。
 
-![1916 年凡尔登、默兹河两岸与周边要塞战区示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Verdun%20and%20Vincinity%20-%20Map.jpg)
+![1916 年凡尔登、默兹河两岸与周边要塞战区示意图](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Verdun-and-Vincinity---Map--ff-0bc7d1f06cea.2dphq4s2td.webp)
 
 凡尔登既是法国边境防御体系的一部分，也承载着此前战争留下的历史记忆，可以说是法国的一处国家象征。对于德国的威胁，法国自然不会坐视不理。
 
@@ -334,7 +334,7 @@ seriesOrder: 4
 
 此前，法国为了防止部分战区的火力空虚，将部分要塞的火炮和守备部队调往其他战区。杜奥蒙要塞因此守备薄弱，一支很小的德军部队趁乱进入要塞，以极少的兵力夺取了这处重要据点。
 
-![1916 年遭受炮火破坏的杜奥蒙要塞航空照片](https://commons.wikimedia.org/wiki/Special:FilePath/Douaumontfort.jpg)
+![1916 年遭受炮火破坏的杜奥蒙要塞航空照片](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douaumontfort--ff-4757a464a789.13mkjta3gk.webp)
 
 深埋地下的混凝土工事能够为士兵提供掩蔽，要塞又能控制周边地形，仍是双方反复争夺的支点。
 
@@ -366,7 +366,7 @@ seriesOrder: 4
 
 危机中，法国将防守凡尔登的任务交给 **菲利普·贝当（Philippe Pétain）**。
 
-![不晚于 1916 年拍摄的菲利普·贝当肖像](https://commons.wikimedia.org/wiki/Special:FilePath/Photo%20of%20Philippe%20P%C3%A9tain.jpg)
+![不晚于 1916 年拍摄的菲利普·贝当肖像](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Photo-of-Philippe-P%C3%A9tain--ff-ae430be3f13f.2a5vsez037.webp)
 
 贝当不仅重视火力准备，也关注士兵能够承受多大的压力。他不认为，仅凭进攻精神或一道坚守命令，就能让部队在重炮轰击之下长期维持。
 
@@ -374,7 +374,7 @@ seriesOrder: 4
 
 车辆要统一调度，损坏的路面要不断铺石修补，故障车辆也必须及时清走，以免堵塞道路。为了让车队持续运转，道路维护和运输安排都要随时跟上前线的需要。
 
-![1916 年描绘法军车队向凡尔登运送增援与弹药的插画](https://commons.wikimedia.org/wiki/Special:FilePath/At%20the%20Battle%20of%20Verdun%20-%20French%20reserves%20and%20ammunition%20are%20brought%20in%20by%20motorcades.png)
+![1916 年描绘法军车队向凡尔登运送增援与弹药的插画](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/At-the-Battle-of-Verdun---French-reserves-and-ammunition-are-brought-in-by-motorcades--ff-e6d2df6d1d31.8ae1x58lpa.webp)
 
 与此同时，当地的窄轨铁路，以及后来部分恢复通车的其他铁路，也承担了补给任务。
 
@@ -395,13 +395,13 @@ seriesOrder: 4
 
 这些高地关系到战场观察、炮兵阵地和附近阵地的安全，它们后来也成为凡尔登战役的象征。
 
-![1916 年凡尔登默兹河左岸战区示意图，1921 年刊于《泰晤士报战争史》](https://commons.wikimedia.org/wiki/Special:FilePath/West%20bank%20of%20the%20Meuse%2C%20Verdun%2C%201916.png)
+![1916 年凡尔登默兹河左岸战区示意图，1921 年刊于《泰晤士报战争史》](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/West-bank-of-the-Meuse%2C-Verdun%2C-1916--ff-a117a4ae2590.1ht0aoiedn.webp)
 
 死人山与 304 高地控制着周围的观察和射击位置。德军每夺取一处阵地，还须压制邻近高地上的侧射火力，留下兵力防备反攻，并修复遭到炮击的补给道路，才能维持战果。
 
 原本希望控制规模的一场进攻，就这样需要不断投入更多兵力和物资。
 
-![1916 年 3 月 18 日，凡尔登附近作战中的法国 155 毫米长身管火炮](https://commons.wikimedia.org/wiki/Special:FilePath/French%20155L%20sur%20affut%20truck%20in%20action%20near%20Verdun%2C%20March%201916%20%283%29.jpg)
+![1916 年 3 月 18 日，凡尔登附近作战中的法国 155 毫米长身管火炮](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/French-155L-sur-affut-truck-in-action-near-Verdun%2C-March-1916-%283%29--ff-e7ac3dc85a51.3gp710nwng.webp)
 
 法军也拥有大炮。德军步兵同样要穿过被炮火破坏的地面，守住缺乏完整掩蔽的阵地，再承受法国的炮击与反攻。
 
@@ -419,7 +419,7 @@ seriesOrder: 4
 
 烟雾、爆炸、火焰、毒气，伤员和病患挤在一起。外面的炮声仍然在响，但里面的人已经很难分辨，这些炮火究竟是友军的救援，还是又一轮打在要塞上的轰击。
 
-![1916 年 3 月，沃要塞内部的法军士兵](https://commons.wikimedia.org/wiki/Special:FilePath/M%20134%208%20le%20fort%20de%20Vaux%20mars%201916.jpg)
+![1916 年 3 月，沃要塞内部的法军士兵](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/M-134-8-le-fort-de-Vaux-mars-1916--ff-3d4b2a931a72.9ddr814fmy.webp)
 
 电话线路遭到破坏后，守军不得不依赖信鸽、灯光信号和冒险穿越火线的联络人员向后方求援。
 
@@ -505,7 +505,7 @@ seriesOrder: 4
 
 英国大舰队司令 **约翰·杰利科（John Jellicoe）** 则需要兼顾两件事：寻找打击德国舰队的机会，同时保存英国主力，因为英国的海上控制依赖这支舰队。
 
-![约 1914—1915 年的英国战列舰“铁公爵”号，后来担任杰利科的旗舰](https://commons.wikimedia.org/wiki/Special:FilePath/HMS%20Iron%20Duke%20%281912%29.jpg)
+![约 1914—1915 年的英国战列舰“铁公爵”号，后来担任杰利科的旗舰](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/HMS-Iron-Duke-%281912%29--ff-aeae2bc26717.3uvmrvw7j3.webp)
 
 对德国而言，没有取得决定性胜利，舰队仍可能撤回基地，等待下一次行动；对英国而言，如果主力舰队在一场冒险中遭到灾难性损失，不仅会使封锁线被迫解除，也会影响海上贸易和英国本土安全。
 
@@ -519,7 +519,7 @@ seriesOrder: 4
 
 贝蒂的部队向南追逐德国舰队，随后发现舍尔的主力也在附近，便转向北方，把德军引向杰利科正在赶来的大舰队。
 
-![1916 年日德兰海战中英德舰队主要航迹示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Map%20of%20the%20Battle%20of%20Jutland%2C%201916.svg)
+![1916 年日德兰海战中英德舰队主要航迹示意图](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Map-of-the-Battle-of-Jutland%2C-1916--ff-776226cf2507.9o0l16jnse.svg)
 
 德军想引出一部分英国舰艇，英军也想把德国舰队引到自己的主力面前。
 
@@ -531,7 +531,7 @@ seriesOrder: 4
 
 “玛丽女王”号等军舰的爆炸，常被后世归因于英国舰艇装甲不足。但装甲只是部分原因。炮弹命中后是否引燃发射药，火焰是否沿弹药通道蔓延到舰体内部，也取决于舰上的弹药处理方式和防火措施。
 
-![1916 年 5 月 31 日，“狮”号受炮击与“玛丽女王”号爆炸的两张照片合成图](https://commons.wikimedia.org/wiki/Special:FilePath/HMSLion%20besideHMSQueenMaryblowingup1916.jpg)
+![1916 年 5 月 31 日，“狮”号受炮击与“玛丽女王”号爆炸的两张照片合成图](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/HMSLion-besideHMSQueenMaryblowingup1916--ff-9c0798d80558.9gxd5qxich.webp)
 
 傍晚，杰利科将主力舰队展开为战斗队形，德国舰队一度陷入不利位置。
 
@@ -586,7 +586,7 @@ seriesOrder: 4
 
 俄军西南方面军司令 **阿列克谢·勃鲁西洛夫（Aleksei Brusilov）** 认为，过去一些攻势准备时间很长，主攻地段又过于明显，往往给了敌人集中预备队的机会。
 
-![1916 年俄国西南方面军司令阿列克谢·勃鲁西洛夫](https://commons.wikimedia.org/wiki/Special:FilePath/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%20%D0%90.%D0%90.%20%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C%201916.jpg)
+![1916 年俄国西南方面军司令阿列克谢·勃鲁西洛夫](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB-%D0%90.%D0%90.-%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%2C-1916--ff-92721ad39708.77ecm9crx3.webp)
 
 他在此前作战经验的基础上，对进攻准备作出了更细致的安排。
 
@@ -600,7 +600,7 @@ seriesOrder: 4
 
 在卢茨克等地，奥匈防线遭到突破，大批部队被俘或后撤。俄军在沃里尼亚、加利西亚与布科维纳方向取得进展。
 
-![1916 年勃鲁西洛夫攻势与东线南部战区示意图](https://commons.wikimedia.org/wiki/Special:FilePath/EasternFront1916b.jpg)
+![1916 年勃鲁西洛夫攻势与东线南部战区示意图](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/EasternFront1916b--ff-c4a4021ccf5e.73uqojjp55.webp)
 
 奥匈并非完全没有防御准备。奥匈军队依托着战壕和坚固阵地，却过于相信这些工事能够挡住进攻；部分精锐部队与装备又已调往意大利方向。面对俄军的多点进攻和较为紧密的步炮协同，奥匈指挥官来不及有效调动预备队应对。
 
@@ -614,7 +614,7 @@ seriesOrder: 4
 
 德国增援抵达后，同盟国开始稳住防线。俄军后续进攻又越来越集中在科韦利一带。这里虽然是重要的铁路枢纽，但河流、沼泽和不断加强的敌军防御，都增加了进攻的难度。
 
-![以 1916 年布恰奇地区俄军攻势为题材的战争插画](https://commons.wikimedia.org/wiki/Special:FilePath/From%20the%20fighting%20of%20the%20Russian%20offensive%20in%20the%20Buchach%20area%2C%201916.png)
+![以 1916 年布恰奇地区俄军攻势为题材的战争插画](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/From-the-fighting-of-the-Russian-offensive-in-the-Buchach-area%2C-1916--ff-2a7cb8fbe226.4cloggxl3s.webp)
 
 随着攻势集中到科韦利，同盟国军队更容易判断俄军的主攻方向，并作出防备，俄军逐渐丧失了最初多点进攻带来的优势。
 
@@ -649,7 +649,7 @@ seriesOrder: 4
 
 对英国远征军总司令 **道格拉斯·黑格（Douglas Haig）** 而言，这既是机会，也是难题。
 
-![1917 年拍摄的英国远征军总司令道格拉斯·黑格肖像](https://commons.wikimedia.org/wiki/Special:FilePath/Douglas%20Haig.jpg)
+![1917 年拍摄的英国远征军总司令道格拉斯·黑格肖像](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Douglas-Haig--ff-3d0cd66405d5.86ufzffj0o.webp)
 
 1914 年，英国派往欧洲大陆的还是一支规模有限的职业远征军。此时，这支军队已大幅扩充，包含大量新兵。1914—1915 年招募的志愿兵开始参加大规模作战，其中不少人来自同一城镇、行业或社群，组成了后来常被称为“伙伴营”的部队。
 
@@ -663,7 +663,7 @@ seriesOrder: 4
 
 英军的进攻重点位于索姆河以北，法军则在相邻地段及河流南侧展开攻击。从蒂耶普瓦尔、拉布瓦塞勒到弗莱尔、佩罗讷，这片战场上的村庄、高地与道路，共同构成了德军防御的骨架。
 
-![1916 年索姆河战役主要攻击阶段与战线变化示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20the%20Somme%201916%20map.png)
+![1916 年索姆河战役主要攻击阶段与战线变化示意图](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Battle-of-the-Somme-1916-map--ff-da3c7d8d7f8f.2rvxh00dlr.webp)
 
 ## 互有胜负的拉锯
 
@@ -701,7 +701,7 @@ seriesOrder: 4
 
 英军工兵此前已经在地下掘进，把大量炸药放到德军据点下方。7 月 1 日上午 7 时 20 分，**霍桑岭（Hawthorn Ridge）** 下的装药爆炸，整片土石被掀向空中。
 
-![1916 年 7 月 1 日上午 7 时 20 分，霍桑岭地下装药爆炸的瞬间](https://commons.wikimedia.org/wiki/Special:FilePath/Hawthorn%20Ridge%20Redoubt%20mine%20%281%20July%201916%29%201.jpg)
+![1916 年 7 月 1 日上午 7 时 20 分，霍桑岭地下装药爆炸的瞬间](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Hawthorn-Ridge-Redoubt-mine-%281-July-1916%29-1--ff-5d3faf496ef2.8vnpjg321n.webp)
 
 土石冲上天空的瞬间，被摄影师欧内斯特·布鲁克斯（Ernest Brooks）记录下来，成为索姆河最著名的影像之一。
 
@@ -713,7 +713,7 @@ seriesOrder: 4
 
 英军于 7 月 1 日上午 7 时 30 分发起了攻击。
 
-![1916 年 7 月 1 日，向拉布瓦塞勒方向前进的泰恩赛德爱尔兰旅支援连](https://commons.wikimedia.org/wiki/Special:FilePath/Tyneside%20Irish%20Brigade%20advancing%201%20July%201916.jpg)
+![1916 年 7 月 1 日，向拉布瓦塞勒方向前进的泰恩赛德爱尔兰旅支援连](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Tyneside-Irish-Brigade-advancing-1-July-1916--ff-fc6d4e757be3.mv8xe9mn.webp)
 
 当炮火弹幕打往更远处，幸存的德军便从掩体里出来，将机枪重新架到射击位置。
 
@@ -738,7 +738,7 @@ seriesOrder: 4
 
 敌方阵地还在更远处。
 
-![1916 年 7 月 1 日进攻前，圣约翰支援壕中的纽芬兰士兵](https://commons.wikimedia.org/wiki/Special:FilePath/Newfoundland%20soldiers%201916.jpg)
+![1916 年 7 月 1 日进攻前，圣约翰支援壕中的纽芬兰士兵](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Newfoundland-soldiers-1916--ff-47c4d537dae1.7zr83ztdm8.webp)
 
 出发以后，他们迅速暴露在了德军火力下，在极短时间内遭受毁灭性损失。
 
@@ -774,7 +774,7 @@ seriesOrder: 4
 
 何况，在已经取得进展的地段，仍有继续扩大战果的机会。当时的指挥官，也无法预知整个夏天打下来，双方最终会付出多大的代价。
 
-![1916 年 7 月，索姆河奥维莱附近战壕中的英国柴郡团士兵](https://commons.wikimedia.org/wiki/Special:FilePath/Cheshire%20Regiment%20trench%20Somme%201916.jpg)
+![1916 年 7 月，索姆河奥维莱附近战壕中的英国柴郡团士兵](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Cheshire-Regiment-trench-Somme-1916--ff-a98356270a2f.9o0l16jnr1.webp)
 
 此后的战斗，逐渐从寻求一次大规模突破，变成对村庄、树林与高地的反复争夺。
 
@@ -794,7 +794,7 @@ seriesOrder: 4
 
 夺取村庄后，部队仍然需要继续争夺附近阵地，并承受德军猛烈炮击。第一师撤下后，第二师和第四师先后接替；这些部队又陆续再次进入同一片战场。
 
-![1916 年 8 月 28 日，从波齐耶尔北侧高地眺望德军第二道阵地](https://commons.wikimedia.org/wiki/Special:FilePath/Pozieres%20plateau%2028%20August%201916.jpg)
+![1916 年 8 月 28 日，从波齐耶尔北侧高地眺望德军第二道阵地](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Pozieres-plateau-28-August-1916--ff-0d48a3c3260a.13mkjta3hw.webp)
 
 经过约六周的战斗，澳大利亚军队在波齐耶尔及相关作战中损失约 **23,000 人**，包括阵亡、负伤和被俘。
 
@@ -802,7 +802,7 @@ seriesOrder: 4
 
 索姆河战场上的部队来自英国本土，也来自帝国各地。这既显示了英国能够动员多大范围的兵员，也意味着战场上的伤亡会波及不同地区的社会与家庭。
 
-![1916 年 7 月 19 日，贝尔纳费森林附近走向救护站的伤员](https://commons.wikimedia.org/wiki/Special:FilePath/British%20wounded%20Bernafay%20Wood%2019%20July%201916.jpg)
+![1916 年 7 月 19 日，贝尔纳费森林附近走向救护站的伤员](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/British-wounded-Bernafay-Wood-19-July-1916--ff-49e381a000c0.8okho0gwl7.webp)
 
 更多伤员需要担架。要把他们送到后方，必须先找到人，再穿过被打坏的战壕与道路，送到前沿救护站，之后才有机会继续转往更远处的医疗设施。
 
@@ -825,7 +825,7 @@ seriesOrder: 4
 >
 > 闪光观测由不同观察点记录炮口闪光方向，再交会判断炮位；声测则利用沿线传声器记录炮声。英军在 1916 年改进声测设备，减少背景噪声干扰，使侦测隐藏炮位的工作逐步更可靠。
 
-![1916 年 7 月，索姆河奥维莱附近佩戴防毒面具的英军维克斯机枪组](https://commons.wikimedia.org/wiki/Special:FilePath/Vickers%20machine%20gun%20crew%20with%20gas%20masks.jpg)
+![1916 年 7 月，索姆河奥维莱附近佩戴防毒面具的英军维克斯机枪组](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/Vickers-machine-gun-crew-with-gas-masks--ff-3c1dfa2611e2.3uvmrvw7k6.webp)
 
 ## 即使夺下阵地以后，也仍然难以掌握战场
 
@@ -867,7 +867,7 @@ seriesOrder: 4
 
 战斗从夏天持续到冬天，而夏天被炮火打碎的道路和土地，到了秋冬积雨以后，就变成更加难以通行的泥地。运送炮弹、移动火炮、修复阵地和抬运伤员，都变得更费力。
 
-![1916 年 11 月 6 日，穿过索姆河战区泥泞道路的英法车队](https://commons.wikimedia.org/wiki/Special:FilePath/THE%20BATTLE%20OF%20THE%20SOMME%2C%20JULY-NOVEMBER%201916%20Q80279.jpg)
+![1916 年 11 月 6 日，穿过索姆河战区泥泞道路的英法车队](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/THE-BATTLE-OF-THE-SOMME%2C-JULY-NOVEMBER-1916-Q80279--ff-aee3c5c0d83b.102ym3h0s6.webp)
 
 车队需要向前运送物资，车辆却要在泥泞中艰难行进。前线一轮炮击所需的弹药，要靠这些通道不断补充。
 
@@ -891,7 +891,7 @@ seriesOrder: 4
 
 它就是英国的 **Mark I 坦克**。
 
-![1916 年 9 月 25 日，索姆河蒂耶普瓦尔附近的英国 Mark I 雄型坦克](https://commons.wikimedia.org/wiki/Special:FilePath/British%20Mark%20I%20male%20tank%20Somme%2025%20September%201916.jpg)
+![1916 年 9 月 25 日，索姆河蒂耶普瓦尔附近的英国 Mark I 雄型坦克](https://img.nightbugclub.cn/posts/history/WWI/261001-WWI-4-verdun-somme-attrition/British-Mark-I-male-tank-Somme-25-September-1916--ff-148b1e5ee7e5.pg4sy1skt.webp)
 
 这张照片拍摄于十天后的索姆河战场。车体尾部还能看见早期型号使用的辅助转向装置，它与后世更紧凑、更可靠的坦克有很大不同。
 

@@ -49,35 +49,35 @@ seriesOrder: 2
 }
 
 /* ---------- 地图 / 战线 / 地缘格局图：宽幅展示 ---------- */
-.custom-md center:has(> figure > img[src*="Schlieffen%20Plan"]),
-.custom-md center:has(> figure > img[src*="Battle%20of%20Frontiers"]),
-.custom-md center:has(> figure > img[src*="Battle%20of%20Mons"]),
-.custom-md center:has(> figure > img[src*="Tannenberg-tysk-plan"]),
-.custom-md center:has(> figure > img[src*="Positions%20of%20the%20armies"]),
-.custom-md center:has(> figure > img[src*="Race%20to%20the%20Sea"]),
-.custom-md center:has(> figure > img[src*="Yser%20inundations"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Schlieffen-Plan--ff-363e5f4ef4b5.9gxd5sj6dk.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Frontiers---Map--ff-ff67f9fde24a.5fldref2w1.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Mons--ff-39aca744be64.232nx0yijo.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Tannenberg-tysk-plan--ff-72dea4d39922.wjcof9m2x.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Positions-of-the-armies-before-the-Battle-of-the-Marne%2C-September-1914--ff-abd62ecfc09e.9kgz3ic933.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Race-to-the-Sea-1914--ff-04a7a4a72055.102ym52osg.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Yser-inundations-and-western-approaches-to-Houthoulst-Forest%2C-1914--ff-c7e534b3782b.92qxexavio.webp"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src*="Schlieffen%20Plan"]) > figure,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Frontiers"]) > figure,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Mons"]) > figure,
-.custom-md center:has(> figure > img[src*="Tannenberg-tysk-plan"]) > figure,
-.custom-md center:has(> figure > img[src*="Positions%20of%20the%20armies"]) > figure,
-.custom-md center:has(> figure > img[src*="Race%20to%20the%20Sea"]) > figure,
-.custom-md center:has(> figure > img[src*="Yser%20inundations"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Schlieffen-Plan--ff-363e5f4ef4b5.9gxd5sj6dk.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Frontiers---Map--ff-ff67f9fde24a.5fldref2w1.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Mons--ff-39aca744be64.232nx0yijo.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Tannenberg-tysk-plan--ff-72dea4d39922.wjcof9m2x.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Positions-of-the-armies-before-the-Battle-of-the-Marne%2C-September-1914--ff-abd62ecfc09e.9kgz3ic933.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Race-to-the-Sea-1914--ff-04a7a4a72055.102ym52osg.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Yser-inundations-and-western-approaches-to-Houthoulst-Forest%2C-1914--ff-c7e534b3782b.92qxexavio.webp"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src*="Schlieffen%20Plan"]) img,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Frontiers"]) img,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Mons"]) img,
-.custom-md center:has(> figure > img[src*="Tannenberg-tysk-plan"]) img,
-.custom-md center:has(> figure > img[src*="Positions%20of%20the%20armies"]) img,
-.custom-md center:has(> figure > img[src*="Race%20to%20the%20Sea"]) img,
-.custom-md center:has(> figure > img[src*="Yser%20inundations"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Schlieffen-Plan--ff-363e5f4ef4b5.9gxd5sj6dk.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Frontiers---Map--ff-ff67f9fde24a.5fldref2w1.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Mons--ff-39aca744be64.232nx0yijo.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Tannenberg-tysk-plan--ff-72dea4d39922.wjcof9m2x.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Positions-of-the-armies-before-the-Battle-of-the-Marne%2C-September-1914--ff-abd62ecfc09e.9kgz3ic933.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Race-to-the-Sea-1914--ff-04a7a4a72055.102ym52osg.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Yser-inundations-and-western-approaches-to-Houthoulst-Forest%2C-1914--ff-c7e534b3782b.92qxexavio.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -85,34 +85,34 @@ seriesOrder: 2
 }
 
 /* ---------- 单独出现的纵向人物肖像：桌面端右浮 ---------- */
-.custom-md center:has(> figure > img[src*="Albert%20I.%2C%20King%20of%20the%20Belgians"]),
-.custom-md center:has(> figure > img[src*="Alexander%20von%20Kluck"]),
-.custom-md center:has(> figure > img[src*="Herbert%20Kitchener%201914"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp"]) {
   float: right;
   width: min(34%, var(--history-portrait-width));
   margin: 0.35rem 0 1.15rem 1.5rem;
 }
 
-.custom-md center:has(> figure > img[src*="Albert%20I.%2C%20King%20of%20the%20Belgians"]) > figure,
-.custom-md center:has(> figure > img[src*="Alexander%20von%20Kluck"]) > figure,
-.custom-md center:has(> figure > img[src*="Herbert%20Kitchener%201914"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp"]) > figure {
   width: 100%;
   max-width: none;
   margin: 0;
 }
 
-.custom-md center:has(> figure > img[src*="Albert%20I.%2C%20King%20of%20the%20Belgians"]) img,
-.custom-md center:has(> figure > img[src*="Alexander%20von%20Kluck"]) img,
-.custom-md center:has(> figure > img[src*="Herbert%20Kitchener%201914"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: 20rem;
   object-fit: contain;
 }
 
-.custom-md center:has(> figure > img[src*="Albert%20I.%2C%20King%20of%20the%20Belgians"]) figcaption,
-.custom-md center:has(> figure > img[src*="Alexander%20von%20Kluck"]) figcaption,
-.custom-md center:has(> figure > img[src*="Herbert%20Kitchener%201914"]) figcaption {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp"]) figcaption {
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -175,21 +175,21 @@ seriesOrder: 2
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src*="Albert%20I.%2C%20King%20of%20the%20Belgians"]),
-.custom-md center:has(> figure > img[src*="Alexander%20von%20Kluck"]),
-.custom-md center:has(> figure > img[src*="Herbert%20Kitchener%201914"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp"]) {
     float: none;
     width: min(100%, var(--history-portrait-mobile-width));
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src*="Schlieffen%20Plan"]) img,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Frontiers"]) img,
-.custom-md center:has(> figure > img[src*="Battle%20of%20Mons"]) img,
-.custom-md center:has(> figure > img[src*="Tannenberg-tysk-plan"]) img,
-.custom-md center:has(> figure > img[src*="Positions%20of%20the%20armies"]) img,
-.custom-md center:has(> figure > img[src*="Race%20to%20the%20Sea"]) img,
-.custom-md center:has(> figure > img[src*="Yser%20inundations"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Schlieffen-Plan--ff-363e5f4ef4b5.9gxd5sj6dk.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Frontiers---Map--ff-ff67f9fde24a.5fldref2w1.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Mons--ff-39aca744be64.232nx0yijo.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Tannenberg-tysk-plan--ff-72dea4d39922.wjcof9m2x.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Positions-of-the-armies-before-the-Battle-of-the-Marne%2C-September-1914--ff-abd62ecfc09e.9kgz3ic933.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Race-to-the-Sea-1914--ff-04a7a4a72055.102ym52osg.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Yser-inundations-and-western-approaches-to-Houthoulst-Forest%2C-1914--ff-c7e534b3782b.92qxexavio.webp"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -223,7 +223,7 @@ seriesOrder: 2
 
 几乎所有大国都拥有自己的战争计划。这些计划虽然各不相同，却都建立在一个危险的共同前提之上：**只要依赖战争初期的快速机动与一次或数次决定性会战，仍有可能在敌人充分发挥全部人口、工业和经济潜力以前便决定胜负。**
 
-![1914 年 8 月 3 日，巴黎东站准备出发的法国动员士兵](https://commons.wikimedia.org/wiki/Special:FilePath/Mobilisation%2008-1914.jpg)
+![1914 年 8 月 3 日，巴黎东站准备出发的法国动员士兵](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Mobilisation-08-1914--ff-01ae7b3692f5.lwiv9udx8.webp)
 
 到 1914 年秋天，八月地图上向前伸展的进攻箭头，逐渐变成一条延伸至北海的战线。士兵挖掘越来越深的壕沟，守住一片高地或一条道路也要付出巨大代价。
 
@@ -249,7 +249,7 @@ seriesOrder: 2
 
 因此，德国计划把最强大的右翼通过卢森堡和比利时向西北展开，绕过法国主要边境防御体系，再向南、向东旋转，威胁巴黎和法军主力后方。
 
-![1914 年德国施里芬—毛奇作战构想与法国第十七号计划示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Schlieffen%20Plan.svg)
+![1914 年德国施里芬—毛奇作战构想与法国第十七号计划示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Schlieffen-Plan--ff-363e5f4ef4b5.9gxd5sj6dk.svg)
 
 后世通常把这套作战构想概括为“施里芬计划”。施里芬退休以后，继任总参谋长赫尔穆特·冯·毛奇继续调整部署，1914 年实际执行的是多年规划不断演变后的方案。
 
@@ -288,7 +288,7 @@ seriesOrder: 2
 
 因此，战争刚开始时，并不是一方进攻、另一方防守，而是两个庞大的军事体系同时向前推进，尝试进攻对方的弱翼。
 
-[grid] ![1914 年的德国总参谋长赫尔穆特·冯·毛奇](https://commons.wikimedia.org/wiki/Special:FilePath/Helmuth%20Johannes%20Ludwig%20von%20Moltke%201914.jpg) ![一战初期的法国陆军总司令约瑟夫·霞飞](https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Joffre.jpg) [/grid]
+[grid] ![1914 年的德国总参谋长赫尔穆特·冯·毛奇](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Helmuth-Johannes-Ludwig-von-Moltke-1914--ff-1c930e141fed.1766hkou52.webp) ![一战初期的法国陆军总司令约瑟夫·霞飞](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Joseph-Joffre--ff-df84ea2233ac.6poaxpx2aw.webp) [/grid]
 
 ---
 
@@ -308,7 +308,7 @@ seriesOrder: 2
 
 因此，比利时政府拒绝了德国要求军队自由通行的最后通牒，并决定抵抗。
 
-![约 1914 年的比利时国王阿尔贝一世](https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20I.%2C%20King%20of%20the%20Belgians%2C%20c.%201914.jpg)
+![约 1914 年的比利时国王阿尔贝一世](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Albert-I.%2C-King-of-the-Belgians%2C-c.-1914--ff-9a4ee0e09b66.5xbffzggmu.webp)
 
 抵抗并非因为比利时相信自己能够单独战胜德军，而是要保住主权、履行本国法律责任，同时为期待中的外援争取时间。
 
@@ -330,7 +330,7 @@ seriesOrder: 2
 
 穿越一个中立国家，绝不等同于在一张空白地图上行军。
 
-![1914 年列日附近阻断道路、准备抵抗德军推进的比利时军队](https://commons.wikimedia.org/wiki/Special:FilePath/Belgian%20troops%20block%20a%20road%20in%20Li%C3%A8ge%20-%20L%C3%BCttich%20against%20the%20German%20advance%201914.jpg)
+![1914 年列日附近阻断道路、准备抵抗德军推进的比利时军队](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Belgian-troops-block-a-road-in-Li%C3%A8ge---L%C3%BCttich-against-the-German-advance-1914--ff-d67103c02f81.9ddr82q3k4.webp)
 
 德军最终依靠重炮攻克了列日外围堡垒。这场抵抗并没有让德国计划立刻破产，德军主力仍然继续向西推进。
 
@@ -344,7 +344,7 @@ seriesOrder: 2
 
 战争计划中的箭头可以连续移动，现实中的军队却需要吃饭、睡觉、补充弹药，还需要修复桥梁、管理道路，并留下部队守卫铁路和占领区。
 
-![1914 年 8 月被比利时守军炸毁后的列日桥梁](https://commons.wikimedia.org/wiki/Special:FilePath/Li%C3%A8ge%2C%20le%20pont%20des%20Arches%20d%C3%A9truit%20par%20les%20Belges%20%C3%A0%20l%27approche%20des%20Allemands%20-%20btv1b6931567w.jpg)
+![1914 年 8 月被比利时守军炸毁后的列日桥梁](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Li%C3%A8ge%2C-le-pont-des-Arches-d%C3%A9truit-par-les-Belges-%C3%A0-lapproche-des-Allemands---btv1b6931567w--ff-271e35402655.2rvxh2wbz4.webp)
 
 这些消耗单独来看都不足以阻止德军推进，却会随着战线不断向前延伸而层层累积。
 
@@ -358,7 +358,7 @@ seriesOrder: 2
 
 鲁汶等地遭到严重破坏，大量比利时平民逃离家园，这些事件后来被协约国广泛宣传。
 
-![1914 年逃离战区的比利时难民](https://commons.wikimedia.org/wiki/Special:FilePath/Belgian%20refugees%201914.jpg)
+![1914 年逃离战区的比利时难民](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Belgian-refugees-1914--ff-01b9c729dfea.7q34em2xy.webp)
 
 > [!NOTE]
 > 一战初期有关比利时暴行的宣传材料确实包含夸张和未经证实的故事，因此阅读当时宣传品时需要区分具体证据。但现代研究已经确认，德军在 1914 年入侵比利时和法国北部期间确实杀害了数千名平民，并在多个城镇实施了大规模报复和破坏。
@@ -380,7 +380,7 @@ seriesOrder: 2
 > [!NOTE]
 > “边境战役”通常是对 1914 年 8 月法国与比利时边境附近多场战斗的合称，涉及阿尔萨斯、洛林、阿登和桑布尔河一带。各处的指挥目标与战况并不完全相同，不能把它看成一场由单一命令决定的战役。
 
-![1914 年 8 月边境战役主要战线与进军方向示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20Frontiers%20-%20Map.jpg)
+![1914 年 8 月边境战役主要战线与进军方向示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Frontiers---Map--ff-ff67f9fde24a.5fldref2w1.webp)
 
 8 月上中旬，法军向阿尔萨斯和洛林发动进攻。向这一地区进军，带有夺回失地的政治象征，也有试探和牵制德军的军事目的。最初的进攻取得了一部分进展。
 
@@ -407,7 +407,7 @@ seriesOrder: 2
 
 8 月 23 日，英军在比利时蒙斯附近的运河线上与亚历山大·冯·克鲁克指挥的德国第一集团军交战。
 
-![1914 年 8 月 23 日蒙斯战役兵力与战线示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20Mons.jpg)
+![1914 年 8 月 23 日蒙斯战役兵力与战线示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Battle-of-Mons--ff-39aca744be64.232nx0yijo.webp)
 
 蒙斯战役最容易被写成一个让人热血沸腾、却解释不了结果的故事：少量英军以步枪射速让德军误以为碰上大批机枪。
 
@@ -421,7 +421,7 @@ seriesOrder: 2
 
 这样的阻击有代价，但也切实减缓了德军的推进速度。
 
-![1914 年 8 月，从蒙斯撤退的英国远征军骑兵与马匹](https://commons.wikimedia.org/wiki/Special:FilePath/Retreat%20from%20Mons.jpg)
+![1914 年 8 月，从蒙斯撤退的英国远征军骑兵与马匹](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Retreat-from-Mons--ff-64c7ea750785.8s43lrvnd2.webp)
 
 法英军队虽损失惨重，却没有被合围消灭。
 
@@ -487,7 +487,7 @@ seriesOrder: 2
 
 德国第八集团军指挥层发生更换，退休将领保罗·冯·兴登堡被召回，埃里希·鲁登道夫出任其参谋长。
 
-![保罗·冯·兴登堡与埃里希·鲁登道夫](https://commons.wikimedia.org/wiki/Special:FilePath/Hindenburg%20and%20Ludendorff.jpg)
+![保罗·冯·兴登堡与埃里希·鲁登道夫](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Hindenburg-and-Ludendorff--ff-048925bf3ea5.46h6ot0br.webp)
 
 随后，德军利用铁路运输、较有利的内线位置，以及俄军两个集团军之间协调不畅的弱点，迅速把主力转向萨姆索诺夫指挥的第二集团军。
 
@@ -497,7 +497,7 @@ seriesOrder: 2
 
 大量俄军被俘，萨姆索诺夫自杀。
 
-![1914 年 8 月坦能堡战役德军机动与包围计划示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Tannenberg-tysk-plan.jpg)
+![1914 年 8 月坦能堡战役德军机动与包围计划示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Tannenberg-tysk-plan--ff-72dea4d39922.wjcof9m2x.webp)
 
 坦能堡是德国在一战早期最耀眼的军事胜利之一。
 
@@ -578,7 +578,7 @@ seriesOrder: 2
 
 ## 克鲁克的大转向
 
-![约 1914 年的德国第一集团军司令亚历山大·冯·克鲁克](https://commons.wikimedia.org/wiki/Special:FilePath/Alexander%20von%20Kluck%20%28ca.%201914%29.jpg)
+![约 1914 年的德国第一集团军司令亚历山大·冯·克鲁克](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Alexander-von-Kluck-%28ca.-1914%29--ff-be716e84c975.b9p24f5nc.webp)
 
 原本的德国右翼计划进行大范围的包抄。
 
@@ -624,7 +624,7 @@ seriesOrder: 2
 
 克鲁克被迫调兵应对。这样一来，第一集团军与第二集团军之间原本就存在的间隙进一步扩大。
 
-![1914 年 9 月第一次马恩河战役前夕德法英主要部队位置](https://commons.wikimedia.org/wiki/Special:FilePath/Positions%20of%20the%20armies%20before%20the%20Battle%20of%20the%20Marne%2C%20September%201914.jpg)
+![1914 年 9 月第一次马恩河战役前夕德法英主要部队位置](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Positions-of-the-armies-before-the-Battle-of-the-Marne%2C-September-1914--ff-abd62ecfc09e.9kgz3ic933.webp)
 
 ## 英军和法军插入德国集团军之间的空隙
 
@@ -656,7 +656,7 @@ seriesOrder: 2
 
 出租车被征用，成为巴黎保卫战的象征。
 
-[grid] ![1914 年的巴黎军政长官约瑟夫·加利埃尼](https://commons.wikimedia.org/wiki/Special:FilePath/Galli%C3%A9ni.JPG) ![法国陆军博物馆收藏的雷诺 AG-1“马恩河出租车”](https://commons.wikimedia.org/wiki/Special:FilePath/Taxi%20de%20la%20Marne%2C%20Mus%C3%A9e%20de%20l%27Arm%C3%A9e-IMG%200987.jpg) [/grid]
+[grid] ![1914 年的巴黎军政长官约瑟夫·加利埃尼](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Galli%C3%A9ni--ff-2f1de9c11428.6m4p003zim.webp) ![法国陆军博物馆收藏的雷诺 AG-1“马恩河出租车”](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Taxi-de-la-Marne%2C-Mus%C3%A9e-de-lArm%C3%A9e-IMG-0987--ff-5ec8be2c0bb9.5xbfg0qqw3.webp) [/grid]
 
 这批运输相对于整个会战的兵力规模十分有限。法军反击依靠的是仍在运转的整体动员与交通体系。
 
@@ -685,7 +685,7 @@ seriesOrder: 2
 
 最初的浅壕也逐渐变成了稳定的阵地。
 
-![一战初期埃纳河战线的德军战壕](https://commons.wikimedia.org/wiki/Special:FilePath/German%20trenches%20on%20the%20aisne.jpg)
+![一战初期埃纳河战线的德军战壕](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/German-trenches-on-the-aisne--ff-2763e10a0735.1ow865q7pv.webp)
 
 ## 通过”侧翼”展开进攻
 
@@ -701,7 +701,7 @@ seriesOrder: 2
 
 这一系列行动后来被称为 **“奔向大海”（Race to the Sea）**。
 
-![1914 年秋季“奔向大海”期间西线不断向北延伸的示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Race%20to%20the%20Sea%201914.png)
+![1914 年秋季“奔向大海”期间西线不断向北延伸的示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Race-to-the-Sea-1914--ff-04a7a4a72055.102ym52osg.webp)
 
 行动的目标是绕到对方暴露的北翼，双方却始终未能完成决定性的包抄。
 
@@ -719,7 +719,7 @@ seriesOrder: 2
 
 洪水与既有防御共同限制了德军的进一步行动。
 
-![1914 年伊瑟河地区人工淹没区与西部战线示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Yser%20inundations%20and%20western%20approaches%20to%20Houthoulst%20Forest%2C%201914.jpg)
+![1914 年伊瑟河地区人工淹没区与西部战线示意图](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Yser-inundations-and-western-approaches-to-Houthoulst-Forest%2C-1914--ff-c7e534b3782b.92qxexavio.webp)
 
 与此同时，更南面的伊普尔地区爆发激烈战斗。
 
@@ -729,7 +729,7 @@ seriesOrder: 2
 
 第一次伊普尔战役造成极其惨重的伤亡。
 
-![1914 年 10 月，伊普尔布料厅前被英国远征军征用的民用卡车](https://commons.wikimedia.org/wiki/Special:FilePath/First%20Battle%20of%20Ypres%2C%20October-November%201914%2C%20Q%2057283.jpg)
+![1914 年 10 月，伊普尔布料厅前被英国远征军征用的民用卡车](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/First-Battle-of-Ypres%2C-October-November-1914%2C-Q-57283--ff-2b232068e31c.4clogij91o.webp)
 
 到 11 月，双方都已经很难再组织一次大规模机动作战。
 
@@ -753,7 +753,7 @@ seriesOrder: 2
 
 英国战争大臣基奇纳甚至在战争刚开始时就判断，这场冲突可能持续数年，需要英国建立规模远大于原有远征军的新军。
 
-![1914 年的英国战争大臣赫伯特·基奇纳](https://commons.wikimedia.org/wiki/Special:FilePath/Herbert%20Kitchener%201914.jpg)
+![1914 年的英国战争大臣赫伯特·基奇纳](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/Herbert-Kitchener-1914--ff-f3c276937382.4ubq53kmoq.webp)
 
 德国军界内部同样有人怀疑“短期战争”能否实现。
 
@@ -779,7 +779,7 @@ seriesOrder: 2
 
 于是，进攻战略并没有因为会导致惨重伤亡而消失。
 
-![第一次世界大战时期投入作战的法国 75 毫米野战炮](https://commons.wikimedia.org/wiki/Special:FilePath/%22A%20French%20%2775%27%20in%20Action.%22.jpg)
+![第一次世界大战时期投入作战的法国 75 毫米野战炮](https://img.nightbugclub.cn/posts/history/WWI/260925-WWI-2-schlieffen-to-marne/_A-French-75-in-Action._--ff-ee084a2e2c18.2yz5ciiheg.webp)
 
 相反，在接下来的四年里，各国不断寻找新的方法突破防线：
 

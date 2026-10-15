@@ -49,17 +49,17 @@ seriesOrder: 5
 }
 
 /* ---------- 战线 / 阵地俯视图：宽幅展示 ---------- */
-.custom-md center:has(> figure > img[src*="Aerial_view_Loos-Hulluch_trench_system_July_1917.jpg"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Aerial_view_Loos-Hulluch_trench_system_July_1917--ff-b80c8845ee44.8vnpjg4uay.webp"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src*="Aerial_view_Loos-Hulluch_trench_system_July_1917.jpg"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Aerial_view_Loos-Hulluch_trench_system_July_1917--ff-b80c8845ee44.8vnpjg4uay.webp"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src*="Aerial_view_Loos-Hulluch_trench_system_July_1917.jpg"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Aerial_view_Loos-Hulluch_trench_system_July_1917--ff-b80c8845ee44.8vnpjg4uay.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -124,7 +124,7 @@ seriesOrder: 5
     margin: 1.25rem auto;
   }
 
-  .custom-md center:has(> figure > img[src*="Aerial_view_Loos-Hulluch_trench_system_July_1917.jpg"]) img {
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Aerial_view_Loos-Hulluch_trench_system_July_1917--ff-b80c8845ee44.8vnpjg4uay.webp"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -213,7 +213,7 @@ seriesOrder: 5
 | 掩蔽部（dugout） | 壕壁或阵地后方 | 休息、储物或躲避部分炮火 |
 | 观察孔、潜望镜 | 胸墙附近 | 尽量不暴露头部地观察前方 |
 
-![1916 年 7 月索姆河战役期间，奥维莱尔附近被英军占据的一段德军战壕](https://commons.wikimedia.org/wiki/Special:FilePath/Cheshire_Regiment_trench_Somme_1916.jpg)
+![1916 年 7 月索姆河战役期间，奥维莱尔附近被英军占据的一段德军战壕](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Cheshire_Regiment_trench_Somme_1916--ff-c8c1dd1c39da.2vfjepv8kz.webp)
 
 前沿壕也很少是一条笔直的长沟，而是不断转折、分段。这样既能减少敌军闯入后沿整条壕沟纵向射击的机会，也能让一次爆炸的弹片和冲击尽量被限制在较短的壕段里。
 
@@ -267,7 +267,7 @@ seriesOrder: 5
 
 在排水困难的阵地，几块木板可能直接决定一段壕沟还能不能正常通行。持续降雨以后，情况会迅速恶化：土壁变软，运输困难，装备沾满泥浆，人的双脚则长时间泡在肮脏、寒冷的泥水里。
 
-![1917 年 10 月，澳大利亚第 1 师士兵在帕申达勒附近的泥地上铺设鸭板](https://commons.wikimedia.org/wiki/Special:FilePath/1st_Division_laying_duckboards_over_the_muddy_ground_in_Passchendaele_%28AWM_E00837%29.jpg)
+![1917 年 10 月，澳大利亚第 1 师士兵在帕申达勒附近的泥地上铺设鸭板](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/1st_Division_laying_duckboards_over_the_muddy_ground_in_Passchendaele_%28AWM_E00837%29--ff-9c46aa38df9f.1apsf8y15y.webp)
 
 这也是“战壕足”（trench foot）成为一战前线典型疾病的背景。它并不是简单的“鞋里进了水”，而是双脚长期处于寒冷、潮湿和受压状态，血液循环受到影响后出现的一系列损伤。
 
@@ -304,7 +304,7 @@ seriesOrder: 5
 
 1917 年拍摄的一张空中侦察照片能更直观地表现这种结构。壕沟在地面上弯折交错，双方阵地之间则夹着无人区。
 
-![1917 年 7 月洛斯—于吕什地区的空中侦察照片，可见双方堑壕网络与无人区](https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_Loos-Hulluch_trench_system_July_1917.jpg)
+![1917 年 7 月洛斯—于吕什地区的空中侦察照片，可见双方堑壕网络与无人区](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Aerial_view_Loos-Hulluch_trench_system_July_1917--ff-b80c8845ee44.8vnpjg4uay.webp)
 
 地图上画成一条细线的“西线”，落到地面以后，其实有相当大的宽度和纵深。
 
@@ -326,7 +326,7 @@ seriesOrder: 5
 
 等它真正到你手里时已经谈不上温热，但在潮湿的壕沟里，能喝到稍微有点热量的东西本身就足够让人稍微取得一点慰藉。
 
-![1917 年 3 月阿拉斯附近，英军士兵在积雪覆盖的战壕中用餐](https://commons.wikimedia.org/wiki/Special:FilePath/The_British_Army_on_the_Western_Front%2C_1914-1918_Q4846.jpg)
+![1917 年 3 月阿拉斯附近，英军士兵在积雪覆盖的战壕中用餐](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_British_Army_on_the_Western_Front%2C_1914-1918_Q4846--ff-ad96e4cece5b.13mkjtbvph.webp)
 
 ## 午餐吃什么？
 
@@ -372,7 +372,7 @@ seriesOrder: 5
 
 只有远处传来一声很难分辨方向的枪响。
 
-![1916 年 8 月索姆河奥维莱尔，一名伍斯特郡团哨兵透过战壕射孔观察前方](https://commons.wikimedia.org/wiki/Special:FilePath/Worcester_Regiment_sentry_in_trench_Ovillers_1916_IWM_Q_4100.jpg)
+![1916 年 8 月索姆河奥维莱尔，一名伍斯特郡团哨兵透过战壕射孔观察前方](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Worcester_Regiment_sentry_in_trench_Ovillers_1916_IWM_Q_4100--ff-ae47697d4c1a.8vnpjg4uaq.webp)
 
 此时此刻，最难忍受的反而不是不时传来的枪声。
 
@@ -430,7 +430,7 @@ seriesOrder: 5
 
 于是你重新开始数。
 
-![1916 年 7 月 1 日索姆河博蒙阿梅尔，英军炮兵正在轰击德军阵地](https://commons.wikimedia.org/wiki/Special:FilePath/Beaumont_Hamel_bombardment_01-07-1916_IWM_Q_90.jpg)
+![1916 年 7 月 1 日索姆河博蒙阿梅尔，英军炮兵正在轰击德军阵地](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Beaumont_Hamel_bombardment_01-07-1916_IWM_Q_90--ff-7b70835fa822.5trti83i1w.webp)
 
 ## 炮兵“改变”了整条堑壕的生活
 
@@ -504,7 +504,7 @@ seriesOrder: 5
 
 白天容易被敌军观察的工作，很多都被推迟到黑暗以后。
 
-![1917 年 1 月康布雷一带，英军杂役队夜间沿支援壕搬运鸭板](https://commons.wikimedia.org/wiki/Special:FilePath/Trench_at_night.jpg)
+![1917 年 1 月康布雷一带，英军杂役队夜间沿支援壕搬运鸭板](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Trench_at_night--ff-5a679186f85e.67y993bsyd.webp)
 
 黑暗降低了被观察的风险，却没有让战场安静下来。
 
@@ -570,7 +570,7 @@ seriesOrder: 5
 
 较大的突袭需要炮兵、机枪手和工兵配合，有时会发展成一场事先准备的小型战斗。指挥官可能希望借此掌握敌情、保持部队警觉，执行任务的士兵却要承担很高的伤亡与被俘风险，对行动价值未必有相同看法。
 
-![1916 年 1 月苏谢前线从胸墙外拍摄的无人区，敌军阵地距拍摄点约 80 米](https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Sensier%27s_Journal_during_the_Great_War_-_No_Man%27s_Land_in_Souchez%2C_January_1916.jpg)
+![1916 年 1 月苏谢前线从胸墙外拍摄的无人区，敌军阵地距拍摄点约 80 米](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Charles_Sensiers_Journal_during_the_Great_War_-_No_Mans_Land_in_Souchez%2C_January_1916--ff-c2158b58f15e.7w7m6cyh4r.webp)
 
 ---
 
@@ -638,7 +638,7 @@ seriesOrder: 5
 
 走了不知道多久，队伍终于停在一段更靠后的壕沟里。
 
-![1916 年 9 月索姆河吉耶蒙附近，威尔士近卫军士兵在一段预备壕中休息](https://commons.wikimedia.org/wiki/Special:FilePath/Welsh_Guards_at_Guillemont_03-09-1916_IWM_Q_4415.jpg)
+![1916 年 9 月索姆河吉耶蒙附近，威尔士近卫军士兵在一段预备壕中休息](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Welsh_Guards_at_Guillemont_03-09-1916_IWM_Q_4415--ff-d0dbea5c8063.b9p22v9zq.webp)
 
 你把背包放下来，靠着壕壁坐了一会儿。
 
@@ -664,7 +664,7 @@ seriesOrder: 5
 
 这天晚上，你终于不用直接守着无人区，却仍然睡在壕沟里。
 
-![1916 年 7 月 1 日博蒙阿梅尔进攻前，英军士兵在支援壕中睡觉，身旁仍放着通往前沿的梯板](https://commons.wikimedia.org/wiki/Special:FilePath/The_Battle_of_the_Somme%2C_July-november_1916_Q62.jpg)
+![1916 年 7 月 1 日博蒙阿梅尔进攻前，英军士兵在支援壕中睡觉，身旁仍放着通往前沿的梯板](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_Battle_of_the_Somme%2C_July-november_1916_Q62--ff-2cd82407b583.4qs47c7o74.webp)
 
 ## 支援壕和预备壕还不算“后方”
 
@@ -700,7 +700,7 @@ seriesOrder: 5
 
 没有鸭板，没有胸墙，头顶终于是一个完整的屋顶。
 
-![1915 年法国，一处宿营地外的两名英军士兵正在刮胡子](https://commons.wikimedia.org/wiki/Special:FilePath/British_soldiers_in_billets_France_%28Photo_24-318%29.jpg)
+![1915 年法国，一处宿营地外的两名英军士兵正在刮胡子](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/British_soldiers_in_billets_France_%28Photo_24-318%29--ff-443f2fc910ab.77ecm9ek31.webp)
 
 ## 临时构筑的宿营地
 
@@ -730,7 +730,7 @@ seriesOrder: 5
 
 终于重新穿上了相对干净一些的衣服，哪怕布料仍然粗糙，感觉也已经和昨天截然不同。
 
-![1918 年法国伯特兰库尔，刚离开战壕的新西兰士兵在师属浴场外等待；类似浴场用于让撤出一线的部队洗浴和处理虱患](https://commons.wikimedia.org/wiki/Special:FilePath/New_Zealand_soldiers_recently_in_the_trenches_outside_the_Divisional_Baths%2C_France_%2821499630725%29.jpg)
+![1918 年法国伯特兰库尔，刚离开战壕的新西兰士兵在师属浴场外等待；类似浴场用于让撤出一线的部队洗浴和处理虱患](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/New_Zealand_soldiers_recently_in_the_trenches_outside_the_Divisional_Baths%2C_France_%2821499630725%29--ff-06d64144ef2e.45igl1d7wd.webp)
 
 回到住处以后，你先把靴子上的泥刮掉，换上一双干袜子，再把步枪拆开重新清理。防毒面具、弹药和其他装备也要一件件检查。
 
@@ -772,7 +772,7 @@ seriesOrder: 5
 
 身边有人写信，有人倒头便睡；有人交谈，也有人掩面抽泣；有人靠墙点上一根香烟，也有人拆开家里寄来的包裹，和身边的人分食里面的东西。
 
-![1914 年第一次伊普尔战役期间，一批英军士兵在谷仓内休息；地面铺着稻草和毯子，步枪与个人装备靠墙放置](https://media.iwm.org.uk/ciim5/323/524/large_000000.jpg)
+![1914 年第一次伊普尔战役期间，一批英军士兵在谷仓内休息；地面铺着稻草和毯子，步枪与个人装备靠墙放置](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/large_000000--ff-05510c1dc862.7w7m6a233q.webp)
 
 今晚，不用在夜间巡逻，也不用去修铁丝网。
 
@@ -796,7 +796,7 @@ seriesOrder: 5
 
 你和同伴在一块空地上重新练习步枪操作、队列和战术动作。新来的士兵跟着老兵一起训练，军官不断纠正他们的动作。
 
-![一战期间，英军士兵在法国埃塔普勒附近的“Bull Ring”训练营进行刺刀训练](https://commons.wikimedia.org/wiki/Special:FilePath/The_British_Army_on_the_Western_Front_1914-1918_Q33326.jpg)
+![一战期间，英军士兵在法国埃塔普勒附近的“Bull Ring”训练营进行刺刀训练](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_British_Army_on_the_Western_Front_1914-1918_Q33326--ff-8e03253ced51.6writ3zbyp.webp)
 
 午饭以后，本以为可以稍微休息一会，却又被叫去修路。
 
@@ -834,7 +834,7 @@ seriesOrder: 5
 
 先是泥泞的道路，然后出现较浅的交通沟。再往前，壕壁一点点升到肩膀以上，你们重新进入战壕体系。
 
-![1917 年 3 月阿拉斯附近，英军第 6 营女王皇家团的配给搬运队抬着食物容器进入交通壕](https://commons.wikimedia.org/wiki/Special:FilePath/The_British_Army_on_the_Western_Front%2C_1914-1918_Q4838.jpg)
+![1917 年 3 月阿拉斯附近，英军第 6 营女王皇家团的配给搬运队抬着食物容器进入交通壕](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_British_Army_on_the_Western_Front%2C_1914-1918_Q4838--ff-ca28e3a8b761.3uvmrvxzr8.webp)
 
 离开前沿时看到的路，现在反过来走了一遍。
 
@@ -881,7 +881,7 @@ seriesOrder: 5
 
 《英军战壕命令范例》规定，前沿口粮和物资通常由支援壕、预备阵地组成的搬运队送上去，连军需军士随队到达。只有无法这样安排时，才抽调前沿人员；其中一份命令还规定，同一时间离开火线的人员不得超过守军的十分之一。
 
-![1917 年 1 月，法国鲁昂的一处英军补给站堆放着大量装箱口粮](https://commons.wikimedia.org/wiki/Special:FilePath/British_Army_on_the_Western_Front_1914-1918_Q1766.jpg)
+![1917 年 1 月，法国鲁昂的一处英军补给站堆放着大量装箱口粮](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/British_Army_on_the_Western_Front_1914-1918_Q1766--ff-b4b7bc80cd31.83au1po8iw.webp)
 
 补给并没有适用于所有阵地的固定送达时刻。较暴露的路线可以借黄昏和夜色降低被观察的风险；交通壕较完善、敌情允许时，白天也能运送。搬运队还要尽量少发出声音，食物能否保温则取决于路程和沿途耽搁。
 
@@ -947,7 +947,7 @@ seriesOrder: 5
 
 如果包裹也在这几天送到，里面可能有巧克力、糖果、香烟、袜子，或者一张照片。你把能分的东西拿出来分享，身边的人也会这样做。
 
-![1917 年法国圣皮埃尔一处 YMCA 小屋内部，士兵可以在这类设施中休息、阅读和购买简单饮食](https://commons.wikimedia.org/wiki/Special:FilePath/The_Young_Men%27s_Christian_Association_on_the_Western_Front%2C_1914-1918_Q5402.jpg)
+![1917 年法国圣皮埃尔一处 YMCA 小屋内部，士兵可以在这类设施中休息、阅读和购买简单饮食](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_Young_Mens_Christian_Association_on_the_Western_Front%2C_1914-1918_Q5402--ff-b09cc8ed4fef.2dphq7q915.webp)
 
 写完信以后，你没有立刻回住处。
 
@@ -1002,7 +1002,7 @@ seriesOrder: 5
 
 台下却一直有人笑。
 
-![1918 年 5 月，英军“The Queerios”慰问演出团在蒙特勒伊附近为军人表演](https://commons.wikimedia.org/wiki/Special:FilePath/Entertainment_in_the_British_Army_on_the_Western_Front%2C_1914-1918_Q8959.jpg)
+![1918 年 5 月，英军“The Queerios”慰问演出团在蒙特勒伊附近为军人表演](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/Entertainment_in_the_British_Army_on_the_Western_Front%2C_1914-1918_Q8959--ff-432cac8e1f07.1vzg1jshf9.webp)
 
 如果没有那阵始终隐约传来的炮声，这几个小时甚至很容易让人忘记自己还身处异乡。
 
@@ -1033,7 +1033,7 @@ seriesOrder: 5
 
 **Concert party** 指组织起来演出的娱乐队伍，可以包括歌唱、短剧、喜剧与音乐厅式节目。一些演出临时凑成，后来也出现师、军一级的专门演出队，从不同部队选出演员。舞台、服装与道具常因陋就简，成员调动或伤亡又会迫使队伍重新组合。
 
-![1915 年法国，几名英军士兵在休息时围坐打牌](https://commons.wikimedia.org/wiki/Special:FilePath/British_soldiers_at_play_France_%28Photo_24-320%29.jpg)
+![1915 年法国，几名英军士兵在休息时围坐打牌](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/British_soldiers_at_play_France_%28Photo_24-320%29--ff-c4a656f5222b.7w7m6a233e.webp)
 
 具体条件因驻地而异。有些营地设施比较齐全，有些地方则几乎什么都没有。
 
@@ -1049,7 +1049,7 @@ seriesOrder: 5
 
 路边堆着箱子和木料，稍远的地方可能是仓库、修理点、医疗单位或铁路设施。
 
-![1916 年 9 月索姆河后方，阿尔贝—亚眠公路上的陆军勤务团运输卡车与燃料桶堆场](https://commons.wikimedia.org/wiki/Special:FilePath/The_Battle_of_the_Somme%2C_July-november_1916_Q1413.jpg)
+![1916 年 9 月索姆河后方，阿尔贝—亚眠公路上的陆军勤务团运输卡车与燃料桶堆场](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/The_Battle_of_the_Somme%2C_July-november_1916_Q1413--ff-d05f174b4bb9.64enbdiq82.webp)
 
 这里没有弹坑与铁丝网，却到处都是战争留下的痕迹。
 
@@ -1075,7 +1075,7 @@ seriesOrder: 5
 
 队伍缓缓离开村庄，房屋和树木慢慢被甩在身后。
 
-![1916 年 4 月，忠诚北兰开夏团士兵在法国瓦伊列队准备返回战壕](https://commons.wikimedia.org/wiki/Special:FilePath/British_Army_on_the_Western_Front%2C_1914-1918._Q518.jpg)
+![1916 年 4 月，忠诚北兰开夏团士兵在法国瓦伊列队准备返回战壕](https://img.nightbugclub.cn/posts/history/WWI/261002-WWI-ST1-trench-life/British_Army_on_the_Western_Front%2C_1914-1918._Q518--ff-700aad0226be.4922ir6ali.webp)
 
 普通道路重新变成交通壕。
 

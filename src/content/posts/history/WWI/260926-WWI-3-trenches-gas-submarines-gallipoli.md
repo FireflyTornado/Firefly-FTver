@@ -49,29 +49,29 @@ seriesOrder: 3
 }
 
 /* ---------- 地图 / 战线 / 地缘格局图：宽幅展示 ---------- */
-.custom-md center:has(> figure > img[src*="Northern%20part%20of%20Western%20front%201915-16"]),
-.custom-md center:has(> figure > img[src*="NYTMap2ndBattleOfYpres1915"]),
-.custom-md center:has(> figure > img[src*="Movements%20of%20RMS%20Lusitania%20and%20SM%20U-20"]),
-.custom-md center:has(> figure > img[src*="Graphic%20map%20of%20the%20Dardanelles"]),
-.custom-md center:has(> figure > img[src*="Russian%20retreat%201915-es"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Northern-part-of-Western-front-1915-16--ff-deb56beb01e4.3d5l3asl0k.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/NYTMap2ndBattleOfYpres1915--ff-1792f000b0ae.5molmsdbhh.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Movements-of-RMS-Lusitania-and-SM-U-20--ff-1269c0300466.8dxnuuzfj7.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Graphic-map-of-the-Dardanelles--ff-18493db33dfa.13mkjt7uiv.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Russian-retreat-1915-es--ff-5de9390cb407.8l0vqalkyx.svg"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src*="Northern%20part%20of%20Western%20front%201915-16"]) > figure,
-.custom-md center:has(> figure > img[src*="NYTMap2ndBattleOfYpres1915"]) > figure,
-.custom-md center:has(> figure > img[src*="Movements%20of%20RMS%20Lusitania%20and%20SM%20U-20"]) > figure,
-.custom-md center:has(> figure > img[src*="Graphic%20map%20of%20the%20Dardanelles"]) > figure,
-.custom-md center:has(> figure > img[src*="Russian%20retreat%201915-es"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Northern-part-of-Western-front-1915-16--ff-deb56beb01e4.3d5l3asl0k.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/NYTMap2ndBattleOfYpres1915--ff-1792f000b0ae.5molmsdbhh.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Movements-of-RMS-Lusitania-and-SM-U-20--ff-1269c0300466.8dxnuuzfj7.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Graphic-map-of-the-Dardanelles--ff-18493db33dfa.13mkjt7uiv.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Russian-retreat-1915-es--ff-5de9390cb407.8l0vqalkyx.svg"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src*="Northern%20part%20of%20Western%20front%201915-16"]) img,
-.custom-md center:has(> figure > img[src*="NYTMap2ndBattleOfYpres1915"]) img,
-.custom-md center:has(> figure > img[src*="Movements%20of%20RMS%20Lusitania%20and%20SM%20U-20"]) img,
-.custom-md center:has(> figure > img[src*="Graphic%20map%20of%20the%20Dardanelles"]) img,
-.custom-md center:has(> figure > img[src*="Russian%20retreat%201915-es"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Northern-part-of-Western-front-1915-16--ff-deb56beb01e4.3d5l3asl0k.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/NYTMap2ndBattleOfYpres1915--ff-1792f000b0ae.5molmsdbhh.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Movements-of-RMS-Lusitania-and-SM-U-20--ff-1269c0300466.8dxnuuzfj7.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Graphic-map-of-the-Dardanelles--ff-18493db33dfa.13mkjt7uiv.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Russian-retreat-1915-es--ff-5de9390cb407.8l0vqalkyx.svg"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -79,26 +79,26 @@ seriesOrder: 3
 }
 
 /* ---------- 单独出现的纵向人物肖像：桌面端右浮 ---------- */
-.custom-md center:has(> figure > img[src*="Churchill%20Admiralty%20Uniform%201914"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp"]) {
   float: right;
   width: min(34%, var(--history-portrait-width));
   margin: 0.35rem 0 1.15rem 1.5rem;
 }
 
-.custom-md center:has(> figure > img[src*="Churchill%20Admiralty%20Uniform%201914"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp"]) > figure {
   width: 100%;
   max-width: none;
   margin: 0;
 }
 
-.custom-md center:has(> figure > img[src*="Churchill%20Admiralty%20Uniform%201914"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: 20rem;
   object-fit: contain;
 }
 
-.custom-md center:has(> figure > img[src*="Churchill%20Admiralty%20Uniform%201914"]) figcaption {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp"]) figcaption {
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -161,17 +161,17 @@ seriesOrder: 3
     margin: 1.25rem auto;
   }
 
-  .custom-md center:has(> figure > img[src*="Churchill%20Admiralty%20Uniform%201914"]) {
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp"]) {
     float: none;
     width: min(100%, var(--history-portrait-mobile-width));
     margin: 1.25rem auto;
   }
 
-  .custom-md center:has(> figure > img[src*="Northern%20part%20of%20Western%20front%201915-16"]) img,
-  .custom-md center:has(> figure > img[src*="NYTMap2ndBattleOfYpres1915"]) img,
-  .custom-md center:has(> figure > img[src*="Movements%20of%20RMS%20Lusitania%20and%20SM%20U-20"]) img,
-  .custom-md center:has(> figure > img[src*="Graphic%20map%20of%20the%20Dardanelles"]) img,
-  .custom-md center:has(> figure > img[src*="Russian%20retreat%201915-es"]) img {
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Northern-part-of-Western-front-1915-16--ff-deb56beb01e4.3d5l3asl0k.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/NYTMap2ndBattleOfYpres1915--ff-1792f000b0ae.5molmsdbhh.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Movements-of-RMS-Lusitania-and-SM-U-20--ff-1269c0300466.8dxnuuzfj7.svg"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Graphic-map-of-the-Dardanelles--ff-18493db33dfa.13mkjt7uiv.webp"]) img,
+  .custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Russian-retreat-1915-es--ff-5de9390cb407.8l0vqalkyx.svg"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -198,7 +198,7 @@ seriesOrder: 3
 
 从北海岸边到瑞士边境，一条由战壕、铁丝网、掩体、炮兵阵地和交通壕组成的防御体系横亘在欧洲西部。过去几个月里为了躲避炮火临时挖出的土沟，正在变成一套能够容纳数十万士兵长期生活和作战的地下世界。
 
-![描绘 1915 年 5 月比利时普洛赫斯泰尔特森林附近前沿战壕的画作](https://commons.wikimedia.org/wiki/Special:FilePath/Front%20Line%20Trench%2C%20Near%20St.%20Yves%2C%20Ploegsteert%20Wood%2C%20May%201915%20Art.IWMART4785.jpg)
+![描绘 1915 年 5 月比利时普洛赫斯泰尔特森林附近前沿战壕的画作](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Front-Line-Trench%2C-Near-St.-Yves%2C-Ploegsteert-Wood%2C-May-1915-Art.IWMART4785--ff-877a36fd4509.54yjy7bxvl.webp)
 
 后世对第一次世界大战最典型的视觉印象——泥泞的壕沟、横亘在无人区上的铁丝网、不断落下的炮弹、机枪火力与防毒面具——大多是在这样的环境中逐渐定型的。
 
@@ -230,7 +230,7 @@ seriesOrder: 3
 | 支援战壕、预备战壕 | 位于前沿阵地之后 | 提供纵深，并容纳后备兵力 |
 | 交通壕 | 连接前沿与后方阵地 | 向前输送弹药、食物、饮水和增援，同时后送伤员 |
 
-![1914 年英军野战筑垒手册中的战壕结构示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Trench%20construction%20diagram%201914.svg)
+![1914 年英军野战筑垒手册中的战壕结构示意图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Trench-construction-diagram-1914--ff-6edbe6ecdea5.7q34cy647.svg)
 
 战壕本身也很少笔直延伸。如果一条壕沟修成很长的直线，一发落入壕中的炮弹、一次爆炸，甚至一名闯入阵地的敌军士兵，都可能让危险沿着壕沟迅速向两侧扩散。因此，许多前线阵地会采用折线、横墙或分段结构，把冲击和射界限制在较小范围内。
 
@@ -253,7 +253,7 @@ seriesOrder: 3
 
 到了 1915 年，西线从北海到瑞士已经形成一条大体连续的正面战场。
 
-![1915—1916 年西线北部主要战区示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Northern%20part%20of%20Western%20front%201915-16.jpg)
+![1915—1916 年西线北部主要战区示意图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Northern-part-of-Western-front-1915-16--ff-deb56beb01e4.3d5l3asl0k.webp)
 
 这条线并不是绝对静止的。双方仍然会发动进攻，也会在局部地区推进几百米、几公里，甚至夺下重要高地和村庄。
 
@@ -273,7 +273,7 @@ seriesOrder: 3
 
 炮弹未必能够彻底切断铁丝网；被炮火压制的机枪组可以在轰击结束后重新回到射击位置；炮击留下的大量弹坑又会让进攻部队更难维持队形。
 
-![1915 年费斯蒂贝尔战场上，皇家明斯特燧发枪团军官操作机枪](https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Munster%20Fusiliers%20on%20the%20Western%20Front.jpg)
+![1915 年费斯蒂贝尔战场上，皇家明斯特燧发枪团军官操作机枪](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Royal-Munster-Fusiliers-on-the-Western-Front--ff-f464c163e857.6writ3vasm.webp)
 
 机枪与步枪、铁丝网、炮兵和纵深阵地配合，共同把无人区变成了火力覆盖区。
 
@@ -332,13 +332,13 @@ seriesOrder: 3
 
 氯气进入呼吸道后会对肺部造成严重损伤，对于此前从未面对如此大规模化学攻击的士兵来说，真正可怕的不只是毒性本身，还在于他们几乎没有成熟的防护设备，甚至不知道这些绿色的气体究竟是什么。
 
-![1915 年第二次伊普尔战役初期战线与德军毒气攻击区域示意图](https://commons.wikimedia.org/wiki/Special:FilePath/NYTMap2ndBattleOfYpres1915.png)
+![1915 年第二次伊普尔战役初期战线与德军毒气攻击区域示意图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/NYTMap2ndBattleOfYpres1915--ff-1792f000b0ae.5molmsdbhh.webp)
 
 法军部分阵地出现混乱，毒气迅速在战线上撕开了一道缺口。
 
 这就是 **第二次伊普尔战役（Second Battle of Ypres）**，它通常被视为人类战争史上第一次大规模致死性毒气攻击，也是化学武器开始真正进入现代战场的重要节点。
 
-![加拿大官方战争艺术中的第二次伊普尔战役场景](https://commons.wikimedia.org/wiki/Special:FilePath/The%20Second%20Battle%20of%20Ypres.png)
+![加拿大官方战争艺术中的第二次伊普尔战役场景](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/The-Second-Battle-of-Ypres--ff-6d2af51b60fa.1zj1z9hj02.webp)
 
 德军最初的攻击确实造成了一个意料之外的突破机会，可这次行动本来并不是一场已经准备好大批预备队、随时向纵深推进的战略总攻，造成的效果甚至超过了部分德军指挥官原先的预期。
 
@@ -352,7 +352,7 @@ seriesOrder: 3
 
 化学战最初的优势，很大程度来自突然性。一旦士兵知道自己面对的是什么，便会迅速寻找防护办法。最早的应急措施十分简陋。士兵使用湿布等材料覆盖口鼻，希望减轻氯气的影响；随后，各国都开始配发经过化学处理的防护用品，再发展出更可靠的防毒面具和滤毒装置。
 
-![1915 年佩戴早期防毒面具的法国士兵](https://commons.wikimedia.org/wiki/Special:FilePath/French%20soldiers%20wearing%20gas%20masks%201915.jpg)
+![1915 年佩戴早期防毒面具的法国士兵](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/French-soldiers-wearing-gas-masks-1915--ff-c6e8afae7912.1apsf8tzxw.webp)
 
 与此同时，化学武器本身也在升级。
 
@@ -394,7 +394,7 @@ seriesOrder: 3
 
 1915 年 2 月 4 日，德国宣布英国周边海域为战区，规定自 2 月 18 日起击沉其中的敌国商船，并表示未必能够保全船员和乘客。公告同时警告，中立船也可能因误认或海战中的其他情况受到攻击。
 
-![第一次世界大战前夕的德国 U-20 潜艇](https://commons.wikimedia.org/wiki/Special:FilePath/U%2020%20submarine%20%28Germany%29%20-%20from%2C%20U-Boote%20Kiel%201914%20%28cropped%29.jpg)
+![第一次世界大战前夕的德国 U-20 潜艇](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/U-20-submarine-%28Germany%29---from%2C-U-Boote-Kiel-1914-%28cropped%29--ff-799412aa2371.4jowbwhhmt.webp)
 
 这种作战方式很快使德国与中立国之间的外交关系急剧恶化。
 
@@ -406,11 +406,11 @@ seriesOrder: 3
 
 1915 年 5 月 1 日，英国冠达邮轮公司的大型客轮 **卢西塔尼亚号（RMS Lusitania）** 从纽约驶向利物浦。
 
-![1915 年 5 月 1 日离开纽约前的卢西塔尼亚号，这是其最后一批照片之一](https://commons.wikimedia.org/wiki/Special:FilePath/Last%20photo%20of%20Lusitania%20May%201%201915.jpg)
+![1915 年 5 月 1 日离开纽约前的卢西塔尼亚号，这是其最后一批照片之一](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Last-photo-of-Lusitania-May-1-1915--ff-2ff3e3bb4701.3rc0u60vvd.webp)
 
 德国驻美国使馆此前已经公开警告，在英国周边战区航行的船只可能遭到攻击。
 
-![1915 年 4 月美国报纸上与卢西塔尼亚号广告并列刊登的德国使馆航行警告](https://commons.wikimedia.org/wiki/Special:FilePath/Lusitania%20warning.jpg)
+![1915 年 4 月美国报纸上与卢西塔尼亚号广告并列刊登的德国使馆航行警告](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Lusitania-warning--ff-c5c843244298.7axyjz3lne.webp)
 
 5 月 7 日，卢西塔尼亚号接近爱尔兰南部海岸时，被德国潜艇 **U-20** 发现。
 
@@ -418,7 +418,7 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 
 约 1,198 人遇难，其中包括 128 名美国公民。
 
-![U-20 与卢西塔尼亚号在 1915 年 5 月初的航行路线示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Movements%20of%20RMS%20Lusitania%20and%20SM%20U-20.svg)
+![U-20 与卢西塔尼亚号在 1915 年 5 月初的航行路线示意图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Movements-of-RMS-Lusitania-and-SM-U-20--ff-1269c0300466.8dxnuuzfj7.svg)
 
 卢西塔尼亚号携带了包括弹药在内的战争相关物资，同时载有大量平民与中立国公民。
 
@@ -460,13 +460,13 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 >
 > 第一海军大臣（First Lord of the Admiralty）是主管海军事务的内阁职务。海军的专业首长则是第一海务大臣（First Sea Lord），1915 年达达尼尔行动初期由海军上将约翰·费舍尔担任。
 
-![1914 年身穿海军部礼服的英国第一海军大臣温斯顿·丘吉尔](https://commons.wikimedia.org/wiki/Special:FilePath/Churchill%20Admiralty%20Uniform%201914.jpg)
+![1914 年身穿海军部礼服的英国第一海军大臣温斯顿·丘吉尔](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Churchill-Admiralty-Uniform-1914--ff-8b038c4dc334.46h6n53c7.webp)
 
 丘吉尔希望利用英国强大的海军力量，在不从西线抽调过多陆军的情况下打破局势。
 
 这项行动经过英国政府和战争委员会讨论，得到其他高级决策者不同程度的支持，但各方高估了海军单独突破海峡的能力。
 
-![1915 年达达尼尔海峡、加里波利半岛及协约国登陆区域地图](https://commons.wikimedia.org/wiki/Special:FilePath/Graphic%20map%20of%20the%20Dardanelles.JPG)
+![1915 年达达尼尔海峡、加里波利半岛及协约国登陆区域地图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Graphic-map-of-the-Dardanelles--ff-18493db33dfa.13mkjt7uiv.webp)
 
 达达尼尔海峡并不是一条军舰开足马力就可以通过的航道。
 
@@ -484,7 +484,7 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 
 **既然岸上的炮台和阵地阻止舰队前进，那就先派陆军登陆，把它们夺下来。**
 
-[grid] ![1915 年 3 月 18 日达达尼尔海战中遭重创并被放弃的英国战列舰“无阻”号](https://commons.wikimedia.org/wiki/Special:FilePath/HMS%20Irresistible%20abandoned%2018%20March%201915.jpg) ![1915 年 4 月 25 日登陆加里波利半岛安扎克湾的澳大利亚军队](https://commons.wikimedia.org/wiki/Special:FilePath/Landing%20of%20Australian%20troops%20at%20ANZAC%20Cove%2C%2025%20April%201915%20slnsw.jpg) [/grid]
+[grid] ![1915 年 3 月 18 日达达尼尔海战中遭重创并被放弃的英国战列舰“无阻”号](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/HMS-Irresistible-abandoned-18-March-1915--ff-d75d73a87ed2.5q87ki6e6i.webp) ![1915 年 4 月 25 日登陆加里波利半岛安扎克湾的澳大利亚军队](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Landing-of-Australian-troops-at-ANZAC-Cove%2C-25-April-1915-slnsw--ff-2b7a390fe4bf.1ow8642aty.webp) [/grid]
 
 ## 加里波利战役：从海面打到陆上
 
@@ -502,7 +502,7 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 
 在安扎克登陆区，奥斯曼第 19 师师长 **穆斯塔法·凯末尔** 在关键时刻主动把部队投入受到威胁的高地，成功阻止了协约国继续向内陆推进。
 
-![1915 年加里波利战壕中的奥斯曼军官与士兵，前排中央人物为穆斯塔法·凯末尔](https://commons.wikimedia.org/wiki/Special:FilePath/Turkish%20trenches%20at%20Gallipoli.jpg)
+![1915 年加里波利战壕中的奥斯曼军官与士兵，前排中央人物为穆斯塔法·凯末尔](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Turkish-trenches-at-Gallipoli--ff-ccc249409134.9rk6ywahkz.webp)
 
 凯末尔后来成为土耳其共和国的创建者，因此加里波利战役在此后的土耳其国家记忆中占据了极为重要的位置。
 
@@ -518,7 +518,7 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 
 一些战壕之间的距离甚至非常近。
 
-![1915 年 6 月，加里波利赫勒斯角附近的英军 60 磅炮阵地](https://commons.wikimedia.org/wiki/Special:FilePath/60%20pounder%20Cape%20Helles%20June%201915.jpg)
+![1915 年 6 月，加里波利赫勒斯角附近的英军 60 磅炮阵地](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/60-pounder-Cape-Helles-June-1915--ff-d6781fbd4456.3uvmrvtyn0.webp)
 
 这里的环境甚至比法国北部更加恶劣。
 
@@ -570,13 +570,13 @@ U-20 发射的一枚鱼雷击中客轮，随后船体内部又发生第二次爆
 
 俄军为了避免更多部队被包围，不断向东撤退。德奥军队重新占领加利西亚，并继续向俄属波兰推进。
 
-![1915 年俄军从加利西亚和波兰大规模后撤路线示意图](https://commons.wikimedia.org/wiki/Special:FilePath/Russian%20retreat%201915-es.svg)
+![1915 年俄军从加利西亚和波兰大规模后撤路线示意图](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Russian-retreat-1915-es--ff-5de9390cb407.8l0vqalkyx.svg)
 
 这一连串行动最终发展成通常所说的 **俄军大撤退（Great Retreat）**。
 
 8 月 5 日，德军进入华沙。
 
-[grid] ![1915 年俄军撤离华沙时的场景](https://commons.wikimedia.org/wiki/Special:FilePath/Ewakuacja%20wojsk%20rosyjskich%20z%20Warszawy%201915.jpg) ![1915 年 8 月 5 日德军骑兵进入华沙](https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-R42025%2C%20Warschau%2C%20Einmarsch%20deutscher%20Kavallerie.jpg) [/grid]
+[grid] ![1915 年俄军撤离华沙时的场景](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Ewakuacja-wojsk-rosyjskich-z-Warszawy-1915--ff-a350a7bbcfc2.45igl196pd.webp) ![1915 年 8 月 5 日德军骑兵进入华沙](https://img.nightbugclub.cn/posts/history/WWI/260926-WWI-3-trenches-gas-submarines-gallipoli/Bundesarchiv-Bild-183-R42025%2C-Warschau%2C-Einmarsch-deutscher-Kavallerie--ff-2fa1b998cf7f.8hh9sksiam.webp) [/grid]
 
 从地图上看，这是同盟国一次极为显著的胜利。
 
