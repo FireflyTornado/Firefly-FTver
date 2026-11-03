@@ -68,7 +68,7 @@
     "glob": "^13.0.6",
     "gray-matter": "^4.0.3",
     "hast-util-from-html": "^2.0.3",
-    "hastscript": "^9.0.1",
+    "hastscript": "^9.0.3",
     "katex": "^0.19.1",
     "l2d-widget": "^0.1.1",
     "marked": "^18.1.1",
@@ -100,7 +100,7 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.12",
-    "@biomejs/biome": "2.6.3",
+    "@biomejs/biome": "2.6.4",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/svg-spinners": "^1.2.4",
     "@tailwindcss/vite": "^4.3.3",
