@@ -92,6 +92,13 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				cover: "/assets/music/cover/世界这么大还是遇见你.jpg",
 				lrc: "/assets/music/lrc/世界这么大还是遇见你.lrc",
 			},
+			{
+				name: "With an Orchid",
+				artist: "Yanni",
+				url: "/assets/music/With an Orchid.mp3",
+				cover: "/assets/music/cover/With an Orchid.jpg",
+				lrc: "",
+			},
 		],
 	},
 };
