@@ -49,26 +49,26 @@ seriesOrder: 1
 }
 
 /* ---------- 地图 / 战线 / 地缘格局图：宽幅展示 ---------- */
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic.svg"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907.webp"]) {
   width: 100%;
   clear: both;
 }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic.svg"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907.webp"]) > figure {
   width: 100%;
   max-width: none;
 }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: var(--history-map-max-height);
@@ -76,46 +76,42 @@ seriesOrder: 1
 }
 
 /* ---------- 单独出现的纵向人物肖像：桌面端右浮 ---------- */
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp"]) {
   float: right;
   width: min(34%, var(--history-portrait-width));
   margin: 0.35rem 0 1.15rem 1.5rem;
 }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) > figure,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) > figure {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp"]) > figure,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp"]) > figure {
   width: 100%;
   max-width: none;
   margin: 0;
 }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp"]) img {
   width: 100%;
   max-width: 100%;
   max-height: 20rem;
   object-fit: contain;
 }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]) figcaption,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]) figcaption,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]) figcaption,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]) figcaption,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]) figcaption,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) figcaption {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp"]) figcaption,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp"]) figcaption {
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -178,21 +174,20 @@ seriesOrder: 1
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp"]),
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp"]) {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp"]),
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp"]) {
     float: none;
     width: min(100%, var(--history-portrait-mobile-width));
     margin: 1.25rem auto;
   }
 
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg"]) img,
-.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp"]) img {
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic.svg"]) img,
+.custom-md center:has(> figure > img[src="https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907.webp"]) img {
     width: 100%;
     height: auto;
     max-height: none;
@@ -210,643 +205,280 @@ seriesOrder: 1
   }
 }
 </style>
-1914 年 6 月 28 日，奥匈帝国皇储弗朗茨·斐迪南大公与妻子索菲在波斯尼亚首府萨拉热窝遇刺。
 
-刺客加夫里洛·普林西普只开了两枪。
+1914 年 6 月 28 日上午，波斯尼亚首府萨拉热窝的街角响起两声枪响。奥匈帝国皇储弗朗茨·斐迪南大公（Franz Ferdinand）与妻子索菲双双倒在敞篷车里。
 
-37 天后，德国分别向俄罗斯、法国宣战，德军越过比利时边境，英国也向德国宣战。一起发生在巴尔干边缘的政治刺杀，最终引爆了欧洲主要大国之间的全面战争。
+开枪的 19 岁青年加夫里洛·普林西普（Gavrilo Princip）只扣动了两次扳机。
 
-同盟关系并不意味着一国宣战、盟国就自动加入。三国同盟和三国协约性质不同，英国也没有因法俄参战而立即参战的义务。此前的摩洛哥危机、波斯尼亚危机和巴尔干战争，同样牵涉大国与军事威胁，却没有演变成欧洲全面战争。
+37 天后，德国向俄国和法国宣战，德军踩过比利时边境，英国随即向德国宣战，数百万欧洲青年背起行囊涌向火车站。一场发生在帝国边陲的政治暗杀，竟然把整座欧洲大陆拖进了前所未有的全面战争。
 
-1914 年的危机越过了这道界限，与此前几十年欧洲力量格局的变化密切相关。
+奇怪的是，20 世纪初的欧洲早就习惯了在悬崖边走钢丝。摩洛哥危机、波斯尼亚危机、两次巴尔干战争，哪一次都剑拔弩张、动辄亮出军事威慑，可列强最终都踩住了刹车。同盟条约也远不像人们常想的那样，像多米诺骨牌似的“一国开火、盟友自动上场”——三国同盟与三国协约性质迥异，英国甚至没有任何条约义务替法俄出兵。
+
+既然之前屡次都能压住火，为什么偏偏 1914 年夏天这颗火星，把整间屋子都点着了？答案藏在刺杀之前几十年里，那条一点点绷紧、最终失去弹性的欧洲锁链里。
 
 ---
 
-# 逐渐失去战略缓冲的欧洲大陆
+# 俾斯麦的钢丝：两大阵营是怎么成形的
 
-19 世纪后半叶到 20 世纪初，欧洲一方面处在工业化、全球贸易和科学技术快速发展的时代，另一方面也在经历一场缓慢而深刻的力量重组。
+19 世纪末的欧洲表面上一派繁荣，工厂轰鸣、铁路成网、跨国贸易欣欣向荣，各国王室之间甚至沾亲带故。可在这层和平的釉面之下，旧有的均势正在被 **1871 年德意志帝国的建立** 悄然打破。
 
-其中最重要的变化之一，是 **1871 年德意志帝国的建立**。
+![1890 年奥托·冯·俾斯麦肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29.webp)
 
-德国统一以前，中欧由多个邦国组成。统一之后，一个人口众多、工业发展迅速、拥有强大陆军的国家突然出现在欧洲大陆中心。它西面是法国，东面是俄罗斯，南面是奥匈帝国，北面则通过北海面对英国。
+统一之前，中欧是一片分散的德意志邦国；统一之后，一个人口稠密、工业迅猛、陆军强悍的庞然大物突然横亘在欧洲腹地。它西邻法国，东接俄国，南靠奥匈帝国，北面隔着北海遥望英国。对新生的德国而言，最挥之不去的噩梦只有一个：如果东西两侧的法国和俄国联起手来，德国就会陷入腹背受敌的两线作战。
 
-德国统一改变了欧洲原有的力量平衡。如果法国与俄罗斯同时成为敌人，德国就可能面临两线作战。
+普法战争后，失去阿尔萨斯—洛林的法国对德国恨意难消。德国首相奥托·冯·俾斯麦（Otto von Bismarck）把全部外交心血都花在一件事上：**孤立法国，绝不让巴黎找到强大的大陆盟友。** 只要德国能同时稳住维也纳和圣彼得堡，法国就只能孤掌难鸣。
 
-![1890 年奥托·冯·俾斯麦肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Otto-von-Bismarck-%28by-Franz-Seraph-von-Lenbach%2C-1890%29--ff-87b249e55bf4.70b4qtiq0j.webp)
+## 德奥抱团，意大利凑上牌桌
 
-俾斯麦执政时期，德国外交的一个重要目标，就是避免法国找到强大的大陆盟友。他试图维持与奥匈、俄国之间复杂而灵活的关系，让德国尽量处在欧洲外交体系的中心。
+俾斯麦最初想出的法子，是把德、奥、俄三个君主帝国绑进 1873 年的“三皇同盟”，靠保守皇室之间的默契维系大陆和平。可这套平衡很快被巴尔干打乱了。奥斯曼帝国日薄西山，俄国一心向东南欧扩张，奥匈则死守后院，生怕沙皇的势力顶到自家门口。1877—1878 年俄土战争后，俄国迫使奥斯曼签下《圣斯特凡诺条约》，扶植出一个疆域庞大的保加利亚，立刻吓坏了奥匈和英国。随后召开的柏林会议削掉了俄国大半战果。圣彼得堡满腹怨气，觉得柏林在关键时刻没有替老朋友说话，德俄裂痕越扯越大。
 
-然而，到 19 世纪末，这种复杂的平衡开始松动。
-
-## 欧洲的两大战略集团
-
-三国同盟形成于 19 世纪后期的俾斯麦外交体系；三国协约则由法、俄、英在十几年间分别改善双边关系，逐渐形成。两者的建立过程与约束力并不相同。
-
-### 德奥同盟：三国同盟最坚固的核心
-
-1871 年德国统一以后，俾斯麦最担心的问题之一，就是法国重新找到强大的盟友。
-
-普法战争使法国失去了阿尔萨斯—洛林地区，也使法国长期对德国心存不满。如果德国与俄罗斯关系恶化，那么法国就可能亲近俄罗斯，从外交孤立中摆脱出来。
-
-俾斯麦最初试图同时维持德国、奥匈帝国和俄罗斯之间的合作。1873 年，德国、奥匈帝国与俄罗斯建立“三皇同盟”，试图通过三个君主制帝国之间的协调维持欧洲大陆稳定。
-
-但随着奥斯曼帝国不断衰落，俄罗斯希望扩大自己在巴尔干地区的影响，而奥匈帝国同样担心俄罗斯势力向东南欧扩张。
-
-1877—1878 年俄土战争以后，俄罗斯迫使奥斯曼帝国签订《圣斯特凡诺条约》，一个领土庞大、受俄罗斯影响明显的保加利亚一度出现。
-
-这立即引起奥匈帝国和英国的警惕。随后召开的柏林会议重新调整了对巴尔干地区的安排，削减了俄罗斯此前取得的部分成果。俄罗斯国内不少人因此认为，德国并没有在关键时刻维护俄国利益，德俄关系明显恶化。
-
-在这种背景下，俾斯麦开始准备应对最坏的情况。
-
-1879 年，德国与奥匈帝国签订 **德奥同盟，也称“二国同盟”**。
-
-条约规定，如果其中一国遭到俄罗斯攻击，另一国将提供军事援助；如果遭到其他欧洲国家攻击，盟友至少应当保持中立。
-
-这项防御性安排确立了此后几十年德国外交中最稳定的一组大国关系，成为后来三国同盟的核心。
+为了替最坏的局面兜底，俾斯麦在 1879 年与奥匈帝国签下 **德奥同盟**（亦称“二国同盟”）：一旦任何一方遭到俄国进攻，另一方必须出兵相助；若遭其他欧洲大国攻击，盟友至少保持中立。这份条约成了往后三十多年德国外交最坚硬的基石。
 
 > [!NOTE]
-> 德奥同盟并不意味着俾斯麦已经彻底放弃与俄罗斯保持关系。1881 年德国、奥匈和俄罗斯一度恢复“三皇同盟”，1887 年德国又与俄罗斯签订《再保险条约》。俾斯麦真正想做的，是在德奥关系提供安全保障的同时，继续避免俄罗斯彻底倒向法国。
+> **俾斯麦的双重保险**
+>
+> 签下德奥同盟后，俾斯麦仍死死拉着俄国不放。1881 年他一度重启“三皇同盟”，1887 年又暗中与俄国签下《再保险条约》，承诺若奥匈主动进攻俄国，德国保持中立。他的思路很清晰：既给奥匈撑腰，又绝不把俄国推向法国怀抱。
 
-### 意大利加入德国和奥匈
+1882 年，意大利加入德奥阵营，**三国同盟（Triple Alliance）** 正式成形。但这张牌桌从一开始就不太牢靠。意大利统一后，国内民族主义者一直盯着奥匈治下的特伦蒂诺、的里雅斯特，称之为“未收复领土”。罗马之所以忍着旧怨倒向德奥，全是因为前一年被法国狠狠摆了一道——意大利垂涎北非突尼斯许久，法国却在 1881 年抢先出兵建立了保护统治。受挫的意大利急需大国撑腰，才赌气坐进了德奥的阵营。也正因这份同盟底色功利，1914 年大战爆发时，意大利以奥匈主动挑衅不适用防御条款为由拒不出兵，次年干脆反手加入了协约国。
 
-1882 年，意大利加入德奥同盟，三国同盟由此形成。
+![19 世纪末至 20 世纪初法国讽刺画中的三国同盟](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Caricature-of-the-Triple-alliance.webp)
 
-意大利与奥匈帝国之间却仍有领土矛盾。19 世纪意大利统一以后，仍有部分意大利民族主义者认为特伦蒂诺、的里雅斯特等奥匈控制地区属于“未收复领土”。
+## 钢丝崩断之后，对手站到了一起
 
-促使意大利靠近德奥的一个重要原因，是它与法国之间的关系恶化。
+这套需要高超平衡术的外交杂技，随着 1890 年俾斯麦下台戛然而止。年轻气盛的德皇威廉二世（Wilhelm II）与新任外交层觉得同时拉拢奥俄太过繁琐矛盾，干脆不再续签《再保险条约》。
 
-意大利希望扩大自己在北非的影响，尤其关注突尼斯。但法国在 1881 年出兵并建立对突尼斯的保护统治，这让意大利遭受严重外交挫折。
+巴黎苦等二十年的缺口，就这样敞开了。论政治制度，一边是高唱《马赛曲》的法兰西共和国，一边是高举东正教与专制旗帜的沙皇帝国，本该格格不入；可共同的战略焦虑很快抹平了意识形态的鸿沟——法国需要东线有人牵制德国，俄国则需要对抗德奥的欧洲靠山，更需要巴黎的银行给自己的铁路和工厂输血。1891 至 1894 年间，伴随巨额法国资本涌入俄国，两国从外交试探走到秘密军事协定，正式缔结 **法俄同盟**。俾斯麦生前最担心的两线夹击，成了摆在德国地图上的现实。
 
-面对法国压力，意大利希望找到能够改善自身战略位置的伙伴，于是在次年加入德国和奥匈帝国的联盟体系。
+![1896 年尼古拉二世访法期间，俄国皇室与法国总统菲利·福尔共同出席亚历山大三世桥奠基仪式](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Voyage-du-tsar-%28Nicolas-II-et-la-tsarine-Alexandra-Feodorovna-en-pr%C3%A9sence-de-F%C3%A9lix-Faure-posant-la-premi%C3%A8re-pierr.webp)
 
-德国与奥匈的联盟关系最牢固，意大利则更多出于对法国的安全和殖民竞争考虑而加入。1914 年，意大利政府认为奥匈对塞尔维亚的行动不适用于条约规定的防御义务，因此没有随德奥参战。
+这时，真正手握天平砝码的是隔海观望的英国。整个 19 世纪大半时间里，英国凭着皇家海军和庞大的海外帝国奉行灵活外交，很少与欧陆强国签死军事盟约。何况英国和法俄两家都结过梁子：英法为了埃及、西非和纽芬兰争了多年，1898 年的法绍达危机险些擦枪走火；英俄则在中亚、阿富汗和波斯打了大半个世纪的“大博弈”（Great Game），伦敦生怕俄国南下威胁英属印度。
 
-后来，意大利甚至在 1915 年转而加入协约国一方作战。
+改变风向的，是欧洲力量对比的倾斜——尤其是德国在世纪之交大造远洋舰队，把北海搅得不再安宁。伦敦意识到，四面树敌的成本越来越高，必须先清理旧账。1904 年，英法签下 **《英法协约》（Entente Cordiale）**：法国承认英国在埃及的地位，英国则不再阻挠法国经营摩洛哥，顺手打包解决了西非与纽芬兰争端。随后德国两次借摩洛哥问题发难、试图拆散英法，结果反倒把伦敦和巴黎推得更紧，两国陆海军开始秘密磋商联合作战方案。
 
-![19 世纪末至 20 世纪初法国讽刺画中的三国同盟](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Caricature-of-the-Triple-alliance--ff-ccf435d3d519.lwiv80ti4.webp)
+![1903 年表现英法友好关系的“英法协约”主题明信片](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Entente-Cordiale-dancing.webp)
 
-### 法国如何打破外交孤立？
+另一边，1904—1905 年日俄战争打输之后，元气大伤的俄国也没力气继续在亚洲跟英国耗下去了，而伦敦同样需要稳住东方、把精力收拢回欧洲。1907 年，**《英俄协约》** 落笔，两国围绕波斯、阿富汗和西藏划定各自势力范围，漫长的亚洲冷战暂时休兵。
 
-法国要摆脱普法战争后的外交孤立，需要找到一个能够牵制德国的欧洲盟友。俄奥两国在巴尔干的矛盾为此提供了机会，德国在俾斯麦下台以后也开始改变对俄政策。
+![1907 年英俄协约划分波斯势力范围示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907.webp)
 
-1890 年，德国没有续签与俄罗斯之间的《再保险条约》。《再保险条约》原本有助于避免德俄直接对立。条约失效削弱了两国关系的缓冲，法国随即抓住机会推动对俄合作。
+## 一张不对等的棋盘
 
-两国虽然政治制度差异巨大——法国是共和国，俄罗斯仍是沙皇专制帝国——却拥有越来越明显的共同战略利益：
+历史课本常把两大集团并排摆在一起，让人误以为 1907 年英、法、俄共同签了一份叫《三国协约》的正式盟约。其实这份文件从未存在过。所谓“三国协约”，不过是 **1894 年法俄同盟、1904 年英法协约与 1907 年英俄协约** 三组双边关系叠加而成的战略格局：
 
-**法国需要一个能够从东面牵制德国的大国；俄罗斯则需要一个能够在面对德国和奥匈时提供支持的欧洲伙伴。**
-
-与此同时，法国资本大量进入俄罗斯，为俄国铁路建设和工业化提供融资，也进一步加强了两国联系。
-
-1891—1894 年间，法俄关系逐步从外交接近转变为军事安排，并最终形成正式的 **法俄同盟**。
-
-![1896 年尼古拉二世访法期间，俄国皇室与法国总统菲利·福尔共同出席亚历山大三世桥奠基仪式](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Voyage-du-tsar-%28Nicolas-II-et-la-tsarine-Alexandra-Feodorovna-en-pr%C3%A9sence-de-F%C3%A9lix-Faure-posant-la-premi%C3%A8re-pierr--ff-4000ec99ec3f.3nsewg25ox.webp)
-
-法国与俄罗斯分别位于德国西、东两侧。两国结盟，使德国必须认真考虑同时与两国作战的风险。
-
-### 英国为什么开始接近法国？
-
-但此时英国仍然没有加入任何与德奥相对立的“三国集团”。
-
-19 世纪的大部分时间里，英国往往避免长期卷入欧洲大陆固定联盟，同时依靠皇家海军、海外帝国和灵活外交维护自身利益。
-
-英国与法国甚至长期存在大量殖民矛盾。双方曾在埃及、西非、纽芬兰等地区发生争端，1898 年的法绍达危机甚至一度让英法关系高度紧张。
-
-到 20 世纪初，英法双方都开始寻求解决殖民争端，以改善彼此关系。
-
-1904 年，英国与法国签署后来被称为 **《英法协约》** 的一系列协议。
-
-它首先解决的是具体的殖民问题，而不是建立军事同盟。其中最重要的安排之一，是法国接受英国在埃及的特殊地位，而英国则承认法国在摩洛哥拥有特殊利益；此外，双方还解决了纽芬兰、西非等一系列长期争端。
-
-主要殖民争端得到缓和以后，英法在欧洲安全问题上的合作空间随之扩大，外交与军事交流也越来越频繁。
-
-特别是在此后的摩洛哥危机中，德国试图挑战法国在摩洛哥的地位，反而进一步推动英法靠近。
-
-![1903 年表现英法友好关系的“英法协约”主题明信片](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Entente-Cordiale-dancing--ff-ee34bd91195d.9o0l16br9m.webp)
-
-### 英国和俄罗斯为什么也能和解？
-
-即使英法关系改善，欧洲仍然没有形成完整的“三国协约”。
-
-因为英国和俄罗斯长期以来同样是竞争对手。19 世纪，两国围绕中亚、阿富汗、波斯以及通往印度的战略通道进行了长期竞争，后来通常被称为 **“大博弈”**。
-
-在英国战略思维中，俄罗斯向中亚不断推进，一度被视为对英属印度安全的潜在威胁。
-
-因此，如果英国与俄罗斯仍然彼此敌视，那么法国虽然同时与两国保持良好关系，却很难把三国真正连接起来。
-
-这种局面在 20 世纪初开始改变。
-
-1904—1905 年的日俄战争削弱了俄罗斯在远东的力量，而英国与日本已经建立同盟。
-
-与此同时，英国越来越难以忽视欧洲方向的环境，尤其是德国海军扩张带来的压力。
-
-对于俄罗斯而言，在远东遭受挫折以后，减少与英国在亚洲的竞争也具有现实价值。
-
-于是，1907 年英国与俄罗斯签订 **《英俄协约》**。
-
-![1907 年英俄协约划分波斯势力范围示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/The-Russo-British-Pact-in-1907--ff-0a25bcf292c5.13mkjt2722.webp)
-
-双方围绕波斯、阿富汗和西藏等问题划定或确认各自利益范围，以减少长期以来在亚洲发生直接冲突的可能。
-
-### “三国协约”其实不是一份三国盟约
-
-**并不存在一份 1907 年由英国、法国和俄罗斯共同签署、名称就叫《三国协约》的统一军事盟约。**
-
-所谓“三国协约”，实际上是三组关系逐渐叠加的结果：
-
-**1890 年代的法俄同盟  
-→ 1904 年英法协约  
-→ 1907 年英俄协约  
-→ 三国之间逐渐形成战略协调。**
-
-因此，它和 1882 年通过正式条约建立的三国同盟并不完全对称。
-
-法国和俄罗斯之间存在明确的军事同盟关系，而英国对法国和俄罗斯承担的义务要模糊得多。
-
-英国虽然随后与法国展开越来越深入的军事和海军磋商，但直到 1914 年七月危机爆发，英国政府内部仍然存在一个非常现实的问题：
-
-**如果法国和德国爆发战争，英国究竟是否必须参战？**
-
-## 两大集团的最终“成形”
-
-到 20 世纪初，欧洲主要大国形成了两组战略联系：
-
-| 集团 | 主要国家 | 实际关系 |
+| 集团 | 主要成员 | 内部约束力与隐忧 |
 | --- | --- | --- |
-| 三国同盟 | 德国、奥匈帝国、意大利 | 德奥关系最紧密；意大利与奥匈存在领土矛盾，联盟并不牢固 |
-| 三国协约 | 法国、俄罗斯、英国 | 法俄是正式军事同盟；英国与法俄更多依靠协约、谅解和逐步加强的战略协调 |
+| 三国同盟 | 德国、奥匈帝国、意大利 | 1882 年正式条约建立；德奥绑定最深，但意大利与奥匈存在领土宿怨，关键时刻随时可能抽身 |
+| 三国协约 | 法国、俄罗斯、英国 | 并非统一盟约；法俄有明确军事同盟义务，英国对法俄仅靠协约与秘密军政磋商，战前始终保留行动自由 |
 
-同盟体系扩大了地区危机的影响。两个国家发生冲突时，其他大国也会盘算：
+直到 1914 年七月危机打响，英国内阁还在激烈争吵：如果德法开打，英国到底算不算“必须参战”？
 
-- 如果我不支持盟友，会不会影响我的信誉？
-- 如果盟友被削弱，我以后会不会陷入孤立？
-- 如果对手的盟友介入，我是否必须提前行动？
-- 如果现在退让，下一场危机中会不会更不利？
+但即便义务不对等，两大阵营成形后，欧洲外交的缓冲垫已经薄得可怕。从前两个国家闹矛盾，列强还能临时合纵连横、彼此掣肘；如今一旦某处冒烟，各国首都立刻会冒出同一套焦虑——今天不替盟友撑腰，明天它垮了或者散伙了，下一次轮到自己挨打时谁来帮忙？地区摩擦就这样被接上了全欧洲的高压电线。
 
-![1914 年欧洲主要国家及联盟关系分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en--ff-495122196cd5.45igl13j83.svg)
+![1914 年欧洲主要国家及联盟关系分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-Europe-alliances-1914-en.svg)
 
 ---
 
-# 火星四溅的巴尔干：欧洲的“火药桶”
+# 火星四溅的巴尔干
 
-欧洲的联盟体系只是为危机提供了扩散渠道，而巴尔干半岛正是欧洲最容易产生危机的地方。
+如果说联盟体系是铺满大陆的导火索，那巴尔干半岛就是火药堆得最厚的地方。
 
-19 世纪末到 20 世纪初，奥斯曼帝国不断衰落，巴尔干民族国家加速扩张，大国也在争夺由此出现的权力真空。
+奥斯曼帝国曾经统治巴尔干数百年，19 世纪以来节节败退，希腊、塞尔维亚、罗马尼亚、保加利亚陆续独立。可帝国退场并没有留下一张干干净净的民族国家地图。塞尔维亚人、克罗地亚人、保加利亚人、阿尔巴尼亚人、希腊人与穆斯林世代混居在群山河谷之间，根本画不出一条让所有人都服气的国界线——你眼中的“收复民族故土”，在邻国眼里就是赤裸裸的领土吞并。
 
-## 奥斯曼帝国衰落以后，地图并没有稳定下来
+## 小塞尔维亚，怎么成了奥匈的心腹大患？
 
-奥斯曼帝国曾经控制巴尔干大片地区。但从 19 世纪开始，它在欧洲的统治不断收缩。希腊、塞尔维亚、罗马尼亚、保加利亚等国家先后取得独立或高度自治地位。
-
-表面上看，这似乎是民族国家逐步取代帝国统治的过程。
-
-问题在于，巴尔干的人口分布从来不是整齐的。塞尔维亚人、克罗地亚人、斯洛文尼亚人、保加利亚人、希腊人、阿尔巴尼亚人、罗马尼亚人、穆斯林群体等长期交错居住，很难按照民族边界画出一张让所有人都满意的地图。
-
-因此，一个民族国家的“统一”，往往意味着另一个国家的领土损失。
-
-一个国家眼中的“收复民族土地”，在邻国眼中可能就是扩张甚至是侵略。
-
-奥斯曼帝国的退场并没有解决地区矛盾，只是让原本被帝国统治压在内部的矛盾逐渐暴露出来。
-
-## 塞尔维亚的问题，为什么会变成奥匈帝国的生存问题？
-
-塞尔维亚是其中最关键的国家之一。
-
-19 世纪末以后，一部分塞尔维亚民族主义者希望把塞尔维亚建设成南斯拉夫民族统一的核心。
-
-所谓“南斯拉夫”，大体指欧洲东南部一些使用南斯拉夫语言、彼此具有文化与历史联系的民族群体，包括塞尔维亚人、克罗地亚人、斯洛文尼亚人等。
+在这片混乱的棋盘上，**塞尔维亚** 是最让维也纳坐立难安的棋子。19 世纪末以来，越来越多塞尔维亚民族主义者梦想以本国为核心，把巴尔干的南斯拉夫各族统一成一个国家。要命的是，数以百万计的南斯拉夫人口就生活在**奥匈帝国**境内。
 
 > [!NOTE]
-> “南斯拉夫”在这里首先是一种语言、文化和政治想象，并不意味着这些群体在宗教、历史经验和政治目标上完全一致。后来建立南斯拉夫联盟，也没有消除这些隔阂。
+> **“南斯拉夫”的理想与裂痕**
+>
+> “南斯拉夫”（Yugoslavia，意为“南部斯拉夫”）最初指东南欧使用南斯拉夫语族的塞尔维亚人、克罗地亚人、斯洛文尼亚人等群体。它首先是一种语言、文化和政治想象，但这些群体在宗教、历史记忆与政治诉求上本来就分歧重重——日后建成的南斯拉夫国家，终其一生也没能真正抚平这些隔阂。
 
-**大量南斯拉夫人口生活在奥匈帝国境内。**
-
-1867 年奥地利帝国改组为奥匈帝国后，哈布斯堡君主统治着一个极其复杂的多民族帝国。德意志人和马扎尔人在政治结构中占据重要位置，但帝国内同时还有捷克人、斯洛伐克人、波兰人、乌克兰人、罗马尼亚人、克罗地亚人、塞尔维亚人、斯洛文尼亚人、意大利人等众多群体。
+1867 年改组而成的奥匈帝国，本质上是一座靠哈布斯堡皇室和庞大官僚军队勉强粘合的多民族大厦。德意志人与匈牙利马扎尔人掌握主导权，屋檐下却还挤着捷克人、斯洛伐克人、波兰人、乌克兰人、罗马尼亚人、克罗地亚人、塞尔维亚人、斯洛文尼亚人和意大利人。
 
 > [!NOTE]
 > **奥匈帝国的两套政府**
 >
-> 奥地利与匈牙利各有自己的政府和议会，共奉同一位君主。外交、共同军队及其经费由两部分共享的机构处理，因此帝国决策需要协调维也纳与布达佩斯两套政府。
+> 帝国由奥地利与匈牙利两部分组成，各自拥有独立的政府和议会，共奉同一位君主；只有外交、共同军队及其军费由帝国中央机构统筹。因此维也纳每做一项重大对外决策，都必须先过布达佩斯那一关。
 
-![1910 年奥匈帝国主要民族与语言群体分布图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic--ff-8d37f15a9e03.wjcodg1nd.svg)
+![1910 年奥匈帝国主要民族与语言群体分布图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Austria-Hungary-ethnic.svg)
 
-奥匈领导层担心，塞尔维亚吸引帝国内南斯拉夫人口的行动会引起其他民族效仿，动摇整个多民族帝国的政治结构。塞尔维亚越强，这种威胁感也就越强。
+对维也纳的统治者来说，塞尔维亚绝不是一个普通邻国，而是一块贴在帝国南境的强力磁铁：今天它吸走了南斯拉夫人的离心力，明天捷克人、罗马尼亚人、意大利人就会有样学样，整座哈布斯堡大厦随时可能从内部崩塌。塞尔维亚越壮大，维也纳的窒息感就越重。
 
-## 1908 年波斯尼亚危机：难以抚平的创伤
+## 两次留满怨气的预演
 
-波斯尼亚和黑塞哥维那正位于这种矛盾的中心位置。
+1908 年的**波斯尼亚危机**，把这道裂痕撕成了公开的伤口。波斯尼亚和黑塞哥维那境内住着大批塞尔维亚人，名义上归奥斯曼帝国，自 1878 年柏林会议后一直由奥匈实际占领管理。1908 年秋，维也纳干脆宣布正式吞并两省，一下浇灭了塞尔维亚民族主义者的合并梦想。
 
-1878 年柏林会议以后，奥匈帝国获得了对波斯尼亚和黑塞哥维那的占领与管理权。虽然名义上它们仍属于奥斯曼帝国，但实际上已经由奥匈帝国控制。
+![1908 年《小日报》描绘波斯尼亚危机的政治讽刺画](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Le-Petit-Journal-Balkan-Crisis-%281908%29.webp)
 
-1908 年，奥匈帝国干脆正式吞并了这一地区。
+贝尔格莱德怒火中烧，向圣彼得堡求救。可那时的俄国刚在日俄战争和 1905 年革命里摔得鼻青脸肿，根本无力开战。当德国冷着脸明确表态力挺奥匈时，俄国只得咬牙退让，塞尔维亚被迫吞下苦果。这场没打起来的危机，反倒给双方刻下了截然相反的教训：柏林和维也纳尝到了甜头，暗自认定**“只要够硬气，俄国人最终会服软”**；圣彼得堡则把这次退让记成了奇耻大辱，发誓下一次绝不能再当着全欧洲的面丢掉“斯拉夫保护者”的颜面。
 
-![1908 年《小日报》描绘波斯尼亚危机的政治讽刺画](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Le-Petit-Journal-Balkan-Crisis-%281908%29--ff-8d3e9d1b0faa.4qs47bxzio.webp)
+没过四年，火药桶真的冒了烟。1912 年，塞尔维亚联合保加利亚、希腊、黑山组成巴尔干同盟，打响第一次巴尔干战争，几乎将奥斯曼帝国扫出欧洲。
 
-这立即引发严重危机。波斯尼亚拥有大量南斯拉夫人口，其中包括很多塞尔维亚人。塞尔维亚民族主义者希望这些地区未来能够与塞尔维亚结合，而奥匈的吞并也使得这种希望破灭。
+![1912 年第一次巴尔干战争期间贝尔格莱德的动员场景](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-for-the-First-Balkan-War%2C-Belgrade-1912.webp)
 
-俄罗斯也支持塞尔维亚的部分立场。但 1908 年的俄罗斯仍在恢复日俄战争和 1905 年革命造成的损失。
+次年，各战胜国又因马其顿分赃不均反目内讧，爆发第二次巴尔干战争。两轮血战打完，塞尔维亚的领土和人口双双猛增，军队也攒足了真刀真枪的实战经验。
 
-所以当德国明确站在奥匈一边时，俄罗斯最终并未准备为此发动战争，塞尔维亚也被迫接受被吞并的事实。
+![1912 年第一次巴尔干战争期间的塞尔维亚军官与士兵](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Srpska-vojska-u-Albaniji-1912.webp)
 
-危机虽然结束，却给双方留下了两种截然相反的印象。
+贝尔格莱德沉浸在胜利的狂喜里，维也纳却一片寒意。南边冒出一个比从前更大、更自信、也更敢叫板的塞尔维亚，让奥匈军政高层越来越相信：**再拖下去，时间只会站在敌人那边，必须趁早找机会把塞尔维亚一劳永逸地打服。**
 
-对奥匈和德国来说，这似乎证明了：
+![1913 年巴尔干半岛各国疆界与领土分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr.svg)
 
-**只要态度足够强硬，俄罗斯可能会退让。**
-
-对俄罗斯和塞尔维亚来说，它却是一场屈辱。
-
-尤其对俄罗斯而言，如果此后每一次巴尔干危机都退让，它作为大国和斯拉夫保护者的信誉将越来越难以维持。
-
-如果多次无法保护支持对象，其他国家就可能重新评估俄国的威慑力与联盟价值。这种担忧后来影响了 1914 年的决策。
-
-## 1912—1913 年巴尔干战争：塞尔维亚日渐强盛
-
-1912 年，塞尔维亚、保加利亚、希腊、黑山组成巴尔干同盟，对奥斯曼帝国发动战争。
-
-![1912 年第一次巴尔干战争期间贝尔格莱德的动员场景](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-for-the-First-Balkan-War%2C-Belgrade-1912--ff-bde8f78d9e87.51ey0hd7ob.webp)
-
-奥斯曼帝国在欧洲的统治迅速崩溃。
-
-随后，各战胜国又因马其顿等地区的分配问题爆发第二次巴尔干战争。
-
-战争结束后，塞尔维亚的领土和人口得到显著扩张。
-
-![1912 年第一次巴尔干战争期间的塞尔维亚军官与士兵](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Srpska-vojska-u-Albaniji-1912--ff-9f8e967fb5fc.1vzg1jiss4.webp)
-
-这对塞尔维亚是一场民族国家扩张的胜利。
-
-但在奥匈帝国看来，这却意味着：
-
-**奥匈帝国南部出现了一个比过去更大、更自信、军事经验更丰富，而且更有能力吸引帝国内南斯拉夫民族的塞尔维亚。**
-
-奥匈帝国内一部分政治和军事人物因此认为：
-
-塞尔维亚问题如果继续拖下去，只会越来越难解决。
-
-1914 年皇储遇刺后，奥匈帝国之所以迅速出现“必须趁这次机会彻底处理塞尔维亚”的声音，正是因为此前数年的经历已经让一些决策者形成了一种判断：
-
-**时间可能不站在奥匈帝国这一边。**
-
-![1913 年巴尔干半岛各国疆界与领土分布示意图](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Map-of-the-Balkans-%281913%29---fr--ff-f085ba86535c.9kgz3giom0.svg)
-
-## 俄罗斯为什么不能简单放弃塞尔维亚？
-
-俄罗斯对塞尔维亚的支持也不仅仅来自“同为斯拉夫民族”这一层关系。
-
-泛斯拉夫主义和东正教文化联系确实影响了一部分俄罗斯公众和政治人物，但巴尔干对俄罗斯同样具有明确的战略价值。
-
-俄罗斯长期关心黑海与地中海之间的海峡问题。如果奥匈势力不断向巴尔干扩张，俄罗斯不仅可能失去塞尔维亚这个地区伙伴，还可能进一步失去在东南欧的话语权。
-
-民族与宗教联系、地区影响力和大国信誉，使俄罗斯很难在奥塞冲突中置身事外。俄国背后有法国，奥匈背后有德国，巴尔干危机因而可能牵动两组大国关系。
+而俄国之所以死死护着塞尔维亚，也不只是为了泛斯拉夫主义和东正教情谊。巴尔干扼守黑海通往地中海的咽喉，如果任由奥匈把势力铺满东南欧，俄国不仅会丢掉最后一个巴尔干铁杆伙伴，更会在所有盟友和对手眼里沦为纸老虎。奥匈身后站着德国，俄国背后连着法国——巴尔干的每一次颤动，都会顺着这两条神经直传欧洲心脏。
 
 ---
 
-# 军备竞赛与“抢先行动”逻辑
+# 当“动员”等于扣动扳机
 
-第一次世界大战爆发以前，欧洲各国都在进行军备扩张。
+如果危机只停留在外交照会里，各国政客或许还能像过去那样讨价还价。真正把 1914 年逼进死胡同的，还有悬在所有大国头顶的两件工业时代产物：**军备竞赛**与**铁路动员时刻表**。
 
-德国和英国展开海军竞争；法国延长兵役期限；俄罗斯在日俄战争后加快军事改革和铁路建设；德国和奥匈也不断完善动员与作战计划。
+## 北海上的无畏舰竞赛
 
-扩军还改变了各国对时间压力的判断。
+在海上，威廉二世推行“世界政策”，雄心勃勃要替德国造出一支能与英国分庭抗礼的远洋舰队。可对岛国英国来说，皇家海军不是面子工程，而是饭碗和命根子——粮食进口、原料运输与全球帝国全系于海路。伦敦绝不可能把德国在北海造大舰看作寻常的国防升级。
 
-## 德英海军竞争与战略不信任
-
-德国皇帝威廉二世时期，德国推动“世界政策”，试图扩大海外影响力，大规模建设远洋海军。
-
-英国的安全则长期依赖皇家海军。英国本土是岛国，海外殖民、贸易航线和粮食进口都高度依赖海上交通，因此，伦敦方面很难把德国建设一支足以在北海挑战英国的舰队，仅仅看作普通的国防现代化。
-
-1906 年英国“无畏号”战列舰服役以后，旧式战列舰在主力舰竞争中的地位迅速下降，德国与英国又进入新一轮主力舰竞争。
+1906 年，英国划时代的 **“无畏号”（HMS Dreadnought）** 战列舰下水，一夜之间让全世界旧式战列舰沦为废铁，也把英德海军竞赛推向白热化。
 
 > [!NOTE]
-> **无畏舰的技术特征**
+> **无畏舰凭什么改写海战？**
 >
-> “无畏号”集中配置十门 12 英寸重型主炮，并采用蒸汽轮机，最高航速约为 21 节。重型主炮与较高航速的组合成为这一代战列舰的鲜明特征，“无畏舰”也由舰名变成了一类战列舰的通称。
+> “无畏号”放弃了过去大小火炮混装的做法，统一搭载十门 12 英寸重型主炮，并换装蒸汽轮机，最高航速达到约 21 节。火力与航速的全面领先让它迅速从一艘军舰的舰名，变成整整一代主力战列舰的通称。
 
-![约 1906—1907 年停泊中的英国“无畏号”战列舰](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/HMS_Dreadnought_1906--ff-2e8c7659ea1c.4cloggpomu.webp)
+![约 1906—1907 年停泊中的英国“无畏号”战列舰](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/HMS_Dreadnought_1906.webp)
 
-海军竞争加深了德英之间的战略互疑，使双方越来越把彼此视为潜在敌人。
+到 1914 年，英国虽然在造舰竞赛中保住了数量优势，英德之间那点残存的互信却早已被一艘艘下水的钢铁巨兽磨得一干二净。
 
-## 大陆战争最重要的资源：铁路和时间
+## 停不下来的铁路时刻表
 
-在陆地上，情况更加复杂。
+在陆地上，各国同样咬紧牙关扩军：法国延长兵役期限，俄国靠着法国贷款加快军事改革和西部铁路网建设，德奥也连年增兵备战。更致命的是，大规模征兵制改写了“开战”的物理形态。
 
-19 世纪末的欧洲已经进入大规模征兵时代。
+1914 年的欧洲大国要在短短一两周内，把数百万正在耕地、做工的预备役男丁召回兵营、发枪配装，再用成千上万趟军列精准运抵边境。哪一个军团在几月几日几点登车、走哪条轨道、在哪一站给蒸汽机车加水、几小时后在哪座车站卸货，全都提前写死在厚如砖头的铁路时刻表里。和平年代，它们只是锁在参谋部保险柜里的纸面推演；**一旦按下总动员的开关，整套庞大机器就会凭着惊人的惯性轰鸣运转**——临时改道或中途喊停，只会让数百万大军和补给车厢撞成一团灾难性的铁路大堵车。
 
-一旦发生战争，一个大国需要在短时间内把数十万乃至数百万预备役军人召回部队，再通过铁路把他们送往边境。
+于是，1914 年各国总参谋部里弥漫着一种近乎偏执的焦虑：**谁先动手，谁就抢占先机；如果敌人已经开始动员，我们还傻傻坐在谈判桌前等外交回音，等开打时就已经输了一半。** 动员不再是讨价还价的筹码，它本身就成了拉响战争的枪栓。
 
-这不是简单地下达一份“动员令”。
+这种时间焦虑，在夹在法俄之间的德国身上表现得最为极端。德国总参谋部算过无数遍账：俄国幅员辽阔、铁路稀疏，完成总动员需要数周；法国则能迅速在西境集结重兵。因此柏林的战略核心全系在“时间差”上——一旦确信对俄开战不可避免，德国绝不能坐等两线合围，必须抢在俄军完全展开前先调动主力迅速击垮法国，再乘铁路回师东进；而为了绕开法德边境坚固的防线，这条西进路线恰恰绕不开中立国比利时。
 
-每个军团什么时候集合、在哪个车站上车、走哪条铁路、在哪一站换乘、什么时候到达集结地，都需要提前制定极其复杂的时刻表。
+这套环环相扣的紧迫算计，平时还锁在柏林的作战室里；七月危机一爆，它便成了逼着外交让路的倒计时器。
 
-和平时期，这些计划只是纸面方案。一旦全面动员开始，它们就会产生强大的惯性。
+---
 
-如果一个国家启动了整套铁路运输和军事动员体系，再临时改变部署方向，就可能造成交通混乱、部队错位和补给中断，甚至在战争正式开始前就丧失战略优势。
+# 萨拉热窝事件
 
-这就产生了 1914 年最危险的一种心理：
+1914 年 6 月 28 日，星期日，萨拉热窝阳光明媚。奥匈帝国皇储弗朗茨·斐迪南大公偕夫人霍恩贝格公爵夫人索菲（Sophie）来此视察驻军并访问市政厅。
 
-> **如果敌人已经开始动员，而我们还在等待外交结果，就可能因为晚几天行动而输掉战争。**
+对这对夫妇来说，这一天藏着私密而苦涩的纪念意义。十四年前的 1900 年 6 月 28 日，斐迪南为了迎娶并非王室出身的贵族女官索菲，被迫签下屈辱的《放弃继承誓约》，答应两人的子女永远无权继承皇位。在等级森严的维也纳宫廷里，索菲受尽冷眼，连国事典礼都不能和丈夫并肩乘车；唯有在波斯尼亚这样的军政巡视场合，她才能以皇储夫人的身份风风光光地坐在丈夫身旁。
 
-于是，动员本身越来越像一种战争信号。
+可对萨拉热窝街头的塞尔维亚民族主义者而言，6 月 28 日却有着截然不同的重量——它是塞尔维亚历法中的 **“维多夫丹”（Vidovdan）**，纪念着 1389 年惨烈的科索沃战役。哈布斯堡皇储挑在这个民族创伤日巡视 1908 年被强行吞并的波斯尼亚，在激进青年眼里，这简直是赤裸裸的挑衅。
 
-## 德国为什么对俄国动员尤其敏感？
+## 一连串荒诞的巧合
 
-德国的地理位置使这个问题更加尖锐。法国在西，俄罗斯在东。
+就在这天早晨，六名隶属革命青年网络 **“青年波斯尼亚”（Young Bosnia）** 的年轻人，怀揣偷渡入境的手枪、手榴弹和一小瓶氰化物，悄然散落在车队必经的阿佩尔河岸街沿线。他们大多不过十八九岁，满腔狂热，却几乎没有专业刺客的冷静。
 
-德国总参谋部长期担心同时面对两个大国。后来通常被概括为“施里芬计划”的德国西线战争构想，其核心逻辑并不是简单的“德国要入侵法国”，而是试图解决这个两线战争难题：
+上午十点刚过，皇储的敞篷车队驶过河岸。第一名刺客紧张得僵在原地，眼睁睁看着车队开过去。几步之外，印刷工人内德利科·查布里诺维奇（Nedeljko Čabrinović）鼓起勇气，在路灯柱上磕响手榴弹引信，朝皇储的敞篷车猛掷过去。炸弹打在折起的车篷上弹落，滚到紧随其后的第三辆车底轰然炸响，十几名随行军官和路边民众倒在血泊里。
+
+查布里诺维奇转身吞下准备好的氰化物胶囊，纵身跃下河堤跳进米利亚茨卡河，打算自尽。可滑稽又狼狈的一幕发生了：那批劣质毒药只是让他剧烈呕吐，而盛夏枯水期的河道水深不过十几厘米，他直挺挺摔在浅滩泥水里，转眼就被冲下来的警察和民众摁住狠揍了一顿。
+
+侥幸逃生的斐迪南大公又惊又怒，车队加速冲到萨拉热窝市政厅。浑然不知街头刚发生爆炸的市长还捧着稿纸，高声念起热情洋溢的欢迎辞。斐迪南再也压不住火气，当众厉声打断了他：“市长先生，这些客套话还有什么用？我作为客人来萨拉热窝访问，你们却拿炸弹往我头上扔，这简直岂有此理！”
+
+平复片刻后，斐迪南拿起沾着受伤侍从血迹的讲稿念完致词。按常理，遭遇如此猖狂的暗杀，访问早就该立刻取消，可这位性格倔强的皇储执意改道，要先去医院探望炸伤的军官。
+
+![1914 年 6 月 28 日，弗朗茨·斐迪南与妻子索菲在随行人员陪同下离开萨拉热窝市政厅](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Franz-Ferdinand-%26-Sophie-Leave-Sarajevo-Guildhall.webp)
+
+车队重新出发，致命的纰漏偏偏出在临时改道上。波斯尼亚总督奥斯卡·波蒂奥雷克（Oskar Potiorek）决定让车队沿宽阔的河岸街直奔医院、避开狭窄老城，却忘了把这个改动交代给打头的捷克司机。车队开到拉丁桥头时，头车照原定路线右拐进了狭窄的弗朗茨·约瑟夫街，皇储座车紧跟着拐了进去。坐在车里的总督猛然大喊走错了路，司机急忙踩死刹车，手忙脚乱地挂倒挡准备倒车——笨重的敞篷车就这样缓缓停在了施勒熟食店门口。
+
+巧合得近乎诡异的是，刚才眼睁睁看着车队疾驰而过、正失魂落魄站在熟食店外面的 19 岁青年加夫里洛·普林西普，突然看见皇储夫妇就停在自己几步之外。
+
+他大步跨上前，掏出布朗宁手枪，在极近的距离连开两枪。第一发子弹击中索菲腹部，她当场倒向丈夫膝头；第二发击穿了斐迪南的颈动脉。站在脚踏板上的随行伯爵弗朗茨·冯·哈拉赫后来记下了皇储最后的绝望呼喊：“索菲，索菲！别死！为了孩子们活下去！”当哈拉赫焦急询问他伤得重不重时，鲜血顺着嘴角涌出的大公反复低喃着“没什么……没什么……”，很快失去意识。不到半小时，夫妇二人双双身亡。
+
+历史在这里开了一个极其残酷的玩笑：弗朗茨·斐迪南生前反而是维也纳宫廷里**最反对贸然对塞尔维亚动武的人物之一**。他多次顶回军方的开战提议，甚至设想过调整帝国民族结构来缓和矛盾，因为他比谁都清楚，一旦惹来俄国干涉，哈布斯堡帝国自己就会万劫不复。可普林西普的两颗子弹，恰恰替维也纳的主战派清掉了头顶最大的绊脚石。
+
+## 柏林递来一张“空头支票”
+
+![加夫里洛·普林西普](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip.webp)
+
+审讯很快挖出了刺客背后的通道。普林西普所在的“青年波斯尼亚”是个松散的激进青年团体，目标各异，共同点只有反抗奥匈统治；而他们手里的手枪、炸弹、射击训练和秘密越境路线，则直接连向塞尔维亚境内的秘密民族主义组织 **“统一或死亡”**——也就是大名鼎鼎的 **“黑手会”（Black Hand）**。
+
+黑手会头目正是塞尔维亚军事情报部门高官德拉古丁·迪米特里耶维奇（绰号“阿皮斯”），他与塞尔维亚文官政府素来明争暗斗。现有史料可以证实，刺杀得到了塞尔维亚军方秘密网络的实质协助，但贝尔格莱德的文官政府并未下令行刺；首相帕希奇在隐约风闻刺客越境后，甚至曾试图通过非正式渠道向维也纳暗示风险，只是措辞太过含糊，没能引起警觉。
+
+但对盛怒的维也纳而言，真相究竟有几分牵连文官政府，已经不再重要了。刺杀消息传回首都，奥匈外交大臣 **莱奥波德·贝希托尔德（Leopold Berchtold）** 与早就嚷嚷着要打塞尔维亚几十次的帝国总参谋长 **康拉德·冯·赫岑多夫（Conrad von Hötzendorf）** 立刻嗅到了千载难逢的机会：如果连皇储夫妇光天化日被杀，帝国都只换来几句道歉和几个替罪羊，那奥匈的威信就扫地殆尽，必须趁这次机会把塞尔维亚打残。唯一唱反调的是匈牙利首相 **伊什特万·蒂萨（István Tisza）**——他既怕吞并更多斯拉夫人破坏匈牙利在帝国里的政治权重，更怕把俄国招来酿成全欧大战。
+
+[grid] ![1914 年前后的奥匈外交大臣莱奥波德·贝希托尔德](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Count-Leopold-Berchtold-%28cropped%29.webp) ![1912 年前后的匈牙利政治家伊什特万·蒂萨](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Tisza-Istv%C3%A1n-portr%C3%A9ja.webp) [/grid]
+
+真正压垮蒂萨顾虑、让维也纳下定决心的，是来自柏林的撑腰。7 月初，奥匈特使赶赴柏林摸底，德皇威廉二世与帝国高层迅速给出明确承诺：无论维也纳决定怎样严厉惩罚塞尔维亚，哪怕惹来俄国干涉，德国都会坚定站在盟友身后。后世把这份几乎不设前提的支持形象地称为 **“空头支票”（Blank Check）**。
+
+![约 1914 年的德国皇帝威廉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914.webp)
+
+柏林并非失去理智，而是经过了一番冷酷的权衡。奥匈是德国唯一靠得住的大国盟友，不能眼睁睁看它在巴尔干步步退让、日益朽坏；更让柏林军政高层焦虑的是，俄国扩军和西部铁路计划预计在 1917 年前后完工，届时德国恐怕再也打不赢两线战争。在他们看来，要是奥匈动作够快、德国撑腰够硬，俄国没准还会像 1908 年那样忍气吞声；即便真打起来，早打也比晚打有利。德国首相 **特奥巴尔德·冯·贝特曼-霍尔韦格（Theobald von Bethmann-Hollweg）** 心里其实清楚此举有多凶险——据他的亲信库尔特·里茨勒在日记里记载，7 月 7 日，忧心忡忡的首相私下把德国这一步称作一次 **“黑暗中的纵身一跃”**（*Sprung ins Dunkle*）。
+
+拿到柏林的承诺后，奥匈并没有立刻动手，反而按兵不动了整整三个星期。这三周里，维也纳无意寻找妥协，只忙着做两件精密的准备工作：对内说服蒂萨点头，对外则刻意掐准时间，等到法国总统普恩加莱（Raymond Poincaré）结束对圣彼得堡的国事访问、登船返航的那一刻，再把最后通牒拍在桌上，让法俄两国最高层来不及当面商量对策。
+
+7 月 23 日傍晚，奥匈驻贝尔格莱德公使递交了一份限期 48 小时的 **最后通牒**。除了取缔反奥宣传、解散民族主义组织、惩办涉案人员外，通牒最致命的条款是要求奥匈官员直接进入塞尔维亚境内，参与镇压反奥运动与调查刺杀案。对一个主权国家来说，这无异于让外国警察接管本国司法。维也纳起草这份文件时，本就没打算让塞尔维亚痛快接受——通牒写得越苛刻，动手就越师出有名。
+
+[grid] ![1914 年 7 月 23 日奥匈外交大臣贝希托尔德致驻贝尔格莱德公使的文书影像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Ultimatum_k.u.k_serbien.webp) ![1914 年 7 月 28 日奥匈帝国对塞尔维亚宣战电报](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/TelegramWW1.webp) [/grid]
+
+---
+
+# 失控 37 天
+
+7 月 25 日下午，距离 48 小时大限只剩几分钟，塞尔维亚交出了答复。贝尔格莱德的姿态低到了尘埃里：几乎全盘答应了所有屈辱条件，只对“奥匈官员入境参与司法调查”这一条作了保留，并提议将分歧交由海牙国际仲裁庭裁决。
+
+连向来脾气火爆的德皇威廉二世读完答复后，都在文件页边批注称，这是一场伟大的道德胜利，**“开战的理由已经全部消失”**。可铁了心要借机重塑巴尔干格局的维也纳根本不吃这一套——只要不是百分之百全盘照单全收，就算拒绝。奥匈公使当场宣布断交，三天后的 **7 月 28 日**，奥匈帝国正式向塞尔维亚宣战，炮舰随即炮击贝尔格莱德。
+
+至此，战火依然局限在奥塞两国之间。真正把局部战争炸成欧洲全面大战的，是接下来七天里互相踩死的油门。
+
+## 表兄弟的电报，按不住动员键
+
+![1914 年的俄罗斯皇帝尼古拉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914.webp)
+
+奥匈开火后，圣彼得堡被逼上了悬崖。1908 年波斯尼亚危机的耻辱记忆犹在眼前，尼古拉二世（Nicholas II）和他的大臣们都很清楚：如果眼睁睁看着塞尔维亚被奥匈碾碎，俄国在巴尔干的威信和作为欧洲大国的体面就会荡然无存。
+
+可俄国军方摆上桌面的是一道要命的选择题：尼古拉二世起初只想针对奥匈方向搞一次“局部动员”，以示威慑又不至于刺激德国；但俄军总参谋部拼命摇头——俄国庞大僵硬的铁路和征兵方案根本没为“只打奥匈不防德国”做好万全准备，一旦德国随后参战，再临时从局部动员切换成全面动员，整条西境防线就会陷入严重混乱。
+
+就在最后几天里，欧洲上演了极具荒诞色彩的一幕。7 月 29 日至 8 月 1 日，互为表亲、平日私交甚笃的德皇威廉二世与沙皇尼古拉二世，用英文在柏林和圣彼得堡之间疯狂拍发私人电报，落款甚至还亲昵地写着家族小名 **“威利”（Willy）** 与 **“尼基”（Nicky）**。尼基恳求威利帮帮忙，别让一场“针对弱小国家的无耻战争”毁了和平，坦承自己快被国内压力淹没了；威利则焦急警告，俄国一旦动员，就会封死自己的调停空间，“和平还是战争的责任，现在全压在你的肩上了”。两位君主字里行间透着真切的慌乱，却谁也拦不住各自参谋部里越转越快的齿轮。
+
+7 月 30 日下午，在军方和外交大臣反复施压下，摇摆不定的尼古拉二世终于签下了**全面动员令**。在圣彼得堡眼里，这是防止塞尔维亚灭顶的最后防线；传到柏林眼里，却成了必须立刻反击的警报。俄国已经按下动员键，德国总参谋部认定西线速胜的宝贵时间窗正在一小时一小时关上。柏林向俄国发出停止动员的最后通牒，遭到拒绝后，**8 月 1 日，德国向俄国宣战。**
+
+德俄一开战，法国立刻被拖进了同一个漩涡。法俄之间签有正式军事同盟，巴黎绝不敢坐视俄国被单独击垮、让自己重新孤零零面对德国；而柏林更不敢把主力拉去东线、把空荡荡的西部留给法军。**8 月 3 日，德国向法国宣战**，庞大兵团随即按既定时刻表向西猛推。
+
+## 踏过“一张废纸”，全欧洲的灯灭了
+
+德军西进的路线直指中立国比利时。8 月 2 日晚，德国要求比利时放行借道，遭到布鲁塞尔断然拒绝。**8 月 4 日**，德军越过比利时边境。
+
+这一步，打消了伦敦内阁最后的犹豫。此前英国政坛对是否卷入欧陆战争吵得不可开交，主和派一度占据上风；可德军一踩进比利时，局势瞬间逆转。英国不仅是 1839 年担保比利时中立的《伦敦条约》签字国，更无法容忍任何欧陆霸主控制近在咫尺的低地国家与英吉利海峡对岸的港口——比利时中立既是国际法道义，也是大英帝国自己的安全底线。
+
+8 月 4 日当天，英国驻德大使爱德华·戈申（Edward Goschen）奉命向柏林递交最后通牒，要求德军撤出比利时。情绪失控的德国首相贝特曼-霍尔韦格难以置信地朝他嚷道，英国竟然为了“中立”这个词、**为了“一张废纸”（a scrap of paper）** 就要对同宗同源的德国开战。当晚午夜，最后通牒期满，**英国正式向德国宣战**。
 
 > [!NOTE]
-> “施里芬计划”这个名称本身带有后来的概括性质。1914 年德国实际执行的部署并不是简单照搬施里芬早年的一份固定蓝图，而是在多年总参谋部规划基础上不断调整形成的西线作战方案。
-
-![1906 年的阿尔弗雷德·冯·施里芬](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Alfred-von-Schlieffen-1906-%28cropped%29--ff-318caf17faf7.9o0l16brdf.webp)
-
-俄罗斯疆域辽阔，动员速度被认为相对较慢，而法国的军事力量则可以更快集中在德国西部边境。
-
-因此，一旦德俄战争不可避免，德国倾向于先把主力集中到西线，迅速击败法国，再利用铁路把部队转向东线，全力对抗俄国。
-
-而为了绕过法国东北部较坚固的防御体系，德国又必须要把大规模兵力部署到比利时方向。
-
-这样，一个非常危险的战略链条提前形成了：
-
-**俄罗斯一旦全面动员  
-→ 德国担心战争窗口正在关闭  
-→ 德国不能只对俄罗斯作战而放任法国  
-→ 德国必须迅速在西线行动  
-→ 西线行动又涉及中立的比利时  
-→ 英国介入的可能性随之急剧上升。**
-
-这条链条在 1914 年以前只是战争计划。
-
-七月危机让它开始变成现实。
-
-政治领导人仍能改变计划，但精确的动员和铁路时刻表提高了调整的代价。外交谈判需要时间，军事规划者却越来越把等待视为风险。
-
----
-
-# 萨拉热窝：刺杀不是凭空发生，也不是塞尔维亚政府的一纸命令
-
-1914 年 6 月 28 日，奥匈帝国皇储弗朗茨·斐迪南前往萨拉热窝访问。
-
-![1914 年 6 月 28 日，弗朗茨·斐迪南与妻子索菲在随行人员陪同下离开萨拉热窝市政厅](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Franz-Ferdinand-%26-Sophie-Leave-Sarajevo-Guildhall--ff-0881c37fdb88.9rk6yw4tzi.webp)
-
-这一天本身就具有高度象征意义。
-
-6 月 28 日，即塞尔维亚历法中的“维多夫丹”，与 1389 年科索沃战役的历史记忆紧密相连。对塞尔维亚民族主义叙事而言，这是一个带有强烈民族象征的日期。
-
-而奥匈帝国皇储恰恰在这一天访问 1908 年被正式吞并的波斯尼亚。
-
-当地激进民族主义者很容易把这看成帝国统治的展示。
-
-于是，一群塞尔维亚民族主义分子决定刺杀皇储，以示不满。
-
-当天，一群与“青年波斯尼亚”有关的年轻人沿着皇储车队路线等待刺杀机会。
-
-最初的袭击失败了。
-
-刺客内德利科·查布里诺维奇向车队投掷炸弹，但没有炸中皇储乘坐的车辆。
-
-按常理，发生如此严重的袭击后，访问本应立即取消。
-
-可弗朗茨·斐迪南随后仍决定继续部分行程，并前往医院探望袭击中受伤的人。
-
-车队临时更改路线，却因沟通失误驶入错误街道。
-
-汽车停车、倒车时，19 岁的加夫里洛·普林西普恰好就在附近。
-
-他走上前，向汽车开了两枪。
-
-弗朗茨·斐迪南和妻子索菲先后中弹死亡。
-
-这场刺杀能够成功，甚至带有一种令人难以置信的巧合。
-
-## “青年波斯尼亚”“黑手会”和塞尔维亚国家之间是什么关系？
-
-普林西普是一名波斯尼亚塞族青年，但他的政治目标不能简单概括成“为塞尔维亚政府执行任务”。
-
-他参与的“青年波斯尼亚”是一个松散的革命民族主义青年网络。成员的政治思想并不完全一致，但普遍反对奥匈统治，希望推动南斯拉夫民族解放或统一。
-
-刺杀者所用的武器、接受的训练以及越境渠道，则与塞尔维亚境内的民族主义秘密网络有关。
-
-最常被提到的是 **“统一或死亡”** 组织，也就是后来广为人知的“黑手会”。
-
-![加夫里洛·普林西普](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Gavrilo-princip--ff-86c1322494c1.3yf8plhdqr.webp)
-
-黑手会内部有塞尔维亚军官和情报人员参与，其中部分人物确实为刺杀者提供了帮助。
-
-塞尔维亚文官政府与这些激进军人之间本就存在权力冲突。
-
-现有史料能够说明，这场刺杀虽然与塞尔维亚境内的民族主义组织和军方秘密网络存在联系，但这并不等于“塞尔维亚政府正式下令刺杀奥匈皇储”。
-
-到 1914 年 7 月，维也纳方面越来越倾向于认为，无论塞尔维亚政府是否直接下令，一个容纳反奥民族主义网络、又不断壮大的塞尔维亚，本身就必须受到压制。刺杀调查因而逐渐变成了重塑巴尔干力量格局的政治机会。
-
----
-
-# 七月危机的前半段：奥匈想惩罚塞尔维亚，德国给了它冒险的底气
-
-萨拉热窝刺杀以后，奥匈帝国并没有立即宣战。
-
-相反，从 6 月 28 日到 7 月 23 日最后通牒发出，中间隔了三个多星期。这说明，欧洲大战并非情绪失控后的即时反应，而是一系列讨论、权衡和政策选择共同造成的结果。
-
-## 维也纳方面讨论的，不只是“如何调查刺杀”
-
-刺杀消息传到维也纳后，奥匈领导层内部迅速出现强硬派。
-
-尤其是外交大臣贝希托尔德等人，越来越倾向于认为单纯外交抗议无法解决问题。过去几年里，塞尔维亚通过巴尔干战争扩大实力，南斯拉夫民族主义又不断冲击帝国南部。
-
-如果皇储遇刺以后，奥匈仍然只获得一份道歉和若干逮捕令的补偿，结果可能不是“问题解决”，而是进一步证明奥匈缺乏压制塞尔维亚的能力。
-
-因此，部分决策者开始把刺杀理解为一个难得的机会：
-
-**这一次必须让塞尔维亚遭受决定性的外交或军事挫败。**
-
-不过，奥匈内部并非从一开始就完全一致。
-
-匈牙利首相蒂萨最初就反对立即发动战争。
-
-[grid] ![1914 年前后的奥匈外交大臣莱奥波德·贝希托尔德](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Portrait-of-Count-Leopold-Berchtold-%28cropped%29--ff-6438ef34d9ce.362d7v0s30.webp) ![1912 年前后的匈牙利政治家伊什特万·蒂萨](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Tisza-Istv%C3%A1n-portr%C3%A9ja--ff-496ba96d1ddd.1ht0aoahx8.webp) [/grid]
-
-他的担忧之一，是吞并更多塞尔维亚人口反而会进一步破坏帝国内部脆弱的民族平衡；他也担心俄国介入导致欧洲战争。
-
-然而，德国的支持改变了奥匈对风险的判断。
-
-## 德国的“空头支票”
-
-7 月初，奥匈派遣特使前往柏林确认德国态度。
-
-德国领导层明确表示，即使奥匈对塞尔维亚采取强硬行动，并且因此引发俄国干预，德国仍会支持自己的盟友。
-
-后世通常把这种支持承诺概括为德国给奥匈的 **“空头支票”**；这一称呼并非当时正式文件的名称。
-
-![约 1914 年的德国皇帝威廉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Kaiser-Guillermo-II-1914--ff-a3786d0ed404.1766hiv9q2.webp)
-
-德国的承诺使奥匈领导层相信，即使俄罗斯介入，自己也不会孤立无援，因而更愿意对塞尔维亚采取军事行动。
-
-德国担心，奥匈这个唯一可靠的大国盟友会因在巴尔干不断退让而日益虚弱；俄罗斯正在扩军，法俄合作也越来越紧密。在柏林部分军政人物看来，如果几年后仍须面对俄法大战，等待俄国完成军事改革只会使德国处境更加不利。这种判断并不意味着德国领导层已经一致决定借刺杀发动世界大战，却提高了他们对危机升级风险的接受程度。
-
-柏林仍希望，奥匈若行动迅速、德国又坚定支持，俄罗斯也许会像 1908 年那样退让。奥匈则希望通过迅速压服塞尔维亚限制危机，后来俄国又试图以军事准备阻止奥匈摧毁塞尔维亚。各方都把展示决心视为迫使对手退让的手段，这些威慑举动却相互刺激，推动了危机升级。
-
-## 奥匈帝国的“等待”
-
-奥匈最终没有立即行动，而是直到 7 月 23 日才向塞尔维亚递交最后通牒。
-
-这既有内部协调和准备方面的原因，也有对外交时机的考虑。国内方面，奥匈需要让最初持保留意见的蒂萨接受强硬政策，也需要起草具体要求。
-
-至于外交时机，最后通牒的递交被特意安排在法国总统普恩加莱和总理维维亚尼结束对俄罗斯国事访问之后。
-
-这样一来，最后通牒提出时，法俄两国最高层便难以及时面对面协调应对。
-
-因此，等待并不意味着奥匈在不断寻求妥协。
-
-相反，这段时间被用来精心策划一份极其强硬的外交文件。
-
-## 强硬的最后通牒
-
-7 月 23 日，奥匈向塞尔维亚递交最后通牒，并只给予约 48 小时答复。
-
-其中不少要求本身并非毫无依据，例如要求塞尔维亚压制公开的反奥宣传、解散相关民族主义组织、惩处涉案人员。
-
-引起争议的，是奥匈要求让其官员参与塞尔维亚境内有关镇压反奥运动和调查刺杀阴谋的行动。
-
-对一个主权国家而言，这意味着让外国政府人员直接介入本国执法和司法事务。
-
-奥匈制定这份通牒时，本身就是为了让**条件足够严苛，使塞尔维亚很难毫无保留地接受。**
-
-如果塞尔维亚拒绝，奥匈便有了发动军事行动的理由。
-
-于是，奥匈有意把一场原本可以围绕“调查刺杀”展开的外交交涉，推向了一场国家主权危机。
-
-[grid] ![1914 年 7 月 23 日奥匈外交大臣贝希托尔德致驻贝尔格莱德公使的文书影像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Ultimatum_k.u.k_serbien--ff-37fb6e09a65a.7q34csim6.webp) ![1914 年 7 月 28 日奥匈帝国对塞尔维亚宣战电报](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/TelegramWW1--ff-8444fdcb4b17.4922iqwlyx.webp) [/grid]
-
----
-
-# 七月危机的后半段：同盟没有“自动触发”战争，各国却一步步自发跟进
-
-7 月 25 日，塞尔维亚提交了对最后通牒的正式答复。
-
-它接受了相当一部分要求，包括打击反奥宣传、解散有关组织和追究部分责任人，但对涉及奥匈官员直接参与塞尔维亚境内调查与执法的要求作出保留，并提出可以把部分争议交由国际仲裁。
-
-这远不能看成是“拒绝”，甚至德国皇帝威廉二世后来阅读塞尔维亚答复时，也一度认为这已经取得了相当大的外交成果，战争未必还有必要。
-
-但奥匈此时的目标已经不只是得到一份尽可能满意的答复。
-
-维也纳希望通过制造一场危机，实质性削弱塞尔维亚。
-
-因此，塞尔维亚没有完全接受所有条件，就足以让奥匈继续推进既定政策。
-
-7 月 28 日，奥匈帝国向塞尔维亚宣战。
-
-至此，欧洲出现局部战争。
-
-但它仍然只是 **奥匈—塞尔维亚战争**。
-
-## 俄国面对的是“塞尔维亚问题”，也是自己的大国地位问题
-
-俄罗斯不能轻易让奥匈帝国全面压倒塞尔维亚。
-
-这不仅因为民族和宗教联系，也因为 1908 年波斯尼亚危机的记忆。
-
-如果俄罗斯再次在德国和奥匈压力下退让，它担心自己在巴尔干的影响力和大国信誉都会受到打击。
-
-![1914 年的俄罗斯皇帝尼古拉二世](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Nicholas-II%2C-1914--ff-8ce6b420263f.3k8syq92y3.webp)
-
-但俄罗斯也面临一个军事难题：
-
-如果只对奥匈帝国方向进行局部动员，俄国复杂的动员体系能否顺利执行？如果德国随后加入战争，再从局部动员转换为全面动员，会不会造成铁路和部署混乱？
-
-所以俄罗斯军方更倾向于完整执行既定的“全面动员”方案。
-
-而俄国领导层眼中一项旨在“防止塞尔维亚被摧毁”的措施，到了德国却有了完全不同的含义。
-
-## “动员”几乎等于宣告战争
-
-对现代大规模战争而言，动员不是简单的外交姿态。它意味着一套涉及数百万人的战争机器开始运转。
-
-俄罗斯全面动员以后，德国面对的问题是：
-
-如果继续等待，那么等到俄军完全部署后，自己的“西线计划”是否还有充足的时间执行？
-
-德国因此向俄罗斯发出最后通牒，要求停止动员，当然得到了俄国的拒绝。
-
-1914 年 8 月 1 日，德国向俄罗斯宣战。
-
-到这里，危机已经从巴尔干战争变成了德俄战争。
-
-## 法国为什么被卷入其中？
-
-法国与俄罗斯之间存在正式的军事同盟。
-
-对法国来说，如果俄罗斯在与德国的冲突中被单独击败，法国以后就可能重新陷入面对德国的战略孤立。
-
-对德国来说，如果先把主力全部投入东线，而法国随后从西面进攻，德国就会陷入腹背受敌的局面。
-
-因此，当德俄战争成为现实时，德国总参谋部很快转入既有的西线计划。
-
-8 月 3 日，德国向法国宣战。
-
-德国不愿等待法国是否先动手：在军事规划者看来，等到法国意图明确时，西线部署的时间优势可能已经消失。
-
-## 比利时问题为什么又使得英国参战？
-
-按照德国西线进攻计划，大军需要经过卢森堡和比利时进入法国北部。
-
-而比利时是中立国，德国要求比利时允许军队通过，被比利时拒绝。
-
-随后德军直接越过边境。
-
-英国此前虽然已经与法国展开军事和海军协调，但政府内部对于是否介入大陆战争仍存在严重分歧。
-
-比利时问题改变了这种政治局面。
-
-一方面，英国是 1839 年有关维持比利时中立安排的参与者。
-
-另一方面，比利时和法国北部就在英吉利海峡对岸。
-
-英国长期战略的核心之一，是不允许某一个大陆强国控制低地国家和海峡对岸的重要港口。
-
-因此，比利时中立既是法律和外交问题，也是英国自己的安全问题。
-
-8 月 4 日，英国向德国宣战。
-
-> [!NOTE]
-> **英国参战与自治领**
+> **英国参战与帝国自治领**
 >
-> 1914 年，英国的宣战也使加拿大、澳大利亚、新西兰等自治领进入对德战争状态。这些地区随后组织远征军，陆续前往欧洲和其他战区。
+> 1914 年伦敦的宣战不仅决定着英国本土，也自动将加拿大、澳大利亚、新西兰等大英帝国自治领以及印度、各海外殖民地卷入对德战争。很快，来自地球另一端的远征军便陆续跨越大洋，奔赴欧洲与中东战场。
 
-奥塞之间的局部战争由此扩大为欧洲主要大国之间的战争。
+短短 37 天，一场发生在巴尔干角落的刺杀，顺着一环扣一环的误判与威慑，烧穿了欧洲的和平底线：
 
-## 37 天：危机怎样一层层扩大
-
-| 日期 | 事件 | 危机性质的变化 |
+| 日期 | 关键事件 | 危机性质的变化 |
 | --- | --- | --- |
-| **6 月 28 日** | 弗朗茨·斐迪南夫妇在萨拉热窝遇刺 | 奥匈帝国内部的安全与政治危机 |
-| **7 月 5—6 日前后** | 德国向奥匈表达坚定支持 | 奥塞问题开始与德俄竞争相互牵连 |
-| **7 月 23 日** | 奥匈向塞尔维亚递交最后通牒 | 刺杀调查转化为国家主权危机 |
-| **7 月 25 日** | 塞尔维亚接受多数要求，但保留部分条款 | 仍存在外交妥协空间 |
-| **7 月 28 日** | 奥匈向塞尔维亚宣战 | 地区战争正式开始 |
-| **7 月 29—30 日** | 俄国军事准备升级并转向全面动员 | 地区战争进入大国军事对抗 |
-| **8 月 1 日** | 德国向俄国宣战 | 奥塞战争扩大为德俄战争 |
-| **8 月 3 日** | 德国向法国宣战 | 两线战争逻辑启动 |
-| **8 月 4 日** | 德军进入比利时；英国向德国宣战 | 欧洲主要大国全面卷入 |
+| **6 月 28 日** | 弗朗茨·斐迪南夫妇在萨拉热窝遇刺 | 奥匈帝国的政治危机，意外移除了维也纳主战派的内部阻力 |
+| **7 月 5—6 日** | 德国向奥匈开出“空头支票” | 奥塞冲突与德俄战略竞争直接挂钩 |
+| **7 月 23 日** | 奥匈递交 48 小时严苛最后通牒 | 刺杀调查被刻意推高为国家主权危机 |
+| **7 月 25 日** | 塞尔维亚几乎全盘妥协，仅保留个别条款 | 外交大门原本尚留缝隙，但维也纳无意停手 |
+| **7 月 28 日** | 奥匈向塞尔维亚宣战 | 巴尔干局部战争爆发 |
+| **7 月 30 日** | 俄国正式宣布全面动员 | 地区冲突升级为大国军事对抗 |
+| **8 月 1 日** | 德国向俄国宣战 | 全面战争在东线引爆 |
+| **8 月 3 日** | 德国向法国宣战 | 德国两线作战逻辑正式启动 |
+| **8 月 4 日** | 德军入侵比利时；英国向德国宣战 | 欧洲主要大国全面卷入世界大战 |
 
-英国外交大臣格雷曾推动大国调停；德国皇帝威廉二世与俄国沙皇尼古拉二世之间进行了著名的“威利—尼基”电报往来；德国、俄罗斯、英国和奥匈之间也曾交换不同的妥协方案。
+![英国外交大臣爱德华·格雷肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden.webp)
 
-![英国外交大臣爱德华·格雷肖像](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Edward-Grey%2C-1st-Viscount-Grey-of-Falloden--ff-1b26dc69e3e6.102ym394dd.webp)
+危机最后一周里，英国外交大臣 **爱德华·格雷（Edward Grey）** 直到最后一刻仍在奔走斡旋，提议召开大国会议降温，可电报跑不过火车，外交谈判终究败给了总参谋部冷冰冰的动员时刻表。
 
-外交协商尚未结束，军事部署的时限却不断压缩各国核实意图、修改条件的时间。
+战后，格雷在回忆录《二十五年》里记下了 8 月 3 日黄昏的一幕。当时他站在伦敦白厅外交部的窗前，正值暮色四合，窗外华灯初放，他对身旁的朋友轻声叹道：**“整个欧洲的灯光正在熄灭，我们在有生之年不会再看到它们重新亮起。”**
 
-![1914 年 8 月 1 日柏林街头民众聚集听取动员令](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-order-is-read-out-in-Berlin%2C-1-August-1914--ff-9a2ef4ee502e.73uqojbsq1.webp)
+![1914 年 8 月 1 日柏林街头民众聚集听取动员令](https://img.nightbugclub.cn/posts/history/WWI/260924-WWI-1-from-sarajevo-to-the-wwi/Mobilization-order-is-read-out-in-Berlin%2C-1-August-1914.webp)
 
----
-
-# 从地区危机到欧洲大战
-
-巴尔干冲突牵动了奥匈的帝国结构与俄国的地区影响力，同盟关系又把盟友的失败变成各国对自身安全的威胁。过去危机留下的经验，使德国更相信强硬能够奏效，也使俄国更难接受再次退让；动员计划则不断压缩妥协的时间。
-
-刺杀提供了危机的起点，战争的扩大仍取决于七月各国政府的具体选择。奥匈试图借机压服塞尔维亚，德国以支持盟友和抢占时间应对风险，俄国以动员显示决心；这些行动相互刺激，最终把原本可以限制在局部的冲突推向了欧洲大战。
+那几天里，柏林、巴黎、伦敦、维也纳和圣彼得堡的街头挤满了听取动员令的人群。旗帜挥舞，乐声高昂，许多人欢呼着相信这会是一场干净利落的短期胜利；只是在欢呼声掩盖不住的角落里，送别亲人的母亲与安静攥紧行囊的士兵，已经隐约感到了不安。没有人真正料到，1914 年夏天这声开场的炮响，会把整个旧欧洲埋进长达四年的泥泞与尸骸之中。
 
 ---
 
 # 参考资料
-
-本文主要参考第一次世界大战爆发史、七月危机研究、外交文件与公共历史资料。若希望继续深入阅读，可以优先从前 4 项开始：
 
 ## 一、写作参考资料
 
@@ -863,29 +495,29 @@ seriesOrder: 1
    对萨拉热窝事件以后奥匈、德国、俄罗斯等国的决策过程、“空头支票”、最后通牒与动员危机进行系统梳理。  
    <https://encyclopedia.1914-1918-online.net/article/july_crisis_1914/>
 
-5. **International Encyclopedia of the First World War — Berchtold, Leopold Graf**  
+5. **International Encyclopedia of the First World War — Sarajevo Incident**  
+   梳理萨拉热窝刺杀经过、斐迪南夫妇背景、“青年波斯尼亚”与“黑手会”的关系，以及刺杀对维也纳决策的影响。  
+   <https://encyclopedia.1914-1918-online.net/article/sarajevo-incident/>
+
+6. **International Encyclopedia of the First World War — Berchtold, Leopold Graf**  
    介绍奥匈外交大臣贝希托尔德在刺杀以后推动对塞尔维亚强硬政策、协调德国支持并制定最后通牒的过程。  
    <https://encyclopedia.1914-1918-online.net/article/berchtold-leopold-graf/>
 
-6. **U.S. Department of State, Office of the Historian — Papers Relating to the Foreign Relations of the United States, 1914, Supplement, The World War**  
+7. **U.S. Department of State, Office of the Historian — Papers Relating to the Foreign Relations of the United States, 1914, Supplement, The World War**  
    收录美国外交人员在七月危机期间对奥匈—塞尔维亚危机、俄国动员、德国反应以及欧洲局势的同期外交记录。  
    <https://history.state.gov/historicaldocuments/frus1914Supp>
 
-7. **U.S. Department of State, Office of the Historian — The Crisis**  
+8. **U.S. Department of State, Office of the Historian — The Crisis**  
    按时间整理 1914 年 7 月下旬欧洲危机中的外交电报与战争扩散过程，可用于核对奥匈最后通牒、塞尔维亚答复、俄国动员以及各国调停活动。  
    <https://history.state.gov/historicaldocuments/frus1914Supp/toc-topics>
 
-8. **Imperial War Museums — First World War history**  
+9. **Imperial War Museums — First World War history**  
    关于战前欧洲联盟体系、军备扩张、帝国竞争以及第一次世界大战爆发过程的公共历史资料。  
    <https://www.iwm.org.uk/history/first-world-war>
 
-9. **Encyclopaedia Britannica — World War I**  
-   关于第一次世界大战背景、巴尔干危机、萨拉热窝刺杀与战争爆发过程的综合性历史资料。  
-   <https://www.britannica.com/event/World-War-I>
-
-10. **Imperial War Museums — The July Crisis / related First World War collections**  
-    可用于补充萨拉热窝事件照片、动员场景与一战初期图像资料。  
-    <https://www.iwm.org.uk/collections>
+10. **Encyclopaedia Britannica — World War I**  
+    关于第一次世界大战背景、巴尔干危机、萨拉热窝刺杀与战争爆发过程的综合性历史资料。  
+    <https://www.britannica.com/event/World-War-I>
 
 11. **Schönbrunn / Habsburger.net — The Dual Monarchy / The supranational state**  
     关于奥地利、匈牙利各自的政府与议会，以及共同外交、军事和经费安排。  
@@ -896,9 +528,20 @@ seriesOrder: 1
     新西兰文化与遗产部关于英国宣战与自治领参战关系的历史资料。  
     [NZ History：The British Empire](https://nzhistory.govt.nz/page/british-empire)
 
-13. **Royal Museums Greenwich — Dreadnought (1906); Warship; Battleship**
-    馆藏说明介绍“无畏号”的十门 12 英寸主炮、蒸汽轮机、21 节航速，以及舰名成为一代战列舰通称的过程。
+13. **Royal Museums Greenwich — Dreadnought (1906); Warship; Battleship**  
+    馆藏说明介绍“无畏号”的十门 12 英寸主炮、蒸汽轮机、21 节航速，以及舰名成为一代战列舰通称的过程。  
     [格林尼治皇家博物馆：“无畏号”](https://www.rmg.co.uk/collections/objects/rmgc-object-67323)
+
+14. **Sir Edward Goschen — Dispatch to Sir Edward Grey（1914 年 8 月 8 日）**  
+    英国驻德大使戈申关于 8 月 4 日与贝特曼-霍尔韦格最后会面的官方外交报告，记录“一张废纸”（a scrap of paper）一语的出处。  
+    [World War I Document Archive：戈申大使报告](https://wwi.lib.byu.edu/index.php/Sir_Edward_Goschen%27s_Account_of_the_Scrap_of_Paper)
+
+15. **Edward Grey — _Twenty-Five Years, 1892–1916_（1925）**  
+    英国外交大臣格雷战后回忆录，记载 1914 年 8 月 3 日黄昏窗前“整个欧洲的灯光正在熄灭”的名句及其回忆语境。
+
+16. **The Willy–Nicky Telegrams（1914 年 7 月 29 日—8 月 1 日）**  
+    德皇威廉二世与俄国沙皇尼古拉二世在战争爆发前夕的英文往来电报原文，展现动员机制与君主私人斡旋之间的脱节。  
+    [World War I Document Archive：威利—尼基电报集](https://wwi.lib.byu.edu/index.php/The_Willy-Nicky_Telegrams)
 
 ## 二、文中配图来源
 
@@ -906,47 +549,45 @@ seriesOrder: 1
 
 2. **19 世纪末至 20 世纪初法国讽刺画中的三国同盟**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Caricature_of_the_Triple_alliance.jpg)。法国政治讽刺画，作者不详，描绘德国与奥匈扶持意大利、英国为其“诊脉”，法俄则在旁观察；Commons 页面将该历史作品标记为公有领域。
 
-3. **1896 年尼古拉二世访法期间的亚历山大三世桥奠基仪式**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Voyage_du_tsar_(Nicolas_II_et_la_tsarine_Alexandra_Feodorovna_en_pr%C3%A9sence_de_F%C3%A9lix_Faure_posant_la_premi%C3%A8re_pierre_du)_pont_Alexandre_III_-_btv1b532609488.jpg)。Atelier Nadar 摄于 1896 年，馆藏于法国国家图书馆（Bibliothèque nationale de France）；原图页提供其馆藏与版权信息。
+3. **1896 年尼古拉二世访法期间，俄国皇室与法国总统菲利·福尔共同出席亚历山大三世桥奠基仪式**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Voyage_du_tsar_(Nicolas_II_et_la_tsarine_Alexandra_Feodorovna_en_pr%C3%A9sence_de_F%C3%A9lix_Faure_posant_la_premi%C3%A8re_pierre_du)_pont_Alexandre_III_-_btv1b532609488.jpg)。Atelier Nadar 摄于 1896 年，馆藏于法国国家图书馆（Bibliothèque nationale de France）；原图页提供其馆藏与版权信息。
 
-4. **1903 年“英法协约”主题明信片**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Entente_Cordiale_dancing.png)。1903 年英法友好主题明信片，作者不详；Wikimedia Commons 页面将其标记为公有领域。
+4. **1903 年表现英法友好关系的“英法协约”主题明信片**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Entente_Cordiale_dancing.png)。1903 年英法友好主题明信片，作者不详；Wikimedia Commons 页面将其标记为公有领域。
 
 5. **1907 年英俄协约划分波斯势力范围示意图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:The_Russo-British_Pact_in_1907.jpg)。表现 1907 年英俄协约对波斯势力范围的划分；历史图像及其版权状态见 Commons 文件页。
 
-6. **1914 年欧洲联盟地图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Map_Europe_alliances_1914-en.svg)。原图作者 historicair；英文译图由 Fluteflute、Bibi Saint-Pol 制作，为法文原图的英文衍生版本；[CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) 授权。
+6. **1914 年欧洲主要国家及联盟关系分布示意图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Map_Europe_alliances_1914-en.svg)。原图作者 historicair；英文译图由 Fluteflute、Bibi Saint-Pol 制作，为法文原图的英文衍生版本；[CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) 授权。
 
 7. **1910 年奥匈帝国主要民族与语言群体分布图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Austria_Hungary_ethnic.svg)。ArdadN 根据 William R. Shepherd 1911 年历史地图集中的民族分布图制作；Commons 页面标记为公有领域。
 
-8. **1908 年《小日报》波斯尼亚危机讽刺画**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Le_Petit_Journal_Balkan_Crisis_(1908).jpg)。1908 年 10 月 18 日法国《Le Petit Journal》插图，作者不详；描绘奥匈吞并波斯尼亚、保加利亚独立等巴尔干危机元素，页面标记为公有领域。
+8. **1908 年《小日报》描绘波斯尼亚危机的政治讽刺画**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Le_Petit_Journal_Balkan_Crisis_(1908).jpg)。1908 年 10 月 18 日法国《Le Petit Journal》插图，作者不详；描绘奥匈吞并波斯尼亚、保加利亚独立等巴尔干危机元素，页面标记为公有领域。
 
 9. **1912 年第一次巴尔干战争期间贝尔格莱德的动员场景**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Mobilization_for_the_First_Balkan_War,_Belgrade_1912.jpg)。1912 年摄于贝尔格莱德，作者不详；Commons 页面依据历史照片版权期限标记为公有领域。
 
 10. **1912 年第一次巴尔干战争期间的塞尔维亚军官与士兵**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Srpska_vojska_u_Albaniji_1912.jpg)。1912 年塞尔维亚军队在阿尔巴尼亚方向的历史照片，来源指向塞尔维亚国家图书馆数字馆藏；版权状态见 Commons 原图页。
 
-11. **1913 年巴尔干半岛形势图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Map_of_the_Balkans_(1913)_-_fr.svg)。该图由 Tinodela 基于原始扫描图制作衍生版本；Wikimedia Commons 页面将原始作品及该文件标记为公有领域。
+11. **1913 年巴尔干半岛各国疆界与领土分布示意图**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Map_of_the_Balkans_(1913)_-_fr.svg)。该图由 Tinodela 基于原始扫描图制作衍生版本；Wikimedia Commons 页面将原始作品及该文件标记为公有领域。
 
-12. **英国“无畏号”战列舰**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:HMS_Dreadnought_1906.jpg)。约摄于 1906—1907 年，摄影者未注明；来源为美国海军历史中心（U.S. Navy Historical Center），编号 NH 63367。该页面将其标记为美国联邦政府作品，在美国属于公有领域。
+12. **约 1906—1907 年停泊中的英国“无畏号”战列舰**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:HMS_Dreadnought_1906.jpg)。约摄于 1906—1907 年，摄影者未注明；来源为美国海军历史中心（U.S. Navy Historical Center），编号 NH 63367。该页面将其标记为美国联邦政府作品，在美国属于公有领域。
 
-13. **1906 年的阿尔弗雷德·冯·施里芬**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Alfred_von_Schlieffen_1906_(cropped).jpg)。E. Bieber 照相馆摄于 1906 年，文件页所列来源为巴登—符腾堡州档案馆（Landesarchiv Baden-Württemberg）；当前文件是完整照片的裁切版本。Commons 标注为美国公有领域。
+13. **1914 年 6 月 28 日，弗朗茨·斐迪南与妻子索菲在随行人员陪同下离开萨拉热窝市政厅**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_Sophie_Leave_Sarajevo_Guildhall.jpg)。摄于 1914 年 6 月 28 日，摄影者不详；Wikimedia Commons 页面以 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 公共领域贡献方式提供。
 
-14. **弗朗茨·斐迪南与索菲离开萨拉热窝市政厅**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_Sophie_Leave_Sarajevo_Guildhall.jpg)。摄于 1914 年 6 月 28 日，摄影者不详；Wikimedia Commons 页面以 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 公共领域贡献方式提供。
+14. **加夫里洛·普林西普**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Gavrilo_princip.jpg)。作者不详，页面所列来源为 *Photos of the Great War*；Wikimedia Commons 将该作品标记为公有领域。
 
-15. **加夫里洛·普林西普照片**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Gavrilo_princip.jpg)。作者不详，页面所列来源为 *Photos of the Great War*；Wikimedia Commons 将该作品标记为公有领域。
+15. **1914 年前后的奥匈外交大臣莱奥波德·贝希托尔德**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Portrait_of_Count_Leopold_Berchtold_(cropped).jpg)。不晚于 1914 年，原载于 *The World's Work*，作者不详；Commons 页面将其标记为公有领域。
 
-16. **奥匈外交大臣莱奥波德·贝希托尔德肖像**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Portrait_of_Count_Leopold_Berchtold_(cropped).jpg)。不晚于 1914 年，原载于 *The World's Work*，作者不详；Commons 页面将其标记为公有领域。
+16. **1912 年前后的匈牙利政治家伊什特万·蒂萨**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Tisza_Istv%C3%A1n_portr%C3%A9ja.jpg)。1912 年前后的历史肖像，作者不详；Wikimedia Commons 页面依据匿名作品出版年代标记为公有领域。
 
-17. **1912 年前后的伊什特万·蒂萨肖像**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Tisza_Istv%C3%A1n_portr%C3%A9ja.jpg)。1912 年前后的历史肖像，作者不详；Wikimedia Commons 页面依据匿名作品出版年代标记为公有领域。
+17. **约 1914 年的德国皇帝威廉二世**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Kaiser_Guillermo_II_1914.png)。约 1914 年刊载于西班牙杂志 *Mundo Gráfico*，作者未署名；Commons 页面标记为公有领域。
 
-18. **约 1914 年的德国皇帝威廉二世**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Kaiser_Guillermo_II_1914.png)。约 1914 年刊载于西班牙杂志 *Mundo Gráfico*，作者未署名；Commons 页面标记为公有领域。
+18. **1914 年 7 月 23 日奥匈外交大臣贝希托尔德致驻贝尔格莱德公使的文书影像**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Ultimatum_k.u.k_serbien.png)。1914 年 7 月 23 日，奥匈外交大臣莱奥波德·贝希托尔德致驻贝尔格莱德公使弗拉基米尔·冯·吉斯尔的文书；来源为奥地利国家档案馆（Österreichisches Staatsarchiv），Wikimedia Commons 页面标记为公有领域。
 
-19. **奥匈帝国对塞尔维亚最后通牒相关文书**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Ultimatum_k.u.k_serbien.png)。1914 年 7 月 23 日，奥匈外交大臣莱奥波德·贝希托尔德致驻贝尔格莱德公使弗拉基米尔·冯·吉斯尔的文书；来源为奥地利国家档案馆（Österreichisches Staatsarchiv），Wikimedia Commons 页面标记为公有领域。
+19. **1914 年 7 月 28 日奥匈帝国对塞尔维亚宣战电报**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:TelegramWW1.jpg)。1914 年 7 月 28 日由奥匈帝国政府发给塞尔维亚政府，页面所列作者为奥匈帝国政府；Wikimedia Commons 将该历史文书标记为公有领域。
 
-20. **奥匈帝国对塞尔维亚宣战电报**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:TelegramWW1.jpg)。1914 年 7 月 28 日由奥匈帝国政府发给塞尔维亚政府，页面所列作者为奥匈帝国政府；Wikimedia Commons 将该历史文书标记为公有领域。
+20. **1914 年的俄罗斯皇帝尼古拉二世**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Nicholas_II,_1914.jpg)。1914 年俄国宫廷摄影师所摄家庭照片的裁切版本；Commons 页面将其标记为公有领域。
 
-21. **1914 年的俄罗斯皇帝尼古拉二世**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Nicholas_II,_1914.jpg)。1914 年俄国宫廷摄影师所摄家庭照片的裁切版本；Commons 页面将其标记为公有领域。
+21. **英国外交大臣爱德华·格雷肖像**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Edward_Grey,_1st_Viscount_Grey_of_Falloden.jpg)。爱德华·格雷肖像，原作与数字化文件版权信息见 Wikimedia Commons 原图页。
 
-22. **英国外交大臣爱德华·格雷肖像**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Edward_Grey,_1st_Viscount_Grey_of_Falloden.jpg)。爱德华·格雷肖像，原作与数字化文件版权信息见 Wikimedia Commons 原图页。
-
-23. **1914 年 8 月 1 日柏林宣读动员令**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Mobilization_order_is_read_out_in_Berlin,_1_August_1914.jpg)。摄影者不详，馆藏于英国帝国战争博物馆（Imperial War Museums），馆藏编号 Q 81755；Wikimedia Commons 页面将该历史照片的扫描版本标记为公有领域，原作属于已到期的英国政府 Crown Copyright 作品。
+22. **1914 年 8 月 1 日柏林街头民众聚集听取动员令**：[Wikimedia Commons 原图页](https://commons.wikimedia.org/wiki/File:Mobilization_order_is_read_out_in_Berlin,_1_August_1914.jpg)。摄影者不详，馆藏于英国帝国战争博物馆（Imperial War Museums），馆藏编号 Q 81755；Wikimedia Commons 页面将该历史照片的扫描版本标记为公有领域，原作属于已到期的英国政府 Crown Copyright 作品。
 
 > [!NOTE]
 > Wikimedia Commons 上的历史图片可能来自不同国家、不同年代与不同馆藏，其版权状态并不完全一致。本文在配图来源中按照文件页当前标注说明作者、馆藏与授权信息；若用于转载、商业发布或二次创作，仍应以对应 Commons 文件页及原馆藏机构的最新授权说明为准。

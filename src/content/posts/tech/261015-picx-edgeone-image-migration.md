@@ -4,7 +4,7 @@ description: 直连源站取图是很方便，但是太卡了！而现有的图�
 published: 2026-10-15
 tags: [blog, 图床, PicX]
 category: 技术
-image: https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.46h65a4rl.webp
+image: https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.webp
 ---
 
 最近整理刚写完的系列文章时，我开始认真考虑图片的存放问题。
@@ -112,7 +112,7 @@ PicX v3 默认使用仓库 `picx-images-hosting` 和分支 `master`，配置时�
 这篇文章封面上传后的实际文件名是：
 
 ```text
-f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.46h65a4rl.webp
+f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.webp
 ```
 
 名字虽然很长，但后面不需要手动重写它。PicX 的哈希化、压缩设置可能改变最终名称和格式，访问时认准仓库中真正存在的文件即可。相关选项见 [PicX 上传说明](https://picx-docs.xpoet.cn/usage-guide/upload.html)。
@@ -194,13 +194,13 @@ picx-images-hosting/
 由于这里把仓库根目录作为输出目录，封面的完整路径为：
 
 ```text
-posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.46h65a4rl.webp
+posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.webp
 ```
 
 在前面加上图片域名，就得到这篇文章实际使用的封面地址：
 
 ```text
-https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.46h65a4rl.webp
+https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.webp
 ```
 
 把完整地址粘贴到浏览器新标签页，能够直接显示封面，就说明这条访问路径已经跑通。仓库名 `picx-images-hosting` 不需要再加到域名后面。
@@ -228,7 +228,7 @@ https://img.nightbugclub.cn/{{path}}
 例如，这张图放进 Markdown 正文时写成：
 
 ```markdown
-![图床搭建测试封面](https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.46h65a4rl.webp)
+![图床搭建测试封面](https://img.nightbugclub.cn/posts/test/f3c08ec596129347ef057118aeabf4a61334156f.jpg@672w_378h_1c_!web-search-common-cover.webp)
 ```
 
 修改 PicX 链接规则影响的是后续复制出来的地址，已经写进文章的旧链接仍需要另外替换。
