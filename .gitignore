@@ -1,5 +1,7 @@
 # build output
 dist/
+playwright-report/
+test-results/
 
 # standalone Presence Agent build output
 release/
@@ -59,3 +61,4 @@ package/
 .codex*
 .claude
 .mimocode
+.workbuddy
